@@ -1,0 +1,28 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "clear": {},
+    "snap": {},
+    "prepare": {},
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "//#check:formatting": {},
+    "check:typescript": {},
+    "check:code-quality": {},
+    "lint": {
+      "dependsOn": ["//#check:formatting"]
+    },
+    "//#fix:formatting": {},
+    "fix:code-quality": {},
+    "fix:lint": {
+      "dependsOn": ["//#fix:formatting"]
+    },
+    "build": {
+      "dependsOn": ["lint", "^build"],
+      "outputs": ["dist/**"]
+    },
+    "publish-it": {}
+  }
+}

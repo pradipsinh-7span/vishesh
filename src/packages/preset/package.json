@@ -1,0 +1,89 @@
+{
+  "name": "@mrjadeja/vishesh-preset",
+  "description": "The tailwind css preset to rapidly build any UI",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "check:typescript": "tsc --noEmit true --emitDeclarationOnly false",
+    "check:code-quality": "eslint . --ext .ts",
+    "lint": "pnpm check:typescript && pnpm check:code-quality",
+    "fix:code-quality": "eslint . --ext .ts --fix",
+    "fix:lint": "pnpm fix:code-quality",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@mrjadeja/eslint-config-vishesh": "workspace:*",
+    "@mrjadeja/eslint-config-vishesh-lib": "workspace:*",
+    "@mrjadeja/vishesh-typescript": "workspace:*",
+    "@mrjadeja/vishesh-typescript-lib": "workspace:*",
+    "@types/node": "^20.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "eslint": "^8.44.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-sort-exports": "^0.8.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "tailwindcss": "^3.3.2",
+    "typescript": "5.0.4",
+    "vite": "^4.3.9",
+    "vite-plugin-dts": "^3.0.3"
+  },
+  "peerDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2"
+  },
+  "module": "./dist/vishesh-preset.js",
+  "main": "./dist/vishesh-preset.c.js",
+  "types": "./types/vishes-preset.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/vishes-preset.d.ts",
+        "default": "./dist/vishesh-preset.js"
+      },
+      "require": {
+        "types": "./types/vishes-preset.d.ts",
+        "default": "./dist/vishesh-preset.c.js"
+      }
+    }
+  },
+  "keywords": [
+    "vishesh",
+    "tailwindcss",
+    "preset",
+    "es modules",
+    "esm",
+    "commonjs",
+    "cjs",
+    "mrjadeja"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/mrjadeja/vishesh/src/packages/preset",
+  "bugs": {
+    "url": "https://github.com/mrjadeja/vishesh/issues",
+    "email": "mrjadeja.in@gmail.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Pradipsinh Jadeja",
+    "email": "mrjadeja.in@gmail.com",
+    "url": "http://mrjadeja.vercel.app/"
+  },
+  "contributors": [
+    {
+      "name": "Pradipsinh Jadeja",
+      "email": "mrjadeja.in@gmail.com",
+      "url": "http://mrjadeja.vercel.app/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrjadeja/vishesh.git"
+  }
+}

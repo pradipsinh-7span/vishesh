@@ -1,0 +1,54 @@
+{
+  "name": "@mrjadeja/vishesh-typescript-react",
+  "description": "Typescript react configuration with vite and alias",
+  "version": "0.0.1",
+  "scripts": {
+    "publish-it": "pnpm publish"
+  },
+  "peerDependencies": {
+    "@mrjadeja/vishesh-typescript": "workspace:*"
+  },
+  "module": "./index.json",
+  "main": "./index.json",
+  "exports": {
+    ".": {
+      "default": "./index.json"
+    }
+  },
+  "keywords": [
+    "vishesh",
+    "typescript",
+    "react",
+    "alias",
+    "mrjadeja"
+  ],
+  "files": [
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/mrjadeja/vishesh/src/packages/dev/typescript-react",
+  "bugs": {
+    "url": "https://github.com/mrjadeja/vishesh/issues",
+    "email": "mrjadeja.in@gmail.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Pradipsinh Jadeja",
+    "email": "mrjadeja.in@gmail.com",
+    "url": "http://mrjadeja.vercel.app/"
+  },
+  "contributors": [
+    {
+      "name": "Pradipsinh Jadeja",
+      "email": "mrjadeja.in@gmail.com",
+      "url": "http://mrjadeja.vercel.app/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrjadeja/vishesh.git"
+  }
+}

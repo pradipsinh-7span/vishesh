@@ -1,0 +1,21 @@
+{
+  "extends": ["@mrjadeja/vishesh"],
+  "rules": {
+    "import/no-unused-modules": [
+      "error",
+      {
+        "unusedExports": true,
+        "ignoreExports": ["lib/main.ts", "vite.config.ts"]
+      }
+    ]
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts"]
+    },
+    "node": {
+      "extensions": [".ts"],
+      "moduleDirectory": ["lib", "node_modules"]
+    }
+  }
+}

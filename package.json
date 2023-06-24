@@ -1,0 +1,68 @@
+{
+  "name": "vishesh",
+  "description": "The ui design system build on top of the tailwindcss ✌",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "clear": "pnpx rimraf --glob **/node_modules **/dist **/types **/.turbo",
+    "snap": "pnpm clear && pnpm i",
+    "prepare": "husky install",
+    "dev": "turbo run dev --concurrency 12",
+    "check:formatting": "prettier --check \"**/*.{ts,tsx,js,jsx,md,mdx,html,css,json,yaml,yml}\"",
+    "check:typescript": "turbo run check:typescript",
+    "check:code-quality": "turbo run check:code-quality",
+    "lint": "turbo run lint",
+    "fix:formatting": "prettier --write \"**/*.{ts,tsx,js,jsx,md,mdx,html,css,json,yaml,yml}\"",
+    "fix:code-quality": "turbo run fix:code-quality",
+    "fix:lint": "turbo run fix:lint",
+    "build": "turbo run build",
+    "publish-it": "turbo run publish-it"
+  },
+  "devDependencies": {
+    "@mrjadeja/vishesh-prettier": "workspace:*",
+    "husky": "^8.0.3",
+    "rimraf": "^5.0.1",
+    "turbo": "^1.10.6",
+    "vite": "^4.3.9"
+  },
+  "keywords": [
+    "vishesh",
+    "tailwindcss",
+    "preset",
+    "prettier",
+    "eslint",
+    "react",
+    "typescript",
+    "mrjadeja"
+  ],
+  "homepage": "https://github.com/mrjadeja/vishesh",
+  "bugs": {
+    "url": "https://github.com/mrjadeja/vishesh/issues",
+    "email": "mrjadeja.in@gmail.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Pradipsinh Jadeja",
+    "email": "mrjadeja.in@gmail.com",
+    "url": "http://mrjadeja.vercel.app/"
+  },
+  "contributors": [
+    {
+      "name": "Pradipsinh Jadeja",
+      "email": "mrjadeja.in@gmail.com",
+      "url": "http://mrjadeja.vercel.app/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrjadeja/vishesh.git"
+  },
+  "engines": {
+    "node": ">=18.0.0 <19.0.0",
+    "pnpm": ">=8.5.0 <9.0.0",
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm"
+  },
+  "packageManager": "pnpm@8.5.1"
+}

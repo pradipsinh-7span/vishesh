@@ -1,0 +1,41 @@
+{
+  "extends": ["@mrjadeja/vishesh"],
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "JSX": "readonly"
+  },
+  "plugins": ["react-hooks", "react"],
+  "rules": {
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react-hooks/rules-of-hooks": "error"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx", ".json"],
+        "moduleDirectory": ["src", "node_modules"]
+      }
+    },
+    "alias": {
+      "map": [
+        ["@components", "./src/components"],
+        ["@package", "./node_modules"],
+        ["@utils", "./src/utils"],
+        ["@routes", "./src/routes"],
+        ["@api", "./src/api"],
+        ["@store", "./src/store"],
+        ["@layout", "./src/layout"]
+      ],
+      "extensions": [".ts", ".tsx"]
+    }
+  },
+  "react": {
+    "version": "detect"
+  }
+}

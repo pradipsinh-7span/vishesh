@@ -1,0 +1,5 @@
+{
+  "plugins": ["@mrjadeja/vishesh-prettier", "prettier-plugin-tailwindcss"],
+  "jsxSingleQuote": false,
+  "tailwindFunctions": ["clsx"]
+}

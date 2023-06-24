@@ -1,0 +1,63 @@
+{
+  "name": "@mrjadeja/eslint-config-vishesh-react",
+  "description": "Eslint react conifguration with typescript, vite and aliases",
+  "version": "0.0.1",
+  "scripts": {
+    "publish-it": "pnpm publish"
+  },
+  "peerDependencies": {
+    "@mrjadeja/eslint-config-vishesh": "workspace:*",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-import-resolver-vite": "^1.0.4",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "module": "./index.json",
+  "main": "./index.json",
+  "exports": {
+    ".": {
+      "default": "./index.json"
+    }
+  },
+  "keywords": [
+    "vishesh",
+    "eslint",
+    "config",
+    "typescript",
+    "react",
+    "vite",
+    "alias",
+    "hooks",
+    "mrjadeja"
+  ],
+  "files": [
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/mrjadeja/vishesh/src/packages/dev/eslint-react",
+  "bugs": {
+    "url": "https://github.com/mrjadeja/vishesh/issues",
+    "email": "mrjadeja.in@gmail.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Pradipsinh Jadeja",
+    "email": "mrjadeja.in@gmail.com",
+    "url": "http://mrjadeja.vercel.app/"
+  },
+  "contributors": [
+    {
+      "name": "Pradipsinh Jadeja",
+      "email": "mrjadeja.in@gmail.com",
+      "url": "http://mrjadeja.vercel.app/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrjadeja/vishesh.git"
+  }
+}

@@ -1,0 +1,38 @@
+name: publish-typescript-lib-to-npm
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/packages/dev/typescript-lib/package.json"
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+    paths:
+      - "src/packages/dev/typescript-lib/package.json"
+jobs:
+  publish-packages:
+    if: ${{ github.event_name == 'push' || github.event.pull_request.merged == true }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: use pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ">=8.5.0 <9.0.0"
+      - name: use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ">=18.0.0 <19.0.0"
+          cache: "pnpm"
+          registry-url: "https://registry.npmjs.org"
+          always-auth: true
+      - name: install dependencies
+        run: pnpm i
+      # - name: publish
+      #   run: pnpm publish-it --filter @mrjadeja/vishesh-typescript-lib
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,0 +1,7 @@
+{
+  "extends": "@mrjadeja/vishesh-typescript-lib",
+  "compilerOptions": {
+    "rootDir": "./lib"
+  },
+  "include": ["./lib/**/*.ts"]
+}

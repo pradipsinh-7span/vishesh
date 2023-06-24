@@ -1,0 +1,59 @@
+{
+  "name": "@mrjadeja/vishesh-typescript-lib",
+  "description": "Typescript library configuration with vite",
+  "version": "0.0.1",
+  "scripts": {
+    "publish-it": "pnpm publish"
+  },
+  "peerDependencies": {
+    "@mrjadeja/vishesh-typescript": "workspace:*",
+    "@types/node": "^20.2.6",
+    "vite": "^4.3.9",
+    "vite-plugin-dts": "^3.0.2"
+  },
+  "module": "./index.json",
+  "main": "./index.json",
+  "exports": {
+    ".": {
+      "default": "./index.json"
+    }
+  },
+  "keywords": [
+    "vishesh",
+    "typescript",
+    "config",
+    "vite",
+    "publish",
+    "library",
+    "mrjadeja"
+  ],
+  "files": [
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/mrjadeja/vishesh/src/packages/dev/typescript-lib",
+  "bugs": {
+    "url": "https://github.com/mrjadeja/vishesh/issues",
+    "email": "mrjadeja.in@gmail.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Pradipsinh Jadeja",
+    "email": "mrjadeja.in@gmail.com",
+    "url": "http://mrjadeja.vercel.app/"
+  },
+  "contributors": [
+    {
+      "name": "Pradipsinh Jadeja",
+      "email": "mrjadeja.in@gmail.com",
+      "url": "http://mrjadeja.vercel.app/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrjadeja/vishesh.git"
+  }
+}

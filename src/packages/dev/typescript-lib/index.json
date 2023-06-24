@@ -1,0 +1,12 @@
+{
+  "extends": "@mrjadeja/vishesh-typescript",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "composite": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "declarationMap": true
+  },
+  "include": ["./lib/**/*.ts"]
+}
