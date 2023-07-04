@@ -12,10 +12,17 @@ _Last updated on: <kbd>03-07-2023</kbd>_
 
 ## Topics
 
+- [🤞 Prerequisite][pre]
 - [📲 Install][install]
 - [⚙️ Setup][setup]
 - [🦾 Basic Scripts][scripts]
 - [▶️ Basic Usage][usage]
+
+<br><br>
+
+## Prerequisite
+
+> **Node**: 14 or higher <br> **Pnpm**: 8 or higher <br> **Npm**: 7 or higher <br> **Yarn**: 1 or higher
 
 <br><br>
 
@@ -51,7 +58,7 @@ yarn dlx install-peerdeps @mrjadeja/typescript -Y -D -x "yanr dlx install-peerde
 
 ```json
 {
-  "extends": ["@mrjadeja/vishesh-typescript-lib"],
+  "extends": "@mrjadeja/vishesh-typescript-lib",
   // your other config / overrides
   "compilerOptions": {
     // your other compiler options
@@ -108,22 +115,22 @@ Add scripts to check or build your code
   "version": "0.1.0",
   "scripts": {
 #   // your other scripts
-+   "check:typescript": "tsc --noEmit=true --emitDeclarationOnly=false",
++   "check:typescript": "tsc --noEmit true --emitDeclarationOnly false",
 +   "build": "vite build"
 +   "publish": "pnpm build && pnpm publish --access pubilc"
   },
++ "types": "./types/vishes-preset.d.ts",
 + "main": "./dist/vishesh-preset.c.js",
 + "module": "./dist/vishesh-preset.js",
-+ "types": "./types/vishes-preset.d.ts",
 + "exports": {
 +   ".": {
 +     "import": {
-+       "default": "./dist/vishesh-preset.js",
-+       "types": "./types/vishes-preset.d.ts"
++       "types": "./types/vishes-preset.d.ts",
++       "default": "./dist/vishesh-preset.js"
 +     },
 +     "require": {
-+       "default": "./dist/vishesh-preset.c.js",
-+       "types": "./types/vishes-preset.d.ts"
++       "types": "./types/vishes-preset.d.ts",
++       "default": "./dist/vishesh-preset.c.js"
 +     }
 +   }
 + },
@@ -159,6 +166,13 @@ pnpm build
 pnpm publish
 ```
 
+<br><br><br><br>
+
+---
+
+_Last updated on: <kbd>05-07-2023</kbd>_
+
+[pre]: #prerequisite "Prerequisite"
 [install]: #install "Install"
 [setup]: #setup "Setup"
 [scripts]: #basic-scripts "Basic Scripts"

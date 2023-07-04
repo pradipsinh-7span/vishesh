@@ -11,8 +11,8 @@
     "vite": "^4.3.9",
     "vite-plugin-dts": "^3.0.2"
   },
-  "module": "./index.json",
   "main": "./index.json",
+  "module": "./index.json",
   "exports": {
     ".": {
       "default": "./index.json"

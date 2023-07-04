@@ -36,9 +36,9 @@
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2"
   },
-  "module": "./dist/vishesh-preset.js",
-  "main": "./dist/vishesh-preset.c.js",
   "types": "./types/vishes-preset.d.ts",
+  "main": "./dist/vishesh-preset.c.js",
+  "module": "./dist/vishesh-preset.js",
   "exports": {
     ".": {
       "import": {

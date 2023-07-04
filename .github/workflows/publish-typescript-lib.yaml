@@ -32,7 +32,7 @@ jobs:
           always-auth: true
       - name: install dependencies
         run: pnpm i
-      # - name: publish
-      #   run: pnpm publish-it --filter @mrjadeja/vishesh-typescript-lib
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: publish
+        run: pnpm publish-it --filter @mrjadeja/vishesh-typescript-lib
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

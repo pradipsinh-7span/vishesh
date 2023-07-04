@@ -8,8 +8,8 @@
   "peerDependencies": {
     "typescript": "~5.0.4"
   },
-  "module": "./index.json",
   "main": "./index.json",
+  "module": "./index.json",
   "exports": {
     ".": {
       "default": "./index.json"

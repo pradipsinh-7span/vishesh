@@ -8,8 +8,8 @@
   "peerDependencies": {
     "prettier": "^2.8.8"
   },
-  "module": "./index.json",
   "main": "./index.json",
+  "module": "./index.json",
   "exports": {
     ".": {
       "default": "./index.json"
