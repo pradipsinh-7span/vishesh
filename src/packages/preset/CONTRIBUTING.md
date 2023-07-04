@@ -1,22 +1,22 @@
 # Contributing
 
-Thanks for your interest in contributing to Vishesh. Contributions are welcome! <br>
+Thanks for your interest in contributing to Vishesh. Contributions are welcome! 🤗<br>
 We appreciate bug reports, feature requests, code improvements, and other forms of contribution. <br>
 To contribute to this project, Please take a moment to review this document **before submitting a pull request**.
 
-<br>
+<br><br>
 
 ## Reporting Issues
 
 If you encounter any issues or bugs, please [create an issue][issue] on our GitHub repository. Provide as much detail as possible to help us reproduce and identify the problem.
 
-<br>
+<br><br>
 
 ## Feature Requests
 
 If you have an idea for a new feature or enhancement, feel free to create [a feature request][discussion] on our GitHub repository. Describe the feature or enhancement you would like to see and provide any additional context or examples.
 
-<br>
+<br><br>
 
 ## Pull Requests
 
@@ -26,9 +26,9 @@ We welcome pull requests!
 
 It's never a fun experience to have your pull request declined after investing a lot of time and effort into a new feature. To avoid this from happening, we request that contributors to first [discuss][pull] it.
 
-<br>
+<br><br>
 
-### **To contribute code changes:**
+## Contribute
 
 1\. [Fork][fork] the repository. <br>
 2\. Create an [Issue][issue] or [Feature Request][discussion] if not exist. <br>
@@ -69,7 +69,25 @@ It's never a fun experience to have your pull request declined after investing a
 
 **A project maintainer will review your pull request, provide feedback if necessary, and merge it once it meets the project's requirements.**
 
-<br>
+<br><br>
+
+## Code Style and Conventions
+
+Follow the existing code style and conventions used in the project. Pay attention to naming conventions, formatting, and documentation standards. <br> <br>
+
+Please run below script to check your code against our code formatting rules:
+
+```shell
+pnpm lint
+```
+
+To automatically fix any style violations in your code, you can run:
+
+```shell
+pnpm fix:lint
+```
+
+<br><br>
 
 ## License
 
@@ -80,6 +98,8 @@ By contributing to this project, you agree that your contributions will be licen
 ---
 
 Reference was taken from [Tailwindcss][tailwind-ref] 💖.
+
+_Last updated on: <kbd>05-07-2023</kbd>_
 
 [fork]: https://github.com/mrjadeja/vishesh/fork "Fork the repository"
 [issue]: https://github.com/mrjadeja/vishesh/issues "Create an issue"

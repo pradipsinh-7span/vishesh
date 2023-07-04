@@ -8,12 +8,9 @@ _The tailwind css preset to rapidly build any UI_
 
 <br>
 
-_Last updated on: <kbd>03-07-2023</kbd>_
-
-<br>
-
 ## Topics
 
+- [🤞 Prerequisite][pre]
 - [📲 Install][install]
 - [⚙️ Setup][which]
   - [🔧 Setup ESM][esm]
@@ -23,6 +20,12 @@ _Last updated on: <kbd>03-07-2023</kbd>_
   - [Container][container]
     - [Fixed container][fixed]
     - [Fluid container][fluid]
+
+<br><br>
+
+## Prerequisite
+
+> **Node**: 14 or higher <br> **Pnpm**: 8 or higher <br> **Npm**: 7 or higher <br> **Yarn**: 1 or higher
 
 <br><br>
 
@@ -175,7 +178,7 @@ We all experienced that minimum or maximum breakpoints are not enough. if we are
 Less often, we are in a situation that for mobile we have one design, then on tablet we have other design. but, on desktop we have design that is similar to mobile. **we have to reset the styles 😓.**
 <br><br>
 
-### **The Solution**
+### **The Solution** ✌️
 
 <br>
 
@@ -249,9 +252,7 @@ There are two types of containers: <br>
 
 <br>
 
-### Setup
-
-<br>
+### **Setup**
 
 ```diff
 # Default breakpoints are in pixels
@@ -295,9 +296,9 @@ There are two types of containers: <br>
 }
 ```
 
-<br>
+<br><br>
 
-### Container Configurations
+### **Container Configurations**
 
 The container configurations allow you to customize the behavior and appearance of the container component. <br><br>
 
@@ -359,7 +360,7 @@ The container configurations allow you to customize the behavior and appearance 
 
 ---
 
-<br>
+<br><br>
 
 ## Fixed container
 
@@ -412,7 +413,7 @@ class="container container-md"
 
 ---
 
-<br>
+<br><br>
 
 ## Fluid container
 
@@ -455,12 +456,13 @@ class="container container-md"
 class="container container-md"
 ```
 
-<br>
+<br><br><br><br>
 
 ---
 
-<br>
+_Last updated on: <kbd>05-07-2023</kbd>_
 
+[pre]: #prerequisite "Prerequisite"
 [install]: #install "Install"
 [which]: #setup "Setup"
 [esm]: #setup-esm "Setup es modules"

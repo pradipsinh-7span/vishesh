@@ -13,8 +13,8 @@
     "prettier-plugin-tailwindcss": "^0.3.0",
     "clsx": "^1.2.1"
   },
-  "module": "./index.json",
   "main": "./index.json",
+  "module": "./index.json",
   "exports": {
     ".": {
       "default": "./index.json"

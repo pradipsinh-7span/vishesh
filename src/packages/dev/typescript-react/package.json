@@ -8,8 +8,8 @@
   "peerDependencies": {
     "@mrjadeja/vishesh-typescript": "workspace:*"
   },
-  "module": "./index.json",
   "main": "./index.json",
+  "module": "./index.json",
   "exports": {
     ".": {
       "default": "./index.json"

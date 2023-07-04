@@ -8,8 +8,8 @@
   "peerDependencies": {
     "@mrjadeja/eslint-config-vishesh": "workspace:*"
   },
-  "module": "./index.json",
   "main": "./index.json",
+  "module": "./index.json",
   "exports": {
     ".": {
       "default": "./index.json"

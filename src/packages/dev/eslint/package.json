@@ -15,8 +15,8 @@
     "eslint-plugin-sort-exports": "^0.8.0",
     "eslint-plugin-unused-imports": "^2.0.0"
   },
-  "module": "./index.json",
   "main": "./index.json",
+  "module": "./index.json",
   "exports": {
     ".": {
       "default": "./index.json"
