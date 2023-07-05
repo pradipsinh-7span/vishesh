@@ -1,20 +1,14 @@
 {
   "name": "@mrjadeja/vishesh-typescript-react",
   "description": "Typescript react configuration with vite and alias",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "scripts": {
-    "publish-it": "pnpm publish"
+    "publish-it": "pnpm publish --access public"
   },
   "peerDependencies": {
     "@mrjadeja/vishesh-typescript": "workspace:*"
   },
   "main": "./index.json",
-  "module": "./index.json",
-  "exports": {
-    ".": {
-      "default": "./index.json"
-    }
-  },
   "keywords": [
     "vishesh",
     "typescript",
@@ -24,11 +18,9 @@
   ],
   "files": [
     "CHANGELOG.md",
-    "CODE_OF_CONDUCT.md"
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "homepage": "https://github.com/mrjadeja/vishesh/src/packages/dev/typescript-react",
   "bugs": {
     "url": "https://github.com/mrjadeja/vishesh/issues",

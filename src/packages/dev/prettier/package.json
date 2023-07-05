@@ -1,9 +1,9 @@
 {
   "name": "@mrjadeja/vishesh-prettier",
   "description": "Prettier configuration",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
-    "publish-it": "pnpm publish"
+    "publish-it": "pnpm publish --access public"
   },
   "peerDependencies": {
     "prettier": "^2.8.8"
@@ -12,7 +12,12 @@
   "module": "./index.json",
   "exports": {
     ".": {
-      "default": "./index.json"
+      "require": {
+        "default": "./index.json"
+      },
+      "import": {
+        "default": "./index.json"
+      }
     }
   },
   "keywords": [
@@ -23,11 +28,9 @@
   ],
   "files": [
     "CHANGELOG.md",
-    "CODE_OF_CONDUCT.md"
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "homepage": "https://github.com/mrjadeja/vishesh/src/packages/dev/prettier",
   "bugs": {
     "url": "https://github.com/mrjadeja/vishesh/issues",

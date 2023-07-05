@@ -1,9 +1,9 @@
 {
   "name": "@mrjadeja/vishesh-typescript-lib",
   "description": "Typescript library configuration with vite",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "scripts": {
-    "publish-it": "pnpm publish"
+    "publish-it": "pnpm publish --access public"
   },
   "peerDependencies": {
     "@mrjadeja/vishesh-typescript": "workspace:*",
@@ -15,7 +15,12 @@
   "module": "./index.json",
   "exports": {
     ".": {
-      "default": "./index.json"
+      "require": {
+        "default": "./index.json"
+      },
+      "import": {
+        "default": "./index.json"
+      }
     }
   },
   "keywords": [
@@ -29,11 +34,9 @@
   ],
   "files": [
     "CHANGELOG.md",
-    "CODE_OF_CONDUCT.md"
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "homepage": "https://github.com/mrjadeja/vishesh/src/packages/dev/typescript-lib",
   "bugs": {
     "url": "https://github.com/mrjadeja/vishesh/issues",

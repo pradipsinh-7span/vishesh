@@ -1,5 +1,4 @@
 packages:
   - "src/packages/*"
-  - "!src/packages/dev"
   - "src/packages/dev/*"
   - "src/playground/*/*"

@@ -1,10 +1,5 @@
 name: publish-prettier-to-npm
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "src/packages/dev/prettier/package.json"
   pull_request:
     branches:
       - main
@@ -14,7 +9,7 @@ on:
       - "src/packages/dev/prettier/package.json"
 jobs:
   publish-packages:
-    if: ${{ github.event_name == 'push' || github.event.pull_request.merged == true }}
+    if: ${{ github.event.pull_request.merged }}
     runs-on: ubuntu-latest
     steps:
       - name: checkout

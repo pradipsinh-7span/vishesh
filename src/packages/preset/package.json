@@ -1,8 +1,7 @@
 {
   "name": "@mrjadeja/vishesh-preset",
   "description": "The tailwind css preset to rapidly build any UI",
-  "private": true,
-  "version": "0.0.1",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "check:typescript": "tsc --noEmit true --emitDeclarationOnly false",
@@ -10,7 +9,8 @@
     "lint": "pnpm check:typescript && pnpm check:code-quality",
     "fix:code-quality": "eslint . --ext .ts --fix",
     "fix:lint": "pnpm fix:code-quality",
-    "build": "vite build"
+    "build": "vite build",
+    "publish-it": "pnpm publish --access public"
   },
   "devDependencies": {
     "@mrjadeja/eslint-config-vishesh": "workspace:*",
@@ -51,6 +51,13 @@
       }
     }
   },
+  "files": [
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "types",
+    "dist"
+  ],
   "keywords": [
     "vishesh",
     "tailwindcss",
@@ -61,9 +68,6 @@
     "cjs",
     "mrjadeja"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "homepage": "https://github.com/mrjadeja/vishesh/src/packages/preset",
   "bugs": {
     "url": "https://github.com/mrjadeja/vishesh/issues",

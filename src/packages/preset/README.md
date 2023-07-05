@@ -71,7 +71,7 @@ First, go to your tailwind config file. then, identify which package to install 
     content: [____],
     theme: {
 #     //  your overide config area
-      extends: {
+      extend: {
 #     // your extend config area
       }
     },
@@ -99,7 +99,7 @@ First, go to your tailwind config file. then, identify which package to install 
     content: [____],
     theme: {
 #     // your overide config area
-      extends: {
+      extend: {
 #       // your extend config area
       }
     },
@@ -111,7 +111,7 @@ First, go to your tailwind config file. then, identify which package to install 
 
 ---
 
-<br><br><br>
+<br>
 
 # Features
 
@@ -149,7 +149,7 @@ Detailed explaination was given below the codeblock. 👇
 -      mac: 1440,
 -      max: 1920,
 -    },
-    extends: {
+    extend: {
 #     // defaults values are there
 #     // no need to add
 #     // just for reference
@@ -269,7 +269,7 @@ There are two types of containers: <br>
 -       '2xl': '6rem',
 -     },
 -   },
-    extends: {
+    extend: {
 #     // defaults values are there
 #     // no need to add
 #     // just for reference
