@@ -63,7 +63,7 @@ yarn add -D @mrjadeja/vishesh-preset
 
 1\. Setup [Tailwindcss][tailwindcss] &nbsp;&nbsp;(_if not already_)
 
-- upgrade to v3 if running on v2
+- [upgrade to v3][migrate-to-v3] if running on v2
 
 2\. go to your tailwind config file. then, identify which package to install by looking at the way your config file were exported. <br>
 **ESM**: `export default` <br>
@@ -73,7 +73,7 @@ yarn add -D @mrjadeja/vishesh-preset
 
 ### Setup ESM
 
-you can extend override [config][tailwind-config]
+you can extend or override [config][tailwind-config]
 
 ```diff
 # tailwind.config.js
@@ -138,7 +138,7 @@ you can extend or override [config][tailwind-config]
 
 <br>
 
-> **👉 configure vishesh with `theme.extends`**
+> **👉 &nbsp; configure vishesh with `theme.extend`**
 
 <br><br>
 
@@ -484,6 +484,7 @@ _Last updated on: <kbd>07-07-2023</kbd>_
 [pre]: #prerequisite "Prerequisite"
 [tailwindcss]: https://tailwindcss.com/docs/installation/framework-guides "Setup tailwindcss"
 [tailwind-config]: https://tailwindcss.com/docs/configuration#configuration-options "Tailwindcss configuration documentation"
+[migrate-to-v3]: https://tailwindcss.com/docs/upgrade-guide "Migrate tailwind to v3 from v2"
 [install]: #install "Install"
 [which]: #setup "Setup"
 [esm]: #setup-esm "Setup es modules"

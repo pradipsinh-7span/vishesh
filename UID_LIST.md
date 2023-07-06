@@ -1,5 +1,6 @@
 # List of unique identifiers
 
+`origin` - [This monorepo itself][origin] <br>
 `pkg-001` - [@mrjadeja/vishesh-preset][preset] <br>
 `pkg-002` - [@mrjadeja/eslint-config-vishesh][eslint] <br>
 `pkg-003` - [@mrjadeja/eslint-config-vishesh-lib][eslint-lib] <br>
@@ -12,6 +13,7 @@
 `play-001` - [play-preset][play-preset] <br>
 `play-002` - [play-preset-cjs][play-preset-cjs] <br>
 
+[origin]: https://github.com/mrjadeja/vishesh
 [preset]: https://github.com/mrjadeja/vishesh/src/packages/preset
 [eslint]: https://github.com/mrjadeja/vishesh/src/dev/eslint "Eslint conifguration with typescript and vite"
 [eslint-lib]: https://github.com/mrjadeja/vishesh/src/dev/eslint-lib
