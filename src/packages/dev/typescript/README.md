@@ -1,12 +1,10 @@
 # Vishesh typescript config
 
-<br>
+> CLI added soon to minimize manual setup. ✌️ <br>
+> ⏳ end of September 2023
 
-> CLI added soon to minimize manual setup. ✌️
-
-<br>
-
-_Last updated on: <kbd>03-07-2023</kbd>_
+> 📺 Youtube video added soon. <br>
+> ⏳ end of July 2023
 
 <br>
 
@@ -22,7 +20,17 @@ _Last updated on: <kbd>03-07-2023</kbd>_
 
 ## Prerequisite
 
-> **Node**: 14 or higher <br> **Pnpm**: 8 or higher <br> **Npm**: 7 or higher <br> **Yarn**: 1 or higher
+```shell
+# Node.js  (choose any)
+v14
+v16
+v18  (Recomended)
+
+# Package manager  (choose any)
+pnpm: v8 or higher  (Recomended)
+npm: v7 or higher
+yarn: v1 or higher
+```
 
 <br><br>
 
@@ -50,13 +58,12 @@ Create a new files at the root of your repository `tsconfig.json`.
 
 > tsconfig.json
 
+you can override [rules][tsconfig-opts]
+
 ```json
 {
   "extends": "@mrjadeja/vishesh-typescript",
-  // your other config / overrides
-  "compilerOptions": {
-    // your other compiler options
-  }
+  "compilerOptions": {}
 }
 ```
 
@@ -88,13 +95,22 @@ Add scripts to check your code
 pnpm check:typescript
 ```
 
-<br><br><br><br>
+```shell
+npm run check:typescript
+```
+
+```shell
+yarn check:typescript
+```
+
+<br><br>
 
 ---
 
-_Last updated on: <kbd>05-07-2023</kbd>_
+_Last updated on: <kbd>06-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
+[tsconfig-opts]: https://www.typescriptlang.org/tsconfig "Typescript compiler options documentation"
 [install]: #install "Install"
 [setup]: #setup "Setup"
 [scripts]: #basic-scripts "Basic Scripts"

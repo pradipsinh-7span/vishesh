@@ -1,7 +1,7 @@
 {
   "name": "@mrjadeja/vishesh-typescript-lib",
   "description": "Typescript library configuration with vite",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "scripts": {
     "publish-it": "pnpm publish --access public"
   },

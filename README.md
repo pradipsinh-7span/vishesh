@@ -38,12 +38,13 @@ It is crucial to balance customization with best practices, ensuring proper hier
    ⏭️ Later in the year once external js is required to make it alive <br>
    ~~🤔 copy of bootstrap~~ (❌ No, it will never become a bootstrap clone) <br>
    ⏳ Expected release of v1.0.0 along side _vishesh-preset_
-5. **vishesh-js** <br>
+5. **vishesh-container-query** <br>
+   👉 _container query support_ <br>
+   ⏳ end of 2023
+6. **vishesh-js** <br>
    👉 _super-charging the javascript ⚡_ <br>
    ⏳ mid of 2<sup>nd</sup> quarter, 2024 <br>
-6. **vishesh-container-query** <br>
-   👉 _container query support_ <br>
-   ⏳ 3<sup>rd</sup> quarter, 2024
+
 7. **vishesh-react**: <br>
    👉 _react hooks and components (**super-charged**)_ <br>
    ⏳ 4<sup>th</sup> quarter, 2024
@@ -55,7 +56,7 @@ It is crucial to balance customization with best practices, ensuring proper hier
    ⏳ 1<sup>st</sup> quarter, 2025
 10. **vishesh-tinywind**: <br>
     👉 _a tiny version of tailwindcss_ <br>
-    ⏳ 3<sup>rd</sup> quarter, 2025
+    ⏳ 2<sup>rd</sup> quarter, 2025
 
 <br><br>
 
@@ -67,7 +68,7 @@ By contributing to this project, you agree that your contributions will be licen
 
 # 💖 [Tailwindcss][tailwind] ✌️
 
-_Last updated on: <kbd>05-07-2023</kbd>_
+_Last updated on: <kbd>07-07-2023</kbd>_
 
 [npm]: https://www.npmjs.com/ "NPM website"
 [vishesh-preset-npm]: https://npmjs.com/package/@mrjadeja/vishesh-preset "Vishesh preset on npm registry"

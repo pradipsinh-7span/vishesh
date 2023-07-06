@@ -1,12 +1,10 @@
 # Vishesh prettier config
 
-<br>
+> CLI added soon to minimize manual setup. ✌️ <br>
+> ⏳ end of September 2023
 
-> CLI added soon to minimize manual setup. ✌️
-
-<br>
-
-_Last updated on: <kbd>03-07-2023</kbd>_
+> 📺 Youtube video added soon. <br>
+> ⏳ end of July 2023
 
 <br>
 
@@ -22,7 +20,20 @@ _Last updated on: <kbd>03-07-2023</kbd>_
 
 ## Prerequisite
 
-> **Node**: 14 or higher <br> **Pnpm**: 8 or higher <br> **Npm**: 7 or higher <br> **Yarn**: 1 or higher
+```shell
+# Node.js  (choose any)
+v14
+v16
+v18  (Recomended)
+
+# Package manager  (choose any)
+pnpm: v8 or higher  (Recomended)
+npm: v7 or higher
+yarn: v1 or higher
+
+# VS code extension
+esbenp.prettier-vscode
+```
 
 <br><br>
 
@@ -50,10 +61,11 @@ Create 2 new files at the root of your repository `.prettierrc` and `.prettierig
 
 > .prettierrc
 
+you can override [rules][prettier-opts]
+
 ```json
 {
   "plugins": ["@mrjadeja/vishesh-prettier"]
-  // your other config / overrides
 }
 ```
 
@@ -64,15 +76,21 @@ Create 2 new files at the root of your repository `.prettierrc` and `.prettierig
 - _[Reference][prettier-ignore]_
 
 ```
-node_modules
 .git
+.next
+dist
+dist-ssr
+node_modules
+tsconfig.tsbuildinfo
+types
+*-lock.*
 ```
 
 <br><br>
 
 ## Basic scripts
 
-Add scripts to check formatting your code
+Add scripts to check formatting
 
 ```diff
 # package.json
@@ -81,8 +99,8 @@ Add scripts to check formatting your code
 # // your other config
   "scripts": {
 #   // your other scripts
-+   "check:formatting": "prettier --check \"**/*.{ts,html,css,json}\"",
-+   "fix:formatting": "prettier --write \"**/*.{ts,html,css,json}\""
++   "check:formatting": "prettier --check \"**/*.{js,ts,html,css,scss,json}\"",
++   "fix:formatting": "prettier --write \"**/*.{js,ts,html,css,scss,json}\""
   }
 }
 ```
@@ -97,20 +115,37 @@ Add scripts to check formatting your code
 pnpm check:formatting
 ```
 
+```shell
+npm run check:formatting
+```
+
+```shell
+yarn check:formatting
+```
+
 > Fix the code formatting
 
 ```shell
 pnpm fix:formatting
 ```
 
-<br><br><br><br>
+```shell
+npm run fix:formatting
+```
+
+```shell
+yarn fix:formatting
+```
+
+<br><br>
 
 ---
 
-_Last updated on: <kbd>05-07-2023</kbd>_
+_Last updated on: <kbd>06-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
-[prettier-ignore]: https://prettier.io/docs/en/ignore.html "Prettier ignore official documentation"
+[prettier-opts]: https://prettier.io/docs/en/options.html "Prettier rules documentation"
+[prettier-ignore]: https://prettier.io/docs/en/ignore.html "Prettier ignore documentation"
 [install]: #install "Install"
 [setup]: #setup "Setup"
 [scripts]: #basic-scripts "Basic Scripts"

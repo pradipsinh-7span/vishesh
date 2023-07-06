@@ -1,7 +1,7 @@
 {
   "name": "@mrjadeja/eslint-config-vishesh-react",
   "description": "Eslint react conifguration with typescript, vite and aliases",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "scripts": {
     "publish-it": "pnpm publish  --access public"
   },

@@ -4,7 +4,8 @@ _The tailwind css preset to rapidly build any UI_
 
 <br>
 
-> You can expect a youtube video till the end of current month (Jul 2023).
+> 📺 Youtube video added soon. <br>
+> ⏳ end of July 2023
 
 <br>
 
@@ -25,7 +26,20 @@ _The tailwind css preset to rapidly build any UI_
 
 ## Prerequisite
 
-> **Node**: 14 or higher <br> **Pnpm**: 8 or higher <br> **Npm**: 7 or higher <br> **Yarn**: 1 or higher
+```shell
+# Node.js  (choose any)
+v14
+v16
+v18  (Recomended)
+
+# Package manager  (choose any)
+pnpm: v8 or higher  (Recomended)
+npm: v7 or higher
+yarn: v1 or higher
+
+# Tailwindcss
+v3 or higher
+```
 
 <br><br>
 
@@ -47,7 +61,11 @@ yarn add -D @mrjadeja/vishesh-preset
 
 ## Setup
 
-First, go to your tailwind config file. then, identify which package to install by looking at the way your config file were exported. <br>
+1\. Setup [Tailwindcss][tailwindcss] &nbsp;&nbsp;(_if not already_)
+
+- upgrade to v3 if running on v2
+
+2\. go to your tailwind config file. then, identify which package to install by looking at the way your config file were exported. <br>
 **ESM**: `export default` <br>
 **CJS**: &nbsp; `module.exports`
 
@@ -55,17 +73,18 @@ First, go to your tailwind config file. then, identify which package to install 
 
 ### Setup ESM
 
+you can extend override [config][tailwind-config]
+
 ```diff
 # tailwind.config.js
 
-# your other imports
+# your imports
++ import vishesh from "@mrjadeja/vishesh-preset";
 
 # remove tailwindcss auto suggestion
 - /** @type {import('tailwindcss').Config} */
 # add tailwindcss + vishesh-preset auto suggestion
 + /** @type {import('@mrjadeja/vishesh-preset/types').VisheshPreset} */
-+ import vishesh from "@mrjadeja/vishesh-preset";
-
   export default {
 +   presets: [vishesh],
     content: [____],
@@ -83,17 +102,17 @@ First, go to your tailwind config file. then, identify which package to install 
 
 ### Setup CJS
 
+you can extend or override [config][tailwind-config]
+
 ```diff
 # tailwind.config.cjs
 
-# your other imports
+# your imports
 
 # remove tailwindcss auto suggestion
 - /** @type {import('tailwindcss').Config} */
 # add tailwindcss + vishesh-preset auto suggestion
 + /** @type {import('@mrjadeja/vishesh-preset/types').VisheshPreset} */
-+ import vishesh from "@mrjadeja/vishesh-preset";
-
   module.exports = {
 +   presets: [require("@mrjadeja/vishesh-preset")],
     content: [____],
@@ -119,7 +138,7 @@ First, go to your tailwind config file. then, identify which package to install 
 
 <br>
 
-> **Recomended: configure vishesh with `theme.extends`**
+> **👉 configure vishesh with `theme.extends`**
 
 <br><br>
 
@@ -456,13 +475,15 @@ class="container container-md"
 class="container container-md"
 ```
 
-<br><br><br><br>
+<br><br>
 
 ---
 
-_Last updated on: <kbd>05-07-2023</kbd>_
+_Last updated on: <kbd>07-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
+[tailwindcss]: https://tailwindcss.com/docs/installation/framework-guides "Setup tailwindcss"
+[tailwind-config]: https://tailwindcss.com/docs/configuration#configuration-options "Tailwindcss configuration documentation"
 [install]: #install "Install"
 [which]: #setup "Setup"
 [esm]: #setup-esm "Setup es modules"

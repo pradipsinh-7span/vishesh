@@ -1,12 +1,14 @@
-# Vishesh typescript config for library
+# Vishesh typescript config
+
+#### **<kbd>Vite</kbd> + <kbd>Library</kbd>**
 
 <br>
 
-> CLI added soon to minimize manual setup. ✌️
+> CLI added soon to minimize manual setup. ✌️ <br>
+> ⏳ till the end of September 2023
 
-<br>
-
-_Last updated on: <kbd>03-07-2023</kbd>_
+> 📺 Youtube video added soon. <br>
+> ⏳ till the end of July 2023
 
 <br>
 
@@ -22,53 +24,76 @@ _Last updated on: <kbd>03-07-2023</kbd>_
 
 ## Prerequisite
 
-> **Node**: 14 or higher <br> **Pnpm**: 8 or higher <br> **Npm**: 7 or higher <br> **Yarn**: 1 or higher
+```shell
+# Node.js  (choose any)
+v14
+v16
+v18  (Recomended)
+
+# Package manager  (choose any)
+pnpm: v8 or higher  (Recomended)
+npm: v7 or higher
+yarn: v1 or higher
+```
 
 <br><br>
 
 ## Install
 
 ```shell
-pnpm dlx install-peerdeps @mrjadeja/typescript -P -D -x "pnpm dlx install-peerdeps @mrjadeja/typescript-lib -P -D"
+# Run this scripts in sequence
+
+1. pnpm dlx install-peerdeps @mrjadeja/typescript -P -D
+# Run the 2nd script only after 1st completes
+2. pnpm dlx install-peerdeps @mrjadeja/typescript-lib -P -D
 ```
 
 ```shell
-npm exec install-peerdeps @mrjadeja/typescript -- -D -x "npm exec install-peerdeps @mrjadeja/typescript-lib -- -D"
+# Run this scripts in sequence
+
+1. npm exec install-peerdeps @mrjadeja/typescript -- -D
+# Run the 2nd script only after 1st completes
+2. npm exec install-peerdeps @mrjadeja/typescript-lib -- -D
 ```
 
 ```shell
-yarn dlx install-peerdeps @mrjadeja/typescript -Y -D -x "yanr dlx install-peerdeps @mrjadeja/typescript-lib -Y -D"
+# Run this scripts in sequence
+
+1. yarn dlx install-peerdeps @mrjadeja/typescript -Y -D
+# Run the 2nd script only after 1st completes
+2. yarn dlx install-peerdeps @mrjadeja/typescript-lib -Y -D
 ```
 
 <br><br>
 
 ## Setup
 
-1. Create a folder at root of the repository with 2 files inside `main.ts` and `index.d.ts`.
+1\. Create a folder at root of the repository with two files inside `main.ts` and `index.d.ts`.
 
 - `lib` - a folder that contians below two files
   - `main.d.ts` - your code for the awesome library
   - `index.d.ts` - types for your code
 
-2. Create 2 new files at the root of your repository `tsconfig.json` and `vite.config.ts`.
+2\. Create two new files at the root of your repository `tsconfig.json` and `vite.config.ts`.
 
 <br>
 
 > tsconfig.json
 
+you can override [rules][tsconfig-opts]
+
 ```json
 {
   "extends": "@mrjadeja/vishesh-typescript-lib",
-  // your other config / overrides
-  "compilerOptions": {
-    // your other compiler options
-  }
+  "compilerOptions": {}
 }
 ```
 
 <br>
 
 > vite.config.ts
+
+you can override [config][vite-config]
 
 ```ts
 import { defineConfig } from "vite";
@@ -147,6 +172,14 @@ Add scripts to check or build your code
 pnpm check:typescript
 ```
 
+```shell
+npm run check:typescript
+```
+
+```shell
+yarn check:typescript
+```
+
 <br>
 
 > Build the library
@@ -155,24 +188,42 @@ pnpm check:typescript
 pnpm build
 ```
 
+```shell
+npm run build
+```
+
+```shell
+yarn build
+```
+
 <br>
 
 > Publish the library
 
 - ⚠️ This is not the complete guild to build and publish the library on npm.
-- 📺 You can expect full youtube video guide till current month end (July 2023).
+- 📺 You can expect the full youtube video guide.
 
 ```shell
 pnpm publish
 ```
 
-<br><br><br><br>
+```shell
+npm run publish
+```
+
+```shell
+yarn publish
+```
+
+<br><br>
 
 ---
 
-_Last updated on: <kbd>05-07-2023</kbd>_
+_Last updated on: <kbd>07-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
+[vite-config]: https://vitejs.dev/config/ "Vite configuration documentation"
+[tsconfig-opts]: https://www.typescriptlang.org/tsconfig "Typescript compiler options documentation"
 [install]: #install "Install"
 [setup]: #setup "Setup"
 [scripts]: #basic-scripts "Basic Scripts"

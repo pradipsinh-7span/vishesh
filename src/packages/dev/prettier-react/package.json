@@ -1,7 +1,7 @@
 {
   "name": "@mrjadeja/vishesh-prettier-react",
   "description": "Prettier react configuration with taiwlind class sort and clsx",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "scripts": {
     "publish-it": "pnpm publish --access public"
   },

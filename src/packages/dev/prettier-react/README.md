@@ -1,16 +1,14 @@
-# Vishesh prettier config react
+# Vishesh prettier config
+
+#### **<kbd>React.js</kbd> + <kbd>prettier-plugin-tailwindcss</kbd> + <kbd>clsx</kbd>**
 
 <br>
 
-## **<kbd>prettier-plugin-tailwindcss</kbd> + <kbd>clsx</kbd>**
+> CLI added soon to minimize manual setup. ✌️ <br>
+> ⏳ end of September 2023
 
-<br>
-
-> CLI added soon to minimize manual setup. ✌️
-
-<br>
-
-_Last updated on: <kbd>03-07-2023</kbd>_
+> 📺 Youtube video added soon. <br>
+> ⏳ end of July 2023
 
 <br>
 
@@ -26,38 +24,73 @@ _Last updated on: <kbd>03-07-2023</kbd>_
 
 ## Prerequisite
 
-> **Node**: 14 or higher <br> **Pnpm**: 8 or higher <br> **Npm**: 7 or higher <br> **Yarn**: 1 or higher
+```shell
+# Node.js  (choose any)
+v14
+v16
+v18  (Recomended)
+
+# Package manager  (choose any)
+pnpm: v8 or higher  (Recomended)
+npm: v7 or higher
+yarn: v1 or higher
+
+# Tools
+React.js: v17 or higher
+Tailwindcss: v3 or higher
+Vite: v3 or higher
+
+# VS code extension
+esbenp.prettier-vscode
+```
 
 <br><br>
 
 ## Install
 
 ```shell
-pnpm dlx install-peerdeps @mrjadeja/prettier -P -D -x "pnpm dlx install-peerdeps @mrjadeja/prettier-react -P -D"
+# Run this scripts in sequence
+
+1. pnpm dlx install-peerdeps @mrjadeja/prettier -P -D
+# Run the 2nd script only after 1st completes
+2. pnpm dlx install-peerdeps @mrjadeja/prettier-react -P -D
 ```
 
 ```shell
-npm exec install-peerdeps @mrjadeja/prettier -- -D -x "npm exec install-peerdeps @mrjadeja/prettier-react -- -D"
+# Run this scripts in sequence
+
+1. npm exec install-peerdeps @mrjadeja/prettier -- -D
+# Run the 2nd script only after 1st completes
+2. npm exec install-peerdeps @mrjadeja/prettier-react -- -D
 ```
 
 ```shell
-yarn dlx install-peerdeps @mrjadeja/prettier -Y -D -x "yanr dlx install-peerdeps @mrjadeja/prettier-react -Y -D"
+# Run this scripts in sequence
+
+1. yarn dlx install-peerdeps @mrjadeja/prettier -Y -D
+# Run the 2nd script only after 1st completes
+2. yarn dlx install-peerdeps @mrjadeja/prettier-react -Y -D
 ```
 
 <br><br>
 
 ## Setup
 
-Create 2 new files at the root of your repository `.prettierrc` and `.prettierignore`.
+1\. Setup [React.js with Vite][vite] &nbsp;&nbsp;(_if not already_)
+
+2\. Setup [Tailwindcss][tailwindcss] &nbsp;&nbsp;(_if not already_)
+
+3\. Create two new files at the root of your repository `.prettierrc` and `.prettierignore`.
 
 <br>
 
 > .prettierrc
 
+you can override [rules][prettier-opts]
+
 ```json
 {
   "plugins": ["@mrjadeja/vishesh-prettier-react"]
-  // your other config / overrides
 }
 ```
 
@@ -68,8 +101,14 @@ Create 2 new files at the root of your repository `.prettierrc` and `.prettierig
 - _[Reference][prettier-ignore]_
 
 ```
-node_modules
 .git
+.next
+dist
+dist-ssr
+node_modules
+tsconfig.tsbuildinfo
+types
+*-lock.*
 ```
 
 <br><br>
@@ -101,19 +140,38 @@ Add scripts to check formatting your code
 pnpm check:formatting
 ```
 
+```shell
+npm run check:formatting
+```
+
+```shell
+yarn check:formatting
+```
+
 > Fix the code formatting
 
 ```shell
 pnpm fix:formatting
 ```
 
-<br><br><br><br>
+```shell
+npm run fix:formatting
+```
+
+```shell
+yarn fix:formatting
+```
+
+<br><br>
 
 ---
 
-_Last updated on: <kbd>05-07-2023</kbd>_
+_Last updated on: <kbd>06-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
+[vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"
+[prettier-opts]: https://prettier.io/docs/en/options.html "Prettier rules documentation"
+[tailwindcss]: https://tailwindcss.com/docs/installation/framework-guides "Setup tailwindcss"
 [prettier-ignore]: https://prettier.io/docs/en/ignore.html "Prettier ignore official documentation"
 [install]: #install "Install"
 [setup]: #setup "Setup"

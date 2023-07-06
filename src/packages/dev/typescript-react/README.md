@@ -1,12 +1,14 @@
-# Vishesh typescript config for react with vite
+# Vishesh typescript config
+
+#### **<kbd>React</kbd> + <kbd>Vite</kbd>**
 
 <br>
 
-> CLI added soon to minimize manual setup. ✌️
+> CLI added soon to minimize manual setup. ✌️ <br>
+> ⏳ end of September 2023
 
-<br>
-
-_Last updated on: <kbd>03-07-2023</kbd>_
+> 📺 Youtube video added soon. <br>
+> ⏳ end of July 2023
 
 <br>
 
@@ -22,57 +24,80 @@ _Last updated on: <kbd>03-07-2023</kbd>_
 
 ## Prerequisite
 
-> **Node**: 14 or higher <br> **Pnpm**: 8 or higher <br> **Npm**: 7 or higher <br> **Yarn**: 1 or higher
+```shell
+# Node.js  (choose any)
+v14
+v16
+v18  (Recomended)
+
+# Package manager  (choose any)
+pnpm: v8 or higher  (Recomended)
+npm: v7 or higher
+yarn: v1 or higher
+
+# Tools
+React.js: v17 or higher
+Tailwindcss: v3 or higher
+Vite: v3 or higher
+```
 
 <br><br>
 
 ## Install
 
 ```shell
-pnpm dlx install-peerdeps @mrjadeja/typescript -P -D -x "pnpm dlx install-peerdeps @mrjadeja/typescript-react -P -D"
+# Run this scripts in sequence
+
+1. pnpm dlx install-peerdeps @mrjadeja/typescript -P -D
+# Run the 2nd script only after 1st completes
+2. pnpm dlx install-peerdeps @mrjadeja/typescript-react -P -D
 ```
 
 ```shell
-npm exec install-peerdeps @mrjadeja/typescript -- -D -x "npm exec install-peerdeps @mrjadeja/typescript-react -- -D"
+# Run this scripts in sequence
+
+1. npm exec install-peerdeps @mrjadeja/typescript -- -D
+# Run the 2nd script only after 1st completes
+2. npm exec install-peerdeps @mrjadeja/typescript-react -- -D
 ```
 
 ```shell
-yarn dlx install-peerdeps @mrjadeja/typescript -Y -D -x "yanr dlx install-peerdeps @mrjadeja/typescript-react -Y -D"
+# Run this scripts in sequence
+
+1. yarn dlx install-peerdeps @mrjadeja/typescript -Y -D
+# Run the 2nd script only after 1st completes
+2. yarn dlx install-peerdeps @mrjadeja/typescript-react -Y -D
 ```
 
 <br><br>
 
 ## Setup
 
-1. Create your project with vite cli.
-
-```shell
-pnpm create vite@latest
-```
+1\. Setup [React.js with Vite][vite] &nbsp;&nbsp;(_if not already_)
 
 - Select `react` and `typescript`.
 
-2. Update `tsconfig.json` and `vite.config.ts`.
+2\. Update `tsconfig.json` and `vite.config.ts`.
 
 <br>
 
 > tsconfig.json
 
 - Remove everything and add below json
+- you can override [rules][tsconfig-opts]
 
 ```json
 {
   "extends": "@mrjadeja/vishesh-typescript-react",
-  // your other config / overrides
-  "compilerOptions": {
-    // your other compiler options
-  }
+  "compilerOptions": {}
 }
 ```
 
 <br>
 
 > vite.config.ts
+
+you can override [config][vite-config]
 
 ```ts
 import { defineConfig } from "vite";
@@ -144,16 +169,23 @@ pnpm check:typescript
 ```
 
 ```shell
-pnpm publish
+npm run check:typescript
 ```
 
-<br><br><br><br>
+```shell
+yarn check:typescript
+```
+
+<br><br>
 
 ---
 
-_Last updated on: <kbd>05-07-2023</kbd>_
+_Last updated on: <kbd>07-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
+[vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"
+[vite-config]: https://vitejs.dev/config/ "Vite configuration documentation"
+[tsconfig-opts]: https://www.typescriptlang.org/tsconfig "Typescript compiler options documentation"
 [install]: #install "Install"
 [setup]: #setup "Setup"
 [scripts]: #basic-scripts "Basic Scripts"

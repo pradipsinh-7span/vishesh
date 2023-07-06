@@ -1,7 +1,7 @@
 {
   "name": "@mrjadeja/vishesh-typescript-react",
   "description": "Typescript react configuration with vite and alias",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "scripts": {
     "publish-it": "pnpm publish --access public"
   },

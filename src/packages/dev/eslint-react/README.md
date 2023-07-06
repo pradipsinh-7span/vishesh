@@ -1,14 +1,14 @@
-# Vishesh eslint config react
+# Vishesh ESlint config
 
-## **<kbd>Typescript</kbd> + <kbd>Vite</kbd>**
-
-<br>
-
-> CLI added soon to minimize manual setup. ✌️
+#### **<kbd>Typescript</kbd>+ <kbd>React</kbd> + <kbd>Vite</kbd>**
 
 <br>
 
-_Last updated on: <kbd>03-07-2023</kbd>_
+> CLI added soon to minimize manual setup. ✌️ <br>
+> ⏳ end of September 2023
+
+> 📺 Youtube video added soon. <br>
+> ⏳ end of July 2023
 
 <br>
 
@@ -24,38 +24,76 @@ _Last updated on: <kbd>03-07-2023</kbd>_
 
 ## Prerequisite
 
-> **Node**: 14 or higher <br> **Pnpm**: 8 or higher <br> **Npm**: 7 or higher <br> **Yarn**: 1 or higher
+```shell
+# Node.js  (choose any)
+v14
+v16
+v18  (Recomended)
+
+# Package manager  (choose any)
+pnpm: v8 or higher  (Recomended)
+npm: v7 or higher
+yarn: v1 or higher
+
+# Tools
+vite: v3 or higher
+typescript: v4 or higher
+
+# VS code extension
+dbaeumer.vscode-eslint
+```
 
 <br><br>
 
 ## Install
 
 ```shell
-pnpm dlx install-peerdeps @mrjadeja/eslint-config-vishesh -P -D -x "pnpm dlx install-peerdeps @mrjadeja/eslint-config-vishesh-react -P -D"
+# Run this scripts in sequence
+
+1. pnpm dlx install-peerdeps @mrjadeja/eslint-config-vishesh -P -D
+# Run the 2nd script only after 1st completes
+2. pnpm dlx install-peerdeps @mrjadeja/eslint-config-vishesh-react -P -D
 ```
 
 ```shell
-npm exec install-peerdeps @mrjadeja/eslint-config-vishesh -- -D -x "npm exec install-peerdeps @mrjadeja/eslint-config-vishesh-react -- -D"
+# Run this scripts in sequence
+
+1. npm exec install-peerdeps @mrjadeja/eslint-config-vishesh -- -D
+# Run the 2nd script only after 1st completes
+2. npm exec install-peerdeps @mrjadeja/eslint-config-vishesh-react -- -D
 ```
 
 ```shell
-yarn dlx install-peerdeps @mrjadeja/eslint-config-vishesh -Y -D -x "yanr dlx install-peerdeps @mrjadeja/eslint-config-vishesh-react -Y -D"
+# Run this scripts in sequence
+
+1. yarn dlx install-peerdeps @mrjadeja/eslint-config-vishesh -Y -D
+# Run the 2nd script only after 1st completes
+2. yarn dlx install-peerdeps @mrjadeja/eslint-config-vishesh-react -Y -D
 ```
 
 <br><br>
 
 ## Setup
 
-Create 2 new files at the root of your repository `.eslintrc` and `.eslintignore`.
+1\. Setup [Vite project][vite] &nbsp;&nbsp;(_if not already_)
+
+- run vite cli
+- choose `react` then `typescript`
+
+2\. Setup [Vishesh typescript][typescript] &nbsp;&nbsp;(_if not already_)
+
+3\. Create two new files at the root of your repository `.eslintrc` and `.eslintignore`.
 
 <br>
 
 > .eslintrc
 
+you can override [rules] and [other configs][configure-eslint]
+
 ```json
 {
-  "extends": ["@mrjadeja/vishesh-react"]
-  // your other config / overrides
+  "extends": ["@mrjadeja/vishesh-react"],
+  "rules": {}
 }
 ```
 
@@ -63,10 +101,21 @@ Create 2 new files at the root of your repository `.eslintrc` and `.eslintignore
 
 > .eslintignore
 
-- _[Reference][eslint-ignore]_
+_[Reference][eslint-ignore]_
 
 ```
+.git
+.husky
+.next
+dist
+dist-ssr
 node_modules
+tsconfig.tsbuildinfo
+types
+package.json
+*-lock.*
+*.config.*
+*.json
 ```
 
 <br><br>
@@ -82,8 +131,8 @@ Add scripts to lint your code
 # // your other config
   "scripts": {
 #   // your other scripts
-+   "lint": "eslint . --ext .ts",
-+   "fix:lint": "eslint . --ext .ts --fix"
++   "lint": "eslint . --ext .ts,.tsx",
++   "fix:lint": "eslint . --ext .ts,.tsx --fix"
   }
 }
 ```
@@ -98,19 +147,47 @@ Add scripts to lint your code
 pnpm lint
 ```
 
-> Fix the code
+```shell
+npm run lint
+```
+
+```shell
+yarn lint
+```
+
+<br>
+
+> **Fix the code** <br>
+
+```shell
+⚠️ Stage all the files before running fix command
+
+👉 git add .
+```
 
 ```shell
 pnpm fix:lint
 ```
 
-<br><br><br><br>
+```shell
+npm run fix:lint
+```
+
+```shell
+yarn fix:lint
+```
+
+<br><br>
 
 ---
 
-_Last updated on: <kbd>05-07-2023</kbd>_
+_Last updated on: <kbd>06-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
+[vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"
+[typescript]: https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/typescript#readme "Vishesh typescript documentation"
+[rules]: https://eslint.org/docs/latest/rules "Eslint rules reference"
+[configure-eslint]: https://eslint.org/docs/latest/use/configure/ "Configure ESlint"
 [eslint-ignore]: https://eslint.org/docs/latest/use/configure/ignore#the-eslintignore-file "Eslint ignore official documentation"
 [install]: #install "Install"
 [setup]: #setup "Setup"
