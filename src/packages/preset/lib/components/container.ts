@@ -6,7 +6,7 @@
 // lg: 1024
 // xl: 1280
 // mac: 1440
-// max: 1920
+// maxw: 1920
 
 import type {
   Breakpoints,

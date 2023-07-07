@@ -14,6 +14,18 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [1.0.2] - 07-07-2023
+
+<br>
+
+### Updated
+
+- [pkg-001]\: &nbsp; #13 &nbsp;-&nbsp; `max:` -> `maxw:` (0.1.4)
+
+<br><br>
+
+---
+
 ## [1.0.1] - 07-07-2023
 
 <br>
@@ -111,8 +123,9 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
-[1.0.1]: https://github.com/mrjadeja/vishesh/compare/8881f38..eb9b099
-[1.0.0]: https://github.com/mrjadeja/vishesh/compare/6f06e0d..8881f38
+[1.0.2]: https://github.com/mrjadeja/vishesh/compare/eb9b099...ca79ae8
+[1.0.1]: https://github.com/mrjadeja/vishesh/compare/8881f38...eb9b099
+[1.0.0]: https://github.com/mrjadeja/vishesh/compare/6f06e0d...8881f38
 [0.1.1]: https://github.com/mrjadeja/vishesh/commit/46f5eba6cd849f33698c5ab594949f2d504d898f "Update docs and prepare github action workflow"
 [0.0.1]: https://github.com/mrjadeja/vishesh/commit/60e5816fc7d3664bdafccdca2aaa75f88eef8318 "Initial Setup"
 [0.0.0]: https://github.com/mrjadeja/vishesh/commit/0be58e6a1c46e655452249712c55dbc8f496091f "Initial commit"

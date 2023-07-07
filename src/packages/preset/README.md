@@ -166,7 +166,7 @@ Detailed explaination was given below the codeblock. 👇
 -      lg: 1024,
 -      xl: 1280,
 -      mac: 1440,
--      max: 1920,
+-      maxw: 1920,
 -    },
     extend: {
 #     // defaults values are there
@@ -180,7 +180,7 @@ Detailed explaination was given below the codeblock. 👇
 +       lg: 1024,
 +       xl: 1280,
 +       mac: 1440,
-+       max: 1920,
++       maxw: 1920,
 +     },
     }
   },
@@ -203,40 +203,40 @@ Less often, we are in a situation that for mobile we have one design, then on ta
 
 \*_For below table, reference is taken from the default breakpoints_
 
-| Type    | Variant     | Media Query                                          |
-| :------ | :---------- | :--------------------------------------------------- |
-| Minimum | `xs:`       | `@media (min-width: 375px)`                          |
-|         | `sm:`       | `@media (min-width: 640px)`                          |
-|         | `md:`       | `@media (min-width: 768px)`                          |
-|         | `lg:`       | `@media (min-width: 1024px)`                         |
-|         | `xl:`       | `@media (min-width: 1280x)`                          |
-|         | `mac:`      | `@media (min-width: 1440px)`                         |
-|         | `max:`      | `@media (min-width: 1920px)`                         |
-| &nbsp;  |             |                                                      |
-| Maximum | `zero-xs:`  | `@media (min-width: 0px) and (max-width: 374px)`     |
-|         | `zero-sm:`  | `@media (min-width: 0px) and (max-width: 639px)`     |
-|         | `zero-md:`  | `@media (min-width: 0px) and (max-width: 767px)`     |
-|         | `zero-lg:`  | `@media (min-width: 0px) and (max-width: 1023px)`    |
-|         | `zero-xl:`  | `@media (min-width: 0px) and (max-width: 1279x)`     |
-|         | `zero-mac:` | `@media (min-width: 0px) and (max-width: 1439px)`    |
-|         | `zero-max:` | `@media (min-width: 0px) and (max-width: 1919px)`    |
-| &nbsp;  |             |                                                      |
-| Range   | `xs-sm:`    | `@media (min-width: 375px) and (max-width: 639px)`   |
-|         | `lg-mac:`   | `@media (min-width: 1024px) and (max-width: 1439px)` |
-|         | `md-max:`   | `@media (min-width: 768px) and (max-width: 1919px)`  |
-|         | ...         | and so on...                                         |
-|         |             |                                                      |
+| Type    | Variant      | Media Query                                          |
+| :------ | :----------- | :--------------------------------------------------- |
+| Minimum | `xs:`        | `@media (min-width: 375px)`                          |
+|         | `sm:`        | `@media (min-width: 640px)`                          |
+|         | `md:`        | `@media (min-width: 768px)`                          |
+|         | `lg:`        | `@media (min-width: 1024px)`                         |
+|         | `xl:`        | `@media (min-width: 1280x)`                          |
+|         | `mac:`       | `@media (min-width: 1440px)`                         |
+|         | `maxw:`      | `@media (min-width: 1920px)`                         |
+| &nbsp;  |              |                                                      |
+| Maximum | `zero-xs:`   | `@media (min-width: 0px) and (max-width: 374px)`     |
+|         | `zero-sm:`   | `@media (min-width: 0px) and (max-width: 639px)`     |
+|         | `zero-md:`   | `@media (min-width: 0px) and (max-width: 767px)`     |
+|         | `zero-lg:`   | `@media (min-width: 0px) and (max-width: 1023px)`    |
+|         | `zero-xl:`   | `@media (min-width: 0px) and (max-width: 1279x)`     |
+|         | `zero-mac:`  | `@media (min-width: 0px) and (max-width: 1439px)`    |
+|         | `zero-maxw:` | `@media (min-width: 0px) and (max-width: 1919px)`    |
+| &nbsp;  |              |                                                      |
+| Range   | `xs-sm:`     | `@media (min-width: 375px) and (max-width: 639px)`   |
+|         | `lg-mac:`    | `@media (min-width: 1024px) and (max-width: 1439px)` |
+|         | `md-maxw:`   | `@media (min-width: 768px) and (max-width: 1919px)`  |
+|         | ...          | and so on...                                         |
+|         |              |                                                      |
 
 \*_List of all availabe ranges_
 
-|           |           |           |           |           |            |
-| --------- | --------- | --------- | --------- | --------- | ---------- |
-| `xs-sm:`  | `sm-md:`  | `md-lg:`  | `lg-xl:`  | `xl-mac:` | `mac-max:` |
-| `xs-md:`  | `sm-lg:`  | `md-xl:`  | `lg-mac:` | `xl-max:` |            |
-| `xs-lg:`  | `sm-xl:`  | `md-mac:` | `lg-max:` |           |            |
-| `xs-xl:`  | `sm-mac:` | `md-max:` |           |           |            |
-| `xs-mac:` | `sm-max:` |           |           |           |            |
-| `xs-max:` |           |           |           |           |            |
+|            |            |            |            |            |             |
+| ---------- | ---------- | ---------- | ---------- | ---------- | ----------- |
+| `xs-sm:`   | `sm-md:`   | `md-lg:`   | `lg-xl:`   | `xl-mac:`  | `mac-maxw:` |
+| `xs-md:`   | `sm-lg:`   | `md-xl:`   | `lg-mac:`  | `xl-maxw:` |             |
+| `xs-lg:`   | `sm-xl:`   | `md-mac:`  | `lg-maxw:` |            |             |
+| `xs-xl:`   | `sm-mac:`  | `md-maxw:` |            |            |             |
+| `xs-mac:`  | `sm-maxw:` |            |            |            |             |
+| `xs-maxw:` |            |            |            |            |             |
 
 <br>
 
