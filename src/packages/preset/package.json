@@ -1,7 +1,7 @@
 {
   "name": "@mrjadeja/vishesh-preset",
   "description": "The tailwind css preset to rapidly build any UI",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "type": "module",
   "scripts": {
     "check:typescript": "tsc --noEmit true --emitDeclarationOnly false",
