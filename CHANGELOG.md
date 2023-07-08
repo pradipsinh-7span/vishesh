@@ -14,6 +14,33 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [1.0.4] - 08-07-2023
+
+<br>
+
+### Updated
+
+- [pkg-001]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.5)
+- [pkg-001]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
+- [pkg-002]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
+- [pkg-003]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
+- [pkg-003]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
+- [pkg-005]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
+- [pkg-006]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
+- [pkg-007]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
+- [pkg-008]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
+- [pkg-009]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
+
+<br>
+
+### Remove
+
+- [pkg-001]\: removed test script (0.1.6)
+
+## <br><br>
+
+---
+
 ## [1.0.2] - 07-07-2023
 
 <br>
@@ -36,7 +63,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 ### Fixed
 
-- [pkg-001]\: tyos in documentation (0.1.3)
+- [pkg-001]\: typos in documentation (0.1.3)
 
 <br><br>
 
@@ -59,7 +86,9 @@ and this project adheres to [Semantic Versioning][semver].
 - [pkg-008]\: documentation (0.1.2)
 - [pkg-009]\: documentation (0.1.2)
 
-## <br><br>
+<br><br>
+
+---
 
 ## [0.1.1] - 05-07-2023
 
@@ -123,11 +152,12 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
-[1.0.2]: https://github.com/mrjadeja/vishesh/compare/eb9b099...ca79ae8
-[1.0.1]: https://github.com/mrjadeja/vishesh/compare/8881f38...eb9b099
-[1.0.0]: https://github.com/mrjadeja/vishesh/compare/6f06e0d...8881f38
-[0.1.1]: https://github.com/mrjadeja/vishesh/commit/46f5eba6cd849f33698c5ab594949f2d504d898f "Update docs and prepare github action workflow"
-[0.0.1]: https://github.com/mrjadeja/vishesh/commit/60e5816fc7d3664bdafccdca2aaa75f88eef8318 "Initial Setup"
+[1.0.4]: https://github.com/mrjadeja/vishesh/compare/ca79ae80...4e46f81c
+[1.0.2]: https://github.com/mrjadeja/vishesh/compare/eb9b099a...ca79ae80
+[1.0.1]: https://github.com/mrjadeja/vishesh/compare/8881f381...eb9b099a
+[1.0.0]: https://github.com/mrjadeja/vishesh/compare/6f06e0d4...8881f381
+[0.1.1]: https://github.com/mrjadeja/vishesh/commit/60e5816f...6f06e0d4 "Update docs and prepare github action workflow"
+[0.0.1]: https://github.com/mrjadeja/vishesh/commit/0be58e6a...60e5816f "Initial Setup"
 [0.0.0]: https://github.com/mrjadeja/vishesh/commit/0be58e6a1c46e655452249712c55dbc8f496091f "Initial commit"
 [TW]: https://github.com/tailwindlabs/tailwindcss/blob/master/CHANGELOG.md "Changelog of tailwindcss"
 [origin]: https://github.com/mrjadeja/vishesh/blob/main/CHANGELOG.md "The vishesh monorepo itself"
