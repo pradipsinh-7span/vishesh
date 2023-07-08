@@ -170,7 +170,7 @@ _Last updated on: <kbd>08-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
 [vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"
-[typescript]: https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/tsconfig#readme "Vishesh typescript documentation"
+[typescript]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/tsconfig/README.md "Vishesh typescript documentation"
 [rules]: https://eslint.org/docs/latest/rules "Eslint rules reference"
 [configure-eslint]: https://eslint.org/docs/latest/use/configure/ "Configure ESlint"
 [eslint-ignore]: https://eslint.org/docs/latest/use/configure/ignore#the-eslintignore-file "Eslint ignore official documentation"
