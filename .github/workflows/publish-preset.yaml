@@ -30,6 +30,6 @@ jobs:
       - name: build packages
         run: pnpm build
       - name: publish
-        run: pnpm publish-it --filter @mrjadeja/vishesh-preset
+        run: pnpm publish-it --filter vishesh-preset
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

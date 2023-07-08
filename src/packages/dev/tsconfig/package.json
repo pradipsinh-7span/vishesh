@@ -1,7 +1,7 @@
 {
-  "name": "@mrjadeja/vishesh-typescript",
+  "name": "vishesh-tsconfig",
   "description": "Typescript configuration",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "scripts": {
     "publish-it": "pnpm publish --access public"
   },
@@ -24,6 +24,7 @@
     "vishesh",
     "typescript",
     "config",
+    "tsconfig",
     "mrjadeja"
   ],
   "files": [
@@ -31,7 +32,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md"
   ],
-  "homepage": "https://github.com/mrjadeja/vishesh/src/packages/dev/typescript-react",
+  "homepage": "https://github.com/mrjadeja/vishesh/src/packages/dev/tsconfig",
   "bugs": {
     "url": "https://github.com/mrjadeja/vishesh/issues",
     "email": "mrjadeja.in@gmail.com"

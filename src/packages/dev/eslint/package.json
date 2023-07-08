@@ -1,7 +1,7 @@
 {
-  "name": "@mrjadeja/eslint-config-vishesh",
+  "name": "eslint-config-vishesh",
   "description": "Eslint conifguration with typescript and vite",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "scripts": {
     "publish-it": "pnpm publish --access public"
   },

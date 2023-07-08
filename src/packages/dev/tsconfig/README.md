@@ -1,4 +1,4 @@
-# Vishesh typescript config
+# Vishesh tsconfig
 
 > CLI added soon to minimize manual setup. ✌️ <br>
 > ⏳ end of September 2023
@@ -37,15 +37,15 @@ yarn: v1 or higher
 ## Install
 
 ```shell
-pnpm dlx install-peerdeps @mrjadeja/vishesh-typescript -P -D
+pnpm dlx install-peerdeps vishesh-tsconfig -P -D
 ```
 
 ```shell
-npm exec install-peerdeps @mrjadeja/vishesh-typescript -- -D
+npm exec install-peerdeps vishesh-tsconfig -- -D
 ```
 
 ```shell
-yarn dlx install-peerdeps @mrjadeja/vishesh-typescript -Y -D
+yarn dlx install-peerdeps vishesh-tsconfig -Y -D
 ```
 
 <br><br>
@@ -62,7 +62,7 @@ you can override [rules][tsconfig-opts]
 
 ```json
 {
-  "extends": "@mrjadeja/vishesh-typescript",
+  "extends": "vishesh-tsconfig",
   "compilerOptions": {}
 }
 ```
@@ -80,7 +80,7 @@ Add scripts to check your code
 # // your other config
   "scripts": {
 #   // your other scripts
-+   "check:typescript": "tsc"
++   "check:ts": "tsc"
   }
 }
 ```
@@ -92,22 +92,22 @@ Add scripts to check your code
 > Check the typescript
 
 ```shell
-pnpm check:typescript
+pnpm check:ts
 ```
 
 ```shell
-npm run check:typescript
+npm run check:ts
 ```
 
 ```shell
-yarn check:typescript
+yarn check:ts
 ```
 
 <br><br>
 
 ---
 
-_Last updated on: <kbd>06-07-2023</kbd>_
+_Last updated on: <kbd>08-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
 [tsconfig-opts]: https://www.typescriptlang.org/tsconfig "Typescript compiler options documentation"

@@ -1,4 +1,4 @@
-# Vishesh typescript config
+# Vishesh tsconfig
 
 #### **<kbd>React</kbd> + <kbd>Vite</kbd>**
 
@@ -48,25 +48,25 @@ Vite: v3 or higher
 ```shell
 # Run this scripts in sequence
 
-1. pnpm dlx install-peerdeps @mrjadeja/typescript -P -D
+1. pnpm dlx install-peerdeps vishesh-tsconfig -P -D
 # Run the 2nd script only after 1st completes
-2. pnpm dlx install-peerdeps @mrjadeja/typescript-react -P -D
+2. pnpm dlx install-peerdeps vishesh-tsconfig-react -P -D
 ```
 
 ```shell
 # Run this scripts in sequence
 
-1. npm exec install-peerdeps @mrjadeja/typescript -- -D
+1. npm exec install-peerdeps vishesh-tsconfig -- -D
 # Run the 2nd script only after 1st completes
-2. npm exec install-peerdeps @mrjadeja/typescript-react -- -D
+2. npm exec install-peerdeps vishesh-tsconfig-react -- -D
 ```
 
 ```shell
 # Run this scripts in sequence
 
-1. yarn dlx install-peerdeps @mrjadeja/typescript -Y -D
+1. yarn dlx install-peerdeps vishesh-tsconfig -Y -D
 # Run the 2nd script only after 1st completes
-2. yarn dlx install-peerdeps @mrjadeja/typescript-react -Y -D
+2. yarn dlx install-peerdeps vishesh-tsconfig-react -Y -D
 ```
 
 <br><br>
@@ -88,7 +88,7 @@ Vite: v3 or higher
 
 ```json
 {
-  "extends": "@mrjadeja/vishesh-typescript-react",
+  "extends": "@vishesh-tsconfig-react",
   "compilerOptions": {}
 }
 ```
@@ -153,7 +153,7 @@ Add scripts to check or build your code
 # // your other config
   "scripts": {
 #   // your other scripts
-+   "check:typescript": "tsc",
++   "check:ts": "tsc",
   },
 }
 ```
@@ -165,22 +165,22 @@ Add scripts to check or build your code
 > Check the typescript
 
 ```shell
-pnpm check:typescript
+pnpm check:ts
 ```
 
 ```shell
-npm run check:typescript
+npm run check:ts
 ```
 
 ```shell
-yarn check:typescript
+yarn check:ts
 ```
 
 <br><br>
 
 ---
 
-_Last updated on: <kbd>07-07-2023</kbd>_
+_Last updated on: <kbd>08-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
 [vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"

@@ -46,15 +46,15 @@ v3 or higher
 ## Install
 
 ```shell
-pnpm add -D @mrjadeja/vishesh-preset
+pnpm add -D vishesh-preset
 ```
 
 ```shell
-npm i -D @mrjadeja/vishesh-preset
+npm i -D vishesh-preset
 ```
 
 ```shell
-yarn add -D @mrjadeja/vishesh-preset
+yarn add -D vishesh-preset
 ```
 
 <br><br>
@@ -79,12 +79,12 @@ you can extend or override [config][tailwind-config]
 # tailwind.config.js
 
 # your imports
-+ import vishesh from "@mrjadeja/vishesh-preset";
++ import vishesh from "vishesh-preset";
 
 # remove tailwindcss auto suggestion
 - /** @type {import('tailwindcss').Config} */
 # add tailwindcss + vishesh-preset auto suggestion
-+ /** @type {import('@mrjadeja/vishesh-preset/types').VisheshPreset} */
++ /** @type {import('vishesh-preset/types').VisheshPreset} */
   export default {
 +   presets: [vishesh],
     content: [____],
@@ -112,9 +112,9 @@ you can extend or override [config][tailwind-config]
 # remove tailwindcss auto suggestion
 - /** @type {import('tailwindcss').Config} */
 # add tailwindcss + vishesh-preset auto suggestion
-+ /** @type {import('@mrjadeja/vishesh-preset/types').VisheshPreset} */
++ /** @type {import('vishesh-preset/types').VisheshPreset} */
   module.exports = {
-+   presets: [require("@mrjadeja/vishesh-preset")],
++   presets: [require("vishesh-preset")],
     content: [____],
     theme: {
 #     // your overide config area
@@ -479,7 +479,7 @@ class="container container-md"
 
 ---
 
-_Last updated on: <kbd>07-07-2023</kbd>_
+_Last updated on: <kbd>08-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
 [tailwindcss]: https://tailwindcss.com/docs/installation/framework-guides "Setup tailwindcss"

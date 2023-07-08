@@ -1,9 +1,9 @@
 // your other imports
 
-/** @type {import('@mrjadeja/vishesh-preset/types').VisheshPreset} */
+/** @type {import('vishesh-preset/types').VisheshPreset} */
 module.exports = {
   content: ["./index.html", "./style.css"],
-  presets: [require("@mrjadeja/vishesh-preset")],
+  presets: [require("vishesh-preset")],
   theme: {
     extend: {
       container: {

@@ -50,25 +50,25 @@ dbaeumer.vscode-eslint
 ```shell
 # Run this scripts in sequence
 
-1. pnpm dlx install-peerdeps @mrjadeja/eslint-config-vishesh -P -D
+1. pnpm dlx install-peerdeps eslint-config-vishesh -P -D
 # Run the 2nd script only after 1st completes
-2. pnpm dlx install-peerdeps @mrjadeja/eslint-config-vishesh-react -P -D
+2. pnpm dlx install-peerdeps eslint-config-vishesh-react -P -D
 ```
 
 ```shell
 # Run this scripts in sequence
 
-1. npm exec install-peerdeps @mrjadeja/eslint-config-vishesh -- -D
+1. npm exec install-peerdeps eslint-config-vishesh -- -D
 # Run the 2nd script only after 1st completes
-2. npm exec install-peerdeps @mrjadeja/eslint-config-vishesh-react -- -D
+2. npm exec install-peerdeps eslint-config-vishesh-react -- -D
 ```
 
 ```shell
 # Run this scripts in sequence
 
-1. yarn dlx install-peerdeps @mrjadeja/eslint-config-vishesh -Y -D
+1. yarn dlx install-peerdeps eslint-config-vishesh -Y -D
 # Run the 2nd script only after 1st completes
-2. yarn dlx install-peerdeps @mrjadeja/eslint-config-vishesh-react -Y -D
+2. yarn dlx install-peerdeps eslint-config-vishesh-react -Y -D
 ```
 
 <br><br>
@@ -80,7 +80,7 @@ dbaeumer.vscode-eslint
 - run vite cli
 - choose `react` then `typescript`
 
-2\. Setup [Vishesh typescript][typescript] &nbsp;&nbsp;(_if not already_)
+2\. Setup [Vishesh tsconfig][typescript] &nbsp;&nbsp;(_if not already_)
 
 3\. Create two new files at the root of your repository `.eslintrc` and `.eslintignore`.
 
@@ -92,7 +92,7 @@ you can override [rules] and [other configs][configure-eslint]
 
 ```json
 {
-  "extends": ["@mrjadeja/vishesh-react"],
+  "extends": ["vishesh-react"],
   "rules": {}
 }
 ```
@@ -181,11 +181,11 @@ yarn fix:lint
 
 ---
 
-_Last updated on: <kbd>06-07-2023</kbd>_
+_Last updated on: <kbd>08-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
 [vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"
-[typescript]: https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/typescript#readme "Vishesh typescript documentation"
+[typescript]: https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/tsconfig#readme "Vishesh typescript documentation"
 [rules]: https://eslint.org/docs/latest/rules "Eslint rules reference"
 [configure-eslint]: https://eslint.org/docs/latest/use/configure/ "Configure ESlint"
 [eslint-ignore]: https://eslint.org/docs/latest/use/configure/ignore#the-eslintignore-file "Eslint ignore official documentation"

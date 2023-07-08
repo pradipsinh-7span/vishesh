@@ -1,7 +1,7 @@
 // your other imports
-import vishesh from "@mrjadeja/vishesh-preset";
+import vishesh from "vishesh-preset";
 
-/** @type {import('@mrjadeja/vishesh-preset/types').VisheshPreset} */
+/** @type {import('vishesh-preset/types').VisheshPreset} */
 export default {
   content: ["./index.html", "./style.css"],
   presets: [vishesh],

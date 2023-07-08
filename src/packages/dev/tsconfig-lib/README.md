@@ -1,4 +1,4 @@
-# Vishesh typescript config
+# Vishesh tsconfig
 
 #### **<kbd>Vite</kbd> + <kbd>Library</kbd>**
 
@@ -43,25 +43,25 @@ yarn: v1 or higher
 ```shell
 # Run this scripts in sequence
 
-1. pnpm dlx install-peerdeps @mrjadeja/typescript -P -D
+1. pnpm dlx install-peerdeps vishesh-tsconfig -P -D
 # Run the 2nd script only after 1st completes
-2. pnpm dlx install-peerdeps @mrjadeja/typescript-lib -P -D
+2. pnpm dlx install-peerdeps vishesh-tsconfig-lib -P -D
 ```
 
 ```shell
 # Run this scripts in sequence
 
-1. npm exec install-peerdeps @mrjadeja/typescript -- -D
+1. npm exec install-peerdeps vishesh-tsconfig -- -D
 # Run the 2nd script only after 1st completes
-2. npm exec install-peerdeps @mrjadeja/typescript-lib -- -D
+2. npm exec install-peerdeps vishesh-tsconfig-lib -- -D
 ```
 
 ```shell
 # Run this scripts in sequence
 
-1. yarn dlx install-peerdeps @mrjadeja/typescript -Y -D
+1. yarn dlx install-peerdeps vishesh-tsconfig -Y -D
 # Run the 2nd script only after 1st completes
-2. yarn dlx install-peerdeps @mrjadeja/typescript-lib -Y -D
+2. yarn dlx install-peerdeps vishesh-tsconfig-lib -Y -D
 ```
 
 <br><br>
@@ -84,7 +84,7 @@ you can override [rules][tsconfig-opts]
 
 ```json
 {
-  "extends": "@mrjadeja/vishesh-typescript-lib",
+  "extends": "vishesh-tsconfig-lib",
   "compilerOptions": {}
 }
 ```
@@ -140,7 +140,7 @@ Add scripts to check or build your code
   "version": "0.1.0",
   "scripts": {
 #   // your other scripts
-+   "check:typescript": "tsc --noEmit true --emitDeclarationOnly false",
++   "check:ts": "tsc --noEmit true --emitDeclarationOnly false",
 +   "build": "vite build"
 +   "publish": "pnpm build && pnpm publish --access pubilc"
   },
@@ -169,15 +169,15 @@ Add scripts to check or build your code
 > Check the typescript
 
 ```shell
-pnpm check:typescript
+pnpm check:ts
 ```
 
 ```shell
-npm run check:typescript
+npm run check:ts
 ```
 
 ```shell
-yarn check:typescript
+yarn check:ts
 ```
 
 <br>
@@ -204,22 +204,22 @@ yarn build
 - 📺 You can expect the full youtube video guide.
 
 ```shell
-pnpm publish
+pnpm publish --access public
 ```
 
 ```shell
-npm run publish
+npm run publish --access public
 ```
 
 ```shell
-yarn publish
+yarn publish --access public
 ```
 
 <br><br>
 
 ---
 
-_Last updated on: <kbd>07-07-2023</kbd>_
+_Last updated on: <kbd>08-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
 [vite-config]: https://vitejs.dev/config/ "Vite configuration documentation"

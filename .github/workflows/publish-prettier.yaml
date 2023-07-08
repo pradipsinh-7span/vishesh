@@ -28,6 +28,6 @@ jobs:
       - name: install dependencies
         run: pnpm i
       - name: publish
-        run: pnpm publish-it --filter @mrjadeja/vishesh-prettier
+        run: pnpm publish-it --filter vishesh-prettier
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

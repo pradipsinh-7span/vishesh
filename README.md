@@ -71,7 +71,7 @@ By contributing to this project, you agree that your contributions will be licen
 _Last updated on: <kbd>07-07-2023</kbd>_
 
 [npm]: https://www.npmjs.com/ "NPM website"
-[vishesh-preset-npm]: https://npmjs.com/package/@mrjadeja/vishesh-preset "Vishesh preset on npm registry"
+[vishesh-preset-npm]: https://npmjs.com/package/vishesh-preset "Vishesh preset on npm registry"
 [list-of-dev-configs]: https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev "List of vishesh dev configurations"
 [vishesh-preset]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/preset/README.md "Vishesh - tailwind css preset"
 [license]: https://github.com/mrjadeja/vishesh/blob/main/LICENSE "License"

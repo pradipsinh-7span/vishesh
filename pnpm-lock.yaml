@@ -4,9 +4,6 @@ importers:
 
   .:
     devDependencies:
-      '@mrjadeja/vishesh-prettier':
-        specifier: workspace:*
-        version: link:src/packages/dev/prettier
       husky:
         specifier: ^8.0.3
         version: 8.0.3
@@ -16,6 +13,9 @@ importers:
       turbo:
         specifier: ^1.10.6
         version: 1.10.6
+      vishesh-prettier:
+        specifier: workspace:*
+        version: link:src/packages/dev/prettier
       vite:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.3.3)
@@ -49,13 +49,13 @@ importers:
 
   src/packages/dev/eslint-lib:
     dependencies:
-      '@mrjadeja/eslint-config-vishesh':
+      eslint-config-vishesh:
         specifier: workspace:*
         version: link:../eslint
 
   src/packages/dev/eslint-react:
     dependencies:
-      '@mrjadeja/eslint-config-vishesh':
+      eslint-config-vishesh:
         specifier: workspace:*
         version: link:../eslint
       eslint-import-resolver-alias:
@@ -82,9 +82,6 @@ importers:
 
   src/packages/dev/prettier-react:
     dependencies:
-      '@mrjadeja/vishesh-prettier':
-        specifier: workspace:*
-        version: link:../prettier
       autoprefixer:
         specifier: ^10.4.14
         version: 10.4.14(postcss@8.4.24)
@@ -100,21 +97,24 @@ importers:
       tailwindcss:
         specifier: ^3.3.2
         version: 3.3.2
+      vishesh-prettier:
+        specifier: workspace:*
+        version: link:../prettier
 
-  src/packages/dev/typescript:
+  src/packages/dev/tsconfig:
     dependencies:
       typescript:
         specifier: ~5.0.4
         version: 5.0.4
 
-  src/packages/dev/typescript-lib:
+  src/packages/dev/tsconfig-lib:
     dependencies:
-      '@mrjadeja/vishesh-typescript':
-        specifier: workspace:*
-        version: link:../typescript
       '@types/node':
         specifier: ^20.2.6
         version: 20.3.3
+      vishesh-tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
       vite:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.3.3)
@@ -122,11 +122,11 @@ importers:
         specifier: ^3.0.2
         version: 3.0.3(@types/node@20.3.3)(typescript@5.0.4)
 
-  src/packages/dev/typescript-react:
+  src/packages/dev/tsconfig-react:
     dependencies:
-      '@mrjadeja/vishesh-typescript':
+      vishesh-tsconfig:
         specifier: workspace:*
-        version: link:../typescript
+        version: link:../tsconfig
 
   src/packages/preset:
     dependencies:
@@ -137,18 +137,6 @@ importers:
         specifier: ^8.4.24
         version: 8.4.24
     devDependencies:
-      '@mrjadeja/eslint-config-vishesh':
-        specifier: workspace:*
-        version: link:../dev/eslint
-      '@mrjadeja/eslint-config-vishesh-lib':
-        specifier: workspace:*
-        version: link:../dev/eslint-lib
-      '@mrjadeja/vishesh-typescript':
-        specifier: workspace:*
-        version: link:../dev/typescript
-      '@mrjadeja/vishesh-typescript-lib':
-        specifier: workspace:*
-        version: link:../dev/typescript-lib
       '@types/node':
         specifier: ^20.3.3
         version: 20.3.3
@@ -161,6 +149,12 @@ importers:
       eslint:
         specifier: ^8.44.0
         version: 8.44.0
+      eslint-config-vishesh:
+        specifier: workspace:*
+        version: link:../dev/eslint
+      eslint-config-vishesh-lib:
+        specifier: workspace:*
+        version: link:../dev/eslint-lib
       eslint-import-resolver-typescript:
         specifier: ^3.5.5
         version: 3.5.5(@typescript-eslint/parser@5.61.0)(eslint-plugin-import@2.27.4)(eslint@8.44.0)
@@ -182,6 +176,12 @@ importers:
       typescript:
         specifier: 5.0.4
         version: 5.0.4
+      vishesh-tsconfig:
+        specifier: workspace:*
+        version: link:../dev/tsconfig
+      vishesh-tsconfig-lib:
+        specifier: workspace:*
+        version: link:../dev/tsconfig-lib
       vite:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.3.3)
@@ -191,9 +191,6 @@ importers:
 
   src/playground/preset/cjs:
     devDependencies:
-      '@mrjadeja/vishesh-preset':
-        specifier: workspace:*
-        version: link:../../../packages/preset
       autoprefixer:
         specifier: ^10.4.14
         version: 10.4.14(postcss@8.4.24)
@@ -203,18 +200,15 @@ importers:
       tailwindcss:
         specifier: ^3.3.2
         version: 3.3.2
+      vishesh-preset:
+        specifier: workspace:*
+        version: link:../../../packages/preset
       vite:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.3.3)
 
   src/playground/preset/esm:
     devDependencies:
-      '@mrjadeja/vishesh-preset':
-        specifier: workspace:*
-        version: link:../../../packages/preset
-      '@mrjadeja/vishesh-prettier':
-        specifier: workspace:*
-        version: link:../../../packages/dev/prettier
       autoprefixer:
         specifier: ^10.4.14
         version: 10.4.14(postcss@8.4.24)
@@ -224,6 +218,9 @@ importers:
       tailwindcss:
         specifier: ^3.3.2
         version: 3.3.2
+      vishesh-preset:
+        specifier: workspace:*
+        version: link:../../../packages/preset
       vite:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.3.3)

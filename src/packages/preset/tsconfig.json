@@ -1,5 +1,5 @@
 {
-  "extends": "@mrjadeja/vishesh-typescript-lib",
+  "extends": "vishesh-tsconfig-lib",
   "compilerOptions": {
     "rootDir": "./lib"
   },

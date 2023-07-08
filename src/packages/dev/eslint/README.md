@@ -48,15 +48,15 @@ dbaeumer.vscode-eslint
 ## Install
 
 ```shell
-pnpm dlx install-peerdeps @mrjadeja/eslint-config-vishesh -P -D
+pnpm dlx install-peerdeps eslint-config-vishesh -P -D
 ```
 
 ```shell
-npm exec install-peerdeps @mrjadeja/eslint-config-vishesh -- -D
+npm exec install-peerdeps eslint-config-vishesh -- -D
 ```
 
 ```shell
-yarn dlx install-peerdeps @mrjadeja/eslint-config-vishesh -Y -D
+yarn dlx install-peerdeps eslint-config-vishesh -Y -D
 ```
 
 <br><br>
@@ -65,7 +65,7 @@ yarn dlx install-peerdeps @mrjadeja/eslint-config-vishesh -Y -D
 
 1\. Setup [Vite project][vite] &nbsp;&nbsp;(_if not already_)
 
-2\. Setup [Vishesh typescript][typescript] &nbsp;&nbsp;(_if not already_)
+2\. Setup [Vishesh tsconfig][typescript] &nbsp;&nbsp;(_if not already_)
 
 3\. Create two new files at the root of your repository `.eslintrc` and `.eslintignore`.
 
@@ -77,7 +77,7 @@ you can override [rules] and [other configs][configure-eslint]
 
 ```json
 {
-  "extends": ["@mrjadeja/vishesh"],
+  "extends": ["vishesh"],
   "rules": {}
 }
 ```
@@ -166,11 +166,11 @@ yarn fix:lint
 
 ---
 
-_Last updated on: <kbd>06-07-2023</kbd>_
+_Last updated on: <kbd>08-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
 [vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"
-[typescript]: https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/typescript#readme "Vishesh typescript documentation"
+[typescript]: https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/tsconfig#readme "Vishesh typescript documentation"
 [rules]: https://eslint.org/docs/latest/rules "Eslint rules reference"
 [configure-eslint]: https://eslint.org/docs/latest/use/configure/ "Configure ESlint"
 [eslint-ignore]: https://eslint.org/docs/latest/use/configure/ignore#the-eslintignore-file "Eslint ignore official documentation"

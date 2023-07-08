@@ -4,7 +4,7 @@
   "version": "1.0.1",
   "type": "module",
   "scripts": {
-    "clear": "pnpx rimraf --glob **/node_modules **/dist **/types **/.turbo",
+    "clear": "pnpx rimraf --glob **/node_modules **/dist **/types **/.turbo **/.next **/tsconfig.tsbuildinfo",
     "snap": "pnpm clear && pnpm i",
     "prepare": "husky install",
     "dev": "turbo run dev --concurrency 12",
@@ -19,7 +19,7 @@
     "publish-it": "turbo run publish-it"
   },
   "devDependencies": {
-    "@mrjadeja/vishesh-prettier": "workspace:*",
+    "vishesh-prettier": "workspace:*",
     "husky": "^8.0.3",
     "rimraf": "^5.0.1",
     "turbo": "^1.10.6",

@@ -1,12 +1,12 @@
 {
-  "name": "@mrjadeja/eslint-config-vishesh-react",
+  "name": "eslint-config-vishesh-react",
   "description": "Eslint react conifguration with typescript, vite and aliases",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "scripts": {
     "publish-it": "pnpm publish  --access public"
   },
   "peerDependencies": {
-    "@mrjadeja/eslint-config-vishesh": "workspace:*",
+    "eslint-config-vishesh": "workspace:*",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-import-resolver-vite": "^1.0.4",

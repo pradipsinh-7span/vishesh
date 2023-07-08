@@ -51,25 +51,25 @@ esbenp.prettier-vscode
 ```shell
 # Run this scripts in sequence
 
-1. pnpm dlx install-peerdeps @mrjadeja/prettier -P -D
+1. pnpm dlx install-peerdeps vishesh-prettier -P -D
 # Run the 2nd script only after 1st completes
-2. pnpm dlx install-peerdeps @mrjadeja/prettier-react -P -D
+2. pnpm dlx install-peerdeps vishesh-prettier-react -P -D
 ```
 
 ```shell
 # Run this scripts in sequence
 
-1. npm exec install-peerdeps @mrjadeja/prettier -- -D
+1. npm exec install-peerdeps vishesh-prettier -- -D
 # Run the 2nd script only after 1st completes
-2. npm exec install-peerdeps @mrjadeja/prettier-react -- -D
+2. npm exec install-peerdeps vishesh-prettier-react -- -D
 ```
 
 ```shell
 # Run this scripts in sequence
 
-1. yarn dlx install-peerdeps @mrjadeja/prettier -Y -D
+1. yarn dlx install-peerdeps vishesh-prettier -Y -D
 # Run the 2nd script only after 1st completes
-2. yarn dlx install-peerdeps @mrjadeja/prettier-react -Y -D
+2. yarn dlx install-peerdeps vishesh-prettier-react -Y -D
 ```
 
 <br><br>
@@ -90,7 +90,7 @@ you can override [rules][prettier-opts]
 
 ```json
 {
-  "plugins": ["@mrjadeja/vishesh-prettier-react"]
+  "plugins": ["vishesh-prettier-react"]
 }
 ```
 
@@ -166,7 +166,7 @@ yarn fix:formatting
 
 ---
 
-_Last updated on: <kbd>06-07-2023</kbd>_
+_Last updated on: <kbd>08-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
 [vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"

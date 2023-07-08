@@ -1,5 +1,5 @@
 {
-  "extends": "@mrjadeja/vishesh-typescript",
+  "extends": "vishesh-tsconfig",
   "compilerOptions": {
     "noEmit": false,
     "declaration": true,

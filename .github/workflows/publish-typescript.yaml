@@ -6,7 +6,7 @@ on:
     types:
       - closed
     paths:
-      - "src/packages/dev/typescript/package.json"
+      - "src/packages/dev/tsconfig/package.json"
 jobs:
   publish-packages:
     if: ${{ github.event.pull_request.merged }}
@@ -28,6 +28,6 @@ jobs:
       - name: install dependencies
         run: pnpm i
       - name: publish
-        run: pnpm publish-it --filter @mrjadeja/vishesh-typescript
+        run: pnpm publish-it --filter vishesh-tsconfig
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

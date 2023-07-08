@@ -13,6 +13,18 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.1.5] - 08-07-2023
+
+<br>
+
+### Removed
+
+- #21 &nbsp;-&nbsp; removed scope from package name
+
+<br><br>
+
+---
+
 ## [0.1.4] - 07-07-2023
 
 <br>

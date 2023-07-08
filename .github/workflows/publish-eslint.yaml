@@ -28,6 +28,6 @@ jobs:
       - name: install dependencies
         run: pnpm i
       - name: publish
-        run: pnpm publish-it --filter @mrjadeja/eslint-config-vishesh
+        run: pnpm publish-it --filter eslint-config-vishesh
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

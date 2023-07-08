@@ -40,15 +40,15 @@ esbenp.prettier-vscode
 ## Install
 
 ```shell
-pnpm dlx install-peerdeps @mrjadeja/vishesh-prettier -P -D
+pnpm dlx install-peerdeps vishesh-prettier -P -D
 ```
 
 ```shell
-npm exec install-peerdeps @mrjadeja/vishesh-prettier -- -D
+npm exec install-peerdeps vishesh-prettier -- -D
 ```
 
 ```shell
-yarn dlx install-peerdeps @mrjadeja/vishesh-prettier -Y -D
+yarn dlx install-peerdeps vishesh-prettier -Y -D
 ```
 
 <br><br>
@@ -65,7 +65,7 @@ you can override [rules][prettier-opts]
 
 ```json
 {
-  "plugins": ["@mrjadeja/vishesh-prettier"]
+  "plugins": ["vishesh-prettier"]
 }
 ```
 
@@ -141,7 +141,7 @@ yarn fix:formatting
 
 ---
 
-_Last updated on: <kbd>06-07-2023</kbd>_
+_Last updated on: <kbd>08-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
 [prettier-opts]: https://prettier.io/docs/en/options.html "Prettier rules documentation"

@@ -1,5 +1,5 @@
 {
-  "extends": ["@mrjadeja/vishesh"],
+  "extends": ["vishesh"],
   "rules": {
     "import/no-unused-modules": [
       "error",
