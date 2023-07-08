@@ -14,6 +14,20 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [1.0.5] - 08-07-2023
+
+<br>
+
+### Fixed
+
+- [pkg-001]\: vishesh tsconfig path (0.1.4)
+- [pkg-002]\: vishesh tsconfig path (0.1.4)
+- [pkg-003]\: vishesh tsconfig path (0.1.4)
+
+<br><br>
+
+---
+
 ## [1.0.4] - 08-07-2023
 
 <br>
@@ -152,6 +166,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.1.5]: https://github.com/mrjadeja/vishesh/compare/b7f440a2...6a3e30b2
 [1.0.4]: https://github.com/mrjadeja/vishesh/compare/ca79ae80...4e46f81c
 [1.0.2]: https://github.com/mrjadeja/vishesh/compare/eb9b099a...ca79ae80
 [1.0.1]: https://github.com/mrjadeja/vishesh/compare/8881f381...eb9b099a
