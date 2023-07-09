@@ -1,6 +1,6 @@
-# **Vishesh** - The rapid design system for your web project ✌
+# **Vishesh** - The rapid design system for your next project ✌
 
-> Unlease the true potential of your project with _VISHESH_, where confidence meets boldness in design. <br>
+> Unlease the true potential of your project with _VISHESH_, where confidence meets **boldness** in design. <br>
 
 <br><br>
 

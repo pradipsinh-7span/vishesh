@@ -1,0 +1,120 @@
+import { Callout, Tabs, Tab } from "nextra-theme-docs";
+
+## Pre-requisite
+
+```shell
+# Node.js  (choose any)
+v14
+v16
+v18  (Recomended)
+
+# Package manager  (choose any)
+pnpm: v8 or higher  (Recomended)
+npm: v7 or higher
+yarn: v1 or higher
+
+# Tailwindcss
+v3 or higher
+```
+
+<br />
+
+## Install
+
+<Tabs items={["pnpm", "npm", "yarn"]}>
+  <Tab>
+
+    ```shell copy
+    pnpm add -D vishesh-preset
+    ```
+
+  </Tab>
+  <Tab>
+
+    ```shell copy
+    npm i -D vishesh-preset
+    ```
+
+  </Tab>
+  <Tab>
+
+    ```shell copy
+    yarn add -D vishesh-preset
+    ```
+
+  </Tab>
+</Tabs>
+
+<br />
+
+## Setup
+
+1\. Setup [Tailwindcss][tailwindcss] &nbsp;&nbsp;(_if not already_)
+
+<Callout type="warning">
+  if running on v2, [migrate to v3][migrate-to-v3]
+</Callout>
+
+2\. go to your tailwind config file. then, identify which package to install by looking at the way your config file were exported.
+
+<Callout>
+  &nbsp;&nbsp; **ESM**: `export default` <br />
+  &nbsp;&nbsp; **CJS**: &nbsp; `module.exports`
+</Callout>
+
+<br />
+
+### Setup ESM
+
+> you can extend or override [config][tailwind-config]
+
+```diff filename="tailwind.config.js"
+# /* your imports */
++ import vishesh from "vishesh-preset";
+
+# /* remove tailwindcss auto suggestion */
+- /** @type {import('tailwindcss').Config} */
+# /* add tailwindcss + vishesh-preset auto suggestion */
++ /** @type {import('vishesh-preset/types').VisheshPreset} */
+  export default {
++   presets: [vishesh],
+    content: [____],
+    theme: {
+#     // ...
+      extend: {
+#     // ...
+      }
+    },
+    plugins: [____]
+  }
+```
+
+<br />
+
+### Setup CJS
+
+> you can extend or override [config][tailwind-config]
+
+```diff filename="tailwind.config.cjs"
+# /* your imports */
+
+# /* remove tailwindcss auto suggestion */
+- /** @type {import('tailwindcss').Config} */
+# /* add tailwindcss + vishesh-preset auto suggestion */
++ /** @type {import('vishesh-preset/types').VisheshPreset} */
+  module.exports = {
++   presets: [require("vishesh-preset")],
+    content: [____],
+    theme: {
+#     // ...
+      extend: {
+#       // ...
+      }
+    },
+    plugins: [____]
+  }
+```
+
+[tailwindcss]: https://tailwindcss.com/docs/installation/framework-guides "Setup tailwindcss"
+[tailwind-config]: https://tailwindcss.com/docs/configuration#configuration-options "Tailwindcss configuration documentation"
+[migrate-to-v3]: https://tailwindcss.com/docs/upgrade-guide "Migrate tailwind to v3 from v2"

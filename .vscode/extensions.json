@@ -9,6 +9,7 @@
     "christian-kohler.path-intellisense",
     "esbenp.prettier-vscode",
     "bradlc.vscode-tailwindcss",
-    "mathcale.theme-dracula-refined"
+    "mathcale.theme-dracula-refined",
+    "unifiedjs.vscode-mdx"
   ]
 }

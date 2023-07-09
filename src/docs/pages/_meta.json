@@ -1,0 +1,41 @@
+{
+  "index": {
+    "title": "Home",
+    "type": "page",
+    "display": "hidden",
+    "theme": {
+      "layout": "full",
+      "breadcrumb": false,
+      "footer": true,
+      "sidebar": false,
+      "toc": false,
+      "pagination": false
+    }
+  },
+  "preset": {
+    "title": "Preset",
+    "type": "page",
+    "display": "hidden",
+    "theme": {
+      "layout": "default",
+      "breadcrumb": true,
+      "footer": true,
+      "sidebar": true,
+      "toc": true,
+      "pagination": true
+    }
+  },
+  "configs": {
+    "title": "Configs",
+    "type": "page",
+    "display": "hidden",
+    "theme": {
+      "layout": "default",
+      "breadcrumb": true,
+      "footer": true,
+      "sidebar": true,
+      "toc": true,
+      "pagination": true
+    }
+  }
+}

@@ -2,3 +2,4 @@ packages:
   - "src/packages/*"
   - "src/packages/dev/*"
   - "src/playground/*/*"
+  - "src/docs"

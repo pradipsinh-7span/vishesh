@@ -11,7 +11,7 @@
 import type { Breakpoints, PluginProps } from "..";
 
 /**
- * Generated all possible combination of breakpoint variants
+ * Generates all possible combination of breakpoint variants
  *
  * `x:` - minimum width breakpoint
  *

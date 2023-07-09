@@ -1,6 +1,6 @@
 {
   "editor.fontFamily": "'IntelOne Mono', Consolas, 'Courier New', monospace",
-  "eslint.workingDirectories": ["./src/packages/preset"],
+  "eslint.workingDirectories": ["./src/packages/preset", "./src/docs"],
   "editor.fontSize": 16,
   "editor.tabSize": 2,
   "editor.cursorStyle": "line",

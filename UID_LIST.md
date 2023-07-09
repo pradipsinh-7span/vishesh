@@ -10,18 +10,20 @@
 `pkg-007` - [vishesh-tsconfig][tsconfig] <br>
 `pkg-008` - [vishesh-tsconfig-lib][tsconfig-lib] <br>
 `pkg-009` - [vishesh-tsconfig-react][tsconfig-react] <br>
-`play-001` - [play-preset][play-preset] <br>
-`play-002` - [play-preset-cjs][play-preset-cjs] <br>
+`play-001` - [play-preset] <br>
+`play-002` - [play-preset-cjs] <br>
+`doc-001` - [docs] <br>
 
 [origin]: https://github.com/mrjadeja/vishesh
 [preset]: https://github.com/mrjadeja/vishesh/src/packages/preset
-[eslint]: https://github.com/mrjadeja/vishesh/src/dev/eslint
-[eslint-lib]: https://github.com/mrjadeja/vishesh/src/dev/eslint-lib
-[eslint-react]: https://github.com/mrjadeja/vishesh/src/dev/eslint-react
-[prettier]: https://github.com/mrjadeja/vishesh/src/dev/prettier
-[prettier-react]: https://github.com/mrjadeja/vishesh/src/dev/prettier-react
-[tsconfig]: https://github.com/mrjadeja/vishesh/src/dev/tsconfig
-[tsconfig-lib]: https://github.com/mrjadeja/vishesh/src/dev/tsconfig-lib
-[tsconfig-react]: https://github.com/mrjadeja/vishesh/src/dev/tsconfig-react
+[eslint]: https://github.com/mrjadeja/vishesh/src/packages/dev/eslint
+[eslint-lib]: https://github.com/mrjadeja/vishesh/src/packages/dev/eslint-lib
+[eslint-react]: https://github.com/mrjadeja/vishesh/src/packages/dev/eslint-react
+[prettier]: https://github.com/mrjadeja/vishesh/src/packages/dev/prettier
+[prettier-react]: https://github.com/mrjadeja/vishesh/src/packages/dev/prettier-react
+[tsconfig]: https://github.com/mrjadeja/vishesh/src/packages/dev/tsconfig
+[tsconfig-lib]: https://github.com/mrjadeja/vishesh/src/packages/dev/tsconfig-lib
+[tsconfig-react]: https://github.com/mrjadeja/vishesh/src/packages/dev/tsconfig-react
 [play-preset]: https://github.com/mrjadeja/vishesh/src/playground/preset/esm
 [play-preset-cjs]: https://github.com/mrjadeja/vishesh/src/playground/preset/cjs
+[docs]: https://github.com/mrjadeja/vishesh/src/docs

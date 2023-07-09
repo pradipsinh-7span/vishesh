@@ -31,7 +31,7 @@ import type {
 // - mac: 128
 
 /**
- * Generated `container-*` utitiles
+ * Generates `container-*` utitiles
  */
 export default function ({ theme, addComponents }: PluginProps): void {
   // ascending order of spacing values
