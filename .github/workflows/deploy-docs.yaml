@@ -8,9 +8,7 @@ on:
     paths:
       - "src/docs/package.json"
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  actions: write
 jobs:
   build:
     runs-on: ubuntu-latest
