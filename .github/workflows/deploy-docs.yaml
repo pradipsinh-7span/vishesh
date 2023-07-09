@@ -6,9 +6,7 @@ on:
     types:
       - closed
     paths:
-      - "src/docs/package.json"
-permissions:
-  actions: write
+permissions: write-all
 jobs:
   build:
     runs-on: ubuntu-latest
