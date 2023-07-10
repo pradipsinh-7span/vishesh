@@ -23,7 +23,10 @@ export default {
   docsRepositoryBase:
     "https://github.com/mrjadeja/vishesh/blob/main/src/docs/pages",
   darkMode: true,
-  primaryHue: 221,
+  primaryHue: {
+    dark: 200,
+    light: 221,
+  },
   sidebar: {
     titleComponent({ title, type }) {
       if (type === "separator") {
