@@ -1,5 +1,7 @@
 import withNextra from "nextra";
 
+const base = process.env.NODE_ENV === "development" ? "" : "/vishesh";
+
 export default withNextra({
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.jsx",
@@ -7,8 +9,8 @@ export default withNextra({
   /* Next.js config */
   output: "export",
   distDir: "dist",
-  basePath: "/vishesh",
-  assetPrefix: "/vishesh",
+  basePath: base,
+  assetPrefix: base,
   images: {
     unoptimized: true,
   },

@@ -26,7 +26,7 @@ export default () => {
           </Link>
           <Link
             href="#roadmap"
-            className="font-medium text-lg text-primary ml-10 px-8 py-1.5 rounded border border-primary hover:bg-primary-light hover:text-white transition-colors ease-in-out duration-200 dark:text-primary-light dark:border-primary-light md:hidden"
+            className="font-medium text-lg text-primary ml-10 px-8 py-1.5 rounded border border-primary hover:bg-primary-light hover:text-white transition-colors ease-in-out duration-200  dark:border-primary-light md:hidden"
           >
             Roadmap
           </Link>
