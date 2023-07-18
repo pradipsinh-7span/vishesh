@@ -14,6 +14,32 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [1.1.1] - 18-07-2023
+
+<br>
+
+### Fixed
+
+- [pkg-004]\: #48 &nbsp;-&nbsp; react setting is at root location not in the settings (0.1.5)
+- [pkg-009]\: #48 &nbsp;-&nbsp; typo in readme setup (0.1.4)
+- [doc-001]\: Update fallback page title (0.1.10)
+
+<br><br>
+
+---
+
+## [1.1.0] - 15-07-2023
+
+<br>
+
+### Added
+
+- [doc-001]\: #18 &nbsp;-&nbsp; add preset docs and host to github pages via github actions (0.1.9)
+
+<br><br>
+
+---
+
 ## [1.0.5] - 08-07-2023
 
 <br>
@@ -166,7 +192,9 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
-[0.1.5]: https://github.com/mrjadeja/vishesh/compare/b7f440a2...6a3e30b2
+[1.1.1]: https://github.com/mrjadeja/vishesh/compare/62545388...9d8beb7e
+[1.1.0]: https://github.com/mrjadeja/vishesh/compare/6a3e30b2...62545388
+[1.0.5]: https://github.com/mrjadeja/vishesh/compare/b7f440a2...6a3e30b2
 [1.0.4]: https://github.com/mrjadeja/vishesh/compare/ca79ae80...4e46f81c
 [1.0.2]: https://github.com/mrjadeja/vishesh/compare/eb9b099a...ca79ae80
 [1.0.1]: https://github.com/mrjadeja/vishesh/compare/8881f381...eb9b099a

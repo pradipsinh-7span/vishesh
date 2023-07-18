@@ -120,15 +120,12 @@ export default {
     return (
       <>
         <meta property="og:url" content={url} />
-        <meta
-          property="og:title"
-          content={frontMatter.title || "Vishesh Preset"}
-        />
+        <meta property="og:title" content={frontMatter.title || "Vishesh"} />
         <meta
           property="og:description"
           content={
             frontMatter.description ||
-            "The tailwind css preset to rapidly build any UI"
+            "The rapid design system for your next project ✌"
           }
         />
         <title>{frontMatter.title || "Vishesh Preset"}</title>

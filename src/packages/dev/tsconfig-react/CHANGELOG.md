@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.1.4] - 18-07-2023
+
+<br>
+
+### Fixed
+
+- #48 &nbsp;-&nbsp; typo in readme setup
+
+<br><br>
+
+---
+
 ## [0.1.3] - 08-07-2023
 
 <br>
@@ -61,6 +73,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.1.4]: https://github.com/mrjadeja/vishesh/compare/b7f440a2...affb3bba
 [0.1.3]: https://github.com/mrjadeja/vishesh/compare/8881f381...b7f440a2
 [0.1.2]: https://github.com/mrjadeja/vishesh/compare/6f06e0d...8881f381
 [0.1.1]: https://github.com/mrjadeja/vishesh/compare/60e5816f...46f5eba6 "Update docs and prepare github action workflow"

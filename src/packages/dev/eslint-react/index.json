@@ -33,9 +33,9 @@
         ["@layout", "./src/layout"]
       ],
       "extensions": [".ts", ".tsx"]
+    },
+    "react": {
+      "version": "detect"
     }
-  },
-  "react": {
-    "version": "detect"
   }
 }

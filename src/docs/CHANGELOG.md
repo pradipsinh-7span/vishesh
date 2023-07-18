@@ -9,19 +9,25 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
-## Unreleased
+## [0.1.10] - 18-07-2023
+
+<br>
+
+### Updated
+
+- Update fallback page title
+
+<br />
+
+---
+
+## [0.1.9] - 10-07-2023
 
 <br>
 
 ### Added
 
-- breakpoints
-  - minimum
-  - maximum
-  - range
-- container
-  - fixed
-  - fluid
+- #18 &nbsp;-&nbsp; add preset docs and host to github pages via github actions
 
 <br />
 
@@ -31,7 +37,8 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
-[0.1.1]: https://github.com/mrjadeja/vishesh/commit/60e5816f...6f06e0d4 "Update docs and prepare github action workflow"
+[0.1.10]: https://github.com/mrjadeja/vishesh/commit/62545388...9d8beb7e
+[0.1.9]: https://github.com/mrjadeja/vishesh/commit/60e5816f...62545388
 [0.0.1]: https://github.com/mrjadeja/vishesh/commit/0be58e6a...60e5816f "Initial Setup"
 [0.0.0]: https://github.com/mrjadeja/vishesh/commit/0be58e6a1c46e655452249712c55dbc8f496091f "Initial commit"
 [changelog]: https://keepachangelog.com/en/1.0.0/ "Keep a changelog guide"

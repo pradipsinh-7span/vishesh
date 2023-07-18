@@ -88,7 +88,7 @@ Vite: v3 or higher
 
 ```json
 {
-  "extends": "@vishesh-tsconfig-react",
+  "extends": "vishesh-tsconfig-react",
   "compilerOptions": {}
 }
 ```
@@ -180,7 +180,7 @@ yarn check:ts
 
 ---
 
-_Last updated on: <kbd>08-07-2023</kbd>_
+_Last updated on: <kbd>18-07-2023</kbd>_
 
 [pre]: #prerequisite "Prerequisite"
 [vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"

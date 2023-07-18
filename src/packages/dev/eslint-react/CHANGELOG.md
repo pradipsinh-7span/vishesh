@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.1.5] - 18-07-2023
+
+<br>
+
+### Fixed
+
+- #48 &nbsp;-&nbsp; react setting is at root location not in the settings
+
+<br><br>
+
+---
+
 ## [0.1.4] - 08-07-2023
 
 <br>
@@ -73,6 +85,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.1.5]: https://github.com/mrjadeja/vishesh/compare/6a3e30b2...affb3bba
 [0.1.4]: https://github.com/mrjadeja/vishesh/compare/b7f440a2...6a3e30b2
 [0.1.3]: https://github.com/mrjadeja/vishesh/compare/8881f381...b7f440a2
 [0.1.2]: https://github.com/mrjadeja/vishesh/compare/6f06e0d...8881f381
