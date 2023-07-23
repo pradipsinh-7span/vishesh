@@ -14,13 +14,36 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [1.2.1] - 23-07-2023
+
+<br>
+
+### Fixed
+
+- [doc-001]\: #53 &nbsp;-&nbsp; fix references (0.2.1)
+- [pkg-001]\: #53 &nbsp;-&nbsp; fix references (0.1.8)
+- [pkg-002]\: #53 &nbsp;-&nbsp; fix references (0.1.6)
+- [pkg-003]\: #53 &nbsp;-&nbsp; fix references (0.1.6)
+- [pkg-004]\: #53 &nbsp;-&nbsp; fix references (0.1.7)
+- [pkg-005]\: #53 &nbsp;-&nbsp; fix references (0.1.5)
+- [pkg-006]\: #53 &nbsp;-&nbsp; fix references (0.1.5)
+- [pkg-007]\: #53 &nbsp;-&nbsp; fix references (0.1.5)
+- [pkg-008]\: #53 &nbsp;-&nbsp; fix references (0.1.5)
+- [pkg-009]\: #53 &nbsp;-&nbsp; fix references (0.1.6)
+
+<br><br>
+
+---
+
 ## [1.2.0] - 23-07-2023
 
 <br>
 
 ### Added
 
-- [doc-001]: #18 &nbsp;-&nbsp; add configs documetation (0.2.0)
+- [doc-001]\: #23 &nbsp;-&nbsp; add configs documetation (0.2.0)
+
+<br>
 
 ### Updated
 
@@ -213,6 +236,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[1.2.1]: https://github.com/mrjadeja/vishesh/commit/780a6ee8...51b34689
 [1.2.0]: https://github.com/mrjadeja/vishesh/compare/9d8beb7e...780a6ee8
 [1.1.1]: https://github.com/mrjadeja/vishesh/compare/62545388...9d8beb7e
 [1.1.0]: https://github.com/mrjadeja/vishesh/compare/6a3e30b2...62545388

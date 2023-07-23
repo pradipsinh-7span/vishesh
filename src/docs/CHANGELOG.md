@@ -9,6 +9,30 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.2.1] - 23-07-2023
+
+<br>
+
+### Fixed
+
+- #53 &nbsp;-&nbsp; fix references
+
+<br />
+
+---
+
+## [0.2.0] - 23-07-2023
+
+<br>
+
+### Added
+
+- #23 &nbsp;-&nbsp; add configs documentation
+
+<br />
+
+---
+
 ## [0.1.10] - 18-07-2023
 
 <br>
@@ -37,6 +61,8 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.2.1]: https://github.com/mrjadeja/vishesh/commit/780a6ee8...51b34689
+[0.2.0]: https://github.com/mrjadeja/vishesh/commit/9d8beb7e...780a6ee8
 [0.1.10]: https://github.com/mrjadeja/vishesh/commit/62545388...9d8beb7e
 [0.1.9]: https://github.com/mrjadeja/vishesh/commit/60e5816f...62545388
 [0.0.1]: https://github.com/mrjadeja/vishesh/commit/0be58e6a...60e5816f "Initial Setup"
