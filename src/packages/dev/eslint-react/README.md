@@ -1,14 +1,6 @@
 # Vishesh ESlint config
 
-#### **<kbd>Typescript</kbd>+ <kbd>React</kbd> + <kbd>Vite</kbd>**
-
-<br>
-
-> CLI added soon to minimize manual setup. ✌️ <br>
-> ⏳ end of September 2023
-
-> 📺 Youtube video added soon. <br>
-> ⏳ end of July 2023
+#### **<kbd>Typescript</kbd>+ <kbd>React.js</kbd> + <kbd>Vite</kbd>**
 
 <br>
 
@@ -36,8 +28,10 @@ npm: v7 or higher
 yarn: v1 or higher
 
 # Tools
-vite: v3 or higher
-typescript: v4 or higher
+React.js: v17 or higher
+Tailwindcss: v3 or higher
+Vite: v3 or higher
+Typescript: v4 or higher
 
 # VS code extension
 dbaeumer.vscode-eslint
@@ -75,14 +69,13 @@ dbaeumer.vscode-eslint
 
 ## Setup
 
-1\. Setup [Vite project][vite] &nbsp;&nbsp;(_if not already_)
+1\. Setup [Vishesh tsconfig-react][tsconfig-react] &nbsp;&nbsp;(_if not already_)
 
-- run vite cli
-- choose `react` then `typescript`
+2\. Setup [Vishesh prettier][prettier-react] &nbsp;&nbsp;(_if not already_)
 
-2\. Setup [Vishesh tsconfig][typescript] &nbsp;&nbsp;(_if not already_)
+3\. Setup [Tailwindcss][tailwind] &nbsp;&nbsp;(_if not already_)
 
-3\. Create two new files at the root of your repository `.eslintrc` and `.eslintignore`.
+4\. Create two new files at the root of your repository `.eslintrc` and `.eslintignore`.
 
 <br>
 
@@ -101,7 +94,7 @@ you can override [rules] and [other configs][configure-eslint]
 
 > .eslintignore
 
-_[Reference][eslint-ignore]_
+_[Reference][eslint-ignore] for ignore files_
 
 ```
 .git
@@ -128,12 +121,13 @@ Add scripts to lint your code
 # package.json
 
 {
-# // your other config
+# // ...
   "scripts": {
-#   // your other scripts
+#   // ...
 +   "lint": "eslint . --ext .ts,.tsx",
 +   "fix:lint": "eslint . --ext .ts,.tsx --fix"
-  }
+  },
+# // ...
 }
 ```
 
@@ -181,15 +175,16 @@ yarn fix:lint
 
 ---
 
-_Last updated on: <kbd>18-07-2023</kbd>_
+_Last updated on July 23, 2023_
 
 [pre]: #prerequisite "Prerequisite"
-[vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"
-[typescript]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/tsconfig/README.md "Vishesh typescript documentation"
-[rules]: https://eslint.org/docs/latest/rules "Eslint rules reference"
-[configure-eslint]: https://eslint.org/docs/latest/use/configure/ "Configure ESlint"
-[eslint-ignore]: https://eslint.org/docs/latest/use/configure/ignore#the-eslintignore-file "Eslint ignore official documentation"
 [install]: #install "Install"
 [setup]: #setup "Setup"
 [scripts]: #basic-scripts "Basic Scripts"
 [usage]: #basic-usage "Basic Usage"
+[tsconfig-react]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/tsconfig-react/README.md "Vishesh typescript react documentation"
+[prettier-react]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/prettier-react/README.md "Vishesh prettier react documentation"
+[tailwind]: https://tailwindcss.com/docs/installation/framework-guides "Setup tailwindcss"
+[rules]: https://eslint.org/docs/latest/rules "Eslint rules reference"
+[configure-eslint]: https://eslint.org/docs/latest/use/configure/ "Configure ESlint"
+[eslint-ignore]: https://eslint.org/docs/latest/use/configure/ignore#the-eslintignore-file "Eslint ignore official documentation"

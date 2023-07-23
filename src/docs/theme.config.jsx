@@ -114,7 +114,7 @@ export default {
     const { asPath, defaultLocale, locale } = useRouter();
     const { frontMatter } = useConfig();
     const url =
-      "https://vishesh.github.io" +
+      "https://mrjadeja.github.io/vishesh" +
       (defaultLocale === locale ? asPath : `/${locale}${asPath}`);
 
     return (
@@ -125,10 +125,10 @@ export default {
           property="og:description"
           content={
             frontMatter.description ||
-            "The rapid design system for your next project ✌"
+            "The rapid design system for your next project ✌ | MrJadeja"
           }
         />
-        <title>{frontMatter.title || "Vishesh Preset"}</title>
+        <title>{frontMatter.title || "Vishesh by MrJadeja"}</title>
       </>
     );
   },

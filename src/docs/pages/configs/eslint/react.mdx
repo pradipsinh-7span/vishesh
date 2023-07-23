@@ -1,0 +1,222 @@
+import { Tabs, Tab, Callout } from "nextra-theme-docs";
+
+# ESLint React.js config
+
+> **<kbd>Typescript</kbd> + <kbd>React.js</kbd> + <kbd>Vite</kbd>**
+
+## Prerequisite
+
+```shell
+# Node.js  (choose any)
+v14
+v16
+v18  (Recomended)
+
+# Package manager  (choose any)
+pnpm: v8 or higher  (Recomended)
+npm: v7 or higher
+yarn: v1 or higher
+
+# Tools
+React.js: v17 or higher
+Tailwindcss: v3 or higher
+Vite: v3 or higher
+Typescript: v4 or higher
+
+# VS code extension
+dbaeumer.vscode-eslint
+```
+
+<br />
+<br />
+
+## Install
+
+<Tabs items={['pnpm', "npm", "yarn"]}>
+  <Tab>
+
+    > <em>Run this scripts in sequence</em>
+    ```shell copy
+    pnpm dlx install-peerdeps eslint-config-vishesh -P -D
+    ```
+
+    > <em>Run the 2nd script only after 1st completes</em>
+    ```shell copy
+    pnpm dlx install-peerdeps eslint-config-vishesh-react -P -D
+    ```
+
+  </Tab>
+  <Tab>
+
+    > <em>Run this scripts in sequence</em>
+    ```shell copy
+    npm exec install-peerdeps eslint-config-vishesh -P -D
+    ```
+
+    > <em>Run the 2nd script only after 1st completes</em>
+    ```shell copy
+    npm exec install-peerdeps eslint-config-vishesh-react -P -D
+    ```
+
+  </Tab>
+  <Tab>
+
+    > <em>Run this scripts in sequence</em>
+    ```shell copy
+    yarn dlx install-peerdeps eslint-config-vishesh -P -D
+    ```
+
+    > <em>Run the 2nd script only after 1st completes</em>
+    ```shell copy
+    yarn dlx install-peerdeps eslint-config-vishesh-react -P -D
+    ```
+
+  </Tab>
+</Tabs>
+
+<br />
+<br />
+
+## Setup
+
+1. Setup [Vishesh tsconfig-react][tsconfig-react] &nbsp;&nbsp;<small>(_if not already_)</small>
+2. Setup [Vishesh prettier-react][prettier-react] &nbsp;&nbsp;<small>(_if not already_)</small>
+3. Setup [Tailwindcss][tailwindcss] &nbsp;&nbsp;<small>(_if not already_)</small>
+4. Create two new files at the root of your repository.
+
+<Tabs items={[".eslintrc", ".eslintignore"]}>
+
+<Tab>
+
+```json filename=".eslintrc" copy
+{
+  "extends": ["vishesh-react"],
+  "rules": {}
+}
+```
+
+<Callout type="info">
+  <em>you can override [rules] and [other configs][configure-eslint]</em>
+</Callout>
+
+</Tab>
+
+<Tab>
+
+```js filename=".eslintignore" copy
+.git
+.husky
+.next
+dist
+dist-ssr
+node_modules
+tsconfig.tsbuildinfo
+types
+package.json
+*-lock.*
+*.config.*
+*.json
+```
+
+<Callout type="info">_[Reference][eslint-ignore] for ignore files_</Callout>
+
+</Tab>
+</Tabs>
+
+<br />
+<br />
+
+## Basic scripts
+
+> <em>Add scripts to lint your code</em>
+
+```diff filename="package.json"
+{
+# // ...
+  "scripts": {
+#   // ...
++   "lint": "eslint . --ext .ts,.tsx",
++   "fix:lint": "eslint . --ext .ts,.tsx --fix"
+  },
+# // ...
+}
+```
+
+<br />
+<br />
+
+## Basic usage
+
+<Tabs items={["Check", "Fix"]}>
+  <Tab>
+
+    > <em>Check the code against eslint rules</em>
+
+    <Tabs items={['pnpm', "npm", "yarn"]}>
+      <Tab>
+
+        ```shell copy
+        pnpm lint
+        ```
+
+      </Tab>
+      <Tab>
+
+        ```shell copy
+        npm run lint
+        ```
+
+      </Tab>
+      <Tab>
+
+        ```shell copy
+        yarn lint
+        ```
+
+      </Tab>
+    </Tabs>
+
+  </Tab>
+  <Tab>
+
+> <em>Fix the code</em>
+
+<Callout type="warning" emoji="">
+  <em>⚠️ &nbsp;Stage all the files before running fix command</em> <br />
+  <em>👉 &nbsp;`git add .`</em>
+</Callout>
+
+  <Tabs items={['pnpm', "npm", "yarn"]}>
+    <Tab>
+
+      ```shell copy
+      pnpm fix:lint
+      ```
+
+    </Tab>
+    <Tab>
+
+      ```shell copy
+      npm run fix:lint
+      ```
+
+    </Tab>
+    <Tab>
+
+      ```shell copy
+      yarn fix:lint
+      ```
+
+    </Tab>
+
+  </Tabs>
+
+  </Tab>
+</Tabs>
+
+[prettier-react]: /configs/prettier/react "Vishesh prettier react documentation"
+[tsconfig-react]: /configs/tsconfig/react "Vishesh react typescript documentation"
+[rules]: https://eslint.org/docs/latest/rules "Eslint rules reference"
+[configure-eslint]: https://eslint.org/docs/latest/use/configure/ "Configure ESlint"
+[tailwindcss]: https://tailwindcss.com/docs/installation/framework-guides "Setup tailwindcss"
+[eslint-ignore]: https://eslint.org/docs/latest/use/configure/ignore#the-eslintignore-file "Eslint ignore official documentation"

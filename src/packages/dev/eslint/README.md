@@ -1,14 +1,6 @@
-# Vishesh ESlint config
+# Vishesh ESLint base config
 
 #### **<kbd>Typescript</kbd> + <kbd>Vite</kbd>**
-
-<br>
-
-> CLI added soon to minimize manual setup. ✌️ <br>
-> ⏳ end of September 2023
-
-> 📺 Youtube video added soon. <br>
-> ⏳ end of July 2023
 
 <br>
 
@@ -36,8 +28,8 @@ npm: v7 or higher
 yarn: v1 or higher
 
 # Tools
-vite: v3 or higher
-typescript: v4 or higher
+Vite: v3 or higher
+Typescript: v4 or higher
 
 # VS code extension
 dbaeumer.vscode-eslint
@@ -65,9 +57,11 @@ yarn dlx install-peerdeps eslint-config-vishesh -Y -D
 
 1\. Setup [Vite project][vite] &nbsp;&nbsp;(_if not already_)
 
-2\. Setup [Vishesh tsconfig][typescript] &nbsp;&nbsp;(_if not already_)
+2\. Setup [Vishesh tsconfig][tsconfig] &nbsp;&nbsp;(_if not already_)
 
-3\. Create two new files at the root of your repository `.eslintrc` and `.eslintignore`.
+3\. Setup [Vishesh prettier][prettier] &nbsp;&nbsp;(_if not already_)
+
+4\. Create two new files at the root of your repository `.eslintrc` and `.eslintignore`.
 
 <br>
 
@@ -86,7 +80,7 @@ you can override [rules] and [other configs][configure-eslint]
 
 > .eslintignore
 
-_[Reference][eslint-ignore]_
+_[Reference][eslint-ignore] for ignore files_
 
 ```
 .git
@@ -113,12 +107,13 @@ Add scripts to lint your code
 # package.json
 
 {
-# // your other config
+# // ...
   "scripts": {
-#   // your other scripts
+#   // ...
 +   "lint": "eslint . --ext .ts",
 +   "fix:lint": "eslint . --ext .ts --fix"
-  }
+  },
+# // ...
 }
 ```
 
@@ -166,15 +161,16 @@ yarn fix:lint
 
 ---
 
-_Last updated on: <kbd>08-07-2023</kbd>_
+_Last updated on July 23, 2023_
 
 [pre]: #prerequisite "Prerequisite"
-[vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"
-[typescript]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/tsconfig/README.md "Vishesh typescript documentation"
-[rules]: https://eslint.org/docs/latest/rules "Eslint rules reference"
-[configure-eslint]: https://eslint.org/docs/latest/use/configure/ "Configure ESlint"
-[eslint-ignore]: https://eslint.org/docs/latest/use/configure/ignore#the-eslintignore-file "Eslint ignore official documentation"
 [install]: #install "Install"
 [setup]: #setup "Setup"
 [scripts]: #basic-scripts "Basic Scripts"
 [usage]: #basic-usage "Basic Usage"
+[tsconfig]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/tsconfig/README.md "Vishesh typescript documentation"
+[prettier]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/prettier/README.md "Vishesh prettier documentation"
+[vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"
+[rules]: https://eslint.org/docs/latest/rules "Eslint rules reference"
+[configure-eslint]: https://eslint.org/docs/latest/use/configure/ "Configure ESlint"
+[eslint-ignore]: https://eslint.org/docs/latest/use/configure/ignore#the-eslintignore-file "Eslint ignore file official documentation"

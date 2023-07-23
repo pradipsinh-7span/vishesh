@@ -81,7 +81,7 @@ By contributing to this project, you agree that your contributions will be licen
 
 Reference was taken from [Tailwindcss][tailwind-ref] 💖.
 
-_Last updated on: <kbd>05-07-2023</kbd>_
+_Last updated on July 5, 2023_
 
 [fork]: https://github.com/mrjadeja/vishesh/fork "Fork the repository"
 [issue]: https://github.com/mrjadeja/vishesh/issues "Create an issue"

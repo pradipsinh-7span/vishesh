@@ -32,7 +32,6 @@ It is crucial to balance customization with best practices, ensuring proper hier
    👨🏻‍💻 Currently under active development <br>
    📜 [Go to documentation][vishesh-preset] <br>
    ⏳ June 30, 2024 <br>
-
 4. **vishesh-preset-js** <br>
    👉 _vanilla js utility functions_ <br>
    ⏳ Mar 31, 2024
@@ -42,7 +41,6 @@ It is crucial to balance customization with best practices, ensuring proper hier
 6. **vishesh-js** <br>
    👉 _super-charging the javascript ⚡_ <br>
    ⏳ Apr 30, 2024 <br>
-
 7. **vishesh-react**: <br>
    👉 _react hooks and components (**super-charged**)_ <br>
    ⏳ Dec 31, 2024
@@ -66,7 +64,7 @@ By contributing to this project, you agree that your contributions will be licen
 
 # 💖 [Tailwindcss][tailwind] ✌️
 
-_Last updated on: <kbd>10-07-2023</kbd>_
+_Last updated on July 10, 2023_
 
 [npm]: https://www.npmjs.com/ "NPM website"
 [vishesh-preset-npm]: https://npmjs.com/package/vishesh-preset "Vishesh preset on npm registry"
