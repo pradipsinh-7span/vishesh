@@ -4,14 +4,6 @@
 
 <br>
 
-> CLI added soon to minimize manual setup. ✌️ <br>
-> ⏳ till the end of September 2023
-
-> 📺 Youtube video added soon. <br>
-> ⏳ till the end of July 2023
-
-<br>
-
 ## Topics
 
 - [🤞 Prerequisite][pre]
@@ -34,6 +26,10 @@ v18  (Recomended)
 pnpm: v8 or higher  (Recomended)
 npm: v7 or higher
 yarn: v1 or higher
+
+# Tools
+Vite: v3 or higher
+Typescript: v4 or higher
 ```
 
 <br><br>
@@ -68,11 +64,17 @@ yarn: v1 or higher
 
 ## Setup
 
-1\. Create a folder at root of the repository with two files inside `main.ts` and `index.d.ts`.
+1\. Setup [Vishesh eslint-lib][eslint-lib] &nbsp;&nbsp;(_if not already_)
 
-- `lib` - a folder that contians below two files
-  - `main.d.ts` - your code for the awesome library
-  - `index.d.ts` - types for your code
+2\. Setup [Vishesh prettier][prettier] &nbsp;&nbsp;(_if not already_)
+
+3\. Create a folder at root of the repository with two files inside `main.ts` and `index.d.ts`.
+
+```shell
+lib - a folder that contians below two files
+  main.ts - your code for the awesome library
+  index.d.ts - types for your code
+```
 
 2\. Create two new files at the root of your repository `tsconfig.json` and `vite.config.ts`.
 
@@ -80,7 +82,7 @@ yarn: v1 or higher
 
 > tsconfig.json
 
-you can override [rules][tsconfig-opts]
+you can override [options][tsconfig-opts]
 
 ```json
 {
@@ -113,9 +115,9 @@ export default defineConfig({
       entry: "./lib/main.ts",
       fileName: (format) => {
         if (format === "cjs") {
-          return "vishesh-preset.c.js";
+          return "vishesh-awesome-lib.c.js";
         }
-        return "vishesh-preset.js";
+        return "vishesh-awesome-lib.js";
       },
       // minify whitespace is disabled for es format
       // Ref: https://vitejs.dev/config/build-options.html#build-minify
@@ -129,36 +131,36 @@ export default defineConfig({
 
 ## Basic scripts
 
-Add scripts to check or build your code
+Add scripts to check the code, build it and publish
 
 ```diff
 # package.json
 
 {
-# // your other config
+# // ...
   "name": "vishesh-awesome-library",
   "version": "0.1.0",
   "scripts": {
-#   // your other scripts
+#   // ...
 +   "check:ts": "tsc --noEmit true --emitDeclarationOnly false",
 +   "build": "vite build"
-+   "publish": "pnpm build && pnpm publish --access pubilc"
   },
-+ "types": "./types/vishes-preset.d.ts",
-+ "main": "./dist/vishesh-preset.c.js",
-+ "module": "./dist/vishesh-preset.js",
++ "types": "./types/vishesh-awesome-lib.d.ts",
++ "main": "./dist/vishesh-awesome-lib.c.js",
++ "module": "./dist/vishesh-awesome-lib.js",
 + "exports": {
 +   ".": {
 +     "import": {
-+       "types": "./types/vishes-preset.d.ts",
-+       "default": "./dist/vishesh-preset.js"
++       "types": "./types/vishesh-awesome-lib.d.ts",
++       "default": "./dist/vishesh-awesome-lib.js"
 +     },
 +     "require": {
-+       "types": "./types/vishes-preset.d.ts",
-+       "default": "./dist/vishesh-preset.c.js"
++       "types": "./types/vishesh-awesome-lib.d.ts",
++       "default": "./dist/vishesh-awesome-lib.c.js"
 +     }
 +   }
 + },
+# // ...
 }
 ```
 
@@ -166,7 +168,7 @@ Add scripts to check or build your code
 
 ## Basic usage
 
-> Check the typescript
+> Check the types
 
 ```shell
 pnpm check:ts
@@ -200,8 +202,7 @@ yarn build
 
 > Publish the library
 
-- ⚠️ This is not the complete guild to build and publish the library on npm.
-- 📺 You can expect the full youtube video guide.
+⚠️ This is not the complete guild to build and publish the library on npm.
 
 ```shell
 pnpm publish --access public
@@ -219,12 +220,14 @@ yarn publish --access public
 
 ---
 
-_Last updated on: <kbd>08-07-2023</kbd>_
+_Last updated on July 23, 2023_
 
 [pre]: #prerequisite "Prerequisite"
-[vite-config]: https://vitejs.dev/config/ "Vite configuration documentation"
-[tsconfig-opts]: https://www.typescriptlang.org/tsconfig "Typescript compiler options documentation"
 [install]: #install "Install"
 [setup]: #setup "Setup"
 [scripts]: #basic-scripts "Basic Scripts"
 [usage]: #basic-usage "Basic Usage"
+[eslint-lib]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/eslint-lib/README.md "Vishesh eslint library documentation"
+[prettier]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/prettier/README.md "Vishesh prettier documentation"
+[vite-config]: https://vitejs.dev/config/ "Vite configuration documentation"
+[tsconfig-opts]: https://www.typescriptlang.org/tsconfig "Typescript compiler options documentation"

@@ -479,7 +479,7 @@ class="container container-md"
 
 ---
 
-_Last updated on: <kbd>08-07-2023</kbd>_
+_Last updated on July 8, 2023_
 
 [pre]: #prerequisite "Prerequisite"
 [tailwindcss]: https://tailwindcss.com/docs/installation/framework-guides "Setup tailwindcss"

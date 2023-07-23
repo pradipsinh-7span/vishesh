@@ -1,0 +1,121 @@
+import { Tabs, Tab, Callout } from "nextra-theme-docs";
+
+# Typescript base config
+
+## Prerequisite
+
+```shell
+# Node.js  (choose any)
+v14
+v16
+v18  (Recomended)
+
+# Package manager  (choose any)
+pnpm: v8 or higher  (Recomended)
+npm: v7 or higher
+yarn: v1 or higher
+```
+
+<br />
+<br />
+
+## Install
+
+<Tabs items={['pnpm', "npm", "yarn"]}>
+  <Tab>
+
+    ```shell copy
+    pnpm dlx install-peerdeps vishesh-tsconfig -P -D
+    ```
+
+  </Tab>
+  <Tab>
+
+    ```shell copy
+    npm exec install-peerdeps vishesh-tsconfig -- -D
+    ```
+
+  </Tab>
+  <Tab>
+
+    ```shell copy
+    yarn dlx install-peerdeps vishesh-tsconfig -Y -D
+    ```
+
+  </Tab>
+</Tabs>
+
+<br />
+<br />
+
+## Setup
+
+1. Setup [Vite project][vite] &nbsp;&nbsp;<small>(_if not already_)</small>
+2. Setup [Vishesh eslint][eslint] &nbsp;&nbsp;<small>(_if not already_)</small>
+3. Setup [Vishesh prettier][prettier] &nbsp;&nbsp;<small>(_if not already_)</small>
+4. Create a new files at the root of your repository.
+
+```json filename="tsconfig.json" copy
+{
+  "extends": "vishesh-tsconfig",
+  "compilerOptions": {}
+}
+```
+
+<Callout type="info">
+  <em>you can override [options][tsconfig-opts]</em>
+</Callout>
+
+<br />
+<br />
+
+## Basic scripts
+
+> <em>Add script to check types</em>
+
+```diff filename="package.json"
+{
+# // ...
+  "scripts": {
+#   // ...
++   "check:ts": "tsc"
+  },
+# // ...
+}
+```
+
+<br />
+<br />
+
+## Basic usage
+
+> <em>Check the types</em>
+
+<Tabs items={['pnpm', "npm", "yarn"]}>
+  <Tab>
+
+    ```shell copy
+    pnpm check:ts
+    ```
+
+  </Tab>
+  <Tab>
+
+    ```shell copy
+    npm run check:ts
+    ```
+
+  </Tab>
+  <Tab>
+
+    ```shell copy
+    yarn check:ts
+    ```
+
+  </Tab>
+</Tabs>
+
+[eslint]: /configs/eslint/base "Vishesh eslint documentation"
+[prettier]: /configs/prettier/base "Vishesh prettier documentation"
+[tsconfig-opts]: https://www.typescriptlang.org/tsconfig "Typescript compiler options documentation"
+[vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"

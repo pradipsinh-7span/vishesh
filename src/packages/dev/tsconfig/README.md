@@ -1,11 +1,5 @@
 # Vishesh tsconfig
 
-> CLI added soon to minimize manual setup. ✌️ <br>
-> ⏳ end of September 2023
-
-> 📺 Youtube video added soon. <br>
-> ⏳ end of July 2023
-
 <br>
 
 ## Topics
@@ -52,13 +46,19 @@ yarn dlx install-peerdeps vishesh-tsconfig -Y -D
 
 ## Setup
 
-Create a new files at the root of your repository `tsconfig.json`.
+1\. Setup [Vite project][vite] &nbsp;&nbsp;(_if not already_)
+
+2\. Setup [Vishesh eslint][eslint] &nbsp;&nbsp;(_if not already_)
+
+3\. Setup [Vishesh prettier][prettier] &nbsp;&nbsp;(_if not already_)
+
+4\. Create a new files at the root of your repository `tsconfig.json`.
 
 <br>
 
 > tsconfig.json
 
-you can override [rules][tsconfig-opts]
+you can override [options][tsconfig-opts]
 
 ```json
 {
@@ -71,17 +71,18 @@ you can override [rules][tsconfig-opts]
 
 ## Basic scripts
 
-Add scripts to check your code
+Add script to check types
 
 ```diff
 # package.json
 
 {
-# // your other config
+# // ...
   "scripts": {
-#   // your other scripts
+#   // ...
 +   "check:ts": "tsc"
-  }
+  },
+# // ...
 }
 ```
 
@@ -89,7 +90,7 @@ Add scripts to check your code
 
 ## Basic usage
 
-> Check the typescript
+> Check the types
 
 ```shell
 pnpm check:ts
@@ -107,11 +108,13 @@ yarn check:ts
 
 ---
 
-_Last updated on: <kbd>08-07-2023</kbd>_
+_Last updated on July 23, 2023_
 
 [pre]: #prerequisite "Prerequisite"
-[tsconfig-opts]: https://www.typescriptlang.org/tsconfig "Typescript compiler options documentation"
 [install]: #install "Install"
 [setup]: #setup "Setup"
 [scripts]: #basic-scripts "Basic Scripts"
 [usage]: #basic-usage "Basic Usage"
+[eslint]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/eslint/README.md "Vishesh eslint documentation"
+[prettier]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/prettier/README.md "Vishesh prettier documentation"
+[vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"

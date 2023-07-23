@@ -13,6 +13,18 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.1.7] - 23-07-2023
+
+<br>
+
+### Updated
+
+- #18 &nbsp;-&nbsp; improve documentation
+
+<br><br>
+
+---
+
 ## [0.1.5] - 08-07-2023
 
 <br>
@@ -102,6 +114,8 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.1.7]: https://github.com/mrjadeja/vishesh/compare/72f2f1c2...780a6ee8
+[0.1.5]: https://github.com/mrjadeja/vishesh/compare/ca79ae8...72f2f1c2
 [0.1.4]: https://github.com/mrjadeja/vishesh/compare/eb9b099...ca79ae8
 [0.1.3]: https://github.com/mrjadeja/vishesh/compare/8881f38...eb9b099
 [0.1.2]: https://github.com/mrjadeja/vishesh/compare/6f06e0d...8881f38

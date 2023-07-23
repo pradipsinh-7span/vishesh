@@ -4,14 +4,6 @@
 
 <br>
 
-> CLI added soon to minimize manual setup. ✌️ <br>
-> ⏳ end of September 2023
-
-> 📺 Youtube video added soon. <br>
-> ⏳ end of July 2023
-
-<br>
-
 ## Topics
 
 - [🤞 Prerequisite][pre]
@@ -36,9 +28,10 @@ npm: v7 or higher
 yarn: v1 or higher
 
 # Tools
+Vite: v3 or higher
+Typescript: v4 or higher
 React.js: v17 or higher
 Tailwindcss: v3 or higher
-Vite: v3 or higher
 
 # VS code extension
 esbenp.prettier-vscode
@@ -76,17 +69,19 @@ esbenp.prettier-vscode
 
 ## Setup
 
-1\. Setup [React.js with Vite][vite] &nbsp;&nbsp;(_if not already_)
+1\. Setup [Vishesh tsconfig-react][tsconfig-react] &nbsp;&nbsp;(_if not already_)
 
-2\. Setup [Tailwindcss][tailwindcss] &nbsp;&nbsp;(_if not already_)
+2\. Setup [Vishesh eslint-react][eslint-react] &nbsp;&nbsp;(_if not already_)
 
-3\. Create two new files at the root of your repository `.prettierrc` and `.prettierignore`.
+3\. Setup [Tailwindcss][tailwindcss] &nbsp;&nbsp;(_if not already_)
+
+4\. Create two new files at the root of your repository `.prettierrc` and `.prettierignore`.
 
 <br>
 
 > .prettierrc
 
-you can override [rules][prettier-opts]
+you can override [options][prettier-opts]
 
 ```json
 {
@@ -98,7 +93,7 @@ you can override [rules][prettier-opts]
 
 > .prettierignore
 
-- _[Reference][prettier-ignore]_
+- _[Reference][prettier-ignore] for ignore files_
 
 ```
 .git
@@ -115,18 +110,19 @@ types
 
 ## Basic scripts
 
-Add scripts to check formatting your code
+Add scripts to check formatting
 
 ```diff
 # package.json
 
 {
-# // your other config
+# // ...
   "scripts": {
-#   // your other scripts
+#   // ...
 +   "check:formatting": "prettier --check \"**/*.{ts,tsx,html,css,json}\"",
 +   "fix:formatting": "prettier --write \"**/*.{ts,tsx,html,css,json}\""
-  }
+  },
+# // ...
 }
 ```
 
@@ -134,7 +130,7 @@ Add scripts to check formatting your code
 
 ## Basic usage
 
-> Check the code formatting against prettier rules
+> Check the code formatting against prettier options
 
 ```shell
 pnpm check:formatting
@@ -147,6 +143,8 @@ npm run check:formatting
 ```shell
 yarn check:formatting
 ```
+
+<br>
 
 > Fix the code formatting
 
@@ -166,14 +164,16 @@ yarn fix:formatting
 
 ---
 
-_Last updated on: <kbd>08-07-2023</kbd>_
+_Last updated on July 23, 2023_
 
 [pre]: #prerequisite "Prerequisite"
-[vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"
-[prettier-opts]: https://prettier.io/docs/en/options.html "Prettier rules documentation"
-[tailwindcss]: https://tailwindcss.com/docs/installation/framework-guides "Setup tailwindcss"
-[prettier-ignore]: https://prettier.io/docs/en/ignore.html "Prettier ignore official documentation"
 [install]: #install "Install"
 [setup]: #setup "Setup"
 [scripts]: #basic-scripts "Basic Scripts"
 [usage]: #basic-usage "Basic Usage"
+[eslint-react]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/eslint-react/README.md "Vishesh eslint react documentation"
+[tsconfig-react]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/tsconfig-react/README.md "Vishesh tsconfig react documentation"
+[vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"
+[prettier-opts]: https://prettier.io/docs/en/options.html "Prettier rules documentation"
+[tailwindcss]: https://tailwindcss.com/docs/installation/framework-guides "Setup tailwindcss"
+[prettier-ignore]: https://prettier.io/docs/en/ignore.html "Prettier ignore official documentation"

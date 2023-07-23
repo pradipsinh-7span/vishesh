@@ -1,0 +1,212 @@
+import { Tabs, Tab, Callout } from "nextra-theme-docs";
+
+# Prettier React.js config
+
+> **<kbd>React.js</kbd> + <kbd>prettier-plugin-tailwindcss</kbd> + <kbd>clsx</kbd>**
+
+## Prerequisite
+
+```shell
+# Node.js  (choose any)
+v14
+v16
+v18  (Recomended)
+
+# Package manager  (choose any)
+pnpm: v8 or higher  (Recomended)
+npm: v7 or higher
+yarn: v1 or higher
+
+# Tools
+Vite: v3 or higher
+Typescript: v4 or higher
+React.js: v17 or higher
+Tailwindcss: v3 or higher
+
+# VS code extension
+dbaeumer.vscode-eslint
+```
+
+<br />
+<br />
+
+## Install
+
+<Tabs items={['pnpm', "npm", "yarn"]}>
+  <Tab>
+
+    > <em>Run this scripts in sequence</em>
+    ```shell copy
+    pnpm dlx install-peerdeps vishesh-prettier -P -D
+    ```
+
+    > <em>Run the 2nd script only after 1st completes</em>
+    ```shell copy
+    pnpm dlx install-peerdeps vishesh-prettier-react -P -D
+    ```
+
+  </Tab>
+  <Tab>
+
+    > <em>Run this scripts in sequence</em>
+    ```shell copy
+    npm exec install-peerdeps vishesh-prettier -P -D
+    ```
+
+    > <em>Run the 2nd script only after 1st completes</em>
+    ```shell copy
+    npm exec install-peerdeps vishesh-prettier-react -P -D
+    ```
+
+  </Tab>
+  <Tab>
+
+    > <em>Run this scripts in sequence</em>
+    ```shell copy
+    yarn dlx install-peerdeps vishesh-prettier -P -D
+    ```
+
+    > <em>Run the 2nd script only after 1st completes</em>
+    ```shell copy
+    yarn dlx install-peerdeps vishesh-prettier-react -P -D
+    ```
+
+  </Tab>
+</Tabs>
+
+<br />
+<br />
+
+## Setup
+
+1. Setup [Vishesh tsconfig-react][tsconfig-react] &nbsp;&nbsp;<small>(_if not already_)</small>
+2. Setup [Vishesh eslint-react][eslint-react] &nbsp;&nbsp;<small>(_if not already_)</small>
+3. Setup [Tailwindcss][tailwindcss] &nbsp;&nbsp;<small>(_if not already_)</small>
+4. Create two new files at the root of your repository.
+
+<Tabs items={[".prettierrc", ".prettierignore"]}>
+
+<Tab>
+
+```json filename=".prettierrc" copy
+{
+  "plugins": ["vishesh-prettier-react"]
+}
+```
+
+<Callout type="info">
+  <em>you can override [options][prettier-opts]</em>
+</Callout>
+
+</Tab>
+
+<Tab>
+
+```js filename=".prettierignore" copy
+.git
+.next
+dist
+dist-ssr
+node_modules
+tsconfig.tsbuildinfo
+types
+*-lock.*
+```
+
+<Callout type="info">_[Reference][prettier-ignore] for ignore files_</Callout>
+
+</Tab>
+</Tabs>
+
+<br />
+<br />
+
+## Basic scripts
+
+> <em>Add scripts to check formatting</em>
+
+```diff filename="package.json"
+{
+# // ...
+  "scripts": {
+#   // ...
++   "check:formatting": "prettier --check \"**/*.{ts,tsx,html,css,json}\"",
++   "fix:formatting": "prettier --write \"**/*.{ts,tsx,html,css,json}\""
+  },
+# // ...
+}
+```
+
+<br />
+<br />
+
+## Basic usage
+
+<Tabs items={["Check", "Fix"]}>
+  <Tab>
+
+    > <em>Check the code formatting against prettier options</em>
+
+    <Tabs items={['pnpm', "npm", "yarn"]}>
+      <Tab>
+
+        ```shell copy
+        pnpm check:formatting
+        ```
+
+      </Tab>
+      <Tab>
+
+        ```shell copy
+        npm run check:formatting
+        ```
+
+      </Tab>
+      <Tab>
+
+        ```shell copy
+        yarn check:formatting
+        ```
+
+      </Tab>
+    </Tabs>
+
+  </Tab>
+  <Tab>
+
+> <em>Fix the code formatting</em>
+
+  <Tabs items={['pnpm', "npm", "yarn"]}>
+    <Tab>
+
+      ```shell copy
+      pnpm fix:formatting
+      ```
+
+    </Tab>
+    <Tab>
+
+      ```shell copy
+      npm run fix:formatting
+      ```
+
+    </Tab>
+    <Tab>
+
+      ```shell copy
+      yarn fix:formatting
+      ```
+
+    </Tab>
+
+  </Tabs>
+
+  </Tab>
+</Tabs>
+
+[vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"
+[prettier-opts]: https://prettier.io/docs/en/options.html "Prettier rules documentation"
+[tsconfig-react]: /configs/tsconfig/reacrt "Vishesh typescript react documentation"
+[eslint-react]: /configs/eslint/react "Vishesh eslint react documentation"
+[tailwindcss]: https://tailwindcss.com/docs/installation/framework-guides "Setup tailwindcss"
+[prettier-ignore]: https://prettier.io/docs/en/ignore.html "Prettier ignore official documentation"

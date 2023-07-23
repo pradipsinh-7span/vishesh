@@ -1,0 +1,204 @@
+import { Tabs, Tab, Callout } from "nextra-theme-docs";
+
+# Typescript React.js config
+
+> **<kbd>React.js</kbd> + <kbd>Vite</kbd>**
+
+## Prerequisite
+
+```shell
+# Node.js  (choose any)
+v14
+v16
+v18  (Recomended)
+
+# Package manager  (choose any)
+pnpm: v8 or higher  (Recomended)
+npm: v7 or higher
+yarn: v1 or higher
+
+# Tools
+React.js: v17 or higher
+Vite: v3 or higher
+```
+
+<br />
+<br />
+
+## Install
+
+<Tabs items={['pnpm', "npm", "yarn"]}>
+  <Tab>
+
+    > <em>Run this scripts in sequence</em>
+    ```shell copy
+    pnpm dlx install-peerdeps vishesh-tsconfig -P -D
+    ```
+
+    > <em>Run the 2nd script only after 1st completes</em>
+    ```shell copy
+    pnpm dlx install-peerdeps vishesh-tsconfig-react -P -D
+    ```
+
+  </Tab>
+  <Tab>
+
+    > <em>Run this scripts in sequence</em>
+    ```shell copy
+    npm exec install-peerdeps vishesh-tsconfig -P -D
+    ```
+
+    > <em>Run the 2nd script only after 1st completes</em>
+    ```shell copy
+    npm exec install-peerdeps vishesh-tsconfig-react -P -D
+    ```
+
+  </Tab>
+  <Tab>
+
+    > <em>Run this scripts in sequence</em>
+    ```shell copy
+    yarn dlx install-peerdeps vishesh-tsconfig -P -D
+    ```
+
+    > <em>Run the 2nd script only after 1st completes</em>
+    ```shell copy
+    yarn dlx install-peerdeps vishesh-tsconfig-react -P -D
+    ```
+
+  </Tab>
+</Tabs>
+
+<br />
+<br />
+
+## Setup
+
+1. Setup [Vite project][vite] &nbsp;&nbsp;<small>(_if not already_)</small>
+   <br /> - *Run vite cli*
+   <br /> - *Choose `react` and then `typescript`* <br />
+2. Setup [Vishesh eslint-react][eslint-react] &nbsp;&nbsp;<small>(_if not already_)</small>
+3. Setup [Vishesh prettier-react][prettier-react] &nbsp;&nbsp;<small>(_if not already_)</small>
+4. Update `tsconfig.json` and `vite.config.ts`.
+
+<Tabs items={["tsconfig.json", "vite.config.ts"]}>
+
+<Tab>
+
+> <em>Remove everything and add below json</em>
+
+```json filename="tsconfig.json" copy
+{
+  "extends": "vishesh-tsconfig-react",
+  "compilerOptions": {}
+}
+```
+
+<Callout type="info">
+  <em>you can override [options][tsconfig-opts]</em>
+</Callout>
+
+</Tab>
+
+<Tab>
+
+```ts filename="vite.config.ts" copy
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: [
+      {
+        find: "@package",
+        replacement: resolve(__dirname, "./node_modules"),
+      },
+      {
+        find: "@components",
+        replacement: resolve(__dirname, "./src/components"),
+      },
+      {
+        find: "@utils",
+        replacement: resolve(__dirname, "./src/utils"),
+      },
+      {
+        find: "@routes",
+        replacement: resolve(__dirname, "./src/routes"),
+      },
+      {
+        find: "@api",
+        replacement: resolve(__dirname, "./src/api"),
+      },
+      {
+        find: "@store",
+        replacement: resolve(__dirname, "./src/store"),
+      },
+      {
+        find: "@layout",
+        replacement: resolve(__dirname, "./src/layout"),
+      },
+    ],
+  },
+});
+```
+
+<Callout type="info">you can override [config][vite-config]</Callout>
+
+</Tab>
+</Tabs>
+
+<br />
+<br />
+
+## Basic scripts
+
+> <em>Add script to check types</em>
+
+```diff filename="package.json"
+{
+# // ...
+  "scripts": {
+#   // ...
++   "check:ts": "tsc",
+  },
+# // ...
+}
+```
+
+<br />
+<br />
+
+## Basic usage
+
+> <em>Check the types</em>
+
+<Tabs items={['pnpm', "npm", "yarn"]}>
+  <Tab>
+
+    ```shell copy
+    pnpm check:ts
+    ```
+
+  </Tab>
+  <Tab>
+
+    ```shell copy
+    npm run check:ts
+    ```
+
+  </Tab>
+  <Tab>
+
+    ```shell copy
+    yarn check:ts
+    ```
+
+  </Tab>
+</Tabs>
+
+[eslint-react]: /configs/eslint/base "Vishesh eslint react documentation"
+[prettier-react]: /configs/prettier/base "Vishesh prettier react documentation"
+[tsconfig-opts]: https://www.typescriptlang.org/tsconfig "Typescript compiler options documentation"
+[vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"
+[vite-config]: https://vitejs.dev/config/ "Vite configuration documentation"

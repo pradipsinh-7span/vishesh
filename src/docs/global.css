@@ -27,6 +27,14 @@ div.nx-max-w-\[90rem\] article {
   @apply !px-0;
 }
 
+.nextra-steps h3::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-indent: 0;
+  margin-top: -1px;
+}
+
 .nextra-steps > h3 {
   @apply text-xl;
 }

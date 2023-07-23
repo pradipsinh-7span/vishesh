@@ -1,14 +1,6 @@
 # Vishesh tsconfig
 
-#### **<kbd>React</kbd> + <kbd>Vite</kbd>**
-
-<br>
-
-> CLI added soon to minimize manual setup. ✌️ <br>
-> ⏳ end of September 2023
-
-> 📺 Youtube video added soon. <br>
-> ⏳ end of July 2023
+#### **<kbd>React.js</kbd> + <kbd>Vite</kbd>**
 
 <br>
 
@@ -37,7 +29,6 @@ yarn: v1 or higher
 
 # Tools
 React.js: v17 or higher
-Tailwindcss: v3 or higher
 Vite: v3 or higher
 ```
 
@@ -73,9 +64,9 @@ Vite: v3 or higher
 
 ## Setup
 
-1\. Setup [React.js with Vite][vite] &nbsp;&nbsp;(_if not already_)
-
-- Select `react` and `typescript`.
+1\. Setup [Vite project][vite] &nbsp;&nbsp;(_if not already_) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;\- Run vite cli <br>
+&nbsp;&nbsp;&nbsp;&nbsp;\- Choose `react` and then `typescript`
 
 2\. Update `tsconfig.json` and `vite.config.ts`.
 
@@ -84,7 +75,7 @@ Vite: v3 or higher
 > tsconfig.json
 
 - Remove everything and add below json
-- you can override [rules][tsconfig-opts]
+- you can override [options][tsconfig-opts]
 
 ```json
 {
@@ -144,17 +135,18 @@ export default defineConfig({
 
 ## Basic scripts
 
-Add scripts to check or build your code
+Add script to check types
 
 ```diff
 # package.json
 
 {
-# // your other config
+# // ...
   "scripts": {
-#   // your other scripts
+#   // ...
 +   "check:ts": "tsc",
   },
+# // ...
 }
 ```
 
@@ -162,7 +154,7 @@ Add scripts to check or build your code
 
 ## Basic usage
 
-> Check the typescript
+> Check the types
 
 ```shell
 pnpm check:ts
@@ -180,7 +172,7 @@ yarn check:ts
 
 ---
 
-_Last updated on: <kbd>18-07-2023</kbd>_
+_Last updated on July 23, 2023_
 
 [pre]: #prerequisite "Prerequisite"
 [vite]: https://vitejs.dev/guide/#scaffolding-your-first-vite-project "Setup vite project"

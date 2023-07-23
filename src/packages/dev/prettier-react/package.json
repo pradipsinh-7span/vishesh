@@ -1,7 +1,7 @@
 {
   "name": "vishesh-prettier-react",
   "description": "Prettier react configuration with taiwlind class sort and clsx",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "scripts": {
     "publish-it": "pnpm publish --access public"
   },

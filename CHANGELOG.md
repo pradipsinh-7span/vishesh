@@ -14,6 +14,30 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [1.2.0] - 23-07-2023
+
+<br>
+
+### Added
+
+- [doc-001]: #18 &nbsp;-&nbsp; add configs documetation (0.2.0)
+
+### Updated
+
+- [pkg-001]\: #18 &nbsp;-&nbsp; improve documentation (0.1.7)
+- [pkg-002]\: #18 &nbsp;-&nbsp; improve documentation (0.1.5)
+- [pkg-003]\: #18 &nbsp;-&nbsp; improve documentation (0.1.5)
+- [pkg-004]\: #18 &nbsp;-&nbsp; improve documentation (0.1.6)
+- [pkg-005]\: #18 &nbsp;-&nbsp; improve documentation (0.1.4)
+- [pkg-006]\: #18 &nbsp;-&nbsp; improve documentation (0.1.4)
+- [pkg-007]\: #18 &nbsp;-&nbsp; improve documentation (0.1.4)
+- [pkg-008]\: #18 &nbsp;-&nbsp; improve documentation (0.1.4)
+- [pkg-009]\: #18 &nbsp;-&nbsp; improve documentation (0.1.5)
+
+<br><br>
+
+---
+
 ## [1.1.1] - 18-07-2023
 
 <br>
@@ -61,10 +85,9 @@ and this project adheres to [Semantic Versioning][semver].
 ### Updated
 
 - [pkg-001]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.5)
-- [pkg-001]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
 - [pkg-002]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
 - [pkg-003]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
-- [pkg-003]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
+- [pkg-004]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
 - [pkg-005]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
 - [pkg-006]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
 - [pkg-007]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
@@ -116,7 +139,6 @@ and this project adheres to [Semantic Versioning][semver].
 ### Updated
 
 - [pkg-001]\: documentation (0.1.2)
-- [pkg-001]\: documentation (0.1.2)
 - [pkg-002]\: documentation (0.1.2)
 - [pkg-003]\: documentation (0.1.2)
 - [pkg-004]\: documentation (0.1.2)
@@ -136,7 +158,6 @@ and this project adheres to [Semantic Versioning][semver].
 
 ### Fixed
 
-- [pkg-001]\: publish config
 - [pkg-001]\: publish config
 - [pkg-002]: publish config
 - [pkg-003]: publish config
@@ -192,6 +213,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[1.2.0]: https://github.com/mrjadeja/vishesh/compare/9d8beb7e...780a6ee8
 [1.1.1]: https://github.com/mrjadeja/vishesh/compare/62545388...9d8beb7e
 [1.1.0]: https://github.com/mrjadeja/vishesh/compare/6a3e30b2...62545388
 [1.0.5]: https://github.com/mrjadeja/vishesh/compare/b7f440a2...6a3e30b2
