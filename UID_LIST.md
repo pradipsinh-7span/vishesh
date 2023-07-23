@@ -15,15 +15,15 @@
 `doc-001` - [docs] <br>
 
 [origin]: https://github.com/mrjadeja/vishesh
-[preset]: https://github.com/mrjadeja/vishesh/src/packages/preset
-[eslint]: https://github.com/mrjadeja/vishesh/src/packages/dev/eslint
-[eslint-lib]: https://github.com/mrjadeja/vishesh/src/packages/dev/eslint-lib
-[eslint-react]: https://github.com/mrjadeja/vishesh/src/packages/dev/eslint-react
-[prettier]: https://github.com/mrjadeja/vishesh/src/packages/dev/prettier
-[prettier-react]: https://github.com/mrjadeja/vishesh/src/packages/dev/prettier-react
-[tsconfig]: https://github.com/mrjadeja/vishesh/src/packages/dev/tsconfig
-[tsconfig-lib]: https://github.com/mrjadeja/vishesh/src/packages/dev/tsconfig-lib
-[tsconfig-react]: https://github.com/mrjadeja/vishesh/src/packages/dev/tsconfig-react
-[play-preset]: https://github.com/mrjadeja/vishesh/src/playground/preset/esm
-[play-preset-cjs]: https://github.com/mrjadeja/vishesh/src/playground/preset/cjs
-[docs]: https://github.com/mrjadeja/vishesh/src/docs
+[preset]: https://github.com/mrjadeja/vishesh/tree/main/src/packages/preset
+[eslint]: https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/eslint
+[eslint-lib]: https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/eslint-lib
+[eslint-react]: https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/eslint-react
+[prettier]: https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/prettier
+[prettier-react]: https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/prettier-react
+[tsconfig]: https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/tsconfig
+[tsconfig-lib]: https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/tsconfig-lib
+[tsconfig-react]: https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/tsconfig-react
+[play-preset]: https://github.com/mrjadeja/vishesh/tree/main/src/playground/preset/esm
+[play-preset-cjs]: https://github.com/mrjadeja/vishesh/tree/main/src/playground/preset/cjs
+[docs]: https://github.com/mrjadeja/vishesh/tree/main/src/docs

@@ -1,7 +1,7 @@
 {
   "name": "vishesh-tsconfig-lib",
   "description": "Typescript library configuration with vite",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "scripts": {
     "publish-it": "pnpm publish --access public"
   },
@@ -38,7 +38,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md"
   ],
-  "homepage": "https://github.com/mrjadeja/vishesh/src/packages/dev/tsconfig-lib",
+  "homepage": "https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/tsconfig-lib",
   "bugs": {
     "url": "https://github.com/mrjadeja/vishesh/issues",
     "email": "mrjadeja.in@gmail.com"

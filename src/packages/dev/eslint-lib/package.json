@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-vishesh-lib",
   "description": "Eslint library conifguration with typescript and vite",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "scripts": {
     "publish-it": "pnpm publish --access public"
   },
@@ -35,7 +35,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md"
   ],
-  "homepage": "https://github.com/mrjadeja/vishesh/src/packages/dev/eslint-lib",
+  "homepage": "https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/eslint-lib",
   "bugs": {
     "url": "https://github.com/mrjadeja/vishesh/issues",
     "email": "mrjadeja.in@gmail.com"

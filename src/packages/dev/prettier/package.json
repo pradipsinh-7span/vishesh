@@ -1,7 +1,7 @@
 {
   "name": "vishesh-prettier",
   "description": "Prettier configuration",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "scripts": {
     "publish-it": "pnpm publish --access public"
   },
@@ -31,7 +31,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md"
   ],
-  "homepage": "https://github.com/mrjadeja/vishesh/src/packages/dev/prettier",
+  "homepage": "https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/prettier",
   "bugs": {
     "url": "https://github.com/mrjadeja/vishesh/issues",
     "email": "mrjadeja.in@gmail.com"

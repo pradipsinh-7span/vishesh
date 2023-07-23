@@ -87,6 +87,6 @@ _Last updated on July 5, 2023_
 [issue]: https://github.com/mrjadeja/vishesh/issues "Create an issue"
 [discussion]: https://github.com/mrjadeja/vishesh/discussions/new?category=ideas "Discussion on new feature"
 [pull]: https://github.com/mrjadeja/vishesh/discussions/new?category=pull-request "Pull Request discussion"
-[list-uid]: https://github.com/mrjadeja/vishesh/UID_LIST.md "List of packages unique identifier"
+[list-uid]: https://github.com/mrjadeja/vishesh/blob/main/UID_LIST.md "List of packages unique identifier"
 [license]: https://github.com/mrjadeja/vishesh/blob/main/LICENSE "Read license"
 [tailwind-ref]: https://github.com/tailwindlabs/tailwindcss/blob/master/.github/CONTRIBUTING.md "Tailwindcss contributing document"
