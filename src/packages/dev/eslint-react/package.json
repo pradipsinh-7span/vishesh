@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-vishesh-react",
   "description": "Eslint react conifguration with typescript, vite and aliases",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "scripts": {
     "publish-it": "pnpm publish  --access public"
   },
@@ -41,7 +41,7 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md"
   ],
-  "homepage": "https://github.com/mrjadeja/vishesh/src/packages/dev/eslint-react",
+  "homepage": "https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/eslint-react",
   "bugs": {
     "url": "https://github.com/mrjadeja/vishesh/issues",
     "email": "mrjadeja.in@gmail.com"

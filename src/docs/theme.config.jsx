@@ -20,8 +20,7 @@ export default {
       </svg>
     ),
   },
-  docsRepositoryBase:
-    "https://github.com/mrjadeja/vishesh/blob/main/src/docs/pages",
+  docsRepositoryBase: "https://github.com/mrjadeja/vishesh/blob/main/src/docs",
   darkMode: true,
   primaryHue: {
     dark: 200,

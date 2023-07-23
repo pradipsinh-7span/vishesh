@@ -1,7 +1,7 @@
 {
   "name": "vishesh-preset",
   "description": "The tailwind css preset to rapidly build any UI",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "type": "module",
   "scripts": {
     "check:typescript": "tsc --noEmit true --emitDeclarationOnly false",
@@ -68,7 +68,7 @@
     "cjs",
     "mrjadeja"
   ],
-  "homepage": "https://github.com/mrjadeja/vishesh/src/packages/preset",
+  "homepage": "https://github.com/mrjadeja/vishesh/tree/main/src/packages/preset",
   "bugs": {
     "url": "https://github.com/mrjadeja/vishesh/issues",
     "email": "mrjadeja.in@gmail.com"
