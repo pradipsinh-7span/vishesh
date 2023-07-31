@@ -7,9 +7,19 @@ export default {
   presets: [vishesh],
   theme: {
     extend: {
+      breakpoints: {
+        zero: undefined,
+        md: 750,
+      },
       container: {
+        mode: "fluid",
         spacing: {
+          zero: 16,
           md: 51,
+        },
+        innerPadding: {
+          sm: 10,
+          xl: 24,
         },
       },
     },

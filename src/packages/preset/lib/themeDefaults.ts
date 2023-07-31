@@ -15,11 +15,6 @@ export default {
     container: {
       mode: "fixed",
       center: true,
-      initialPadding: {
-        active: true,
-        value: 16,
-        resetOn: "xs",
-      },
       spacing: {
         xs: 16,
         sm: 28,
@@ -27,6 +22,17 @@ export default {
         lg: 64,
         xl: 80,
         mac: 128,
+        maxw: 240,
+      },
+      innerPadding: {
+        zero: 16,
+        xs: 0,
+        sm: 0,
+        md: 0,
+        lg: 0,
+        xl: 0,
+        mac: 0,
+        maxw: 0,
       },
     },
   },

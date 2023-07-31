@@ -2,11 +2,9 @@ import type { Config, ThemeConfig } from "tailwindcss/types/config";
 
 export type Breakpoints = Record<string, number>;
 
-interface Container {
-  center: boolean;
-  initialPadding: InitialPadding;
+interface BaseContainer {
+  mode: ContainerMode;
   spacing: Spacing;
-  mode: "fixed" | "fluid";
   /**
    * @deprecated
    * > 🚨 Do not use
@@ -19,7 +17,25 @@ interface Container {
   padding?: never;
 }
 
-export type InitialPadding = PaddingActive | PaddingInActive;
+type Container = ContainerFixed | ContainerFluid | ContainerBoth;
+
+export type ContainerMode = "fixed" | "fluid" | "both";
+export type InnerPadding = Record<keyof Breakpoints, number>;
+interface ContainerFixed extends BaseContainer {
+  mode: "fixed";
+  center: boolean;
+  innerPadding: InnerPadding;
+}
+interface ContainerFluid extends BaseContainer {
+  mode: "fluid";
+  innerPadding?: never;
+  center?: never;
+}
+interface ContainerBoth extends BaseContainer {
+  mode: "both";
+  center: boolean;
+  innerPadding: InnerPadding;
+}
 
 export type Merge<A, B> = {
   [K in keyof A | keyof B]: K extends keyof A & keyof B
@@ -30,17 +46,6 @@ export type Merge<A, B> = {
     ? A[K]
     : never;
 };
-interface PaddingActive {
-  active: true;
-  value: number;
-  resetOn: keyof Breakpoints;
-}
-
-interface PaddingInActive {
-  active: false;
-  value?: never;
-  resetOn?: never;
-}
 
 export interface PluginProps {
   theme: Function;
