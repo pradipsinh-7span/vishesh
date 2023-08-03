@@ -15,6 +15,7 @@ const Theme: Partial<VisheshPreset> = {
   corePlugins: {
     container: false,
   },
+  // TODO: provide option to disable vishesh plugins "visheshCore"
   plugins: [
     plugin((props: PluginProps): void => {
       variants(props);

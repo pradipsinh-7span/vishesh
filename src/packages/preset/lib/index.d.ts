@@ -21,6 +21,10 @@ type Container = ContainerFixed | ContainerFluid | ContainerBoth;
 
 export type ContainerMode = "fixed" | "fluid" | "both";
 export type InnerPadding = Record<keyof Breakpoints, number>;
+export interface BothSpacing extends Spacing {
+  fixed?: Spacing;
+  fluid?: Spacing;
+}
 interface ContainerFixed extends BaseContainer {
   mode: "fixed";
   center: boolean;
@@ -34,6 +38,7 @@ interface ContainerFluid extends BaseContainer {
 interface ContainerBoth extends BaseContainer {
   mode: "both";
   center: boolean;
+  spacing: BothSpacing;
   innerPadding: InnerPadding;
 }
 

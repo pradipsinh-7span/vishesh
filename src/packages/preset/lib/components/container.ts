@@ -9,6 +9,7 @@
 // maxw: 1920
 
 import type {
+  BothSpacing,
   Breakpoints,
   ContainerMode,
   InnerPadding,
@@ -40,10 +41,46 @@ export default function ({ theme, addComponents }: PluginProps): void {
   // make sure zero has 0
   breakpoints["zero"] = 0;
 
+  // container mode
+  const MODE: ContainerMode = theme("container.mode");
+
   // spacing
-  const unorderedSpacing: Spacing = theme("container.spacing");
-  // make sure zero has 0
-  unorderedSpacing["zero"] = 0;
+  const unorderedSpacing: Spacing | BothSpacing = theme("container.spacing");
+  // make sure zero exists
+  if (MODE === "fixed") {
+    // only using zero as key
+    unorderedSpacing["zero"] = 0;
+  } else if (MODE === "fluid") {
+    // if provided than take it
+    // if not make sure zero exists
+    if ("zero" in unorderedSpacing) {
+      unorderedSpacing.zero = Math.max(0, unorderedSpacing["zero"]);
+    } else {
+      unorderedSpacing["zero"] = 0;
+    }
+  } else if (MODE === "both") {
+    /* type: both */
+    // for common set zero to 0
+    unorderedSpacing["zero"] = 0;
+    // fixed
+    if ("fixed" in (unorderedSpacing as BothSpacing)) {
+      // only using zero as key
+      (unorderedSpacing as BothSpacing).fixed!["zero"] = 0;
+    }
+    // fluid
+    if ("fluid" in (unorderedSpacing as BothSpacing)) {
+      // if provided than take it
+      // if not make sure zero exists
+      if ("zero" in (unorderedSpacing as BothSpacing).fluid!) {
+        (unorderedSpacing as BothSpacing).fluid!.zero = Math.max(
+          0,
+          unorderedSpacing["zero"]
+        );
+      } else {
+        (unorderedSpacing as BothSpacing).fluid!["zero"] = 0;
+      }
+    }
+  }
 
   // ascending order of spacing values
   // include only spacing key:value pair that exist in breakpoint
@@ -58,12 +95,10 @@ export default function ({ theme, addComponents }: PluginProps): void {
 
   let containerClass: ContainerClass = { ...normalProperties };
 
-  // container mode
-  const MODE: ContainerMode = theme("container.mode");
-  // inner padding for container
-  const innerPadding: InnerPadding = theme("container.innerPadding") || {};
-
   if (MODE === "fixed") {
+    // inner padding for container
+    const innerPadding: InnerPadding = theme("container.innerPadding") || {};
+
     if (!theme("container.center")) {
       addComponents({
         ".container-left": {
