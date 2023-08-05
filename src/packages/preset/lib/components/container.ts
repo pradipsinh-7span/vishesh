@@ -13,7 +13,6 @@ import type {
   Breakpoints,
   ContainerMode,
   InnerPadding,
-  Merge,
   PluginProps,
   Spacing,
 } from "..";
@@ -84,7 +83,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
       if ("zero" in (unsortedSpacing as BothSpacing).fluid!) {
         (unsortedSpacing as BothSpacing).fluid!.zero = Math.max(
           0,
-          unsortedSpacing["zero"]
+          (unsortedSpacing as BothSpacing).fluid!.zero
         );
       } else {
         (unsortedSpacing as BothSpacing).fluid!["zero"] = 0;
@@ -92,21 +91,34 @@ export default function ({ theme, addComponents }: PluginProps): void {
     }
   }
 
-  // ascending order of spacing values
-  // include only spacing key:value pair that exist in breakpoint
-  const spacing = sortedBreakpointKeys
-    .map((key): [string, number] => {
-      const value = unsortedSpacing[key];
-      if (typeof value === "number" && (value || value === 0)) {
-        return [key, Math.max(0, value)];
-      }
-      return [key, Infinity];
-    })
-    .filter(([_, val]) => val !== Infinity);
+  let baseProperties: Partial<BaseProperties> = {
+    width: "100%",
+    display: "block",
+  };
 
-  let baseProperties: BaseProperties = { width: "100%", display: "block" };
+  if (MODE === "fixed" || MODE === "both") {
+    // ascending order of spacing values
+    // include only spacing key:value pair that exist in breakpoint
+    const spacing = sortedBreakpointKeys
+      .map((key): [string, number] => {
+        let value = unsortedSpacing[key];
+        if (
+          MODE === "both" &&
+          (unsortedSpacing as BothSpacing).fixed?.[
+            key as keyof typeof breakpoints
+          ]
+        ) {
+          value = (unsortedSpacing as BothSpacing).fixed![
+            key as keyof typeof breakpoints
+          ];
+        }
+        if (typeof value === "number" && (value || value === 0)) {
+          return [key, Math.max(0, value)];
+        }
+        return [key, Infinity];
+      })
+      .filter(([_, val]) => val !== Infinity);
 
-  if (MODE === "fixed") {
     if (!theme("container.center")) {
       addComponents({
         ".container-left": {
@@ -130,49 +142,139 @@ export default function ({ theme, addComponents }: PluginProps): void {
         marginLeft: "auto",
       };
     }
+
+    // inner padding for container
+    const innerPadding: InnerPadding = theme("container.innerPadding") || {};
+
+    // set container padding
+    baseProperties = {
+      ...baseProperties,
+      paddingLeft: innerPadding["zero"] || 0,
+      paddingRight: innerPadding["zero"] || 0,
+    };
+
+    // Generates container-* utilities with min-width media queries
+    spacing
+      .map(([key, value]): [string, number] => [
+        key,
+        Math.max(0, breakpoints[key] - value * 2),
+      ])
+      .forEach(([key, _], index, sizes) => {
+        let mediaQueryProperties: Record<string, MediaQueryProperties> = {};
+
+        // Genereates container max-width for given and above breakpoints
+        // and for below breakpoint, its just 100% of parent width
+        // for example,
+        // container-lg will generate below media queries
+        // - for smaller breakpoints width is "100%" and max-width applied as below
+        // - @media (min-width: 1024px) { "max-width": 896px }   (spacing: 64)
+        // - @media (min-width: 1280px) { "max-width": 1120px }  (spacing: 80)
+        // - @media (min-width: 1440px) { "max-width": 1184px }	 (spacing: 128)
+        sizes.forEach(([_key, _value], _index) => {
+          if (_key !== "zero" && _index >= index) {
+            mediaQueryProperties[`@media (min-width: ${breakpoints[_key]}px)`] =
+              {
+                maxWidth: _value,
+                paddingLeft: innerPadding[_key],
+                paddingRight: innerPadding[_key],
+              };
+          }
+        });
+
+        if (key === "zero") {
+          /**
+           * Generates base container class
+           * display
+           * ?marginRight
+           * ?marginLeft
+           * ?paddingLeft
+           * ?paddingRight
+           * width
+           */
+          /* Generating here because of css specificity */
+          addComponents({
+            [MODE === "both" ? ".container-fixed-base" : ".container"]: {
+              ...baseProperties,
+            },
+          });
+          addComponents({
+            ".container-fixed": {
+              ...baseProperties,
+              ...mediaQueryProperties,
+            },
+          });
+        } else {
+          // Generates container-* classes
+          // container-xs
+          // container-sm
+          // container-md
+          // container-lg
+          // ...and so on
+          /* POC: can i use matchComponents to add arbitary value support? */
+          addComponents({
+            [`.container${MODE === "both" ? "-fixed" : ""}-${key}`]: {
+              ...mediaQueryProperties,
+            },
+          });
+        }
+      });
   }
 
-  // inner padding for container
-  const innerPadding: InnerPadding = theme("container.innerPadding") || {};
+  if (MODE === "fluid" || MODE === "both") {
+    // ascending order of spacing values
+    // include only spacing key:value pair that exist in breakpoint
+    const spacing = sortedBreakpointKeys
+      .map((key): [string, number] => {
+        let value = unsortedSpacing[key];
+        if (
+          MODE === "both" &&
+          (unsortedSpacing as BothSpacing).fluid?.[
+            key as keyof typeof breakpoints
+          ]
+        ) {
+          value = (unsortedSpacing as BothSpacing).fluid![
+            key as keyof typeof breakpoints
+          ];
+        }
+        if (typeof value === "number" && (value || value === 0)) {
+          return [key, Math.max(0, value)];
+        }
+        return [key, Infinity];
+      })
+      .filter(([_, val]) => val !== Infinity);
 
-  // set container padding
-  baseProperties = {
-    ...baseProperties,
-    paddingLeft: (MODE === "fixed" ? innerPadding["zero"] : spacing[0][1]) || 0,
-    paddingRight:
-      (MODE === "fixed" ? innerPadding["zero"] : spacing[0][1]) || 0,
-  };
+    let baseFluidProperties = {
+      ...baseProperties,
+    };
+    delete baseFluidProperties.marginLeft;
+    delete baseFluidProperties.marginRight;
 
-  // Generates container-* utilities with min-width media queries
-  spacing
-    .map(([key, value]): [string, number] => {
-      if (MODE === "fixed") {
-        return [key, Math.max(0, breakpoints[key] - value * 2)];
-      }
-      return [key, value];
-    })
-    .forEach(([key, _], index, sizes) => {
-      let mediaQueryProperties: Record<string, MediaQueryProperties> = {};
+    // set container padding
+    baseFluidProperties = {
+      ...baseFluidProperties,
+      paddingLeft: spacing[0][1] || 0,
+      paddingRight: spacing[0][1] || 0,
+    } satisfies Omit<Partial<BaseProperties>, "marginLeft" | "marginRight">;
 
-      // Genereates container max-width for given and above breakpoints
-      // and for below breakpoint, its just 100% of parent width
+    // Generates container-* utilities with min-width media queries
+    spacing.forEach(([key, _], index, sizes) => {
+      let mediaQueryProperties: Record<
+        string,
+        Omit<MediaQueryProperties, "maxWidth">
+      > = {};
+
+      // Genereates container left and right padding for given and above breakpoints
       // for example,
       // container-lg will generate below media queries
-      // - for smaller breakpoints width is "100%" and max-width applied as below
-      // - @media (min-width: 1024px) { "max-width": 896px }   (spacing: 64)
-      // - @media (min-width: 1280px) { "max-width": 1120px }  (spacing: 80)
-      // - @media (min-width: 1440px) { "max-width": 1184px }	 (spacing: 128)
+      // - @media (min-width: 1024px) { "padding-left": 64px, "padding-right": 64px }
+      // - @media (min-width: 1280px) { "padding-left": 80px, "padding-right": 80px }
+      // - @media (min-width: 1440px) { "padding-left": 128px, "padding-right": 128px }
       sizes.forEach(([_key, _value], _index) => {
         if (_key !== "zero" && _index >= index) {
-          const properties: MediaQueryProperties = {
-            paddingLeft: MODE === "fixed" ? innerPadding[_key] : _value,
-            paddingRight: MODE === "fixed" ? innerPadding[_key] : _value,
+          mediaQueryProperties[`@media (min-width: ${breakpoints[_key]}px)`] = {
+            paddingLeft: _value,
+            paddingRight: _value,
           };
-          if (MODE === "fixed") {
-            properties["maxWidth"] = _value;
-          }
-          mediaQueryProperties[`@media (min-width: ${breakpoints[_key]}px)`] =
-            properties;
         }
       });
 
@@ -180,40 +282,38 @@ export default function ({ theme, addComponents }: PluginProps): void {
         /**
          * Generates base container class
          * display
-         * ?marginRight
-         * ?marginLeft
-         * ?paddingLeft
-         * ?paddingRight
+         * paddingLeft
+         * paddingRight
          * width
          */
         /* Generating here because of css specificity */
         addComponents({
-          ".container": {
-            ...baseProperties,
+          [MODE === "both" ? ".container-fluid-base" : ".container"]: {
+            ...baseFluidProperties,
           },
         });
+        addComponents({
+          ".container-fluid": {
+            ...baseFluidProperties,
+            ...mediaQueryProperties,
+          },
+        });
+      } else {
         // Generates container-* classes
-        // container-fixed | container-fluid
         // container-xs
         // container-sm
         // container-md
         // container-lg
         // ...and so on
+        /* POC: can i use matchComponents to add arbitary value support? */
         addComponents({
-          [`.container-${MODE}`]: {
-            ...baseProperties,
-            ...mediaQueryProperties,
-          },
-        });
-      } else {
-        /** POC: can i use matchComponents to add arbitary value support? */
-        addComponents({
-          [`.container-${key}`]: {
+          [`.container${MODE === "both" ? "-fluid" : ""}-${key}`]: {
             ...mediaQueryProperties,
           },
         });
       }
     });
+  }
 
   // Generate container-none class
   addComponents({
@@ -231,21 +331,14 @@ export default function ({ theme, addComponents }: PluginProps): void {
   /* LATER THE CLASS GENEREATES, HIGHER THE SPECIFICITY IT HAS */
 }
 
-type BaseProperties = Merge<
-  {
-    width: "100%";
-    display: "block";
-    marginLeft?: "auto";
-    marginRight?: "auto";
-  },
-  Record<
-    any,
-    {
-      paddingLeft: number;
-      paddingRight: number;
-    }
-  >
->;
+type BaseProperties = {
+  width: "100%";
+  display: "block";
+  marginLeft?: "auto";
+  marginRight?: "auto";
+  paddingLeft: string | number;
+  paddingRight: string | number;
+};
 
 type MediaQueryProperties = {
   maxWidth?: number;
