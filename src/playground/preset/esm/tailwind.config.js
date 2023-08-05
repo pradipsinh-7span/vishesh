@@ -12,7 +12,7 @@ export default {
         md: 750,
       },
       container: {
-        mode: "fluid",
+        mode: "fixed",
         spacing: {
           zero: 16,
           xs: 51,
