@@ -1,6 +1,9 @@
 import type { Config, ThemeConfig } from "tailwindcss/types/config";
 
-export type Breakpoints = Record<string, number>;
+export interface BothSpacing extends Spacing {
+  fixed?: Spacing;
+  fluid?: Spacing;
+}
 
 interface BaseContainer {
   mode: ContainerMode;
@@ -19,12 +22,10 @@ interface BaseContainer {
 
 type Container = ContainerFixed | ContainerFluid | ContainerBoth;
 
+export type Breakpoints = Record<string, number>;
 export type ContainerMode = "fixed" | "fluid" | "both";
-export type InnerPadding = Record<keyof Breakpoints, number>;
-export interface BothSpacing extends Spacing {
-  fixed?: Spacing;
-  fluid?: Spacing;
-}
+// TODO: accept single number also for setting same value to all breakpoint
+export type InnerPadding = Record<keyof Breakpoints, number | string>;
 interface ContainerFixed extends BaseContainer {
   mode: "fixed";
   center: boolean;
@@ -33,6 +34,7 @@ interface ContainerFixed extends BaseContainer {
 interface ContainerFluid extends BaseContainer {
   mode: "fluid";
   innerPadding?: never;
+  // TODO: add this option to align container manually
   center?: never;
 }
 interface ContainerBoth extends BaseContainer {

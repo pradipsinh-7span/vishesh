@@ -139,8 +139,8 @@ export default function ({ theme, addComponents }: PluginProps): void {
       ?.forEach(([key, _], index, sizes) => {
         type MediaQueryMaxWidth = {
           maxWidth: number;
-          paddingRight: number;
-          paddingLeft: number;
+          paddingRight: number | string;
+          paddingLeft: number | string;
         };
         let mediaProperties = {} as
           | Record<string, MediaQueryMaxWidth>
@@ -154,15 +154,17 @@ export default function ({ theme, addComponents }: PluginProps): void {
         // - @media (min-width: 1024px) { "max-width": 896px }   (spacing: 64)
         // - @media (min-width: 1280px) { "max-width": 1120px }  (spacing: 80)
         // - @media (min-width: 1440px) { "max-width": 1184px }	 (spacing: 128)
-        sizes.forEach(([_key, _value], _index) => {
-          if (_value && _key !== "zero" && _index >= index) {
-            mediaProperties[`@media (min-width: ${breakpoints[_key]}px)`] = {
-              maxWidth: _value,
-              paddingLeft: innerPadding[_key] || 0,
-              paddingRight: innerPadding[_key] || 0,
-            };
-          }
-        });
+        sizes
+          ?.sort((a, b) => a[1] - b[1]) // as "sm" is coming before the "xs"
+          .forEach(([_key, _value], _index) => {
+            if (_value && _key !== "zero" && _index >= index) {
+              mediaProperties[`@media (min-width: ${breakpoints[_key]}px)`] = {
+                maxWidth: _value,
+                paddingLeft: innerPadding[_key] || 0,
+                paddingRight: innerPadding[_key] || 0,
+              };
+            }
+          });
 
         // Generates container-* classes
         // container-fixed
@@ -196,8 +198,8 @@ export default function ({ theme, addComponents }: PluginProps): void {
     // set padding for zero also
     containerClass = {
       ...containerClass,
-      paddingLeft: spacing["zero"] || 0,
-      paddingRight: spacing["zero"] || 0,
+      paddingLeft: spacing[0][1] || 0,
+      paddingRight: spacing[0][1] || 0,
     };
 
     // Generates container-* utilities with min-width media queries
