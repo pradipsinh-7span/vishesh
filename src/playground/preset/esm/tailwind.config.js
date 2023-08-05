@@ -12,11 +12,11 @@ export default {
         md: 750,
       },
       container: {
-        mode: "fixed",
+        mode: "fluid",
         spacing: {
           zero: 16,
-          xs: 20,
-          md: 51,
+          xs: 51,
+          md: 20,
         },
         innerPadding: {
           sm: 10,

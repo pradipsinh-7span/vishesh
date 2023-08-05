@@ -40,53 +40,57 @@ export default function ({ theme, addComponents }: PluginProps): void {
   const breakpoints = (theme("breakpoints") || {}) as Breakpoints;
   // make sure zero has 0
   breakpoints["zero"] = 0;
+  // sorted breakponints keys
+  const sortedBreakpointKeys = Object.entries(breakpoints)
+    .sort((a, b) => a[1] - b[1])
+    .map(([key, _]) => key);
 
   // container mode
   const MODE: ContainerMode = theme("container.mode");
 
-  // spacing
-  const unorderedSpacing: Spacing | BothSpacing = theme("container.spacing");
+  // unsorted spacing
+  const unsortedSpacing: Spacing | BothSpacing = theme("container.spacing");
   // make sure zero exists
   if (MODE === "fixed") {
     // only using zero as key
-    unorderedSpacing["zero"] = 0;
+    unsortedSpacing["zero"] = 0;
   } else if (MODE === "fluid") {
     // if provided than take it
     // if not make sure zero exists
-    if ("zero" in unorderedSpacing) {
-      unorderedSpacing.zero = Math.max(0, unorderedSpacing["zero"]);
+    if ("zero" in unsortedSpacing) {
+      unsortedSpacing.zero = Math.max(0, unsortedSpacing["zero"]);
     } else {
-      unorderedSpacing["zero"] = 0;
+      unsortedSpacing["zero"] = 0;
     }
   } else if (MODE === "both") {
     /* type: both */
     // for common set zero to 0
-    unorderedSpacing["zero"] = 0;
+    unsortedSpacing["zero"] = 0;
     // fixed
-    if ("fixed" in (unorderedSpacing as BothSpacing)) {
+    if ("fixed" in (unsortedSpacing as BothSpacing)) {
       // only using zero as key
-      (unorderedSpacing as BothSpacing).fixed!["zero"] = 0;
+      (unsortedSpacing as BothSpacing).fixed!["zero"] = 0;
     }
     // fluid
-    if ("fluid" in (unorderedSpacing as BothSpacing)) {
+    if ("fluid" in (unsortedSpacing as BothSpacing)) {
       // if provided than take it
       // if not make sure zero exists
-      if ("zero" in (unorderedSpacing as BothSpacing).fluid!) {
-        (unorderedSpacing as BothSpacing).fluid!.zero = Math.max(
+      if ("zero" in (unsortedSpacing as BothSpacing).fluid!) {
+        (unsortedSpacing as BothSpacing).fluid!.zero = Math.max(
           0,
-          unorderedSpacing["zero"]
+          unsortedSpacing["zero"]
         );
       } else {
-        (unorderedSpacing as BothSpacing).fluid!["zero"] = 0;
+        (unsortedSpacing as BothSpacing).fluid!["zero"] = 0;
       }
     }
   }
 
   // ascending order of spacing values
   // include only spacing key:value pair that exist in breakpoint
-  const spacing = Object.entries(unorderedSpacing)
-    ?.filter(([key, value]) => key in breakpoints && (value || value === 0))
-    ?.sort((a, b) => a[1] - b[1]);
+  const spacing = Object.entries(unsortedSpacing)
+    .filter(([key, value]) => key in breakpoints && (value || value === 0))
+    .sort((a, b) => a[1] - b[1]);
 
   const normalProperties: NormalProperties = {
     width: "100%",
@@ -130,13 +134,23 @@ export default function ({ theme, addComponents }: PluginProps): void {
       paddingRight: innerPadding["zero"] || 0,
     };
 
+    sortedBreakpointKeys
+      .map((key) => {
+        const value = unsortedSpacing[key];
+        if ((typeof value === "number" && value) || value === 0) {
+          return [key, Math.max(0, breakpoints[key] - value * 2)];
+        }
+      })
+      .filter(Boolean);
+
     // Generates container-* utilities with min-width media queries
     spacing
-      ?.map(([key, value]): [string, number] => [
+      .map(([key, value]): [string, number] => [
         key,
         Math.max(0, breakpoints[key] - value * 2),
       ])
-      ?.forEach(([key, _], index, sizes) => {
+      .sort((a, b) => a[1] - b[1])
+      .forEach(([key, _], index, sizes) => {
         type MediaQueryMaxWidth = {
           maxWidth: number;
           paddingRight: number | string;
@@ -154,17 +168,15 @@ export default function ({ theme, addComponents }: PluginProps): void {
         // - @media (min-width: 1024px) { "max-width": 896px }   (spacing: 64)
         // - @media (min-width: 1280px) { "max-width": 1120px }  (spacing: 80)
         // - @media (min-width: 1440px) { "max-width": 1184px }	 (spacing: 128)
-        sizes
-          ?.sort((a, b) => a[1] - b[1]) // as "sm" is coming before the "xs"
-          .forEach(([_key, _value], _index) => {
-            if (_value && _key !== "zero" && _index >= index) {
-              mediaProperties[`@media (min-width: ${breakpoints[_key]}px)`] = {
-                maxWidth: _value,
-                paddingLeft: innerPadding[_key] || 0,
-                paddingRight: innerPadding[_key] || 0,
-              };
-            }
-          });
+        sizes.forEach(([_key, _value], _index) => {
+          if (_value && _key !== "zero" && _index >= index) {
+            mediaProperties[`@media (min-width: ${breakpoints[_key]}px)`] = {
+              maxWidth: _value,
+              paddingLeft: innerPadding[_key] || 0,
+              paddingRight: innerPadding[_key] || 0,
+            };
+          }
+        });
 
         // Generates container-* classes
         // container-fixed
@@ -173,8 +185,21 @@ export default function ({ theme, addComponents }: PluginProps): void {
         // container-md
         // container-lg
         // ...and so on
-        /** POC: can i use matchComponents to add arbitary value support? */
         if (key === "zero") {
+          /**
+           * Generates base container class
+           * ?marginRight
+           * ?marginLeft
+           * ?paddingLeft
+           * ?paddingRight
+           * width
+           */
+          /* Generating here because of css specificity */
+          addComponents({
+            ".container": {
+              ...containerClass,
+            },
+          });
           addComponents({
             ".container-fixed": {
               ...containerClass,
@@ -182,6 +207,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
             },
           });
         } else {
+          /** POC: can i use matchComponents to add arbitary value support? */
           addComponents({
             [`.container-${key}`]: {
               ...mediaProperties,
@@ -229,8 +255,22 @@ export default function ({ theme, addComponents }: PluginProps): void {
         // container-md
         // container-lg
         // ...and so on
-        /** POC: can i use matchComponents to add arbitary value support? */
+
         if (key === "zero") {
+          /**
+           * Generates base container class
+           * ?marginRight
+           * ?marginLeft
+           * ?paddingLeft
+           * ?paddingRight
+           * width
+           */
+          /* Generating here because of css specificity */
+          addComponents({
+            ".container": {
+              ...containerClass,
+            },
+          });
           addComponents({
             [".container-fluid"]: {
               ...containerClass,
@@ -238,6 +278,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
             },
           });
         } else {
+          /** POC: can i use matchComponents to add arbitary value support? */
           addComponents({
             [`.container-${key}`]: {
               ...mediaProperties,
@@ -246,20 +287,6 @@ export default function ({ theme, addComponents }: PluginProps): void {
         }
       });
   }
-
-  /**
-   * Generates base container class
-   * ?marginRight
-   * ?marginLeft
-   * ?paddingLeft
-   * ?paddingRight
-   * width
-   */
-  addComponents({
-    ".container": {
-      ...containerClass,
-    },
-  });
 
   // Generate container-none class
   addComponents({
@@ -273,6 +300,8 @@ export default function ({ theme, addComponents }: PluginProps): void {
       display: "initial",
     },
   });
+
+  /* LATER THE CLASS GENEREATES, HIGHER THE SPECIFICITY IT HAS */
 }
 
 type NormalProperties = {
