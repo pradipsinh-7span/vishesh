@@ -15,10 +15,11 @@ export default {
         mode: "fixed",
         spacing: {
           zero: 16,
-          xs: 51,
+          xs: 32,
           md: 20,
         },
         innerPadding: {
+          zero: 16,
           sm: 10,
           lg: 24,
           xl: "2rem",
