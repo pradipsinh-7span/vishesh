@@ -8,6 +8,8 @@
 // mac: 1440
 // max: 1920
 
+import { isObject } from "../utils";
+
 import type { Breakpoints, PluginProps } from "..";
 
 /**
@@ -21,16 +23,19 @@ import type { Breakpoints, PluginProps } from "..";
  */
 export default function ({ theme, addVariant }: PluginProps): void {
   // unsorted breakpoints
-  const unsortedBreakpoints = (theme("breakpoints") || {}) as Breakpoints;
+  const unsortedBreakpoints: Breakpoints = theme("breakpoints");
+  if (!isObject(unsortedBreakpoints)) {
+    return;
+  }
   // make sure zero has 0
   unsortedBreakpoints["zero"] = 0;
 
   // ascending order of breakpoint values
-  const breakpoints = Object.entries(unsortedBreakpoints)?.sort(
-    (a, b) => a?.[1] - b?.[1]
-  );
+  const breakpoints = Object.entries(unsortedBreakpoints)
+    .map(([key, value]): [string, number] => [key, Math.max(0, value)])
+    .sort((a, b) => a?.[1] - b?.[1]);
 
-  breakpoints?.forEach(([key, value], index) => {
+  breakpoints.forEach(([key, value], index) => {
     if (key === "zero") {
       // generate zero-*: breakpoint variants
       // For example,
@@ -43,7 +48,10 @@ export default function ({ theme, addVariant }: PluginProps): void {
         _key !== "zero" &&
           addVariant(
             `zero-${_key}`,
-            `@media (min-width: 0px) and (max-width: ${_value - 1}px)`
+            `@media (min-width: 0px) and (max-width: ${Math.max(
+              0,
+              _value - 1
+            )}px)`
           );
       });
     } else {
@@ -61,7 +69,10 @@ export default function ({ theme, addVariant }: PluginProps): void {
         if (_index > index) {
           addVariant(
             `${key}-${_key}`,
-            `@media (min-width: ${value}px) and (max-width: ${_value - 1}px)`
+            `@media (min-width: ${value}px) and (max-width: ${Math.max(
+              0,
+              _value - 1
+            )}px)`
           );
         }
         /* only breakpoints */
@@ -75,7 +86,10 @@ export default function ({ theme, addVariant }: PluginProps): void {
         if (index + 1 === _index) {
           addVariant(
             `${key}-only`,
-            `@media (min-width: ${value}px) and (max-width: ${_value - 1}px)`
+            `@media (min-width: ${value}px) and (max-width: ${Math.max(
+              0,
+              _value - 1
+            )}px)`
           );
         }
       });

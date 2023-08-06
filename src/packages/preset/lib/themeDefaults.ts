@@ -12,7 +12,6 @@ export default {
       mac: 1440,
       maxw: 1920,
     },
-    // TODO: add more defaults
     container: {
       mode: "fixed",
       center: true,

@@ -8,8 +8,7 @@ export default {
   theme: {
     extend: {
       breakpoints: {
-        zero: undefined,
-        md: 750,
+        md: 760,
       },
       container: {
         mode: "both",

@@ -111,6 +111,19 @@ export default function ({ theme, addComponents }: PluginProps): void {
   };
 
   if (MODE === "fixed" || MODE === "both") {
+    // inner padding for container
+    const innerPadding: InnerPadding = theme("container.innerPadding");
+    if (!isObject(innerPadding)) {
+      return;
+    }
+
+    // set container padding
+    let baseFixedProperties = {
+      ...baseProperties,
+      paddingLeft: innerPadding["zero"] || 0,
+      paddingRight: innerPadding["zero"] || 0,
+    };
+
     // ascending order of spacing values
     // include only spacing key:value pair that exist in breakpoint
     const spacing = sortedBreakpointKeys
@@ -134,7 +147,9 @@ export default function ({ theme, addComponents }: PluginProps): void {
       })
       .filter(([_, val]) => val !== Infinity);
 
-    if (!theme("container.center")) {
+    const center: boolean = theme("container.center");
+
+    if (!(typeof center === "boolean" && center)) {
       addComponents({
         ".container-left": {
           marginRight: "auto",
@@ -151,22 +166,12 @@ export default function ({ theme, addComponents }: PluginProps): void {
       });
     } else {
       // Centered container with inherit parent width
-      baseProperties = {
-        ...baseProperties,
+      baseFixedProperties = {
+        ...baseFixedProperties,
         marginRight: "auto",
         marginLeft: "auto",
       };
     }
-
-    // inner padding for container
-    const innerPadding: InnerPadding = theme("container.innerPadding") || {};
-
-    // set container padding
-    baseProperties = {
-      ...baseProperties,
-      paddingLeft: innerPadding["zero"] || 0,
-      paddingRight: innerPadding["zero"] || 0,
-    };
 
     // Generates container-* utilities with min-width media queries
     spacing
@@ -209,12 +214,12 @@ export default function ({ theme, addComponents }: PluginProps): void {
           /* Generating here because of css specificity */
           addComponents({
             [MODE === "both" ? ".container-fixed-base" : ".container"]: {
-              ...baseProperties,
+              ...baseFixedProperties,
             },
           });
           addComponents({
             ".container-fixed": {
-              ...baseProperties,
+              ...baseFixedProperties,
               ...mediaQueryProperties,
             },
           });
@@ -236,6 +241,12 @@ export default function ({ theme, addComponents }: PluginProps): void {
   }
 
   if (MODE === "fluid" || MODE === "both") {
+    let baseFluidProperties = {
+      ...baseProperties,
+    };
+    delete baseFluidProperties.marginLeft;
+    delete baseFluidProperties.marginRight;
+
     // ascending order of spacing values
     // include only spacing key:value pair that exist in breakpoint
     const spacing = sortedBreakpointKeys
@@ -258,12 +269,6 @@ export default function ({ theme, addComponents }: PluginProps): void {
         return [key, Infinity];
       })
       .filter(([_, val]) => val !== Infinity);
-
-    let baseFluidProperties = {
-      ...baseProperties,
-    };
-    delete baseFluidProperties.marginLeft;
-    delete baseFluidProperties.marginRight;
 
     // set container padding
     baseFluidProperties = {
