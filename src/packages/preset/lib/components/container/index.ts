@@ -1,3 +1,5 @@
+/* LATER THE CLASS GENEREATES, HIGHER THE SPECIFICITY IT HAS */
+
 // breakpoints
 // zero: 0
 // xs: 375
@@ -8,16 +10,17 @@
 // mac: 1440
 // maxw: 1920
 
-import { isObject } from "../utils";
+import { isObject } from "../../utils";
 
 import type {
+  BaseProperties,
+  MediaQueryProperties,
   BothSpacing,
-  Breakpoints,
   ContainerMode,
   InnerPadding,
-  PluginProps,
-  Spacing,
-} from "..";
+} from "./types";
+import type { PluginProps, Spacing } from "../..";
+import type { Breakpoints } from "../../variants/breakpoints/types";
 
 // container
 // center: boolean
@@ -67,22 +70,28 @@ export default function ({ theme, addComponents }: PluginProps): void {
   // make sure zero exists
   if (MODE === "fixed") {
     // only using zero as key
-    unsortedSpacing["zero"] = 0;
+    (unsortedSpacing as Spacing)["zero"] = 0;
   } else if (MODE === "fluid") {
     // if provided than take it
     // if not make sure zero exists
-    if (typeof unsortedSpacing.zero === "number") {
-      unsortedSpacing.zero = Math.max(0, unsortedSpacing["zero"]);
+    if (typeof (unsortedSpacing as Spacing).zero === "number") {
+      (unsortedSpacing as Spacing).zero = Math.max(
+        0,
+        (unsortedSpacing as Spacing)["zero"]
+      );
     } else {
-      unsortedSpacing["zero"] = 0;
+      (unsortedSpacing as Spacing)["zero"] = 0;
     }
   } else if (MODE === "both") {
     /* type: both */
     // for common set zero to 0
-    if (typeof unsortedSpacing.zero === "number") {
-      unsortedSpacing.zero = Math.max(0, unsortedSpacing["zero"]);
+    if (typeof (unsortedSpacing as Spacing).zero === "number") {
+      (unsortedSpacing as Spacing).zero = Math.max(
+        0,
+        (unsortedSpacing as Spacing)["zero"]
+      );
     } else {
-      unsortedSpacing["zero"] = 0;
+      (unsortedSpacing as Spacing)["zero"] = 0;
     }
 
     // fixed
@@ -100,7 +109,9 @@ export default function ({ theme, addComponents }: PluginProps): void {
           (unsortedSpacing as BothSpacing).fluid!.zero
         );
       } else {
-        (unsortedSpacing as BothSpacing).fluid!["zero"] = unsortedSpacing.zero;
+        (unsortedSpacing as BothSpacing).fluid!["zero"] = (
+          unsortedSpacing as Spacing
+        ).zero;
       }
     }
   }
@@ -128,7 +139,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
     // include only spacing key:value pair that exist in breakpoint
     const spacing = sortedBreakpointKeys
       .map((key): [string, number] => {
-        let value = unsortedSpacing[key];
+        let value = (unsortedSpacing as Spacing)[key];
         if (
           MODE === "both" &&
           isObject((unsortedSpacing as BothSpacing).fixed) &&
@@ -251,7 +262,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
     // include only spacing key:value pair that exist in breakpoint
     const spacing = sortedBreakpointKeys
       .map((key): [string, number] => {
-        let value = unsortedSpacing[key];
+        let value = (unsortedSpacing as Spacing)[key];
         if (
           MODE === "both" &&
           isObject((unsortedSpacing as BothSpacing).fluid) &&
@@ -348,21 +359,4 @@ export default function ({ theme, addComponents }: PluginProps): void {
       display: "initial",
     },
   });
-
-  /* LATER THE CLASS GENEREATES, HIGHER THE SPECIFICITY IT HAS */
 }
-
-type BaseProperties = {
-  width: "100%";
-  display: "block";
-  marginLeft?: "auto";
-  marginRight?: "auto";
-  paddingLeft: string | number;
-  paddingRight: string | number;
-};
-
-type MediaQueryProperties = {
-  maxWidth?: number;
-  paddingLeft: number | string;
-  paddingRight: number | string;
-};

@@ -1,3 +1,5 @@
+/* LATER THE CLASS GENEREATES, HIGHER THE SPECIFICITY IT HAS */
+
 // breakpoints
 // zero: 0
 // xs: 375
@@ -8,9 +10,10 @@
 // mac: 1440
 // max: 1920
 
-import { isObject } from "../utils";
+import { isObject } from "../../utils";
 
-import type { Breakpoints, PluginProps } from "..";
+import type { Breakpoints } from "./types";
+import type { PluginProps } from "../..";
 
 /**
  * Generates all possible combination of breakpoint variants
@@ -35,29 +38,38 @@ export default function ({ theme, addVariant }: PluginProps): void {
     .map(([key, value]): [string, number] => [key, Math.max(0, value)])
     .sort((a, b) => a?.[1] - b?.[1]);
 
+  /** CSS Specificity order
+   * x:         - min-width breakpoints
+   * zero-x:    - max-width breakpoints
+   * x-y:       - range breakpoints
+   * x-only:    - single breakpoints
+   */
+
+  // generates minimum width breakpoint variants
+  breakpoints.forEach(
+    ([key, value]) =>
+      key !== "zero" && addVariant(key, `@media (min-width: ${value}px)`)
+  );
+
+  // generate zero-*: breakpoint variants
+  // For example,
+  // let's take one breakpoint, lg: 1024
+  // let's take another breakpoitn, md: 768
+  // then zero-lg: variant applies on the 0-1023 px viewport
+  // then zero-md: variant applies on the 0-767 px viewport
+  // lg-zero, md-zero doesn't make sense.
+  breakpoints.forEach(
+    ([key, value]) =>
+      key !== "zero" &&
+      addVariant(
+        `zero-${key}`,
+        `@media (min-width: 0px) and (max-width: ${Math.max(0, value - 1)}px)`
+      )
+  );
+
+  // range and only breakpoints
   breakpoints.forEach(([key, value], index) => {
-    if (key === "zero") {
-      // generate zero-*: breakpoint variants
-      // For example,
-      // let's take one breakpoint, lg: 1024
-      // let's take another breakpoitn, md: 768
-      // then zero-lg: variant applies on the 0-1023 px viewport
-      // then zero-md: variant applies on the 0-767 px viewport
-      // lg-zero, md-zero doesn't make sense.
-      breakpoints.forEach(([_key, _value]) => {
-        _key !== "zero" &&
-          addVariant(
-            `zero-${_key}`,
-            `@media (min-width: 0px) and (max-width: ${Math.max(
-              0,
-              _value - 1
-            )}px)`
-          );
-      });
-    } else {
-      // generates minimum width breakpoint variants
-      addVariant(key, `@media (min-width: ${value}px)`);
-      // range and only breakpoints
+    if (key !== "zero") {
       breakpoints.forEach(([_key, _value], _index) => {
         /* range breakpoints */
         // generate x-y: breakpoint variants where x is not zero
