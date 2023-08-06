@@ -23,6 +23,10 @@
       "dependsOn": ["lint", "^build"],
       "outputs": ["dist/**"]
     },
+    "watch:build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
     "preview": {},
     "publish-it": {}
   }

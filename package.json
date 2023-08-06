@@ -16,6 +16,7 @@
     "fix:code-quality": "turbo run fix:code-quality",
     "fix:lint": "turbo run fix:lint",
     "build": "turbo run build",
+    "watch:build": "turbo run watch:build",
     "preview": "turbo run preview",
     "publish-it": "turbo run publish-it"
   },

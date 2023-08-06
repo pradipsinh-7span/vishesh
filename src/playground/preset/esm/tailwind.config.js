@@ -17,8 +17,12 @@ export default {
           zero: 16,
           xs: 32,
           md: 20,
+          xl: 60,
           fluid: {
-            // zero: 32,
+            xl: 100,
+          },
+          fixed: {
+            xl: 100,
           },
         },
         innerPadding: {

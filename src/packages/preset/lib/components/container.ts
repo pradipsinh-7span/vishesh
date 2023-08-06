@@ -8,6 +8,8 @@
 // mac: 1440
 // maxw: 1920
 
+import { isObject } from "../utils";
+
 import type {
   BothSpacing,
   Breakpoints,
@@ -42,7 +44,10 @@ import type {
  */
 export default function ({ theme, addComponents }: PluginProps): void {
   // breakpoints
-  const breakpoints = (theme("breakpoints") || {}) as Breakpoints;
+  const breakpoints: Breakpoints = theme("breakpoints");
+  if (!isObject(breakpoints)) {
+    return;
+  }
   // make sure zero has 0
   breakpoints["zero"] = 0;
   // sorted breakponints keys
@@ -55,6 +60,10 @@ export default function ({ theme, addComponents }: PluginProps): void {
 
   // unsorted spacing
   const unsortedSpacing: Spacing | BothSpacing = theme("container.spacing");
+  if (!isObject(unsortedSpacing)) {
+    return;
+  }
+
   // make sure zero exists
   if (MODE === "fixed") {
     // only using zero as key
@@ -62,7 +71,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
   } else if (MODE === "fluid") {
     // if provided than take it
     // if not make sure zero exists
-    if ("zero" in unsortedSpacing) {
+    if (typeof unsortedSpacing.zero === "number") {
       unsortedSpacing.zero = Math.max(0, unsortedSpacing["zero"]);
     } else {
       unsortedSpacing["zero"] = 0;
@@ -70,23 +79,28 @@ export default function ({ theme, addComponents }: PluginProps): void {
   } else if (MODE === "both") {
     /* type: both */
     // for common set zero to 0
-    unsortedSpacing["zero"] = 0;
+    if (typeof unsortedSpacing.zero === "number") {
+      unsortedSpacing.zero = Math.max(0, unsortedSpacing["zero"]);
+    } else {
+      unsortedSpacing["zero"] = 0;
+    }
+
     // fixed
-    if ("fixed" in (unsortedSpacing as BothSpacing)) {
+    if (isObject((unsortedSpacing as BothSpacing).fixed)) {
       // only using zero as key
       (unsortedSpacing as BothSpacing).fixed!["zero"] = 0;
     }
     // fluid
-    if ("fluid" in (unsortedSpacing as BothSpacing)) {
+    if (isObject((unsortedSpacing as BothSpacing).fluid)) {
       // if provided than take it
       // if not make sure zero exists
-      if ("zero" in (unsortedSpacing as BothSpacing).fluid!) {
+      if (typeof (unsortedSpacing as BothSpacing).fluid!.zero === "number") {
         (unsortedSpacing as BothSpacing).fluid!.zero = Math.max(
           0,
           (unsortedSpacing as BothSpacing).fluid!.zero
         );
       } else {
-        (unsortedSpacing as BothSpacing).fluid!["zero"] = 0;
+        (unsortedSpacing as BothSpacing).fluid!["zero"] = unsortedSpacing.zero;
       }
     }
   }
@@ -104,9 +118,10 @@ export default function ({ theme, addComponents }: PluginProps): void {
         let value = unsortedSpacing[key];
         if (
           MODE === "both" &&
-          (unsortedSpacing as BothSpacing).fixed?.[
+          isObject((unsortedSpacing as BothSpacing).fixed) &&
+          typeof (unsortedSpacing as BothSpacing).fixed![
             key as keyof typeof breakpoints
-          ]
+          ] === "number"
         ) {
           value = (unsortedSpacing as BothSpacing).fixed![
             key as keyof typeof breakpoints
@@ -228,9 +243,10 @@ export default function ({ theme, addComponents }: PluginProps): void {
         let value = unsortedSpacing[key];
         if (
           MODE === "both" &&
-          (unsortedSpacing as BothSpacing).fluid?.[
+          isObject((unsortedSpacing as BothSpacing).fluid) &&
+          typeof (unsortedSpacing as BothSpacing).fluid![
             key as keyof typeof breakpoints
-          ]
+          ] === "number"
         ) {
           value = (unsortedSpacing as BothSpacing).fluid![
             key as keyof typeof breakpoints
