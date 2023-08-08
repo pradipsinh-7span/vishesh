@@ -18,8 +18,9 @@ import type {
   BothSpacing,
   ContainerMode,
   InnerPadding,
+  Spacing,
 } from "./types";
-import type { PluginProps, Spacing } from "../..";
+import type { PluginProps } from "../..";
 import type { Breakpoints } from "../../variants/breakpoints/types";
 
 // container

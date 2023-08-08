@@ -17,8 +17,6 @@ export interface PluginProps {
   addVariant: Function;
 }
 
-export type Spacing = Record<keyof Breakpoints, number>;
-
 interface ThemeDefaults {
   breakpoints: Breakpoints;
   container: Container;

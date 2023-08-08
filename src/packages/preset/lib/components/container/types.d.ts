@@ -19,6 +19,12 @@ export type InnerPadding =
   | string
   | Record<keyof Breakpoints, number | string>;
 
+export interface MediaQueryProperties {
+  maxWidth?: number;
+  paddingLeft: number | string;
+  paddingRight: number | string;
+}
+
 interface ContainerFixed extends BaseContainer {
   mode: "fixed";
   center: boolean;
@@ -39,11 +45,7 @@ interface ContainerBoth extends BaseContainer {
   innerPadding: InnerPadding;
 }
 
-export interface MediaQueryProperties {
-  maxWidth?: number;
-  paddingLeft: number | string;
-  paddingRight: number | string;
-}
+export type Spacing = Record<keyof Breakpoints, number>;
 
 interface BaseContainer {
   mode: ContainerMode;
