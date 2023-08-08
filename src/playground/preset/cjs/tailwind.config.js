@@ -6,9 +6,28 @@ module.exports = {
   presets: [require("vishesh-preset")],
   theme: {
     extend: {
+      breakpoints: {
+        md: 760,
+      },
       container: {
+        mode: "both",
         spacing: {
-          md: 51,
+          zero: 16,
+          xs: 32,
+          md: 20,
+          xl: 60,
+          fluid: {
+            xl: 100,
+          },
+          fixed: {
+            xl: 100,
+          },
+        },
+        innerPadding: {
+          zero: 16,
+          sm: 10,
+          lg: 24,
+          xl: "2rem",
         },
       },
     },

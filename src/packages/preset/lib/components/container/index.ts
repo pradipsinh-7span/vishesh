@@ -124,15 +124,27 @@ export default function ({ theme, addComponents }: PluginProps): void {
   if (MODE === "fixed" || MODE === "both") {
     // inner padding for container
     const innerPadding: InnerPadding = theme("container.innerPadding");
-    if (!isObject(innerPadding)) {
+    if (
+      !(
+        isObject(innerPadding) ||
+        typeof innerPadding === "number" ||
+        typeof innerPadding === "string"
+      )
+    ) {
       return;
     }
 
     // set container padding
     let baseFixedProperties = {
       ...baseProperties,
-      paddingLeft: innerPadding["zero"] || 0,
-      paddingRight: innerPadding["zero"] || 0,
+      paddingLeft:
+        typeof innerPadding === "object"
+          ? innerPadding["zero"]
+          : innerPadding || 0,
+      paddingRight:
+        typeof innerPadding === "object"
+          ? innerPadding["zero"]
+          : innerPadding || 0,
     };
 
     // ascending order of spacing values
@@ -206,8 +218,14 @@ export default function ({ theme, addComponents }: PluginProps): void {
             mediaQueryProperties[`@media (min-width: ${breakpoints[_key]}px)`] =
               {
                 maxWidth: _value,
-                paddingLeft: innerPadding[_key],
-                paddingRight: innerPadding[_key],
+                paddingLeft:
+                  typeof innerPadding === "object"
+                    ? innerPadding[_key]
+                    : innerPadding,
+                paddingRight:
+                  typeof innerPadding === "object"
+                    ? innerPadding[_key]
+                    : innerPadding,
               };
           }
         });
@@ -241,7 +259,10 @@ export default function ({ theme, addComponents }: PluginProps): void {
           // container-md
           // container-lg
           // ...and so on
-          /* POC: can i use matchComponents to add arbitary value support? */
+          /** POC:
+           * 1. can i use matchComponents to add arbitary value support?
+           * 2. or use css variable trick to override properties for that perticular element -> "lg:[max-width:800px]"
+           */
           addComponents({
             [`.container${MODE === "both" ? "-fixed" : ""}-${key}`]: {
               ...mediaQueryProperties,
@@ -337,7 +358,10 @@ export default function ({ theme, addComponents }: PluginProps): void {
         // container-md
         // container-lg
         // ...and so on
-        /* POC: can i use matchComponents to add arbitary value support? */
+        /** POC:
+         * 1. can i use matchComponents to add arbitary value support?
+         * 2. or use css variable trick to override properties for that perticular element -> "lg:[max-width:800px]"
+         */
         addComponents({
           [`.container${MODE === "both" ? "-fluid" : ""}-${key}`]: {
             ...mediaQueryProperties,

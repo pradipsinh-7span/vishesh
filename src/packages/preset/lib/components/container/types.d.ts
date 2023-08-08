@@ -14,8 +14,10 @@ export interface BothSpacing extends Spacing {
 
 export type ContainerMode = "fixed" | "fluid" | "both";
 
-// TODO: accept single number also for setting same value to all breakpoint
-export type InnerPadding = Record<keyof Breakpoints, number | string>;
+export type InnerPadding =
+  | number
+  | string
+  | Record<keyof Breakpoints, number | string>;
 
 interface ContainerFixed extends BaseContainer {
   mode: "fixed";
@@ -26,7 +28,7 @@ interface ContainerFixed extends BaseContainer {
 interface ContainerFluid extends BaseContainer {
   mode: "fluid";
   innerPadding?: never;
-  // TODO: add this option to align container manually
+  // POC: add this option to align container manually
   center?: never;
 }
 
