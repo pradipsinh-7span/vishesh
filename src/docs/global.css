@@ -27,6 +27,10 @@ div.nx-max-w-\[90rem\] article {
   @apply !px-0;
 }
 
+aside > div {
+  @apply rmd:!px-6;
+}
+
 .nextra-steps h3::before {
   @apply flex items-center justify-center indent-0 -mt-px;
 }

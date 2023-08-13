@@ -1,15 +1,10 @@
-import { Callout } from "nextra-theme-docs";
+import { Callout, Tabs, Tab } from "nextra-theme-docs";
 
 # Breakpoints
 
-Breakpoints are more familiar word with responsive desing. So, we _disabled `screens` and added `breakpoints`._
-
-These breakpoints are not just regular breakpoints. Vishesh generates a bunch of other breakpoint variants. <br />
-It has `minimum` + `maximum` + `range` variants included.
-
-<br />
-
-Detailed explaination was given below the codeblock. 👇
+<Callout type="warning">
+  <em>We disabled `screens` and added `breakpoints`.</em>
+</Callout>
 
 ```diff
 # Default breakpoints are in pixels
@@ -48,48 +43,72 @@ Detailed explaination was given below the codeblock. 👇
 
 <br />
 
-### **The Why❓**
+### **Why?**
 
 We all experienced that minimum or maximum breakpoints are not enough. if we are using tailwind then, we need to manually create such breakpoints.<br />
 
-Less often, we are in a situation that for mobile we have one design, then on tablet we have other design. but, on desktop we have design that is similar to mobile. **we have to reset the styles 😓.**
-
-<Callout type="info">This website itself using the vishesh preset.</Callout>
+Less often, we are in a situation that for mobile we have one design, then on tablet we have other design. but, on desktop we have design that is similar to mobile. **we have to reset the styles everytime 😓.**
 
 <br />
 
-### **The Solution** ✌️
+### **Solution** ✌️
 
-> _For below table, reference is taken from the default breakpoints_
+These breakpoints are not just regular breakpoints. Vishesh generates a bunch of other breakpoint variants. <br />
+It has `minimum` + `maximum` + `range` + `only` variants included 🤘.
 
-| Type    | Variant    | Media Query                                        |
-| :------ | :--------- | :------------------------------------------------- |
-| Minimum | xs:        | @media (min-width: 375px)                          |
-|         | sm:        | @media (min-width: 640px)                          |
-|         | md:        | @media (min-width: 768px)                          |
-|         | lg:        | @media (min-width: 1024px)                         |
-|         | xl:        | @media (min-width: 1280x)                          |
-|         | mac:       | @media (min-width: 1440px)                         |
-|         | maxw:      | @media (min-width: 1920px)                         |
-| &nbsp;  |            |                                                    |
-| Maximum | zero-xs:   | @media (min-width: 0px) and (max-width: 374px)     |
-|         | zero-sm:   | @media (min-width: 0px) and (max-width: 639px)     |
-|         | zero-md:   | @media (min-width: 0px) and (max-width: 767px)     |
-|         | zero-lg:   | @media (min-width: 0px) and (max-width: 1023px)    |
-|         | zero-xl:   | @media (min-width: 0px) and (max-width: 1279x)     |
-|         | zero-mac:  | @media (min-width: 0px) and (max-width: 1439px)    |
-|         | zero-maxw: | @media (min-width: 0px) and (max-width: 1919px)    |
-| &nbsp;  |            |                                                    |
-| Range   | xs-sm:     | @media (min-width: 375px) and (max-width: 639px)   |
-|         | lg-mac:    | @media (min-width: 1024px) and (max-width: 1439px) |
-|         | md-maxw:   | @media (min-width: 768px) and (max-width: 1919px)  |
-|         | ...        | and so on...                                       |
-|         |            |                                                    |
+<Callout type="info">
+  <em>This docs website itself using the vishesh preset breakpoint.</em>
+</Callout>
 
-> **List of all availabe ranges**
+<br />
 
-|          |          |          |          |          |           |
-| -------- | -------- | -------- | -------- | -------- | --------- |
+<Tabs items={["Minimum", "Maximum", "Range", "Only"]}>
+
+  <Tab>
+
+> <em>usually we use this breakpoint variants</em>
+
+| Variant | Media Query                |
+| :------ | :------------------------- |
+| xs:     | @media (min-width: 375px)  |
+| sm:     | @media (min-width: 640px)  |
+| md:     | @media (min-width: 768px)  |
+| lg:     | @media (min-width: 1024px) |
+| xl:     | @media (min-width: 1280x)  |
+| mac:    | @media (min-width: 1440px) |
+| maxw:   | @media (min-width: 1920px) |
+
+  </Tab>
+
+  <Tab>
+
+> <em>Just prepend `r` to breakpoint variants</em>
+
+| Variant | Media Query                                     |
+| :------ | :---------------------------------------------- |
+| rxs:    | @media (min-width: 0px) and (max-width: 374px)  |
+| rsm:    | @media (min-width: 0px) and (max-width: 639px)  |
+| rmd:    | @media (min-width: 0px) and (max-width: 767px)  |
+| rlg:    | @media (min-width: 0px) and (max-width: 1023px) |
+| rxl:    | @media (min-width: 0px) and (max-width: 1279x)  |
+| rmac:   | @media (min-width: 0px) and (max-width: 1439px) |
+| rmaxw:  | @media (min-width: 0px) and (max-width: 1919px) |
+
+  </Tab>
+
+  <Tab>
+
+| Variant  | Media Query                                        |
+| :------- | :------------------------------------------------- |
+| xs-sm:   | @media (min-width: 375px) and (max-width: 639px)   |
+| lg-mac:  | @media (min-width: 1024px) and (max-width: 1439px) |
+| md-maxw: | @media (min-width: 768px) and (max-width: 1919px)  |
+| ...      | and so on...                                       |
+
+> <em>**All availabe breakpoint variant ranges**</em>
+
+| xs-\*    | sm-\*    | md-\*    | lg-\*    | xl-\*    | mac-\*    |
+| :------- | :------- | :------- | :------- | :------- | :-------- |
 | xs-sm:   | sm-md:   | md-lg:   | lg-xl:   | xl-mac:  | mac-maxw: |
 | xs-md:   | sm-lg:   | md-xl:   | lg-mac:  | xl-maxw: |           |
 | xs-lg:   | sm-xl:   | md-mac:  | lg-maxw: |          |           |
@@ -97,10 +116,52 @@ Less often, we are in a situation that for mobile we have one design, then on ta
 | xs-mac:  | sm-maxw: |          |          |          |           |
 | xs-maxw: |          |          |          |          |           |
 
+  </Tab>
+
+  <Tab>
+
+> <em>Just prepend `o` to breakpoint variants</em>
+
+| Variant | Media Query                                        |
+| :------ | :------------------------------------------------- |
+| oxs:    | @media (min-width: 375px) and (max-width: 639px)   |
+| osm:    | @media (min-width: 640px) and (max-width: 767px)   |
+| omd:    | @media (min-width: 768px) and (max-width: 1023px)  |
+| olg:    | @media (min-width: 1024px) and (max-width: 1279x)  |
+| oxl:    | @media (min-width: 1280px) and (max-width: 1439px) |
+| omac:   | @media (min-width: 1440px) and (max-width: 1919px) |
+
+  </Tab>
+
+</Tabs>
+
+<br />
+
+### CSS Specificity Order
+
+<Callout type="info">
+  <em>_Higher power variant overrides lower power variant_</em>
+</Callout>
+
+| Power | Variant | Width   |
+| :---- | :------ | :------ |
+| 1     | x:      | minimum |
+| 2     | rx:     | maximum |
+| 3     | x-y:    | range   |
+| 4     | ox:     | only    |
+
 <br />
 
 ### Basic Usage
 
-```js
-class="sm:p-5 zero-md:bg-red-500 sm-md:p-4"
+<Callout type="info">
+  <em>Example is for showcase purpose only</em>
+</Callout>
+
+```js filename="Before"
+class="p-3.5 xs:p-6 sm:p-5 md:p-6 lg:p-7 mac:p-6"
+```
+
+```js filename="After"
+class="p-6 rxs:p-3.5 osm:p-5 lg-mac:p-7"
 ```

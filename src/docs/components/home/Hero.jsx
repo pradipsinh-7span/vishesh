@@ -8,7 +8,7 @@ export default () => {
         <HeroImage />
       </div>
       <div className="sm:max-w-xs md:max-w-sm xl:max-w-lg">
-        <div className="zero-sm:mt-10 text-black dark:text-white">
+        <div className="rsm:mt-10 text-black dark:text-white">
           <h2 className="text-3xl font-semibold capitalize xl:text-5xl xl:leading-[60px]">
             The rapid design system for your next project
           </h2>

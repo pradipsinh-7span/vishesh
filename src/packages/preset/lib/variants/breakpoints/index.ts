@@ -18,11 +18,13 @@ import type { PluginProps } from "../..";
 /**
  * Generates all possible combination of breakpoint variants
  *
- * `x:` - minimum width breakpoint
+ * `x:` - minimum width breakpoint, where **x** is any breakpoint key expect *zero*
  *
- * `zero-*:` - where **\*** is any breakpoint key except *zero*
+ * `rx:` - maximum width breakpoint, where **x** is any breakpoint key except *zero*
  *
- * `x-y:` - where **x** and **y** is breakpoint keys, x is not *zero*
+ * `ox:` - only width breakpoint, where **x** is any breakpoint key except *zero*
+ *
+ * `x-y:` - where **x** and **y** is breakpoint keys, where **x** and **y** is not *zero*
  */
 export default function ({ theme, addVariant }: PluginProps): void {
   // unsorted breakpoints
@@ -40,29 +42,30 @@ export default function ({ theme, addVariant }: PluginProps): void {
 
   /** CSS Specificity order
    * x:         - min-width breakpoints
-   * zero-x:    - max-width breakpoints
+   * rx:        - max-width breakpoints
    * x-y:       - range breakpoints
-   * x-only:    - single breakpoints
+   * ox:        - single breakpoints
    */
 
   // generates minimum width breakpoint variants
+  // x:
   breakpoints.forEach(
     ([key, value]) =>
       key !== "zero" && addVariant(key, `@media (min-width: ${value}px)`)
   );
 
-  // generate zero-*: breakpoint variants
+  // generate r*: breakpoint variants
   // For example,
   // let's take one breakpoint, lg: 1024
   // let's take another breakpoitn, md: 768
-  // then zero-lg: variant applies on the 0-1023 px viewport
-  // then zero-md: variant applies on the 0-767 px viewport
+  // then rlg: variant applies on the 0-1023 px viewport
+  // then rmd: variant applies on the 0-767 px viewport
   // lg-zero, md-zero doesn't make sense.
   breakpoints.forEach(
     ([key, value]) =>
       key !== "zero" &&
       addVariant(
-        `zero-${key}`,
+        `r${key}`,
         `@media (min-width: 0px) and (max-width: ${Math.max(0, value - 1)}px)`
       )
   );
@@ -89,15 +92,15 @@ export default function ({ theme, addVariant }: PluginProps): void {
         }
         /* only breakpoints */
         // For example,
-        // zero-only: not generated as first breakpoint by value
-        // xs-only: 375-639 px viewport
-        // sm-only: 640-767 px viewport
+        // ozero: not generated as first breakpoint by value
+        // oxs: 375-639 px viewport
+        // osm: 640-767 px viewport
         // ...
-        // mac-only: 1440-1919 px viewport
-        // maxw-only: not generated as last breakpoint by value
+        // omac: 1440-1919 px viewport
+        // omaxw: not generated as last breakpoint by value
         if (index + 1 === _index) {
           addVariant(
-            `${key}-only`,
+            `o${key}`,
             `@media (min-width: ${value}px) and (max-width: ${Math.max(
               0,
               _value - 1

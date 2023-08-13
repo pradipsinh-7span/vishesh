@@ -15,7 +15,7 @@ export default () => {
           <br className="sm:hidden" />
           <Products />
         </div>
-        <div className="zero-sm:pt-20 sm-md:pt-16 md:shrink-0">
+        <div className="rsm:pt-20 sm-md:pt-16 md:shrink-0">
           <Roadmap />
         </div>
       </div>
