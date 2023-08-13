@@ -47,6 +47,8 @@ export default function ({ theme, addVariant }: PluginProps): void {
    * ox:        - single breakpoints
    */
 
+  /* POC: can i minimize the loops and optimize the code? */
+
   // generates minimum width breakpoint variants
   // x:
   breakpoints.forEach(
@@ -54,7 +56,7 @@ export default function ({ theme, addVariant }: PluginProps): void {
       key !== "zero" && addVariant(key, `@media (min-width: ${value}px)`)
   );
 
-  // generate r*: breakpoint variants
+  // generate rx: breakpoint variants
   // For example,
   // let's take one breakpoint, lg: 1024
   // let's take another breakpoitn, md: 768
@@ -66,21 +68,21 @@ export default function ({ theme, addVariant }: PluginProps): void {
       key !== "zero" &&
       addVariant(
         `r${key}`,
-        `@media (min-width: 0px) and (max-width: ${Math.max(0, value - 1)}px)`
+        `@media
+      (max-width: ${Math.max(0, value - 1)}px)`
       )
   );
 
-  // range and only breakpoints
+  /* range breakpoints */
+  // generate x-y: breakpoint variants where x is not zero
+  // For example,
+  // let's take one breakpoint, lg: 1024
+  // let's take another breakpoitn, md: 768
+  // then md-lg: variant applies on the 768-1023 px viewport
+  // lg-md doesn't make any sense
   breakpoints.forEach(([key, value], index) => {
     if (key !== "zero") {
       breakpoints.forEach(([_key, _value], _index) => {
-        /* range breakpoints */
-        // generate x-y: breakpoint variants where x is not zero
-        // For example,
-        // let's take one breakpoint, lg: 1024
-        // let's take another breakpoitn, md: 768
-        // then md-lg: variant applies on the 768-1023 px viewport
-        // lg-md doesn't make any sense
         if (_index > index) {
           addVariant(
             `${key}-${_key}`,
@@ -90,14 +92,21 @@ export default function ({ theme, addVariant }: PluginProps): void {
             )}px)`
           );
         }
-        /* only breakpoints */
-        // For example,
-        // ozero: not generated as first breakpoint by value
-        // oxs: 375-639 px viewport
-        // osm: 640-767 px viewport
-        // ...
-        // omac: 1440-1919 px viewport
-        // omaxw: not generated as last breakpoint by value
+      });
+    }
+  });
+
+  /* only breakpoints */
+  // For example,
+  // ozero: not generated as first breakpoint by value
+  // oxs: 375-639 px viewport
+  // osm: 640-767 px viewport
+  // ...
+  // omac: 1440-1919 px viewport
+  // omaxw: not generated as last breakpoint by value
+  breakpoints.forEach(([key, value], index) => {
+    if (key !== "zero") {
+      breakpoints.forEach(([_key, _value], _index) => {
         if (index + 1 === _index) {
           addVariant(
             `o${key}`,
