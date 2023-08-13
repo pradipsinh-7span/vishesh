@@ -16,6 +16,7 @@ export default {
       mode: "fixed",
       center: true,
       spacing: {
+        zero: 16,
         xs: 16,
         sm: 28,
         md: 40,
