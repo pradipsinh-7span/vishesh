@@ -2,23 +2,34 @@ import { Callout } from "nextra-theme-docs";
 
 # Fixed container
 
-<Callout type="warning">
-  Vishesh container is _**`tightly bounded with breakpoints`**_. so, it only
-  generates container classes for breakpoints that's defined in the
-  configurations.
+<Callout type="info">
+  max width = breakpoint - ( 2 * spacing ) <br />
+  <em>_please refer_ [breakpoints][breakpoints]</em>
 </Callout>
 
-> _please refer_ [breakpoints][breakpoints] <br /> `max width = breakpoint - (2 * spacing) ` &nbsp;<br />
+> `container-fixed`
 
-| Class         | Spacing | \<375px | ≥375px | ≥640px | ≥768px | ≥1024px | ≥1280px | ≥1440px | ≥1920px |
-| :------------ | :------ | :------ | :----- | :----- | :----- | :------ | :------ | :------ | :------ |
-| container     | 0       | 100%    | 100%   | 100%   | 100%   | 100%    | 100%    | 100%    | 100%    |
-| container-xs  | 16      | 100%    | 343px  | 584px  | 688px  | 896px   | 1120px  | 1184px  | 1184px  |
-| container-sm  | 28      | 100%    | 100%   | 584px  | 688px  | 896px   | 1120px  | 1184px  | 1184px  |
-| container-md  | 40      | 100%    | 100%   | 100%   | 688px  | 896px   | 1120px  | 1184px  | 1184px  |
-| container-lg  | 64      | 100%    | 100%   | 100%   | 100%   | 896px   | 1120px  | 1184px  | 1184px  |
-| container-xl  | 80      | 100%    | 100%   | 100%   | 100%   | 100%    | 1120px  | 1184px  | 1184px  |
-| container-mac | 128     | 100%    | 100%   | 100%   | 100%   | 100%    | 100%    | 1184px  | 1184px  |
+| breakpoint | spacing | max-width |
+| :--------- | :------ | :-------- |
+| \<375px    | 0       | 100%      |
+| ≥375px     | 16      | 343px     |
+| ≥640px     | 28      | 584px     |
+| ≥768px     | 40      | 688px     |
+| ≥1024px    | 64      | 896px     |
+| ≥1280px    | 80      | 1120px    |
+| ≥1440px    | 128     | 1184px    |
+| ≥1920px    | 240     | 1440px    |
+
+| Class           | Spacing | \<375px | ≥375px | ≥640px | ≥768px | ≥1024px | ≥1280px | ≥1440px | ≥1920px |
+| :-------------- | :------ | :------ | :----- | :----- | :----- | :------ | :------ | :------ | :------ |
+| container-fixed |         | 100%    | 343px  | 584px  | 688px  | 896px   | 1120px  | 1184px  | 1184px  |
+| container       | 0       | 100%    | 100%   | 100%   | 100%   | 100%    | 100%    | 100%    | 100%    |
+| container-xs    | 16      | 100%    | 343px  | 584px  | 688px  | 896px   | 1120px  | 1184px  | 1184px  |
+| container-sm    | 28      | 100%    | 100%   | 584px  | 688px  | 896px   | 1120px  | 1184px  | 1184px  |
+| container-md    | 40      | 100%    | 100%   | 100%   | 688px  | 896px   | 1120px  | 1184px  | 1184px  |
+| container-lg    | 64      | 100%    | 100%   | 100%   | 100%   | 896px   | 1120px  | 1184px  | 1184px  |
+| container-xl    | 80      | 100%    | 100%   | 100%   | 100%   | 100%    | 1120px  | 1184px  | 1184px  |
+| container-mac   | 128     | 100%    | 100%   | 100%   | 100%   | 100%    | 100%    | 1184px  | 1184px  |
 
 <br />
 

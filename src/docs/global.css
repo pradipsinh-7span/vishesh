@@ -54,3 +54,7 @@ code {
 aside > div {
   @apply md:!px-0;
 }
+
+details > div {
+  @apply px-2.5 pt-4;
+}

@@ -88,65 +88,113 @@ retains consistent spacing and alignment.
 
 <br />
 
-## Container Configurations
+## Configuration
 
-The container configurations allow you to customize the behavior and appearance of the container component. <br />
+The container configurations allow you to customize the behavior and appearance of the container component.
 
-| Property | Description                                                          |
-| :------- | :------------------------------------------------------------------- |
-| mode     | Determines the container mode: <br />`fixed \| fluid \| both`        |
-| spacing  | Defines the maximum width of the container at different breakpoints. |
+### mode
 
-> <em>Below two properies only applicable to *fixed container*</em>
+- Determines the container mode
 
-|              |                                                                       |
-| ------------ | --------------------------------------------------------------------- |
-| center       | Determines if the container should be centered: <br />`true \| false` |
-| innerPadding | Equal left and right padding applied to container at each breakpoint  |
-
-<br />
-
-### Mode
-
-| Option    | Descrption                                                                               |
-| --------- | ---------------------------------------------------------------------------------------- |
+<details>
+  <summary>Toggle content</summary>
+| Option    | Descrption          |
+| --------- | ----------------- |
 | **fixed** | Generates a container with a fixed width that adjusts its size at different breakpoints. |
 | **fluid** | Generates a container that dynamically adapts its width to fit the available space.      |
 | **both**  | Use _fixed_ and _fluid_ container together                                               |
 
-### Spacing
-
-- Defines the width of the container at different breakpoints
-
-### Center
-
-| Option    | Descrption                                                                                       |
-| --------- | ------------------------------------------------------------------------------------------------ |
-| **true**  | Creates a centered container with equal margins on both sides (only applicable in `fixed` mode). |
-| **false** | Generates separate classes for left, center, and right alignment.                                |
-
-<br />
-
----
-
-<br />
-
-```css
-/* vishesh generates base container class as below */
-
-.container {
-  width: 100%;
-  display: block;
-  /* if center is true */
-  margin-left: auto;
-  margin-right: auto;
-  /* if initialPading */
-  /* active: true */
-  /* value: 16 */
-  /* resetOn: "xs" */
-  @media (max-width: 375px) {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
+```js
+container: {
+  mode: "fixed" | "fluid" | "both",
+  // ...
 }
 ```
+
+</details>
+
+### spacing
+
+- Defines the maximum width of the container at different breakpoints.
+
+<details>
+  <summary>Toggle content</summary>
+
+```js
+container: {
+  // ...
+  spacing: {
+    "breakpoint key": number
+  },
+  // ...
+}
+```
+
+</details>
+
+### center
+
+- Determines if the container should be centered
+
+> <em>Only applicable in fixed mode</em>
+
+<details>
+  <summary>Toggle content</summary>
+
+| Option    | Descrption                                                        |
+| --------- | ----------------------------------------------------------------- |
+| **true**  | Creates a centered container with equal margins on both sides.    |
+| **false** | Generates separate classes for left, center, and right alignment. |
+
+```js
+container: {
+  // ...
+  center: true | false,
+  // ...
+}
+```
+
+</details>
+
+### innerPadding
+
+- Equal left and right padding applied to the container at each breakpoint
+
+> <em>Only applicable in fixed mode</em>
+
+<details>
+  <summary>Toggle content</summary>
+
+> <em>string must be valid css like "16px", "1rem", etc...</em>
+
+```js filename="apply to all breakpoints"
+container: {
+  // ...
+  innerPadding: number | string,
+  // ...
+}
+```
+
+```js filename="apply to specific breakpoint"
+container: {
+  // ...
+  innerPadding: {
+    "breakpoint key": number | string
+  },
+  // ...
+}
+```
+
+</details>
+
+<br />
+<br />
+
+## Source code
+
+\{ \} [container.ts](https://github.com/mrjadeja/vishesh/blob/main/src/packages/preset/lib/components/container/index.ts "Vishesh preset container source code")
+
+## References
+
+1. [tailwindcss container](https://tailwindcss.com/docs/container "Tailwindcss container documentation") <br />
+2. [bootstrap container](https://getbootstrap.com/docs/5.0/layout/containers "Bootstrap container documentation")
