@@ -7,38 +7,70 @@ import { Callout } from "nextra-theme-docs";
   <em>_please refer_ [breakpoints][breakpoints]</em>
 </Callout>
 
+<br />
+
+## Max width
+
+#### Auto
+
 > `container-fixed`
 
-| breakpoint | spacing | max-width |
-| :--------- | :------ | :-------- |
-| \<375px    | 0       | 100%      |
-| ≥375px     | 16      | 343px     |
-| ≥640px     | 28      | 584px     |
-| ≥768px     | 40      | 688px     |
-| ≥1024px    | 64      | 896px     |
-| ≥1280px    | 80      | 1120px    |
-| ≥1440px    | 128     | 1184px    |
-| ≥1920px    | 240     | 1440px    |
+| breakpoint | \<375px | ≥375px | ≥640px | ≥768px | ≥1024px | ≥1280  | ≥1440px | ≥1920px |
+| :--------- | :------ | :----- | :----- | :----- | :------ | :----- | :------ | :------ |
+| spacing    | 0       | 16     | 28     | 40     | 64      | 80     | 128     | 240     |
+| max-width  | 100%    | 343px  | 584px  | 688px  | 896px   | 1120px | 1184px  | 1440px  |
 
-| Class           | Spacing | \<375px | ≥375px | ≥640px | ≥768px | ≥1024px | ≥1280px | ≥1440px | ≥1920px |
-| :-------------- | :------ | :------ | :----- | :----- | :----- | :------ | :------ | :------ | :------ |
-| container-fixed |         | 100%    | 343px  | 584px  | 688px  | 896px   | 1120px  | 1184px  | 1184px  |
-| container       | 0       | 100%    | 100%   | 100%   | 100%   | 100%    | 100%    | 100%    | 100%    |
-| container-xs    | 16      | 100%    | 343px  | 584px  | 688px  | 896px   | 1120px  | 1184px  | 1184px  |
-| container-sm    | 28      | 100%    | 100%   | 584px  | 688px  | 896px   | 1120px  | 1184px  | 1184px  |
-| container-md    | 40      | 100%    | 100%   | 100%   | 688px  | 896px   | 1120px  | 1184px  | 1184px  |
-| container-lg    | 64      | 100%    | 100%   | 100%   | 100%   | 896px   | 1120px  | 1184px  | 1184px  |
-| container-xl    | 80      | 100%    | 100%   | 100%   | 100%   | 100%    | 1120px  | 1184px  | 1184px  |
-| container-mac   | 128     | 100%    | 100%   | 100%   | 100%   | 100%    | 100%    | 1184px  | 1184px  |
+#### Manual
+
+1\. Base class `container` <small>(mandatory)</small> <br/>
+2\. Max width class `container-x` <small>(where `x` is the breakpoint key)</small>
+
+| Class          | Spacing | \<375px | ≥375px | ≥640px | ≥768px | ≥1024px | ≥1280px | ≥1440px | ≥1920px |
+| :------------- | :------ | :------ | :----- | :----- | :----- | :------ | :------ | :------ | :------ |
+| container      | 0       | 100%    | 100%   | 100%   | 100%   | 100%    | 100%    | 100%    | 100%    |
+| container-xs   | 16      | 100%    | 343px  | 584px  | 688px  | 896px   | 1120px  | 1184px  | 1440px  |
+| container-sm   | 28      | 100%    | 100%   | 584px  | 688px  | 896px   | 1120px  | 1184px  | 1440px  |
+| container-md   | 40      | 100%    | 100%   | 100%   | 688px  | 896px   | 1120px  | 1184px  | 1440px  |
+| container-lg   | 64      | 100%    | 100%   | 100%   | 100%   | 896px   | 1120px  | 1184px  | 1440px  |
+| container-xl   | 80      | 100%    | 100%   | 100%   | 100%   | 100%    | 1120px  | 1184px  | 1440px  |
+| container-mac  | 128     | 100%    | 100%   | 100%   | 100%   | 100%    | 100%    | 1184px  | 1440px  |
+| container-maxw | 240     | 100%    | 100%   | 100%   | 100%   | 100%    | 100%    | 100%    | 1440px  |
 
 <br />
 
-### If center set to false
+## Inner padding
 
-then the following classes are generated:
+Equal left and right padding applied to the container at each breakpoint
+
+#### number
+
+- number should be 0 or greater
+
+#### string
+
+- valid css like "16px", "1rem", etc...first-letter:
+
+#### object
+
+- applied to specific breakpoint
+  - key: breakpoint key
+  - value: number or string
+
+<br />
+
+## Center
+
+#### true
+
+- horizontally align the container to center
+- this is set by default
+
+#### false
+
+- Below classes are available to manually set alignment
 
 | Class            | Description                         |
-| ---------------- | ----------------------------------- |
+| :--------------- | :---------------------------------- |
 | container-left   | Aligns the container to the left.   |
 | container-center | Centers the container horizontally. |
 | container-right  | Aligns the container to the right.  |
