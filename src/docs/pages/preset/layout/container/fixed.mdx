@@ -3,13 +3,15 @@ import { Callout } from "nextra-theme-docs";
 # Fixed container
 
 <Callout type="info">
-  max width = breakpoint - ( 2 * spacing ) <br />
+  <em>max-width = breakpoint - ( 2 * spacing )</em> <br />
   <em>_please refer_ [breakpoints][breakpoints]</em>
 </Callout>
 
 <br />
 
-## Max width
+## Configuration
+
+### Max width
 
 #### Auto
 
@@ -19,6 +21,10 @@ import { Callout } from "nextra-theme-docs";
 | :--------- | :------ | :----- | :----- | :----- | :------ | :----- | :------ | :------ |
 | spacing    | 0       | 16     | 28     | 40     | 64      | 80     | 128     | 240     |
 | max-width  | 100%    | 343px  | 584px  | 688px  | 896px   | 1120px | 1184px  | 1440px  |
+
+<Callout type="error">
+  <em>Don't mix Auto and Manual classes</em>
+</Callout>
 
 #### Manual
 
@@ -38,67 +44,88 @@ import { Callout } from "nextra-theme-docs";
 
 <br />
 
-## Inner padding
+### Inner padding
 
-Equal left and right padding applied to the container at each breakpoint
+Equal left and right padding applied to the fixed container at each breakpoint
 
-#### number
-
-- number should be 0 or greater
-
-#### string
-
-- valid css like "16px", "1rem", etc...first-letter:
-
-#### object
-
-- applied to specific breakpoint
-  - key: breakpoint key
-  - value: number or string
+| Value  | Condition                                                                                    | Default |
+| :----- | :------------------------------------------------------------------------------------------- | :------ |
+| number | should be 0 or greater                                                                       |         |
+| string | valid css like "16px", "1rem", etc...                                                        |         |
+| object | applies to specific breakpoint <br /> - key: breakpoint key <br /> - value: number or string | yes     |
 
 <br />
 
-## Center
+### Center
 
 #### true
 
-- horizontally align the container to center
+- horizontally align the fixed container to center
 - this is set by default
 
 #### false
 
 - Below classes are available to manually set alignment
 
-| Class            | Description                         |
-| :--------------- | :---------------------------------- |
-| container-left   | Aligns the container to the left.   |
-| container-center | Centers the container horizontally. |
-| container-right  | Aligns the container to the right.  |
+| Class            | Description                               |
+| :--------------- | :---------------------------------------- |
+| container-left   | Aligns the fixed container to the left.   |
+| container-center | Centers the fixed container horizontally. |
+| container-right  | Aligns the fixed container to the right.  |
+
+<br />
+<br />
+
+## Base class
+
+```css
+.container {
+  width: 100%;
+  display: block;
+  /* If center is true */
+  margin-right: auto;
+  margin-left: auto;
+  /* If innerWidth.zero set to 16px */
+  padding-left: 16px;
+  padding-right: 16px;
+}
+```
 
 <br />
 
-### Reset Container
+## Reset class
 
 ```css
-/* Vishesh generates container-none class */
-/* to reset the fixed container */
-
 .container-none {
   width: initial;
   margin-left: unset;
   margin-right: unset;
+  padding-left: unset;
+  padding-right: unset;
   max-width: unset;
   display: initial;
 }
 ```
 
-<Callout type="warning">
-  Please consider [css specificity][specificity] when using `container-none`
-</Callout>
-
 <br />
 
-### Basic usage
+## Basic usage
+
+<Callout type="error">
+  <em>Don't mix Auto and Manual classes</em>
+</Callout>
+
+### Auto
+
+> <em>automatically set max-width at each breakpoint</em>
+
+```js
+class="container-fixed"
+```
+
+### Manual
+
+> <em>manually set max-width at a specific breakpoint</em>
 
 ```js
 class="container container-md"

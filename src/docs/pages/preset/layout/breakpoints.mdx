@@ -173,7 +173,10 @@ It has `minimum` + `maximum` + `range` + `only` variants included 🤘.
 </Callout>
 
 ```js filename="Before"
+// without tailwind range variant
 class="p-3.5 xs:p-6 sm:p-5 md:p-6 lg:p-7 mac:p-6"
+// with tailwind range variant
+class="p-6 max-xs:p-3.5 sm:max-md:p-5 lg:max-mac:p-7"
 ```
 
 ```js filename="After"
