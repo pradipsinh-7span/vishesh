@@ -2,47 +2,96 @@ import { Callout } from "nextra-theme-docs";
 
 # Fluid container
 
-<Callout type="warning">
-  Vishesh container is _**`tightly bounded with breakpoints`**_. so, it only
-  generates container classes for breakpoints that's defined in the
-  configurations.
+<Callout type="info">
+  <em>width = 100% - ( 2 * spacing )</em> <br />
+  <em>_please refer_ [breakpoints][breakpoints]</em>
 </Callout>
-
-> _please refer_ [breakpoints][breakpoints] <br /> `container width = 100% - (2 * spacing) ` &nbsp;<br />
-
-| Class         | Spacing | \<375px | ≥375px      | ≥640px      | ≥768px      | ≥1024px      | ≥1280px      | ≥1440px      | ≥1920px      |
-| :------------ | :------ | :------ | :---------- | :---------- | :---------- | :----------- | :----------- | :----------- | :----------- |
-| container     | 0       | 100%    | 100%        | 100%        | 100%        | 100%         | 100%         | 100%         | 100%         |
-| container-xs  | 16      | 100%    | 100% - 32px | 100% - 56px | 100% - 80px | 100% - 128px | 100% - 160px | 100% - 256px | 100% - 256px |
-| container-sm  | 28      | 100%    | 100%        | 100% - 56px | 100% - 80px | 100% - 128px | 100% - 160px | 100% - 256px | 100% - 256px |
-| container-md  | 40      | 100%    | 100%        | 100%        | 100% - 80px | 100% - 128px | 100% - 160px | 100% - 256px | 100% - 256px |
-| container-lg  | 64      | 100%    | 100%        | 100%        | 100%        | 100% - 128px | 100% - 160px | 100% - 256px | 100% - 256px |
-| container-xl  | 80      | 100%    | 100%        | 100%        | 100%        | 100%         | 100% - 160px | 100% - 256px | 100% - 256px |
-| container-mac | 128     | 100%    | 100%        | 100%        | 100%        | 100%         | 100%         | 100% - 256px | 100% - 256px |
 
 <br />
 
-### Reset Container
+## Configuration
+
+### Horizontal padding
+
+#### Auto
+
+> `container-fluid`
+
+| breakpoint | \<375px     | ≥375px      | ≥640px      | ≥768px      | ≥1024px      | ≥1280        | ≥1440px      | ≥1920px      |
+| :--------- | :---------- | :---------- | :---------- | :---------- | :----------- | :----------- | :----------- | :----------- |
+| spacing    | 16          | 16          | 28          | 40          | 64           | 80           | 128          | 240          |
+| width      | 100% - 32px | 100% - 32px | 100% - 56px | 100% - 80px | 100% - 128px | 100% - 160px | 100% - 256px | 100% - 480px |
+
+<Callout type="error">
+  <em>Don't mix Auto and Manual classes</em>
+</Callout>
+
+#### Manual
+
+1\. Base class `container` <small>(mandatory)</small> <br/>
+2\. padding class `container-x` <small>(where `x` is the breakpoint key)</small>
+
+| Class          | Spacing | \<375px     | ≥375px      | ≥640px      | ≥768px      | ≥1024px      | ≥1280px      | ≥1440px      | ≥1920px      |
+| :------------- | :------ | :---------- | :---------- | :---------- | :---------- | :----------- | :----------- | :----------- | :----------- |
+| container      | 16      | 100% - 32px | 100% - 32px | 100% - 32px | 100% - 32px | 100% - 32px  | 100% - 32px  | 100% - 32px  | 100% - 32px  |
+| container-xs   | 16      | 100%        | 100% - 32px | 100% - 56px | 100% - 80px | 100% - 128px | 100% - 160px | 100% - 256px | 100% - 480px |
+| container-sm   | 28      | 100%        | 100%        | 100% - 56px | 100% - 80px | 100% - 128px | 100% - 160px | 100% - 256px | 100% - 480px |
+| container-md   | 40      | 100%        | 100%        | 100%        | 100% - 80px | 100% - 128px | 100% - 160px | 100% - 256px | 100% - 480px |
+| container-lg   | 64      | 100%        | 100%        | 100%        | 100%        | 100% - 128px | 100% - 160px | 100% - 256px | 100% - 480px |
+| container-xl   | 80      | 100%        | 100%        | 100%        | 100%        | 100%         | 100% - 160px | 100% - 256px | 100% - 480px |
+| container-mac  | 128     | 100%        | 100%        | 100%        | 100%        | 100%         | 100%         | 100% - 256px | 100% - 480px |
+| container-maxw | 240     | 100%        | 100%        | 100%        | 100%        | 100%         | 100%         | 100%         | 100% - 480px |
+
+<br />
+<br />
+
+## Base class
 
 ```css
-/* Vishesh generates container-none class */
-/* to reset the fluid container */
+.container {
+  width: 100%;
+  display: block;
+  /* If spacing.zero set to 16px */
+  padding-left: 16px;
+  padding-right: 16px;
+}
+```
 
+<br />
+
+## Reset class
+
+```css
 .container-none {
   width: initial;
+  margin-left: unset;
+  margin-right: unset;
   padding-left: unset;
   padding-right: unset;
+  max-width: unset;
   display: initial;
 }
 ```
 
-<Callout type="warning">
-  Please consider [css specificity][specificity] when using `container-none`
-</Callout>
-
 <br />
 
-### Basic usage
+## Basic usage
+
+<Callout type="error">
+  <em>Don't mix Auto and Manual classes</em>
+</Callout>
+
+### Auto
+
+> <em>automatically set horizontal padding at each breakpoint</em>
+
+```js
+class="container-fluid"
+```
+
+### Manual
+
+> <em>manually set horizontal padding at a specific breakpoint</em>
 
 ```js
 class="container container-md"
