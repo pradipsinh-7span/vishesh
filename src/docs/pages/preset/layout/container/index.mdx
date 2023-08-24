@@ -100,11 +100,11 @@ The container configurations allow you to customize the behavior and appearance 
 | --------- | ----------------- |
 | **fixed** | Generates a container with a fixed width that adjusts its size at different breakpoints. |
 | **fluid** | Generates a container that dynamically adapts its width to fit the available space.      |
-| **both**  | Use _fixed_ and _fluid_ container together                                               |
+| **twin**  | Use _fixed_ and _fluid_ container together                                               |
 
 ```js
 container: {
-  mode: "fixed" | "fluid" | "both",
+  mode: "fixed" | "fluid" | "twin",
   // ...
 }
 ```
@@ -128,6 +128,12 @@ container: {
 }
 ```
 
+<Callout type="info">
+  <em>For fixed container, `spacing.zero`</em>
+  <em> or twin container, `spacing.fixed.zero`</em>
+  <em> is always 0 no matter what value you provide </em>
+</Callout>
+
 </details>
 
 ### center
@@ -139,10 +145,10 @@ container: {
 <details>
   <summary>Toggle content</summary>
 
-| Option    | Descrption                                                        |
-| --------- | ----------------------------------------------------------------- |
-| **true**  | Creates a centered container with equal margins on both sides.    |
-| **false** | Generates separate classes for left, center, and right alignment. |
+| Option    | Descrption                                                          |
+| --------- | ------------------------------------------------------------------- |
+| **true**  | Creates a centered container with equal horizontal margin on sides. |
+| **false** | Generates separate classes for left, center, and right alignment.   |
 
 ```js
 container: {

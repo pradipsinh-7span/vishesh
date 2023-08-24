@@ -7,12 +7,7 @@ export interface BaseProperties {
   paddingRight: string | number;
 }
 
-export interface BothSpacing extends Spacing {
-  fixed?: Spacing;
-  fluid?: Spacing;
-}
-
-export type ContainerMode = "fixed" | "fluid" | "both";
+export type ContainerMode = "fixed" | "fluid" | "twin";
 
 export type InnerPadding =
   | number
@@ -25,27 +20,32 @@ export interface MediaQueryProperties {
   paddingRight: number | string;
 }
 
-interface ContainerFixed extends BaseContainer {
+export type Spacing = Record<keyof Breakpoints, number>;
+
+interface FixedContainer extends BaseContainer {
   mode: "fixed";
   center: boolean;
   innerPadding: InnerPadding;
 }
 
-interface ContainerFluid extends BaseContainer {
+interface FluidContainer extends BaseContainer {
   mode: "fluid";
   innerPadding?: never;
   // POC: add this option to align container manually
   center?: never;
 }
 
-interface ContainerBoth extends BaseContainer {
-  mode: "both";
+interface TwinContainer extends BaseContainer {
+  mode: "twin";
   center: boolean;
-  spacing: BothSpacing;
+  spacing: TwinSpacing;
   innerPadding: InnerPadding;
 }
 
-export type Spacing = Record<keyof Breakpoints, number>;
+export interface TwinSpacing extends Spacing {
+  fixed?: Spacing;
+  fluid?: Spacing;
+}
 
 interface BaseContainer {
   mode: ContainerMode;
@@ -62,4 +62,4 @@ interface BaseContainer {
   padding?: never;
 }
 
-type Container = ContainerFixed | ContainerFluid | ContainerBoth;
+type Container = FixedContainer | FluidContainer | TwinContainer;

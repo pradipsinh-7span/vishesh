@@ -1,0 +1,123 @@
+import { Callout } from "nextra-theme-docs";
+
+# Twin Container
+
+If you choose _Fixed_ or _Fluid_ container then, you can use only one of them in your project. But, what if you want to use both of them together?
+
+Introducing the _Twin container_. though there are a little change in class names and few rules.
+
+<Callout type="info">
+  <em>You can use fixed and fluid container</em>
+  <em> configurations normally as you use</em>
+  <em> when container type is fixed or fluid</em>
+  <em> except there are some changes mentioned below</em>
+</Callout>
+
+<br />
+
+## Spacing
+
+`#1` spacing applies to both container. if you want to override it for _Fixed_ or _Fluid_ container then, you can do it by adding object with the container type key (`#2` and `#3`).
+
+```js
+container: {
+  type: "twin",
+  // ...
+  spacing: {
+    "breakpoint key": number,     // #1
+    fixed: {
+      "breakpoint key": number,   // #2
+    },
+    fluid: {
+      "breakpoint key": number,   // #3
+    }
+  },
+  // ...
+}
+```
+
+<Callout type="info">
+  <em>fixed and fluid objects are optional</em>
+</Callout>
+
+<br />
+
+## Class names
+
+### Auto
+
+For auto class there is no change in name.
+
+1. `container-fixed`
+2. `container-fluid`
+
+### Manual
+
+For manual classes, you have to explicitly add container type in class name to identify which container you are using.
+
+| Type  | Before       | After                |
+| :---- | :----------- | :------------------- |
+| Fixed | container    | container-fixed-base |
+|       | container-sm | container-fixed-sm   |
+|       | container-md | container-fixed-md   |
+|       | // ...       | and so on            |
+| Fluid | container    | container-fluid-base |
+|       | container-sm | container-fluid-sm   |
+|       | container-md | container-fluid-md   |
+|       | // ...       | and so on            |
+
+> <em>If center is set to false</em>
+
+| Type  | Before           | After                  |
+| :---- | :--------------- | :--------------------- |
+| Fixed | container-left   | container-fixed-left   |
+|       | container-center | container-fixed-center |
+|       | container-right  | container-fixed-right  |
+
+<br />
+
+## Basic usage
+
+<Callout type="error">
+  <em>Don't mix Auto and Manual classes</em>
+</Callout>
+<Callout type="error">
+  <em>Don't mix Fixed and Fluid container</em>
+</Callout>
+
+### Auto
+
+> <em>automatically set max-width at each breakpoint</em>
+
+```js
+class="container-fixed"
+```
+
+> <em>automatically set horizontal padding at each breakpoint</em>
+
+```js
+class="container-fluid"
+```
+
+### Manual
+
+> <em>manually set max-width at a specific breakpoint</em>
+
+```js
+class="container-fixed-base container-fixed-md"
+```
+
+> <em>manually set horizontal padding at a specific breakpoint</em>
+
+```js
+class="container-fluid-base container-fluid-md"
+```
+
+### Fixed & Fluid together
+
+> <em>You can use Fixed and Fluid together only</em>
+> <em> by keeping css specificity intact</em>
+
+```js
+class="rxl:container-fluid xl:container-fixed"
+```

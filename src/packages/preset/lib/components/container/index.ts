@@ -15,7 +15,7 @@ import { isObject } from "../../utils";
 import type {
   BaseProperties,
   MediaQueryProperties,
-  BothSpacing,
+  TwinSpacing,
   ContainerMode,
   InnerPadding,
   Spacing,
@@ -63,7 +63,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
   const MODE: ContainerMode = theme("container.mode");
 
   // unsorted spacing
-  const unsortedSpacing: Spacing | BothSpacing = theme("container.spacing");
+  const unsortedSpacing: Spacing | TwinSpacing = theme("container.spacing");
   if (!isObject(unsortedSpacing)) {
     return;
   }
@@ -83,8 +83,8 @@ export default function ({ theme, addComponents }: PluginProps): void {
     } else {
       (unsortedSpacing as Spacing)["zero"] = 0;
     }
-  } else if (MODE === "both") {
-    /* type: both */
+  } else if (MODE === "twin") {
+    /* type: twin */
     // for common set zero to 0
     if (typeof (unsortedSpacing as Spacing).zero === "number") {
       (unsortedSpacing as Spacing).zero = Math.max(
@@ -96,21 +96,21 @@ export default function ({ theme, addComponents }: PluginProps): void {
     }
 
     // fixed
-    if (isObject((unsortedSpacing as BothSpacing).fixed)) {
+    if (isObject((unsortedSpacing as TwinSpacing).fixed)) {
       // only using zero as key
-      (unsortedSpacing as BothSpacing).fixed!["zero"] = 0;
+      (unsortedSpacing as TwinSpacing).fixed!["zero"] = 0;
     }
     // fluid
-    if (isObject((unsortedSpacing as BothSpacing).fluid)) {
+    if (isObject((unsortedSpacing as TwinSpacing).fluid)) {
       // if provided than take it
       // if not make sure zero exists
-      if (typeof (unsortedSpacing as BothSpacing).fluid!.zero === "number") {
-        (unsortedSpacing as BothSpacing).fluid!.zero = Math.max(
+      if (typeof (unsortedSpacing as TwinSpacing).fluid!.zero === "number") {
+        (unsortedSpacing as TwinSpacing).fluid!.zero = Math.max(
           0,
-          (unsortedSpacing as BothSpacing).fluid!.zero
+          (unsortedSpacing as TwinSpacing).fluid!.zero
         );
       } else {
-        (unsortedSpacing as BothSpacing).fluid!["zero"] = (
+        (unsortedSpacing as TwinSpacing).fluid!["zero"] = (
           unsortedSpacing as Spacing
         ).zero;
       }
@@ -122,7 +122,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
     display: "block",
   };
 
-  if (MODE === "fixed" || MODE === "both") {
+  if (MODE === "fixed" || MODE === "twin") {
     // inner padding for container
     const innerPadding: InnerPadding = theme("container.innerPadding");
     if (
@@ -154,13 +154,13 @@ export default function ({ theme, addComponents }: PluginProps): void {
       .map((key): [string, number] => {
         let value = (unsortedSpacing as Spacing)[key];
         if (
-          MODE === "both" &&
-          isObject((unsortedSpacing as BothSpacing).fixed) &&
-          typeof (unsortedSpacing as BothSpacing).fixed![
+          MODE === "twin" &&
+          isObject((unsortedSpacing as TwinSpacing).fixed) &&
+          typeof (unsortedSpacing as TwinSpacing).fixed![
             key as keyof typeof breakpoints
           ] === "number"
         ) {
-          value = (unsortedSpacing as BothSpacing).fixed![
+          value = (unsortedSpacing as TwinSpacing).fixed![
             key as keyof typeof breakpoints
           ];
         }
@@ -175,15 +175,15 @@ export default function ({ theme, addComponents }: PluginProps): void {
 
     if (!(typeof center === "boolean" && center)) {
       addComponents({
-        ".container-left": {
+        [`.container${MODE === "twin" ? "-fixed" : ""}-left`]: {
           marginRight: "auto",
           marginLeft: "unset",
         },
-        ".container-center": {
+        [`.container${MODE === "twin" ? "-fixed" : ""}-center`]: {
           marginRight: "auto",
           marginLeft: "auto",
         },
-        ".container-right": {
+        [`.container${MODE === "twin" ? "-fixed" : ""}-right`]: {
           marginRight: "unset",
           marginLeft: "auto",
         },
@@ -243,7 +243,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
            */
           /* Generating here because of css specificity */
           addComponents({
-            [MODE === "both" ? ".container-fixed-base" : ".container"]: {
+            [MODE === "twin" ? ".container-fixed-base" : ".container"]: {
               ...baseFixedProperties,
             },
           });
@@ -265,7 +265,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
            * 2. or use css variable trick to override properties for that perticular element -> "lg:[max-width:800px]"
            */
           addComponents({
-            [`.container${MODE === "both" ? "-fixed" : ""}-${key}`]: {
+            [`.container${MODE === "twin" ? "-fixed" : ""}-${key}`]: {
               ...mediaQueryProperties,
             },
           });
@@ -273,7 +273,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
       });
   }
 
-  if (MODE === "fluid" || MODE === "both") {
+  if (MODE === "fluid" || MODE === "twin") {
     let baseFluidProperties = {
       ...baseProperties,
     };
@@ -286,13 +286,13 @@ export default function ({ theme, addComponents }: PluginProps): void {
       .map((key): [string, number] => {
         let value = (unsortedSpacing as Spacing)[key];
         if (
-          MODE === "both" &&
-          isObject((unsortedSpacing as BothSpacing).fluid) &&
-          typeof (unsortedSpacing as BothSpacing).fluid![
+          MODE === "twin" &&
+          isObject((unsortedSpacing as TwinSpacing).fluid) &&
+          typeof (unsortedSpacing as TwinSpacing).fluid![
             key as keyof typeof breakpoints
           ] === "number"
         ) {
-          value = (unsortedSpacing as BothSpacing).fluid![
+          value = (unsortedSpacing as TwinSpacing).fluid![
             key as keyof typeof breakpoints
           ];
         }
@@ -342,7 +342,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
          */
         /* Generating here because of css specificity */
         addComponents({
-          [MODE === "both" ? ".container-fluid-base" : ".container"]: {
+          [MODE === "twin" ? ".container-fluid-base" : ".container"]: {
             ...baseFluidProperties,
           },
         });
@@ -364,7 +364,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
          * 2. or use css variable trick to override properties for that perticular element -> "lg:[max-width:800px]"
          */
         addComponents({
-          [`.container${MODE === "both" ? "-fluid" : ""}-${key}`]: {
+          [`.container${MODE === "twin" ? "-fluid" : ""}-${key}`]: {
             ...mediaQueryProperties,
           },
         });

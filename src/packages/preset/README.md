@@ -338,7 +338,7 @@ The container configurations allow you to customize the behavior and appearance 
 
 ### Center
 
-- `true`: Creates a centered container with equal margins on both sides (only applicable in `fixed` mode).
+- `true`: Creates a centered container with equal horizontal margin on sides (only applicable in `fixed` mode).
 - `false`: Generates separate classes for left, center, and right alignment.
 
 ### Initial Padding

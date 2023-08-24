@@ -11,7 +11,7 @@ export default {
         md: 760,
       },
       container: {
-        mode: "both",
+        mode: "twin",
         spacing: {
           zero: 16,
           xs: 32,
