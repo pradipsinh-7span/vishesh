@@ -28,7 +28,7 @@ jobs:
       - name: install dependencies
         run: pnpm i
       - name: build packages
-        run: pnpm build
+        run: pnpm build --filter vishesh-preset
       - name: publish
         run: pnpm publish-it --filter vishesh-preset
         env:
