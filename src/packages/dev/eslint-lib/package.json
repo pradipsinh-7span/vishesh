@@ -31,8 +31,8 @@
     "mrjadeja"
   ],
   "files": [
-    "CHANGELOG.md",
     "CODE_OF_CONDUCT.md",
+    "CHANGELOG.md",
     "CONTRIBUTING.md"
   ],
   "homepage": "https://github.com/mrjadeja/vishesh/tree/main/src/packages/dev/eslint-lib",
