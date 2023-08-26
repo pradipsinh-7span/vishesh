@@ -1,7 +1,7 @@
 {
   "name": "vishesh",
   "description": "The ui design system build on top of the tailwindcss ✌",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "type": "module",
   "scripts": {
     "clear": "pnpx rimraf --glob **/node_modules **/dist **/types **/.turbo **/.next **/tsconfig.tsbuildinfo",
