@@ -20,19 +20,19 @@ article > main {
 }
 
 div.nx-max-w-\[90rem\] {
-  @apply md:container md:flex container-md;
+  @apply md:container-fixed md:flex;
 }
 
 div.nx-max-w-\[90rem\] article {
   @apply !px-0;
 }
 
+aside > div {
+  @apply rmd:!px-6;
+}
+
 .nextra-steps h3::before {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-indent: 0;
-  margin-top: -1px;
+  @apply flex items-center justify-center indent-0 -mt-px;
 }
 
 .nextra-steps > h3 {
@@ -52,5 +52,9 @@ code {
 }
 
 aside > div {
-  @apply md:!pl-0;
+  @apply md:!px-0;
+}
+
+details > div {
+  @apply px-2.5 pt-4;
 }

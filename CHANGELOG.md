@@ -14,11 +14,77 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [1.10.0] - 26-08-2023
+
+<br>
+
+### Added
+
+- [origin]\: #30 &nbsp;-&nbsp; add docs changelog file reference (0.10.0)
+- [pkg-001]\: #30 &nbsp;-&nbsp; add breakpoint variant: `only` (0.4.0)
+- [pkg-001]\: #30 &nbsp;-&nbsp; add inner padding for fixed container (0.4.0)
+- [pkg-001]\: #30 &nbsp;-&nbsp; add twin container (0.4.0)
+- [play-001]\: #30 &nbsp;-&nbsp; add and use twin container (0.2.0)
+- [play-002]\: #30 &nbsp;-&nbsp; add and use twin container (0.2.0)
+- [doc-001]\: #30 &nbsp;-&nbsp; add source code link (0.5.0)
+- [doc-001]\: #30 &nbsp;-&nbsp; add description to breakpoints and container (0.5.0)
+- [doc-001]\: #30 &nbsp;-&nbsp; add twin container (0.5.0)
+
+<br />
+
+### Improved
+
+- [origin]\: #30 &nbsp;-&nbsp; update changelog naming convention (0.10.0)
+  - Fixed to Improved
+  - Updated to Improved
+- [pkg-001]\: #30 &nbsp;-&nbsp; prevent zero from override for breakpoints and fixed container (0.4.0)
+- [pkg-001]\: #30 &nbsp;-&nbsp; improve css specificity (0.4.0)
+- [pkg-001]\: #30 &nbsp;-&nbsp; improve typescript (0.4.0)
+- [pkg-001]\: #30 &nbsp;-&nbsp; improve lib folder and files structure (0.4.0)
+- [pkg-001]\: #30 &nbsp;-&nbsp; minimize the readme (0.4.0)
+- [pkg-002]\: #30 &nbsp;-&nbsp; minimize the readme (0.1.7)
+- [pkg-003]\: #30 &nbsp;-&nbsp; minimize the readme (0.1.7)
+- [pkg-004]\: #30 &nbsp;-&nbsp; minimize the readme (0.1.8)
+- [pkg-005]\: #30 &nbsp;-&nbsp; minimize the readme (0.1.6)
+- [pkg-006]\: #30 &nbsp;-&nbsp; minimize the readme (0.1.6)
+- [pkg-007]\: #30 &nbsp;-&nbsp; minimize the readme (0.1.6)
+- [pkg-008]\: #30 &nbsp;-&nbsp; minimize the readme (0.1.6)
+- [pkg-009]\: #30 &nbsp;-&nbsp; minimize the readme (0.1.7)
+- [doc-001]\: #30 &nbsp;-&nbsp; change roadmap timeline (0.5.0)
+- [doc-001]\: #30 &nbsp;-&nbsp; improve css (0.5.0)
+- [doc-001]\: #30 &nbsp;-&nbsp; improve url and filetree structure (0.5.0)
+- [doc-001]\: #30 &nbsp;-&nbsp; improve preset and configs documentation (0.5.0)
+- [doc-001]\: #30 &nbsp;-&nbsp; improve readme (0.5.0)
+- [doc-001]\: #30 &nbsp;-&nbsp; replace all tabs with accordion except scripts section for SEO (0.5.0)
+
+<br />
+
+### Removed
+
+- [origin]\: #30 &nbsp;-&nbsp; remove full details from readme (0.10.0)
+- [pkg-001]\: #30 &nbsp;-&nbsp; remove todo and POC from the code (0.4.0)
+- [pkg-001]\: #30 &nbsp;-&nbsp; remove `initialPadding` for fixed container (0.4.0)
+- [pkg-001]\: #30 &nbsp;-&nbsp; remove full documentaion from readme (0.4.0)
+- [pkg-002]\: #30 &nbsp;-&nbsp; remove full documentaion from readme (0.1.7)
+- [pkg-003]\: #30 &nbsp;-&nbsp; remove full documentaion from readme (0.1.7)
+- [pkg-004]\: #30 &nbsp;-&nbsp; remove full documentaion from readme (0.1.8)
+- [pkg-005]\: #30 &nbsp;-&nbsp; remove full documentaion from readme (0.1.6)
+- [pkg-006]\: #30 &nbsp;-&nbsp; remove full documentaion from readme (0.1.6)
+- [pkg-007]\: #30 &nbsp;-&nbsp; remove full documentaion from readme (0.1.6)
+- [pkg-008]\: #30 &nbsp;-&nbsp; remove full documentaion from readme (0.1.6)
+- [pkg-009]\: #30 &nbsp;-&nbsp; remove full documentaion from readme (0.1.7)
+- [doc-001]\: #30 &nbsp;-&nbsp; remove todo and POC from the code (0.5.0)
+- [doc-001]\: #30 &nbsp;-&nbsp; remove `initialPadding` for fixed container (0.5.0)
+
+<br /><br />
+
+---
+
 ## [1.2.1] - 23-07-2023
 
 <br>
 
-### Fixed
+### Improved
 
 - [doc-001]\: #53 &nbsp;-&nbsp; fix references (0.2.1)
 - [pkg-001]\: #53 &nbsp;-&nbsp; fix references (0.1.8)
@@ -45,7 +111,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Updated
+### Improved
 
 - [pkg-001]\: #18 &nbsp;-&nbsp; improve documentation (0.1.7)
 - [pkg-002]\: #18 &nbsp;-&nbsp; improve documentation (0.1.5)
@@ -65,7 +131,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Fixed
+### Improved
 
 - [pkg-004]\: #48 &nbsp;-&nbsp; react setting is at root location not in the settings (0.1.5)
 - [pkg-009]\: #48 &nbsp;-&nbsp; typo in readme setup (0.1.4)
@@ -91,7 +157,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Fixed
+### Improved
 
 - [pkg-001]\: vishesh tsconfig path (0.1.4)
 - [pkg-002]\: vishesh tsconfig path (0.1.4)
@@ -105,7 +171,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Updated
+### Improved
 
 - [pkg-001]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.5)
 - [pkg-002]\: #21 &nbsp;-&nbsp; updated package name - remove scope (0.1.3)
@@ -131,7 +197,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Updated
+### Improved
 
 - [pkg-001]\: &nbsp; #13 &nbsp;-&nbsp; `max:` -> `maxw:` (0.1.4)
 
@@ -147,7 +213,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 - [origin]
 
-### Fixed
+### Improved
 
 - [pkg-001]\: typos in documentation (0.1.3)
 
@@ -159,7 +225,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Updated
+### Improved
 
 - [pkg-001]\: documentation (0.1.2)
 - [pkg-002]\: documentation (0.1.2)
@@ -179,7 +245,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Fixed
+### Improved
 
 - [pkg-001]\: publish config
 - [pkg-002]: publish config
@@ -236,6 +302,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[1.10.0]: https://github.com/mrjadeja/vishesh/commit/51b34689...af778dea
 [1.2.1]: https://github.com/mrjadeja/vishesh/commit/780a6ee8...51b34689
 [1.2.0]: https://github.com/mrjadeja/vishesh/compare/9d8beb7e...780a6ee8
 [1.1.1]: https://github.com/mrjadeja/vishesh/compare/62545388...9d8beb7e
@@ -261,6 +328,7 @@ and this project adheres to [Semantic Versioning][semver].
 [pkg-009]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/tsconfig-react/CHANGELOG.md "Changelog of typescript config for react"
 [play-001]: https://github.com/mrjadeja/vishesh/blob/main/src/playground/preset/esm/CHANGELOG.md "Changelog of playground for testing vishesh preset (esm)"
 [play-002]: https://github.com/mrjadeja/vishesh/blob/main/src/playground/preset/cjs/CHANGELOG.md "Changelog of playground for testing vishesh preset (cjs)"
+[doc-001]: https://github.com/mrjadeja/vishesh/blob/main/src/docs/CHANGELOG.md "Changelog of playground for testing vishesh preset (cjs)"
 [list-uid]: https://github.com/mrjadeja/vishesh/UID_LIST.md "List of packages unique identifier"
 [changelog]: https://keepachangelog.com/en/1.0.0/ "Keep a changelog guide"
 [semver]: https://semver.org/spec/v2.0.0.html "Semantic versioning"

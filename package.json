@@ -1,7 +1,7 @@
 {
   "name": "vishesh",
   "description": "The ui design system build on top of the tailwindcss ✌",
-  "version": "1.2.1",
+  "version": "1.10.0",
   "type": "module",
   "scripts": {
     "clear": "pnpx rimraf --glob **/node_modules **/dist **/types **/.turbo **/.next **/tsconfig.tsbuildinfo",
@@ -16,6 +16,7 @@
     "fix:code-quality": "turbo run fix:code-quality",
     "fix:lint": "turbo run fix:lint",
     "build": "turbo run build",
+    "watch:build": "turbo run watch:build",
     "preview": "turbo run preview",
     "publish-it": "turbo run publish-it"
   },
@@ -60,7 +61,7 @@
   },
   "engines": {
     "node": ">=18.0.0 <19.0.0",
-    "pnpm": ">=8.5.0 <9.0.0",
+    "pnpm": "8.5.1",
     "npm": "please-use-pnpm",
     "yarn": "please-use-pnpm"
   },

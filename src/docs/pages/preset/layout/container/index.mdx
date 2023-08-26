@@ -1,0 +1,204 @@
+import { Callout, Tabs, Tab } from "nextra-theme-docs";
+
+# Container
+
+A container in responsive web design is a wrapper element that provides a structured and adaptable layout for content.
+
+<Callout type="info">
+  <em>Tailwind has a container. but, it is very limited.</em>
+</Callout>
+
+<Callout type="warning">
+  <em>Vishesh preset container is _**`tightly bounded with breakpoints`**_.</em>
+  <em> so, it only generates container classes for</em>
+  <em> breakpoints that's defined in the configurations.</em>
+</Callout>
+
+<br />
+<br />
+
+## Types of container
+
+### Improved container
+
+It is a container with a predetermined width that adjusts its size at every
+breakpoint. This enables the layout to seamlessly adapt to various screen
+sizes while preserving a consistent width within each breakpoint, ensuring a
+cohesive and visually appealing design across different devices.
+
+### Fluid container
+
+It dynamically adapts its width to fit the available space, while
+simultaneously adjusting its padding at different breakpoints. This ensures
+that the container scales proportionally, maintains a flexible layout, and
+retains consistent spacing and alignment.
+
+<br />
+
+## **Setup**
+
+```diff
+{
+  content: [____],
+  theme: {
+-   container: {
+-     center: true,
+-     padding: {
+-       DEFAULT: '1rem',
+-       sm: '2rem',
+-       lg: '4rem',
+-       xl: '5rem',
+-       '2xl': '6rem',
+-     },
+-   },
+    extend: {
+#     /* defaults values are there */
+#     /* no need to add */
+#     /* just for reference */
++     container: {
++       mode: "fixed",
++       center: true,
++       spacing: {
++         zero: 16,
++         xs: 16,
++         sm: 28,
++         md: 40,
++         lg: 64,
++         xl: 80,
++         mac: 128
++         maxw: 240
++       },
++       innerPadding: {
++         xs: 16,
++         sm: 0,
++         md: 0,
++         lg: 0,
++         xl: 0,
++         mac: 0,
++         maxw: 0
++       }
++     }
+    }
+  },
+  plugins: [____]
+}
+```
+
+<br />
+
+## Configuration
+
+The container configurations allow you to customize the behavior and appearance of the container component.
+
+### mode
+
+- Determines the container mode
+
+<details>
+  <summary>Toggle content</summary>
+| Option    | Descrption          |
+| --------- | ----------------- |
+| **fixed** | Generates a container with a fixed width that adjusts its size at different breakpoints. |
+| **fluid** | Generates a container that dynamically adapts its width to fit the available space.      |
+| **twin**  | Use _fixed_ and _fluid_ container together                                               |
+
+```js
+container: {
+  mode: "fixed" | "fluid" | "twin",
+  // ...
+}
+```
+
+</details>
+
+### spacing
+
+- Defines the maximum width of the container at different breakpoints.
+
+<details>
+  <summary>Toggle content</summary>
+
+```js
+container: {
+  // ...
+  spacing: {
+    "breakpoint key": number
+  },
+  // ...
+}
+```
+
+<Callout type="info">
+  <em>For fixed container, `spacing.zero`</em>
+  <em> or twin container, `spacing.fixed.zero`</em>
+  <em> is always 0 no matter what value you provide </em>
+</Callout>
+
+</details>
+
+### center
+
+- Determines if the fixed container should be centered
+
+> <em>Only applicable in fixed mode</em>
+
+<details>
+  <summary>Toggle content</summary>
+
+| Option    | Descrption                                                          |
+| --------- | ------------------------------------------------------------------- |
+| **true**  | Creates a centered container with equal horizontal margin on sides. |
+| **false** | Generates separate classes for left, center, and right alignment.   |
+
+```js
+container: {
+  // ...
+  center: true | false,
+  // ...
+}
+```
+
+</details>
+
+### innerPadding
+
+- Equal left and right padding applied to the fixed container at each breakpoint
+
+> <em>Only applicable in fixed mode</em>
+
+<details>
+  <summary>Toggle content</summary>
+
+> <em>string must be valid css like "16px", "1rem", etc...</em>
+
+```js filename="apply to all breakpoints"
+container: {
+  // ...
+  innerPadding: number | string,
+  // ...
+}
+```
+
+```js filename="apply to specific breakpoint"
+container: {
+  // ...
+  innerPadding: {
+    "breakpoint key": number | string
+  },
+  // ...
+}
+```
+
+</details>
+
+<br />
+<br />
+
+## Source code
+
+\{ \} [container.ts](https://github.com/mrjadeja/vishesh/blob/main/src/packages/preset/lib/components/container/index.ts "Vishesh preset container source code")
+
+## References
+
+1. [tailwindcss container](https://tailwindcss.com/docs/container "Tailwindcss container documentation") <br />
+2. [bootstrap container](https://getbootstrap.com/docs/5.0/layout/containers "Bootstrap container documentation")

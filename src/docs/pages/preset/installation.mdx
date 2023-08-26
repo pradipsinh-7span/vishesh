@@ -49,24 +49,24 @@ v3 or higher
 
 ## Setup
 
-1\. Setup [Tailwindcss][tailwindcss] &nbsp;&nbsp;(_if not already_)
+1\. Setup [Tailwindcss][tailwindcss] &nbsp;&nbsp;(<small>_if not already_</small>)
 
 <Callout type="warning">
-  if running on v2, [migrate to v3][migrate-to-v3]
+  <em>if running on v2, [migrate to v3][migrate-to-v3]</em>
 </Callout>
 
 2\. go to your tailwind config file. then, identify which package to install by looking at the way your config file were exported.
 
 <Callout>
-  &nbsp;&nbsp; **ESM**: `export default` <br />
-  &nbsp;&nbsp; **CJS**: &nbsp; `module.exports`
+  <em>**ESM**: `export default`</em> <br />
+  <em>**CJS**: `module.exports`</em>
 </Callout>
 
 <br />
 
 ### Setup ESM
 
-> you can extend or override [config][tailwind-config]
+> <em>you can extend or override [config][tailwind-config]</em>
 
 ```diff filename="tailwind.config.js"
 # /* your imports */
@@ -93,7 +93,7 @@ v3 or higher
 
 ### Setup CJS
 
-> you can extend or override [config][tailwind-config]
+> <em>you can extend or override [config][tailwind-config]</em>
 
 ```diff filename="tailwind.config.cjs"
 # /* your imports */
@@ -114,6 +114,15 @@ v3 or higher
     plugins: [____]
   }
 ```
+
+<br />
+<br />
+
+## Customize
+
+Vishesh preset was shipped with _default configurations to start_. Providing you a headstart in your journey. <br />
+
+> <em>👉 &nbsp; you can customize it with `theme.extend`</em>
 
 [tailwindcss]: https://tailwindcss.com/docs/installation/framework-guides "Setup tailwindcss"
 [tailwind-config]: https://tailwindcss.com/docs/configuration#configuration-options "Tailwindcss configuration documentation"

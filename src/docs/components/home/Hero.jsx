@@ -4,15 +4,15 @@ import { HeroImage } from "../icons/HeroImage";
 export default () => {
   return (
     <section className="py-10 sm:flex sm:flex-row-reverse md:items-center sm-md:pt-8 xl:py-16">
-      <div className="mx-auto w-40 text-primary dark:text-primary-light sm:w-44 xl:w-72">
+      <div className="ml-auto rsm:mr-auto w-40 text-primary dark:text-primary-light sm:w-44 xl:w-72">
         <HeroImage />
       </div>
       <div className="sm:max-w-xs md:max-w-sm xl:max-w-lg">
-        <div className="zero-sm:mt-10 text-black dark:text-white">
+        <div className="rsm:mt-10 text-black dark:text-white">
           <h2 className="text-3xl font-semibold capitalize xl:text-5xl xl:leading-[60px]">
             The rapid design system for your next project
           </h2>
-          <h4 className="mt-4 xl:text-xl xl:mt-6">
+          <h4 className="mt-4 xl:text-lg xl:mt-6 italic">
             Unlease the true potential of your project with <em>vishesh</em>,
             where confidence meets <strong>boldness</strong> in design.
           </h4>

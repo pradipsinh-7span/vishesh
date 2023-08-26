@@ -1,7 +1,7 @@
 {
   "name": "vishesh-tsconfig-lib",
   "description": "Typescript library configuration with vite",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "scripts": {
     "publish-it": "pnpm publish --access public"
   },

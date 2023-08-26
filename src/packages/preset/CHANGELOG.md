@@ -13,15 +13,47 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.4.0] - 26-08-2023
+
+<br>
+
+### Added
+
+- #30 &nbsp;-&nbsp; add breakpoint variant: `only`
+- #30 &nbsp;-&nbsp; add inner padding for fixed container
+- #30 &nbsp;-&nbsp; add twin container
+
+<br />
+
+### Improved
+
+- #30 &nbsp;-&nbsp; prevent zero from override for breakpoints and fixed container
+- #30 &nbsp;-&nbsp; improve css specificity
+- #30 &nbsp;-&nbsp; improve typescript
+- #30 &nbsp;-&nbsp; improve lib folder and files structure
+- #30 &nbsp;-&nbsp; minimize the readme
+
+<br />
+
+### Removed
+
+- #30 &nbsp;-&nbsp; remove todo and POC from the code
+- #30 &nbsp;-&nbsp; remove `initialPadding` for fixed container
+- #30 &nbsp;-&nbsp; remove full documentaion from readme
+
+<br /><br />
+
+---
+
 ## [0.1.8] - 23-07-2023
 
 <br>
 
-### Fixed
+### Improved
 
 - #53 &nbsp;-&nbsp; fix references
 
-<br />
+<br /><br />
 
 ---
 
@@ -29,7 +61,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Updated
+### Improved
 
 - #18 &nbsp;-&nbsp; improve documentation
 
@@ -53,7 +85,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Updated
+### Improved
 
 - #13 &nbsp;-&nbsp; `max:` -> `maxw:`
 
@@ -65,7 +97,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Fixed
+### Improved
 
 - typos in documentation
 
@@ -77,7 +109,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Updated
+### Improved
 
 - documentation
 
@@ -89,7 +121,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Fixed
+### Improved
 
 - publish configs
 
@@ -126,6 +158,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.4.0]: https://github.com/mrjadeja/vishesh/commit/51b34689...af778dea
 [0.1.8]: https://github.com/mrjadeja/vishesh/commit/780a6ee8...51b34689
 [0.1.7]: https://github.com/mrjadeja/vishesh/compare/72f2f1c2...780a6ee8
 [0.1.5]: https://github.com/mrjadeja/vishesh/compare/ca79ae8...72f2f1c2

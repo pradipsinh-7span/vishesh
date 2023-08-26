@@ -1,0 +1,196 @@
+import { Callout, Tabs, Tab } from "nextra-theme-docs";
+
+# Breakpoints
+
+Breakpoints are like signposts in web design that signal when a design needs to adapt to different screen sizes. They guide the website's layout and appearance, ensuring it's user-friendly across devices like phones, tablets, and computers.
+
+When a screen hits a breakpoint, the design switches to a version that fits that size perfectly. Breakpoints are like the magic behind a website's ability to look great and work seamlessly, no matter if you're browsing on a tiny smartphone or a large desktop monitor.
+
+<br />
+
+<Callout type="warning">
+  <em>We disabled `screens` and added `breakpoints`.</em>
+</Callout>
+
+```diff filename="tailwind.config.js"
+# Default breakpoints are in pixels
+{
+  content: [____],
+  theme: {
+-    screens: {
+-      zero: 0,
+-      xs: 375,
+-      sm: 640,
+-      md: 768,
+-      lg: 1024,
+-      xl: 1280,
+-      mac: 1440,
+-      maxw: 1920,
+-    },
+    extend: {
+#     /* defaults values are there */
+#     /* no need to add */
+#     /* just for reference */
++     breakpoints: {
++       zero: 0,
++       xs: 375,
++       sm: 640,
++       md: 768,
++       lg: 1024,
++       xl: 1280,
++       mac: 1440,
++       maxw: 1920,
++     },
+    }
+  },
+  plugins: [____]
+}
+```
+
+<br />
+
+## **Why?**
+
+We all experienced that minimum or maximum breakpoints are not enough. if we are using tailwind then, we need to manually create such breakpoints.<br />
+
+Less often, we are in a situation that for mobile we have one design, then on tablet we have other design. but, on desktop we have design that is similar to mobile. _we have to reset the styles everytime_ 😓.
+
+<br />
+
+## **Solution** ✌️
+
+These breakpoints are not just regular breakpoints. Vishesh generates a bunch of other breakpoint variants. <br />
+It has `minimum` + `maximum` + `range` + `only` variants included 🤘.
+
+<Callout type="info">
+  <em>This docs website itself using the vishesh preset breakpoint.</em>
+</Callout>
+
+<br />
+
+### Minimum variants
+
+<details>
+  <summary>Toggle content</summary>
+
+> <em>usually we use this breakpoint variants</em>
+
+| Variant | Media Query                |
+| :------ | :------------------------- |
+| xs:     | @media (min-width: 375px)  |
+| sm:     | @media (min-width: 640px)  |
+| md:     | @media (min-width: 768px)  |
+| lg:     | @media (min-width: 1024px) |
+| xl:     | @media (min-width: 1280x)  |
+| mac:    | @media (min-width: 1440px) |
+| maxw:   | @media (min-width: 1920px) |
+
+</details>
+
+### Maximum variants
+
+<details>
+  <summary>Toggle content</summary>
+
+> <em>Just prepend `r` to breakpoint variants</em>
+
+| Variant | Media Query                                     |
+| :------ | :---------------------------------------------- |
+| rxs:    | @media (min-width: 0px) and (max-width: 374px)  |
+| rsm:    | @media (min-width: 0px) and (max-width: 639px)  |
+| rmd:    | @media (min-width: 0px) and (max-width: 767px)  |
+| rlg:    | @media (min-width: 0px) and (max-width: 1023px) |
+| rxl:    | @media (min-width: 0px) and (max-width: 1279x)  |
+| rmac:   | @media (min-width: 0px) and (max-width: 1439px) |
+| rmaxw:  | @media (min-width: 0px) and (max-width: 1919px) |
+
+</details>
+
+### Range variants
+
+<details>
+  <summary>Toggle content</summary>
+
+| Variant  | Media Query                                        |
+| :------- | :------------------------------------------------- |
+| xs-sm:   | @media (min-width: 375px) and (max-width: 639px)   |
+| lg-mac:  | @media (min-width: 1024px) and (max-width: 1439px) |
+| md-maxw: | @media (min-width: 768px) and (max-width: 1919px)  |
+| ...      | and so on...                                       |
+
+> <em>**All availabe breakpoint variant ranges**</em>
+
+| xs-\*    | sm-\*    | md-\*    | lg-\*    | xl-\*    | mac-\*    |
+| :------- | :------- | :------- | :------- | :------- | :-------- |
+| xs-sm:   | sm-md:   | md-lg:   | lg-xl:   | xl-mac:  | mac-maxw: |
+| xs-md:   | sm-lg:   | md-xl:   | lg-mac:  | xl-maxw: |           |
+| xs-lg:   | sm-xl:   | md-mac:  | lg-maxw: |          |           |
+| xs-xl:   | sm-mac:  | md-maxw: |          |          |           |
+| xs-mac:  | sm-maxw: |          |          |          |           |
+| xs-maxw: |          |          |          |          |           |
+
+</details>
+
+### Only variants
+
+<details>
+  <summary>Toggle content</summary>
+
+> <em>Just prepend `o` to breakpoint variants</em>
+
+| Variant | Media Query                                        |
+| :------ | :------------------------------------------------- |
+| oxs:    | @media (min-width: 375px) and (max-width: 639px)   |
+| osm:    | @media (min-width: 640px) and (max-width: 767px)   |
+| omd:    | @media (min-width: 768px) and (max-width: 1023px)  |
+| olg:    | @media (min-width: 1024px) and (max-width: 1279x)  |
+| oxl:    | @media (min-width: 1280px) and (max-width: 1439px) |
+| omac:   | @media (min-width: 1440px) and (max-width: 1919px) |
+
+</details>
+
+<br />
+
+## CSS Specificity Order
+
+<Callout type="info">
+  <em>_Higher power variant overrides lower power variant_</em>
+</Callout>
+
+| Power | Variant | Width   |
+| :---- | :------ | :------ |
+| 1     | x:      | minimum |
+| 2     | rx:     | maximum |
+| 3     | x-y:    | range   |
+| 4     | ox:     | only    |
+
+<br />
+
+## Basic Usage
+
+<Callout type="info">
+  <em>Example is for showcase purpose only</em>
+</Callout>
+
+```js filename="Before"
+// without tailwind range variant
+class="p-3.5 xs:p-6 sm:p-5 md:p-6 lg:p-7 mac:p-6"
+// with tailwind range variant
+class="p-6 max-xs:p-3.5 sm:max-md:p-5 lg:max-mac:p-7"
+```
+
+```js filename="After"
+class="p-6 rxs:p-3.5 osm:p-5 lg-mac:p-7"
+```
+
+<br />
+
+## Source code
+
+\{ \} [breakpoints.ts](https://github.com/mrjadeja/vishesh/blob/main/src/packages/preset/lib/variants/breakpoints/index.ts "Vishesh preset breakpoints source code")
+
+## References
+
+1. [tailwindcss responsive design](https://tailwindcss.com/docs/responsive-design "Tailwindcss responsive design documentation") <br />
+2. [tailwindcss customizing breakpoints](https://tailwindcss.com/docs/screens "Tailwindcss customizing screens documentation") <br />
+3. [bootstrap breakpoints](https://getbootstrap.com/docs/5.3/layout/breakpoints "Bootstrap breakpoints documentation")

@@ -1,7 +1,7 @@
 {
   "name": "vishesh-tsconfig-react",
   "description": "Typescript react configuration with vite and alias",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "scripts": {
     "publish-it": "pnpm publish --access public"
   },

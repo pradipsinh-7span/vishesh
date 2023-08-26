@@ -9,15 +9,33 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.1.8] - 26-08-2023
+
+<br>
+
+### Improved
+
+- #30 &nbsp;-&nbsp; minimize the readme
+
+<br />
+
+### Removed
+
+- #30 &nbsp;-&nbsp; remove full documentaion from readme
+
+<br /><br />
+
+---
+
 ## [0.1.7] - 23-07-2023
 
 <br>
 
-### Fixed
+### Improved
 
 - #53 &nbsp;-&nbsp; fix references
 
-<br />
+<br /><br />
 
 ---
 
@@ -25,7 +43,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Updated
+### Improved
 
 - #18 &nbsp;-&nbsp; improve documentation
 
@@ -37,7 +55,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Fixed
+### Improved
 
 - #48 &nbsp;-&nbsp; react setting is at root location not in the settings
 
@@ -49,7 +67,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Fixed
+### Improved
 
 - vishesh tsconfig path
 
@@ -73,7 +91,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Updated
+### Improved
 
 - documentation
 
@@ -85,7 +103,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Fixed
+### Improved
 
 - publish configs
 
@@ -109,6 +127,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.1.8]: https://github.com/mrjadeja/vishesh/commit/51b34689...af778dea
 [0.1.7]: https://github.com/mrjadeja/vishesh/commit/780a6ee8...51b34689
 [0.1.6]: https://github.com/mrjadeja/vishesh/compare/affb3bba...780a6ee8
 [0.1.5]: https://github.com/mrjadeja/vishesh/compare/6a3e30b2...affb3bba

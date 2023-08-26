@@ -1,7 +1,7 @@
 {
   "name": "vishesh-prettier",
   "description": "Prettier configuration",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "scripts": {
     "publish-it": "pnpm publish --access public"
   },

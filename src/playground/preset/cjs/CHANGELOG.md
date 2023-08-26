@@ -9,11 +9,23 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.2.0] - 26-08-2023
+
+<br>
+
+### Added
+
+- #30 &nbsp;-&nbsp; add and use twin container
+
+<br><br>
+
+---
+
 ## [0.1.0] - 08-07-2023
 
 <br>
 
-### Updated
+### Improved
 
 - #21 &nbsp;-&nbsp; updated package name
 
@@ -35,6 +47,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.2.0]: https://github.com/mrjadeja/vishesh/compare/b7f440a2...af778dea
 [0.1.0]: https://github.com/mrjadeja/vishesh/compare/60e5816f...b7f440a2
 [0.0.1]: https://github.com/mrjadeja/vishesh/compare/0be58e6a...60e5816f "Initial Setup"
 [0.0.0]: https://github.com/mrjadeja/vishesh/commit/0be58e6a1c46e655452249712c55dbc8f496091f "Initial commit"

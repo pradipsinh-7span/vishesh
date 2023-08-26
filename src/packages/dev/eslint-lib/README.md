@@ -1,185 +1,28 @@
 # Vishesh ESLint library config
 
-#### **<kbd>Typescript</kbd> + <kbd>Library</kbd> + <kbd>Vite</kbd>**
+_<kbd>Typescript</kbd> + <kbd>Library</kbd> + <kbd>Vite</kbd>_
 
-<br>
+<br />
 
-## Topics
+## Documentation
 
-- [🤞 Prerequisite][pre]
-- [📲 Install][install]
-- [⚙️ Setup][setup]
-- [🦾 Basic Scripts][scripts]
-- [▶️ Basic Usage][usage]
+For full documentation, visit https://mrjadeja.github.io/vishesh/configs/eslint/lib
 
-<br><br>
+<br />
 
-## Prerequisite
+## Community
 
-```shell
-# Node.js  (choose any)
-v14
-v16
-v18  (Recomended)
+For help, discussion about best practices, or any other conversation that would benefit from being searchable: <br />
+[Discuss Vishesh on GitHub](https://github.com/mrjadeja/vishesh/discussions)
 
-# Package manager  (choose any)
-pnpm: v8 or higher  (Recomended)
-npm: v7 or higher
-yarn: v1 or higher
+<br />
 
-# Tools
-Vite: v3 or higher
-Typescript: v4 or higher
+## Contributing
 
-# VS code extension
-dbaeumer.vscode-eslint
-```
+If you're interested in contributing to Vishesh ESLint library config, please read our [contributing docs](https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/eslint-lib/CONTRIBUTING.md) **before submitting a pull request**.
 
-<br><br>
+<br />
 
-## Install
+## License
 
-```shell
-# Run this scripts in sequence
-
-1. pnpm dlx install-peerdeps eslint-config-vishesh -P -D
-# Run the 2nd script only after 1st completes
-2. pnpm dlx install-peerdeps eslint-config-vishesh-lib -P -D
-```
-
-```shell
-# Run this scripts in sequence
-
-1. npm exec install-peerdeps eslint-config-vishesh -- -D
-# Run the 2nd script only after 1st completes
-2. npm exec install-peerdeps eslint-config-vishesh-lib -- -D
-```
-
-```shell
-# Run this scripts in sequence
-
-1. yarn dlx install-peerdeps eslint-config-vishesh -Y -D
-# Run the 2nd script only after 1st completes
-2. yarn dlx install-peerdeps eslint-config-vishesh-lib -Y -D
-```
-
-<br><br>
-
-## Setup
-
-1\. Setup [Vishesh tsconfig-lib][tsconfig-lib] &nbsp;&nbsp;(_if not already_)
-
-2\. Setup [Vishesh prettier][prettier] &nbsp;&nbsp;(_if not already_)
-
-3\. Create two new files at the root of your repository `.eslintrc` and `.eslintignore`.
-
-<br>
-
-> .eslintrc
-
-you can override [rules] and [other configs][configure-eslint]
-
-```json
-{
-  "extends": ["vishesh-lib"],
-  "rules": {}
-}
-```
-
-<br>
-
-> .eslintignore
-
-_[Reference][eslint-ignore] for ignore files_
-
-```
-.git
-.husky
-.next
-dist
-dist-ssr
-node_modules
-tsconfig.tsbuildinfo
-types
-package.json
-*-lock.*
-*.config.*
-*.json
-```
-
-<br><br>
-
-## Basic scripts
-
-Add scripts to lint your code
-
-```diff
-# package.json
-
-{
-# // ...
-  "scripts": {
-#   // ...
-+   "lint": "eslint . --ext .ts",
-+   "fix:lint": "eslint . --ext .ts --fix"
-  },
-# // ...
-}
-```
-
-<br><br>
-
-## Basic usage
-
-> Check the code against eslint rules
-
-```shell
-pnpm lint
-```
-
-```shell
-npm run lint
-```
-
-```shell
-yarn lint
-```
-
-<br>
-
-> **Fix the code** <br>
-
-```shell
-⚠️ Stage all the files before running fix command
-
-👉 git add .
-```
-
-```shell
-pnpm fix:lint
-```
-
-```shell
-npm run fix:lint
-```
-
-```shell
-yarn fix:lint
-```
-
-<br><br>
-
----
-
-_Last updated on July 23, 2023_
-
-[pre]: #prerequisite "Prerequisite"
-[install]: #install "Install"
-[setup]: #setup "Setup"
-[scripts]: #basic-scripts "Basic Scripts"
-[usage]: #basic-usage "Basic Usage"
-[tsconfig-lib]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/tsconfig-lib/README.md "Vishesh typescript documentation"
-[prettier]: https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/prettier/README.md "Vishesh typescript documentation"
-[rules]: https://eslint.org/docs/latest/rules "Eslint rules reference"
-[configure-eslint]: https://eslint.org/docs/latest/use/configure/ "Configure ESlint"
-[eslint-ignore]: https://eslint.org/docs/latest/use/configure/ignore#the-eslintignore-file "Eslint ignore official documentation"
+[MIT License](https://github.com/mrjadeja/vishesh/blob/main/src/packages/dev/eslint-lib/LICENSE)

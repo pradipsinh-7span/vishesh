@@ -1,0 +1,135 @@
+import { Callout } from "nextra-theme-docs";
+
+# Fixed container
+
+<Callout type="info">
+  <em>max-width = breakpoint - ( 2 * spacing )</em> <br />
+  <em>_please refer_ [breakpoints][breakpoints]</em>
+</Callout>
+
+<br />
+
+## Configuration
+
+### Max width
+
+#### Auto
+
+> `container-fixed`
+
+| breakpoint | \<375px | ≥375px | ≥640px | ≥768px | ≥1024px | ≥1280  | ≥1440px | ≥1920px |
+| :--------- | :------ | :----- | :----- | :----- | :------ | :----- | :------ | :------ |
+| spacing    | 0       | 16     | 28     | 40     | 64      | 80     | 128     | 240     |
+| max-width  | 100%    | 343px  | 584px  | 688px  | 896px   | 1120px | 1184px  | 1440px  |
+
+<Callout type="error">
+  <em>Don't mix Auto and Manual classes</em>
+</Callout>
+
+#### Manual
+
+1\. Base class `container` <small>(mandatory)</small> <br/>
+2\. Max width class `container-x` <small>(where `x` is the breakpoint key)</small>
+
+| Class          | Spacing | \<375px | ≥375px | ≥640px | ≥768px | ≥1024px | ≥1280px | ≥1440px | ≥1920px |
+| :------------- | :------ | :------ | :----- | :----- | :----- | :------ | :------ | :------ | :------ |
+| container      | 0       | 100%    | 100%   | 100%   | 100%   | 100%    | 100%    | 100%    | 100%    |
+| container-xs   | 16      | 100%    | 343px  | 584px  | 688px  | 896px   | 1120px  | 1184px  | 1440px  |
+| container-sm   | 28      | 100%    | 100%   | 584px  | 688px  | 896px   | 1120px  | 1184px  | 1440px  |
+| container-md   | 40      | 100%    | 100%   | 100%   | 688px  | 896px   | 1120px  | 1184px  | 1440px  |
+| container-lg   | 64      | 100%    | 100%   | 100%   | 100%   | 896px   | 1120px  | 1184px  | 1440px  |
+| container-xl   | 80      | 100%    | 100%   | 100%   | 100%   | 100%    | 1120px  | 1184px  | 1440px  |
+| container-mac  | 128     | 100%    | 100%   | 100%   | 100%   | 100%    | 100%    | 1184px  | 1440px  |
+| container-maxw | 240     | 100%    | 100%   | 100%   | 100%   | 100%    | 100%    | 100%    | 1440px  |
+
+<br />
+
+### Inner padding
+
+Equal left and right padding applied to the fixed container at each breakpoint
+
+| Value  | Condition                                                                                    | Default |
+| :----- | :------------------------------------------------------------------------------------------- | :------ |
+| number | should be 0 or greater                                                                       |         |
+| string | valid css like "16px", "1rem", etc...                                                        |         |
+| object | applies to specific breakpoint <br /> - key: breakpoint key <br /> - value: number or string | yes     |
+
+<br />
+
+### Center
+
+#### true
+
+- horizontally align the fixed container to center
+- this is set by default
+
+#### false
+
+- Below classes are available to manually set alignment
+
+| Class            | Description                               |
+| :--------------- | :---------------------------------------- |
+| container-left   | Aligns the fixed container to the left.   |
+| container-center | Centers the fixed container horizontally. |
+| container-right  | Aligns the fixed container to the right.  |
+
+<br />
+<br />
+
+## Base class
+
+```css
+.container {
+  width: 100%;
+  display: block;
+  /* If center is true */
+  margin-right: auto;
+  margin-left: auto;
+  /* If innerWidth.zero set to 16px */
+  padding-left: 16px;
+  padding-right: 16px;
+}
+```
+
+<br />
+
+## Reset class
+
+```css
+.container-none {
+  width: initial;
+  margin-left: unset;
+  margin-right: unset;
+  padding-left: unset;
+  padding-right: unset;
+  max-width: unset;
+  display: initial;
+}
+```
+
+<br />
+
+## Basic usage
+
+<Callout type="error">
+  <em>Don't mix Auto and Manual classes</em>
+</Callout>
+
+### Auto
+
+> <em>automatically set max-width at each breakpoint</em>
+
+```js
+class="container-fixed"
+```
+
+### Manual
+
+> <em>manually set max-width at a specific breakpoint</em>
+
+```js
+class="container container-md"
+```
+
+[breakpoints]: /preset/layout/breakpoints "Breakpoints"
+[specificity]: https://www.youtube.com/watch?v=c0kfcP_nD9E "CSS Specificity"

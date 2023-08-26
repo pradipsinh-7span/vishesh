@@ -91,7 +91,7 @@ pnpm fix:lint
 
 ## License
 
-By contributing to this project, you agree that your contributions will be licensed under the [LICENSE][license] file of this project.
+By contributing to this project, you acknowledge and agree that any contributions you make will be subject to the terms outlined in the project's [LICENSE][license] file.
 
 <br><br>
 
@@ -99,7 +99,7 @@ By contributing to this project, you agree that your contributions will be licen
 
 Reference was taken from [Tailwindcss][tailwind-ref] 💖.
 
-_Last updated on July 5, 2023_
+_Last updated on Aug 26, 2023_
 
 [fork]: https://github.com/mrjadeja/vishesh/fork "Fork the repository"
 [issue]: https://github.com/mrjadeja/vishesh/issues "Create an issue"

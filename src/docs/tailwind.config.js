@@ -19,9 +19,10 @@ export default {
         },
       },
       container: {
-        initialPadding: {
-          value: 24,
-          resetOn: "md",
+        innerPadding: {
+          zero: 24,
+          xs: 24,
+          sm: 24,
         },
       },
     },

@@ -9,11 +9,43 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.5.0] - 26-08-2023
+
+<br>
+
+### Added
+
+- #30 &nbsp;-&nbsp; add source code link
+- #30 &nbsp;-&nbsp; add description to breakpoints and container
+- #30 &nbsp;-&nbsp; add twin container
+
+<br />
+
+### Improved
+
+- #30 &nbsp;-&nbsp; change roadmap timeline
+- #30 &nbsp;-&nbsp; improve css
+- #30 &nbsp;-&nbsp; improve url and filetree structure
+- #30 &nbsp;-&nbsp; improve preset and configs documentation
+- #30 &nbsp;-&nbsp; improve readme
+- #30 &nbsp;-&nbsp; replace all tabs with accordion except scripts section for SEO
+
+<br />
+
+### Removed
+
+- #30 &nbsp;-&nbsp; remove todo and POC from the code
+- #30 &nbsp;-&nbsp; remove `initialPadding` for fixed container
+
+<br />
+
+---
+
 ## [0.2.1] - 23-07-2023
 
 <br>
 
-### Fixed
+### Improved
 
 - #53 &nbsp;-&nbsp; fix references
 
@@ -37,7 +69,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Updated
+### Improved
 
 - Update fallback page title
 
@@ -61,6 +93,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.5.0]: https://github.com/mrjadeja/vishesh/commit/51b34689...af778dea
 [0.2.1]: https://github.com/mrjadeja/vishesh/commit/780a6ee8...51b34689
 [0.2.0]: https://github.com/mrjadeja/vishesh/commit/9d8beb7e...780a6ee8
 [0.1.10]: https://github.com/mrjadeja/vishesh/commit/62545388...9d8beb7e

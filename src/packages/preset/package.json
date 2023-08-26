@@ -1,7 +1,7 @@
 {
   "name": "vishesh-preset",
   "description": "The tailwind css preset to rapidly build any UI",
-  "version": "0.1.8",
+  "version": "0.4.0",
   "type": "module",
   "scripts": {
     "check:typescript": "tsc --noEmit true --emitDeclarationOnly false",
@@ -10,6 +10,7 @@
     "fix:code-quality": "eslint . --ext .ts --fix",
     "fix:lint": "pnpm fix:code-quality",
     "build": "vite build",
+    "watch:build": "vite build --watch",
     "publish-it": "pnpm publish --access public"
   },
   "devDependencies": {
