@@ -14,6 +14,18 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [1.10.1] - 26-08-2023
+
+<br>
+
+### Improved
+
+- [doc-001]\: Fixed typo (0.5.1)
+
+<br />
+
+---
+
 ## [1.10.0] - 26-08-2023
 
 <br>
@@ -302,6 +314,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[1.10.1]: https://github.com/mrjadeja/vishesh/commit/af778dea...03c9e081
 [1.10.0]: https://github.com/mrjadeja/vishesh/commit/51b34689...af778dea
 [1.2.1]: https://github.com/mrjadeja/vishesh/commit/780a6ee8...51b34689
 [1.2.0]: https://github.com/mrjadeja/vishesh/compare/9d8beb7e...780a6ee8
