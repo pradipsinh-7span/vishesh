@@ -14,6 +14,32 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.10.2] - 27-08-2023
+
+<br>
+
+### Added
+
+- [doc-001]\: Added `MrJadeja` website link to header (0.5.2)
+
+<br />
+
+### Improved
+
+- [doc-001]\: Changed `Products` to `Packages` (0.5.2)
+- [doc-001]\: Improve reverse and only breakpoint variants documentation (0.5.2)
+- [doc-001]\: Improve footer (0.5.2)
+
+<br />
+
+### Removed
+
+- [doc-001]\: Removed skype from the header (0.5.2)
+
+<br /><br />
+
+---
+
 ## [1.10.1] - 26-08-2023
 
 <br>
@@ -22,7 +48,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 - [doc-001]\: Fixed typo (0.5.1)
 
-<br />
+<br /><br />
 
 ---
 
@@ -314,6 +340,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.10.2]: https://github.com/mrjadeja/vishesh/commit/03c9e081...abfa4451
 [1.10.1]: https://github.com/mrjadeja/vishesh/commit/af778dea...03c9e081
 [1.10.0]: https://github.com/mrjadeja/vishesh/commit/51b34689...af778dea
 [1.2.1]: https://github.com/mrjadeja/vishesh/commit/780a6ee8...51b34689

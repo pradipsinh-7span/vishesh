@@ -9,6 +9,32 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.5.2] - 27-08-2023
+
+<br>
+
+### Added
+
+- Added `MrJadeja` website link to header
+
+<br />
+
+### Improved
+
+- Changed `Products` to `Packages`
+- Improve reverse and only breakpoint variants documentation
+- Improve footer
+
+<br />
+
+### Removed
+
+- Removed skype from the header
+
+<br /><br />
+
+---
+
 ## [0.5.1] - 26-08-2023
 
 <br>
@@ -17,7 +43,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 - Fixed typo
 
-<br />
+<br /><br />
 
 ---
 
@@ -42,16 +68,14 @@ and this project adheres to [Semantic Versioning][semver].
 - #30 &nbsp;-&nbsp; improve readme
 - #30 &nbsp;-&nbsp; replace all tabs with accordion except scripts section for SEO
 
-<br />
+<br /><br />
 
 ### Removed
 
 - #30 &nbsp;-&nbsp; remove todo and POC from the code
 - #30 &nbsp;-&nbsp; remove `initialPadding` for fixed container
 
-<br />
-
----
+## <br /><br />
 
 ## [0.2.1] - 23-07-2023
 
@@ -61,7 +85,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 - #53 &nbsp;-&nbsp; fix references
 
-<br />
+<br /><br />
 
 ---
 
@@ -73,7 +97,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 - #23 &nbsp;-&nbsp; add configs documentation
 
-<br />
+<br /><br />
 
 ---
 
@@ -85,7 +109,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 - Update fallback page title
 
-<br />
+<br /><br />
 
 ---
 
@@ -97,7 +121,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 - #18 &nbsp;-&nbsp; add preset docs and host to github pages via github actions
 
-<br />
+<br /><br />
 
 ---
 
@@ -105,6 +129,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.5.2]: https://github.com/mrjadeja/vishesh/commit/03c9e081...abfa4451
 [0.5.1]: https://github.com/mrjadeja/vishesh/commit/af778dea...03c9e081
 [0.5.0]: https://github.com/mrjadeja/vishesh/commit/51b34689...af778dea
 [0.2.1]: https://github.com/mrjadeja/vishesh/commit/780a6ee8...51b34689
