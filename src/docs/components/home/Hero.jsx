@@ -19,7 +19,7 @@ export default () => {
         </div>
         <div className="mt-6 flex items-center xl:mt-8">
           <Link
-            href="#products"
+            href="#packages"
             className="bg-primary px-8 py-1.5 rounded text-white text-lg font-medium border border-primary hover:bg-primary-light transition-colors ease-in-out duration-200"
           >
             Explore
