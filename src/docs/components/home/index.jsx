@@ -1,6 +1,6 @@
 import Hero from "./Hero";
 import Why from "./Why.mdx";
-import Products from "./Products.mdx";
+import Packages from "./Packages.mdx";
 import Roadmap from "./Roadmap.mdx";
 
 export default () => {
@@ -13,7 +13,7 @@ export default () => {
           <br />
           <br />
           <br className="sm:hidden" />
-          <Products />
+          <Packages />
         </div>
         <div className="rsm:pt-20 sm-md:pt-16 md:shrink-0">
           <Roadmap />
