@@ -93,7 +93,7 @@ export default {
                 <br />
                 Powered by{" "}
                 <a
-                  href="https://mrjadeja.vercel.app"
+                  href="https://www.mrjadeja.in"
                   target="_blank"
                   className="text-lg font-semibold text-[#F97316]"
                 >
