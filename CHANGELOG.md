@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
-## [0.11.1] - 29-08-2023
+## [1.11.1] - 29-08-2023
 
 <br>
 
@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
-## [0.11.0] - 29-08-2023
+## [1.11.0] - 29-08-2023
 
 <br>
 
@@ -39,7 +39,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
-## [0.10.2] - 27-08-2023
+## [1.10.2] - 27-08-2023
 
 <br>
 
