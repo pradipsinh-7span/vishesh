@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Fixed
+### Improved
 
 - Fixed typo in docs
 

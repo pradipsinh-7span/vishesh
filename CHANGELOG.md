@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 <br>
 
-### Fixed
+### Improved
 
 - [doc-001]\: Fixed typo in docs (0.6.1)
 
