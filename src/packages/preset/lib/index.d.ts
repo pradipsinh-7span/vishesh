@@ -11,10 +11,18 @@ type Merge<A, B> = {
     ? A[K]
     : never;
 };
+
+interface VisheshCorePlugins {
+  breakpoints: boolean;
+  container: boolean;
+}
+
 export interface PluginProps {
   theme: Function;
   addComponents: Function;
   addVariant: Function;
+  config: Function;
+  visheshCorePlugins: VisheshCorePlugins;
 }
 
 interface ThemeDefaults {
@@ -26,4 +34,5 @@ type Theme = ThemeConfig & ThemeDefaults;
 
 interface VisheshPreset extends Config {
   theme: Partial<Theme & { extend: Partial<Theme> }>;
+  visheshCore: VisheshCore;
 }

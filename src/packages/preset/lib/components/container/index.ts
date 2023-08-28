@@ -153,6 +153,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
     const spacing = sortedBreakpointKeys
       .map((key): [string, number] => {
         let value = (unsortedSpacing as Spacing)[key];
+        // if mode is twin then, override if provided
         if (
           MODE === "twin" &&
           isObject((unsortedSpacing as TwinSpacing).fixed) &&
@@ -164,6 +165,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
             key as keyof typeof breakpoints
           ];
         }
+        //
         if (typeof value === "number" && (value || value === 0)) {
           return [key, Math.max(0, value)];
         }
@@ -281,6 +283,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
     const spacing = sortedBreakpointKeys
       .map((key): [string, number] => {
         let value = (unsortedSpacing as Spacing)[key];
+        // if mode is twin then, override if provided
         if (
           MODE === "twin" &&
           isObject((unsortedSpacing as TwinSpacing).fluid) &&
@@ -292,6 +295,7 @@ export default function ({ theme, addComponents }: PluginProps): void {
             key as keyof typeof breakpoints
           ];
         }
+        //
         if (typeof value === "number" && (value || value === 0)) {
           return [key, Math.max(0, value)];
         }

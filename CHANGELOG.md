@@ -14,6 +14,19 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.11.0] - 29-08-2023
+
+<br>
+
+### Added
+
+- [pkg-001]\: #60 &nbsp;-&nbsp; added `visheshCorePlugins` to provide option for enabling / disabling core plugins (0.5.0)
+- [doc-001]\: #60 &nbsp;-&nbsp; added docs for `visheshCorePlugins` (0.6.0)
+
+<br /><br />
+
+---
+
 ## [0.10.2] - 27-08-2023
 
 <br>
@@ -340,7 +353,8 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
-[0.10.2]: https://github.com/mrjadeja/vishesh/commit/03c9e081...abfa4451
+[1.11.0]: https://github.com/mrjadeja/vishesh/commit/abfa4451...6e5ad8f8
+[1.10.2]: https://github.com/mrjadeja/vishesh/commit/03c9e081...abfa4451
 [1.10.1]: https://github.com/mrjadeja/vishesh/commit/af778dea...03c9e081
 [1.10.0]: https://github.com/mrjadeja/vishesh/commit/51b34689...af778dea
 [1.2.1]: https://github.com/mrjadeja/vishesh/commit/780a6ee8...51b34689
