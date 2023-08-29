@@ -14,6 +14,18 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [1.11.3] - 29-08-2023
+
+<br>
+
+### Improved
+
+- [doc-001]\: Fixed grammer in docs (0.6.3)
+
+<br /><br />
+
+---
+
 ## [1.11.2] - 29-08-2023
 
 <br>
@@ -377,6 +389,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[1.11.3]: https://github.com/mrjadeja/vishesh/commit/f4521692...6867d3df
 [1.11.2]: https://github.com/mrjadeja/vishesh/commit/3bded435...f4521692
 [1.11.1]: https://github.com/mrjadeja/vishesh/commit/6e5ad8f8...3bded435
 [1.11.0]: https://github.com/mrjadeja/vishesh/commit/abfa4451...6e5ad8f8
