@@ -1,4 +1,4 @@
-export interface BaseProperties {
+interface BaseProperties {
   width: "100%";
   display: "block";
   marginLeft?: "auto";
@@ -7,20 +7,20 @@ export interface BaseProperties {
   paddingRight: string | number;
 }
 
-export type ContainerMode = "fixed" | "fluid" | "twin";
+type ContainerMode = "fixed" | "fluid" | "twin";
 
-export type InnerPadding =
+type InnerPadding =
   | number
   | string
   | Record<keyof Breakpoints, number | string>;
 
-export interface MediaQueryProperties {
+interface MediaQueryProperties {
   maxWidth?: number;
   paddingLeft: number | string;
   paddingRight: number | string;
 }
 
-export type Spacing = Record<keyof Breakpoints, number>;
+type Spacing = Record<keyof Breakpoints, number>;
 
 interface FixedContainer extends BaseContainer {
   mode: "fixed";
@@ -41,7 +41,7 @@ interface TwinContainer extends BaseContainer {
   innerPadding: InnerPadding;
 }
 
-export interface TwinSpacing extends Spacing {
+interface TwinSpacing extends Spacing {
   fixed?: Spacing;
   fluid?: Spacing;
 }
@@ -50,13 +50,11 @@ interface BaseContainer {
   mode: ContainerMode;
   spacing: Spacing;
   /**
-   * @deprecated
-   * > 🚨 Do not use
+   * > 🚨 Do not use if using vishesh breakpoints
    */
   screens?: never;
   /**
-   * @deprecated
-   * > 🚨 Do not use
+   * > 🚨 Do not use if using vishesh container
    */
   padding?: never;
 }

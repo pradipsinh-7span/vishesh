@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.3.0] - 06-09-2023
+
+<br>
+
+### Improved
+
+- #81 &nbsp;-&nbsp; improved tailwindcss config file
+
+<br /><br />
+
+---
+
 ## [0.2.0] - 26-08-2023
 
 <br>
@@ -47,6 +59,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.3.0]: https://github.com/mrjadeja/vishesh/commit/af778dea...f709c3c1
 [0.2.0]: https://github.com/mrjadeja/vishesh/compare/b7f440a2...af778dea
 [0.1.0]: https://github.com/mrjadeja/vishesh/compare/60e5816f...b7f440a2
 [0.0.1]: https://github.com/mrjadeja/vishesh/compare/0be58e6a...60e5816f "Initial Setup"

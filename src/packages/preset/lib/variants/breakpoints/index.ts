@@ -12,7 +12,6 @@
 
 import { isObject } from "../../utils";
 
-import type { Breakpoints } from "./types";
 import type { PluginProps } from "../..";
 
 /**

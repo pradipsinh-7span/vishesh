@@ -14,6 +14,30 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [1.15.0] - 06-09-2023
+
+<br>
+
+### Improved
+
+- [pkg-001]\: #81 &nbsp;-&nbsp; fixed tailwindcss core plugins not working (0.6.0)
+  - if we disable vishesh preset core plugins, then enable back corrosponding tailwindcss core plugin
+  - made vishesh preset itself function and accept plugins to be disabled in array
+- [doc-001]\: #81 &nbsp;-&nbsp; updated core plugins document (0.7.0)
+- [doc-001]\: #81 &nbsp;-&nbsp; minor improvement in overall docs (0.7.0)
+- [play-001]\: #81 &nbsp;-&nbsp; improved tailwindcss config file (0.3.0)
+- [play-002]\: #81 &nbsp;-&nbsp; improved tailwindcss config file (0.3.0)
+
+<br />
+
+### Removed
+
+- [pkg-001]\: #81 &nbsp;-&nbsp; removed `vishehsCorePlugins` option from config (0.6.0)
+
+<br /><br />
+
+---
+
 ## [1.11.3] - 29-08-2023
 
 <br>
@@ -389,6 +413,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[1.15.0]: https://github.com/mrjadeja/vishesh/commit/6867d3df...f709c3c1
 [1.11.3]: https://github.com/mrjadeja/vishesh/commit/f4521692...6867d3df
 [1.11.2]: https://github.com/mrjadeja/vishesh/commit/3bded435...f4521692
 [1.11.1]: https://github.com/mrjadeja/vishesh/commit/6e5ad8f8...3bded435

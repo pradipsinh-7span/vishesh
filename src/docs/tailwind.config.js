@@ -2,7 +2,7 @@ import vishesh from "vishesh-preset";
 
 /** @type {import('vishesh-preset/types').VisheshPreset} */
 export default {
-  presets: [vishesh],
+  presets: [vishesh()],
   darkMode: "class",
   content: [
     "./pages/**/*.{jsx,mdx}",
