@@ -9,13 +9,13 @@ When a screen hits a breakpoint, the design switches to a version that fits that
 <br />
 
 <Callout type="warning">
-  <em>We disabled `screens` and added `breakpoints`.</em>
+  <em>You have to remove `screens` config from your config file.</em>
 </Callout>
 
 ```diff filename="tailwind.config.js"
 # Default breakpoints are in pixels
 {
-  content: [____],
+#  // ...
   theme: {
 -    screens: {
 -      zero: 0,
@@ -43,7 +43,7 @@ When a screen hits a breakpoint, the design switches to a version that fits that
 +     },
     }
   },
-  plugins: [____]
+# // ...
 }
 ```
 
@@ -63,7 +63,8 @@ These breakpoints are not just regular breakpoints. Vishesh generates a bunch of
 It has `minimum` + `maximum` + `range` + `only` variants included 🤘.
 
 <Callout type="info">
-  <em>This docs website itself using the vishesh preset breakpoint.</em>
+  <em>Tailwindcss has the solution, but it's little verbose.</em> <br />
+  <em>See [basic usage](#basic-usage) for comparision.</em>
 </Callout>
 
 <br />
@@ -73,7 +74,11 @@ It has `minimum` + `maximum` + `range` + `only` variants included 🤘.
 <details>
   <summary>Toggle content</summary>
 
-> <em>usually we use this breakpoint variants</em>
+> <em>usually we use this breakpoint variants</em> <br />
+> <em>
+>   <abbr title="Also known as">a.k.a</abbr>
+> </em>
+> <em>forward breakpoint variants</em>
 
 | Variant | Media Query                |
 | :------ | :------------------------- |
@@ -93,7 +98,7 @@ It has `minimum` + `maximum` + `range` + `only` variants included 🤘.
   <summary>Toggle content</summary>
 
 > <em>Just prepend `r` to breakpoint variants</em> <br />
-> <em>where `r` stands for `reverse` breakpoint</em>
+> <em>where `r` stands for `reverse` breakpoint variant</em>
 
 | Variant | Media Query                                     |
 | :------ | :---------------------------------------------- |
@@ -138,7 +143,7 @@ It has `minimum` + `maximum` + `range` + `only` variants included 🤘.
   <summary>Toggle content</summary>
 
 > <em>Just prepend `o` to breakpoint variants</em> <br />
-> <em>where `o` stands for `only` breakpoint</em>
+> <em>where `o` stands for `only` breakpoint variant</em>
 
 | Variant | Media Query                                        |
 | :------ | :------------------------------------------------- |

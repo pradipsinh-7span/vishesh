@@ -37,8 +37,4 @@ export default {
       },
     },
   },
-  visheshCorePlugins: {
-    breakpoints: true,
-    container: true,
-  },
 } satisfies Partial<VisheshPreset>;

@@ -1,7 +1,10 @@
 import breakpoints from "./breakpoints";
 
-import type { PluginProps } from "..";
+import type { PluginProps, VisheshCorePluginsList } from "..";
 
-export default function (props: PluginProps): void {
-  !!props.visheshCorePlugins.breakpoints && breakpoints(props);
+export default function (
+  props: PluginProps,
+  disabledPluginList: VisheshCorePluginsList[]
+): void {
+  !disabledPluginList.includes("breakpoints") && breakpoints(props);
 }

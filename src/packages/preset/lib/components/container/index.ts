@@ -12,16 +12,7 @@
 
 import { isObject } from "../../utils";
 
-import type {
-  BaseProperties,
-  MediaQueryProperties,
-  TwinSpacing,
-  ContainerMode,
-  InnerPadding,
-  Spacing,
-} from "./types";
 import type { PluginProps } from "../..";
-import type { Breakpoints } from "../../variants/breakpoints/types";
 
 // container
 // center: boolean

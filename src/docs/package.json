@@ -1,7 +1,7 @@
 {
   "name": "docs",
-  "description": "The official documentation of vishesh",
-  "version": "0.6.3",
+  "description": "The official documentation of vishesh project",
+  "version": "0.7.0",
   "type": "module",
   "scripts": {
     "dev": "next dev",

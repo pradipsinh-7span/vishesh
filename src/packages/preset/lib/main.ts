@@ -1,41 +1,40 @@
 import plugin from "tailwindcss/plugin";
 
-import type { Merge, PluginProps, VisheshCorePlugins, VisheshPreset } from ".";
+import type { VisheshPreset, VisheshConfig } from ".";
 
 import components from "./components";
-
-import type { PluginAPI } from "tailwindcss/types/config";
-
 import themeDefaults from "./themeDefaults";
-import { isObject } from "./utils";
+import {
+  getDisabledPluginsList,
+  isObject,
+  transformTailwindConfig,
+} from "./utils";
 import variants from "./variants";
 
-const Theme: Partial<VisheshPreset> = {
-  theme: {
-    // disabled with override as core pluging not working
-    screens: {},
-  },
-  corePlugins: {
-    container: false,
-  },
-  plugins: [
-    plugin((props): void => {
-      // Fix the typescript
-      const visheshProps = props as Merge<PluginAPI, PluginProps>;
-      // Set core plugins
-      const visheshCorePlugins: VisheshCorePlugins =
-        props.config("visheshCorePlugins");
-      visheshProps["visheshCorePlugins"] = {
-        ...themeDefaults.visheshCorePlugins,
-        ...((isObject(visheshCorePlugins) && visheshCorePlugins) ||
-          ({} as VisheshCorePlugins)),
-      };
+const visheshConfig = (
+  visheshConfig: VisheshConfig
+): Partial<VisheshPreset> => {
+  // fallbacks
+  if (!visheshConfig || !isObject(visheshConfig)) {
+    visheshConfig = {
+      disable: [],
+    };
+  }
+  if (!Array.isArray(visheshConfig.disable)) {
+    visheshConfig.disable = [];
+  }
 
-      // core plugins
-      variants(visheshProps);
-      components(visheshProps);
-    }, themeDefaults),
-  ],
+  // Vishesh preset
+  const disabledPluginList = getDisabledPluginsList(visheshConfig.disable);
+  return {
+    ...transformTailwindConfig(disabledPluginList),
+    plugins: [
+      plugin((props): void => {
+        variants(props, disabledPluginList);
+        components(props, disabledPluginList);
+      }, themeDefaults),
+    ],
+  };
 };
 
-export default Theme;
+export default visheshConfig;

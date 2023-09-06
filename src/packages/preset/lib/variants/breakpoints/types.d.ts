@@ -1,1 +1,1 @@
-export type Breakpoints = Record<string, number>;
+type Breakpoints = Record<string, number>;

@@ -2,9 +2,9 @@
 import vishesh from "vishesh-preset";
 
 /** @type {import('vishesh-preset/types').VisheshPreset} */
-export default {
+const theme = {
   content: ["./index.html", "./style.css"],
-  presets: [vishesh],
+  presets: [vishesh()],
   theme: {
     extend: {
       breakpoints: {
@@ -35,3 +35,7 @@ export default {
   },
   plugins: [],
 };
+
+console.log("theme", theme.presets);
+
+export default theme;

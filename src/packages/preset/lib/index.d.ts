@@ -12,17 +12,11 @@ type Merge<A, B> = {
     : never;
 };
 
-interface VisheshCorePlugins {
-  breakpoints: boolean;
-  container: boolean;
-}
-
-export interface PluginProps {
+interface PluginProps {
   theme: Function;
   addComponents: Function;
   addVariant: Function;
   config: Function;
-  visheshCorePlugins: VisheshCorePlugins;
 }
 
 interface ThemeDefaults {
@@ -32,7 +26,15 @@ interface ThemeDefaults {
 
 type Theme = ThemeConfig & ThemeDefaults;
 
-interface VisheshPreset extends Config {
-  theme: Partial<Theme & { extend: Partial<Theme> }>;
-  visheshCore: VisheshCore;
+interface VisheshConfig {
+  disable: VisheshCorePluginsList[];
 }
+
+// To disable vishesh core plugins and enable back tailwindcss core plugins
+type VisheshCorePluginsList = "breakpoints" | "container";
+
+export interface VisheshPreset extends Config {
+  theme: VisheshThemeConfig;
+}
+
+type VisheshThemeConfig = Partial<Theme & { extend: Partial<Theme> }>;

@@ -1,9 +1,10 @@
 // your other imports
+const vishesh = require("vishesh-preset");
 
 /** @type {import('vishesh-preset/types').VisheshPreset} */
-module.exports = {
+const theme = {
   content: ["./index.html", "./style.css"],
-  presets: [require("vishesh-preset")],
+  presets: [vishesh()],
   theme: {
     extend: {
       breakpoints: {
@@ -34,3 +35,7 @@ module.exports = {
   },
   plugins: [],
 };
+
+console.log("theme", theme.presets);
+
+module.exports = theme;

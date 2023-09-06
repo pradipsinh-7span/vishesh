@@ -1,9 +1,10 @@
 import container from "./container";
 
-import type { PluginProps } from "..";
+import type { PluginProps, VisheshCorePluginsList } from "..";
 
-export default function (props: PluginProps): void {
-  !!props.visheshCorePlugins.breakpoints &&
-    !!props.visheshCorePlugins.container &&
-    container(props);
+export default function (
+  props: PluginProps,
+  disabledPluginList: VisheshCorePluginsList[]
+): void {
+  !disabledPluginList.includes("container") && container(props);
 }

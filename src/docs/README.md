@@ -1,6 +1,6 @@
 # Vishesh docs
 
-_The official documentation of vishesh_
+_The official documentation of vishesh project_
 
 <br />
 
