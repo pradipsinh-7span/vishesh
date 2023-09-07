@@ -154,7 +154,7 @@ export default {
 
     return (
       <>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/vishesh/favicon.ico" />
         <meta property="og:url" content={url} />
         <meta property="og:title" content={frontMatter.title || "Vishesh"} />
         <meta
