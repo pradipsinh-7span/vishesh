@@ -5,7 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is loosely based on [Keep a Changelog][changelog],
 and this project adheres to [Semantic Versioning][semver].
 
+<br /><br />
+
+---
+
+## [0.7.2] - 07-09-2023
+
 <br>
+
+### Improved
+
+- Fixed favicon link
+
+<br /><br />
 
 ---
 
@@ -210,6 +222,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.7.2]: https://github.com/mrjadeja/vishesh/commit/a864e6cb...282ff89f
 [0.7.1]: https://github.com/mrjadeja/vishesh/commit/f709c3c1...a864e6cb
 [0.7.0]: https://github.com/mrjadeja/vishesh/commit/6867d3df...f709c3c1
 [0.6.3]: https://github.com/mrjadeja/vishesh/commit/f4521692...6867d3df
