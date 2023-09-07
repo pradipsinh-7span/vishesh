@@ -14,6 +14,26 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [1.15.1] - 07-09-2023
+
+<br>
+
+### Added
+
+- [doc-001]\: added _vishesh_ logo (0.7.1)
+- [doc-001]\: added favicon (0.7.1)
+
+<br />
+
+### Improved
+
+- [doc-001]\: updated _MrJadeja_ logo (0.7.1)
+- [doc-001]\: set light theme as default (0.7.1)
+
+<br /><br />
+
+---
+
 ## [1.15.0] - 06-09-2023
 
 <br>
@@ -413,6 +433,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[1.15.1]: https://github.com/mrjadeja/vishesh/commit/f709c3c1...a864e6cb
 [1.15.0]: https://github.com/mrjadeja/vishesh/commit/6867d3df...f709c3c1
 [1.11.3]: https://github.com/mrjadeja/vishesh/commit/f4521692...6867d3df
 [1.11.2]: https://github.com/mrjadeja/vishesh/commit/3bded435...f4521692
