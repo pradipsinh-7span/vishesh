@@ -1,3 +1,8 @@
+---
+title: Breakpoints - Layout - Preset | Vishesh | MrJadeja
+description: Breakpoints are like signposts in web design that signal when a design needs to adapt to different screen sizes. They guide the website's layout and appearance, ensuring it's user-friendly across devices like phones, tablets, and computers.
+---
+
 import { Callout, Tabs, Tab } from "nextra-theme-docs";
 
 # Breakpoints
@@ -9,7 +14,8 @@ When a screen hits a breakpoint, the design switches to a version that fits that
 <br />
 
 <Callout type="warning">
-  <em>You have to remove `screens` config from your config file.</em>
+  <em>Make sure to remove the `screens`</em>
+  <em> configuration from your config file.</em>
 </Callout>
 
 ```diff filename="tailwind.config.js"
@@ -51,32 +57,34 @@ When a screen hits a breakpoint, the design switches to a version that fits that
 
 ## **Why?**
 
-We all experienced that minimum or maximum breakpoints are not enough. if we are using tailwind then, we need to manually create such breakpoints.<br />
+Have you ever found yourself struggling with the limitations of minimum or maximum breakpoints in your design? If you're a Tailwind CSS user, you probably know the pain of having to manually define these breakpoints.
 
-Less often, we are in a situation that for mobile we have one design, then on tablet we have other design. but, on desktop we have design that is similar to mobile. _we have to reset the styles everytime_ 😓.
+Even less frequently, you may encounter a situation where you need one design for mobile, a different one for tablets, but oddly, the desktop design is almost identical to mobile. Resetting styles can be a tedious task in such cases 😓.
+
+That's where the Vishesh Preset comes to the rescue!
 
 <br />
 
 ## **Solution** ✌️
 
-These breakpoints are not just regular breakpoints. Vishesh generates a bunch of other breakpoint variants. <br />
-It has `minimum` + `maximum` + `range` + `only` variants included 🤘.
+These breakpoints aren't your regular breakpoints. Vishesh Preset goes the extra mile by generating a plethora of other breakpoint variants. <br />
+It includes `minimum`, `maximum`, `range`, and `only` variants 🤘.
 
 <Callout type="info">
-  <em>Tailwindcss has the solution, but it's little verbose.</em> <br />
-  <em>See [basic usage](#basic-usage) for comparision.</em>
+  <em>Tailwind CSS has a solution, but it's a bit more verbose.</em> <br />
+  <em>For a comparison, refer to [basic usage](#basic-usage).</em>
 </Callout>
 
 <br />
 
-### Minimum variants
+## Types of breakpoint variants
 
-<details>
-  <summary>Toggle content</summary>
+<details open>
+  <summary>Minimum Variants</summary>
 
-> <em>usually we use this breakpoint variants</em> <br />
+> <em>Usually, we use these breakpoint variants</em> <br />
 > <em>
->   <abbr title="Also known as">a.k.a</abbr>
+>   <abbr title="also known as">A.K.A.</abbr>
 > </em>
 > <em>forward breakpoint variants</em>
 
@@ -92,12 +100,12 @@ It has `minimum` + `maximum` + `range` + `only` variants included 🤘.
 
 </details>
 
-### Maximum variants
-
 <details>
-  <summary>Toggle content</summary>
+  <summary>Maximum Variants</summary>
 
-> <em>Just prepend `r` to breakpoint variants</em> <br />
+> <em>To access these variants,</em>
+> <em> simply prepend `r` to the regular breakpoint names.</em>
+> <br />
 > <em>where `r` stands for `reverse` breakpoint variant</em>
 
 | Variant | Media Query                                     |
@@ -112,10 +120,8 @@ It has `minimum` + `maximum` + `range` + `only` variants included 🤘.
 
 </details>
 
-### Range variants
-
 <details>
-  <summary>Toggle content</summary>
+  <summary>Range Variants</summary>
 
 | Variant  | Media Query                                        |
 | :------- | :------------------------------------------------- |
@@ -137,12 +143,11 @@ It has `minimum` + `maximum` + `range` + `only` variants included 🤘.
 
 </details>
 
-### Only variants
-
 <details>
-  <summary>Toggle content</summary>
+  <summary>Only Variants</summary>
 
-> <em>Just prepend `o` to breakpoint variants</em> <br />
+> <em>To access these variants,</em>
+> <em> simply prepend `o` to the regular breakpoint names.</em> <br />
 > <em>where `o` stands for `only` breakpoint variant</em>
 
 | Variant | Media Query                                        |
@@ -161,28 +166,28 @@ It has `minimum` + `maximum` + `range` + `only` variants included 🤘.
 ## CSS Specificity Order
 
 <Callout type="info">
-  <em>_Higher power variant overrides lower power variant_</em>
+  <em>_Higher-power variants override lower-power variants_</em>
 </Callout>
 
-| Power | Variant | Width   |
+| Power | Variant | Type    |
 | :---- | :------ | :------ |
-| 1     | x:      | minimum |
-| 2     | rx:     | maximum |
-| 3     | x-y:    | range   |
-| 4     | ox:     | only    |
+| 1     | x:      | Minimum |
+| 2     | rx:     | Maximum |
+| 3     | x-y:    | Range   |
+| 4     | ox:     | Only    |
 
 <br />
 
 ## Basic Usage
 
 <Callout type="info">
-  <em>Example is for showcase purpose only</em>
+  <em>The example is for showcase purposes only.</em>
 </Callout>
 
 ```js filename="Before"
-// without tailwind range variant
+// Without Tailwind range variants
 class="p-3.5 xs:p-6 sm:p-5 md:p-6 lg:p-7 mac:p-6"
-// with tailwind range variant
+// With Tailwind range variants
 class="p-6 max-xs:p-3.5 sm:max-md:p-5 lg:max-mac:p-7"
 ```
 
@@ -198,6 +203,6 @@ class="p-6 rxs:p-3.5 osm:p-5 lg-mac:p-7"
 
 ## References
 
-1. [tailwindcss responsive design](https://tailwindcss.com/docs/responsive-design "Tailwindcss responsive design documentation") <br />
-2. [tailwindcss customizing breakpoints](https://tailwindcss.com/docs/screens "Tailwindcss customizing screens documentation") <br />
-3. [bootstrap breakpoints](https://getbootstrap.com/docs/5.3/layout/breakpoints "Bootstrap breakpoints documentation")
+1. [Tailwind CSS responsive design](https://tailwindcss.com/docs/responsive-design "Tailwindcss responsive design documentation") <br />
+2. [Tailwind CSS customizing breakpoints](https://tailwindcss.com/docs/screens "Tailwindcss customizing screens documentation") <br />
+3. [Bootstrap breakpoints](https://getbootstrap.com/docs/5.3/layout/breakpoints "Bootstrap breakpoints documentation")

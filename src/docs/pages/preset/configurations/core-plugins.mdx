@@ -1,10 +1,23 @@
+---
+title: Core Plugins - Configurations - Preset | Vishesh | MrJadeja
+description: The Vishesh Preset is a collection of plugins similar to Tailwind CSS. It generates classes only for the enabled plugins, ensuring that you have precisely what you need — no more and no less.
+---
+
 import { Callout } from "nextra-theme-docs";
 
 # Core Plugins
 
 The Vishesh Preset is a collection of plugins similar to Tailwind CSS. It generates classes only for the enabled plugins, ensuring that you have precisely what you need — no more and no less.
 
-By default, all the core plugins are enabled. To disable any of them, add theme to disable array as shown below
+<Callout type="info">
+  <em>By default, all the core plugins are enabled.</em>
+</Callout>
+
+<br />
+
+## Disable Core Plugins
+
+To disable any of the core plugins, add them to the disable array as shown below.
 
 ```js filename="tailwind.config.js"
 export default {
@@ -19,12 +32,11 @@ export default {
 ```
 
 <Callout type="warning">
-  <em>If you disable any of **Depends on**</em>
-  <em> core plugin as shown in the below list,</em>
-  <em> The dependent core plugin also got disabled.</em>
-</Callout>
-<Callout type="info">
-  <em>If you disable `breakpoints`, then `container` also disabled.</em>
+  <em>If you disable any of the `Depends on`</em>
+  <em> core plugins as [listed below](#list-of-plugins),</em>
+  <em> The dependent core plugins will also be disabled.</em> <br />
+  <em className="font-semibold not-italic"> For example,</em> <br />
+  <em>If you disable `breakpoints`, then `container` will also be disabled.</em>
 </Callout>
 
 <br />

@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  @apply !scroll-smooth;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-display;
+}
+
+code,
+kbd {
+  @apply font-mono font-normal;
 }
 
 a {
@@ -57,4 +67,39 @@ aside > div {
 
 details > div {
   @apply px-2.5 pt-4;
+}
+
+details h1,
+h1.no-nx {
+  @apply mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100;
+}
+
+details h2,
+h2.no-nx {
+  @apply font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-10 border-b pb-1 text-3xl border-neutral-200/70 contrast-more:border-neutral-400 contrast-more:dark:border-neutral-400;
+}
+
+html.dark details h2,
+html.dark h2.no-nx {
+  border-color: hsl(var(--nextra-primary-hue) 100% 94%/0.1);
+}
+
+details h3,
+h3.no-nx {
+  @apply font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-8 text-2xl;
+}
+
+details h4,
+h4.no-nx {
+  @apply font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-8 text-xl;
+}
+
+details h5,
+h5.no-nx {
+  @apply font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-8 text-lg;
+}
+
+details h6,
+h6.no-nx {
+  @apply font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-8 text-base;
 }

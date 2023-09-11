@@ -1,23 +1,26 @@
+---
+title: Twin Container - Container - Layout - Preset | Vishesh | MrJadeja
+description: If you choose either a Fixed or Fluid container, you can use only one of them in your project. However, with the Twin container, you can use both Fixed and Fluid containers together under certain conditions.
+---
+
 import { Callout } from "nextra-theme-docs";
 
 # Twin Container
 
-If you choose _Fixed_ or _Fluid_ container then, you can use only one of them in your project. But, what if you want to use both of them together?
+When you select either a _Fixed_ or _Fluid_ container, you can use only one at a time. But what if you wish to use both simultaneously?
 
-Introducing the _Twin container_ with a little change in class names and few rules.
+Introducing the _Twin container_, which involves some class name adjustments and additional rules.
 
-<Callout type="info">
-  <em>You can use fixed and fluid container</em>
-  <em> configurations normally as you use</em>
-  <em> when container type is fixed or fluid</em>
-  <em> except there are some changes mentioned below</em>
-</Callout>
+You can use fixed and fluid container configurations just as you would when the container type is set to fixed or fluid, with some exceptions mentioned below.
 
 <br />
 
 ## Spacing
 
-`#1` spacing applies to both container. if you want to override it for _Fixed_ or _Fluid_ container then, you can do it by adding object with the container type key (`#2` and `#3`).
+<details>
+<summary>Toggle Content</summary>
+
+`#1` Spacing applies to both containers. If you want to override it for _Fixed_ or _Fluid_ containers, you can do so by adding an object with the container type key (`#2` and `#3`).
 
 ```js
 container: {
@@ -37,36 +40,42 @@ container: {
 ```
 
 <Callout type="info">
-  <em>fixed and fluid objects are optional</em>
+  <em>The `fixed` and `fluid` objects are optional.</em>
+</Callout>
+</details>
+
+## Class Names
+
+<details>
+<summary>Toggle Content</summary>
+
+<Callout type="error">
+  <em>Don't mix Fixed and Fluid container.</em>
 </Callout>
 
-<br />
+<h3>Auto</h3>
 
-## Class names
-
-### Auto
-
-For auto class there is no change in name.
+For auto classes, there is no change in the name.
 
 1. `container-fixed`
 2. `container-fluid`
 
-### Manual
+<h3>Manual</h3>
 
-For manual classes, you have to explicitly add container type in class name to identify which container you are using.
+For manual classes, you need to explicitly add the container type in the class name to identify which container you are using.
 
 | Type  | Before       | After                |
 | :---- | :----------- | :------------------- |
 | Fixed | container    | container-fixed-base |
 |       | container-sm | container-fixed-sm   |
 |       | container-md | container-fixed-md   |
-|       | // ...       | and so on            |
+|       | ...          | and so on...         |
 | Fluid | container    | container-fluid-base |
 |       | container-sm | container-fluid-sm   |
 |       | container-md | container-fluid-md   |
-|       | // ...       | and so on            |
+|       | ...          | and so on...         |
 
-> <em>If center is set to false</em>
+> <em>If `center` is set to false</em>
 
 | Type  | Before           | After                  |
 | :---- | :--------------- | :--------------------- |
@@ -74,50 +83,102 @@ For manual classes, you have to explicitly add container type in class name to i
 |       | container-center | container-fixed-center |
 |       | container-right  | container-fixed-right  |
 
+</details>
+
+<br />
+<br />
+
+## Reset class
+
+```css
+.container-none {
+  width: initial;
+  margin-left: unset;
+  margin-right: unset;
+  padding-left: unset;
+  padding-right: unset;
+  max-width: unset;
+  display: initial;
+}
+```
+
 <br />
 
 ## Basic usage
 
 <Callout type="error">
-  <em>Don't mix Auto and Manual classes</em>
+  <em>Don't mix Fixed and Fluid container.</em>
 </Callout>
+
+<details>
+<summary>Fixed and Fluid container on different divs</summary>
+
 <Callout type="error">
-  <em>Don't mix Fixed and Fluid container</em>
+  <em>Don't mix Auto and Manual classes.</em>
 </Callout>
 
-### Auto
+<h4 class="no-nx">Auto</h4>
 
-> <em>automatically set max-width at each breakpoint</em>
+> <em>Automatically set max-width at each breakpoint.</em>
 
 ```js
 class="container-fixed"
 ```
 
-> <em>automatically set horizontal padding at each breakpoint</em>
+> <em>Automatically set horizontal padding at each breakpoint.</em>
 
 ```js
 class="container-fluid"
 ```
 
-### Manual
+<h4 class="no-nx">Manual</h4>
 
-> <em>manually set max-width at a specific breakpoint</em>
+> <em>Manually set max-width at a specific breakpoint.</em>
 
 ```js
 class="container-fixed-base container-fixed-md"
 ```
 
-> <em>manually set horizontal padding at a specific breakpoint</em>
+> <em>Manually set horizontal padding at a specific breakpoint.</em>
 
 ```js
 class="container-fluid-base container-fluid-md"
 ```
 
-### Fixed & Fluid together
+</details>
 
-> <em>You can use Fixed and Fluid together only</em>
-> <em> by keeping css specificity intact</em>
+<details>
+<summary>Fixed and Fluid container on same div</summary>
+
+<Callout type="info">
+  <em>You can use Fixed and Fluid container on same div only</em>
+  <em> by maintaining CSS specificity.</em>
+</Callout>
+
+<Callout type="error">
+  <em>Don't mix Auto and Manual classes.</em>
+</Callout>
+
+<h4 class="no-nx">Auto</h4>
+
+> <em>
+>   Automatically set max-width for Fixed container and horizontal padding for
+>   Fluid container at each breakpoint.
+> </em>
 
 ```js
 class="rxl:container-fluid xl:container-fixed"
 ```
+
+<h4 class="no-nx">Manual</h4>
+
+> <em>
+>   Manually set max-width for Fixed container and horizontal padding for Fluid
+>   container at specific breakpoint.
+> </em>
+
+```js
+class="rxl:container-fluid-base md-rxl:container-fluid-md xl:container-fixed-base xl:container-fixed-mac"
+```
+
+</details>

@@ -14,6 +14,25 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [1.16.0] - 11-09-2023
+
+<br />
+
+### Added
+
+- [doc-001]\: #73 &nbsp;-&nbsp; added basic SEO (0.8.0)
+
+<br />
+
+### Improved
+
+- [doc-001]\: #73 &nbsp;-&nbsp; fixed grammer (0.8.0)
+- [doc-001]\: #73 &nbsp;-&nbsp; refactored structure (0.8.0)
+
+<br /><br />
+
+---
+
 ## [1.15.2] - 07-09-2023
 
 <br>
@@ -445,6 +464,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[1.16.0]: https://github.com/mrjadeja/vishesh/commit/282ff89f...e807eb00
 [1.15.2]: https://github.com/mrjadeja/vishesh/commit/a864e6cb...282ff89f
 [1.15.1]: https://github.com/mrjadeja/vishesh/commit/f709c3c1...a864e6cb
 [1.15.0]: https://github.com/mrjadeja/vishesh/commit/6867d3df...f709c3c1

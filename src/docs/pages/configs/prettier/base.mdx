@@ -1,22 +1,27 @@
+---
+title: Base - Prettier - Configs | Vishesh | MrJadeja
+description: Prettier base config.
+---
+
 import { Tabs, Tab, Callout } from "nextra-theme-docs";
 
 # Prettier base config
 
-## Prerequisite
+## Prerequisites
 
 ```shell
 # Node.js  (choose any)
-v14
-v16
-v18  (Recomended)
+- v14
+- v16
+- v18  (Recommended)
 
 # Package manager  (choose any)
-pnpm: v8 or higher  (Recomended)
-npm: v7 or higher
-yarn: v1 or higher
+- pnpm: v8 or higher  (Recommended)
+- npm: v7 or higher
+- yarn: v1 or higher
 
 # VS code extension
-esbenp.prettier-vscode
+- esbenp.prettier-vscode
 ```
 
 <br />
@@ -24,43 +29,45 @@ esbenp.prettier-vscode
 
 ## Install
 
-<Tabs items={['pnpm', "npm", "yarn"]}>
-  <Tab>
+<details open>
+<summary>pnpm</summary>
 
     ```shell copy
     pnpm dlx install-peerdeps vishesh-prettier -P -D
     ```
 
-  </Tab>
-  <Tab>
+</details>
+
+<details >
+<summary>npm</summary>
 
     ```shell copy
     npm exec install-peerdeps vishesh-prettier -- -D
     ```
 
-  </Tab>
-  <Tab>
+</details>
+
+<details >
+<summary>yarn</summary>
 
     ```shell copy
     yarn dlx install-peerdeps vishesh-prettier -Y -D
     ```
 
-  </Tab>
-</Tabs>
+</details>
 
 <br />
 <br />
 
 ## Setup
 
-1. Setup [Vite project][vite] &nbsp;&nbsp;<small>(_if not already_)</small>
-2. Setup [Vishesh eslint][eslint] &nbsp;&nbsp;<small>(_if not already_)</small>
-3. Setup [Vishesh tsconfig][tsconfig] &nbsp;&nbsp;<small>(_if not already_)</small>
+1. Set up [Vite project][vite] &nbsp;&nbsp;<small>(_if not already done_)</small>
+2. Set up [Vishesh eslint][eslint] &nbsp;&nbsp;<small>(_if not already done_)</small>
+3. Set up [Vishesh tsconfig][tsconfig] &nbsp;&nbsp;<small>(_if not already done_)</small>
 4. Create two new files at the root of your repository.
 
-<Tabs items={[".prettierrc", ".prettierignore"]}>
-
-<Tab>
+<details open>
+<summary>Config file</summary>
 
 ```json filename=".prettierrc" copy
 {
@@ -69,12 +76,13 @@ esbenp.prettier-vscode
 ```
 
 <Callout type="info">
-  <em>you can override [options][prettier-opts]</em>
+  <em>You can override [options][prettier-opts].</em>
 </Callout>
 
-</Tab>
+</details>
 
-<Tab>
+<details >
+<summary>Ignore file</summary>
 
 ```js filename=".prettierignore" copy
 .git
@@ -87,17 +95,18 @@ types
 *-lock.*
 ```
 
-<Callout type="info">_[Reference][prettier-ignore ] for ignore files_</Callout>
+<Callout type="info">
+  <em>_[Reference][prettier-ignore ] for ignore files_.</em>
+</Callout>
 
-</Tab>
-</Tabs>
+</details>
 
 <br />
 <br />
 
 ## Basic scripts
 
-> <em>Add scripts to check formatting</em>
+> <em>Add scripts to check formatting.</em>
 
 ```diff filename="package.json"
 {
@@ -116,68 +125,80 @@ types
 
 ## Basic usage
 
-<Tabs items={["Check", "Fix"]}>
-  <Tab>
+<details>
+<summary>Check the code</summary>
 
-    > <em>Check the code formatting against prettier options</em>
+> <em>Check the code formatting against prettier options.</em>
 
-    <Tabs items={['pnpm', "npm", "yarn"]}>
-      <Tab>
+<details open>
+<summary>pnpm</summary>
 
-        ```shell copy
-        pnpm check:formatting
-        ```
+```shell copy
+pnpm check:formatting
+```
 
-      </Tab>
-      <Tab>
+</details>
 
-        ```shell copy
-        npm run check:formatting
-        ```
+<details >
+<summary>npm</summary>
 
-      </Tab>
-      <Tab>
+```shell copy
+npm run check:formatting
+```
 
-        ```shell copy
-        yarn check:formatting
-        ```
+</details>
 
-      </Tab>
-    </Tabs>
+<details >
+<summary>yarn</summary>
 
-  </Tab>
-  <Tab>
+```shell copy
+yarn check:formatting
+```
 
-> <em>Fix the code formatting</em>
+</details>
 
-  <Tabs items={['pnpm', "npm", "yarn"]}>
-    <Tab>
+</details>
 
-      ```shell copy
-      pnpm fix:formatting
-      ```
+<details>
+<summary>Fix the code</summary>
 
-    </Tab>
-    <Tab>
+> <em>Fix the code formatting according to prettier options.</em>
 
-      ```shell copy
-      npm run fix:formatting
-      ```
+<Callout type="warning" emoji="">
+  <em>⚠️ &nbsp;Stage all the files before running the fix command.</em> <br />
+  <em>👉 &nbsp;`git add .`</em>
+</Callout>
 
-    </Tab>
-    <Tab>
+<details open>
+<summary>pnpm</summary>
 
-      ```shell copy
-      yarn fix:formatting
-      ```
+```shell copy
+pnpm fix:formatting
+```
 
-    </Tab>
+</details>
 
-  </Tabs>
+<details >
+<summary>npm</summary>
 
-  </Tab>
-</Tabs>
+```shell copy
+npm run fix:formatting
+```
 
+</details>
+
+<details >
+<summary>yarn</summary>
+
+```shell copy
+yarn fix:formatting
+```
+
+</details>
+
+</details>
+
+<br />
 <br />
 
 ## Source code

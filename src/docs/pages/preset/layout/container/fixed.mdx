@@ -1,32 +1,38 @@
+---
+title: Fixed Container - Container - Layout - Preset | Vishesh | MrJadeja
+description: A fixed container has a predetermined width that adjusts its size at every breakpoint. This enables the layout to seamlessly adapt to various screen sizes while preserving a consistent width within each breakpoint, ensuring a cohesive and visually appealing design across different devices.
+---
+
 import { Callout } from "nextra-theme-docs";
 
 # Fixed container
 
 <Callout type="info">
   <em>`max-width = breakpoint - ( 2 * spacing )`</em> <br />
-  <em>_please refer_ [breakpoints][breakpoints]</em>
+  <em>For reference, please check [breakpoints][breakpoints]</em>
 </Callout>
 
 <br />
 
 ## Configuration
 
-### Max width
-
-#### Auto
-
-> `container-fixed`
-
-| breakpoint | \<375px | ≥375px | ≥640px | ≥768px | ≥1024px | ≥1280  | ≥1440px | ≥1920px |
-| :--------- | :------ | :----- | :----- | :----- | :------ | :----- | :------ | :------ |
-| spacing    | 0       | 16     | 28     | 40     | 64      | 80     | 128     | 240     |
-| max-width  | 100%    | 343px  | 584px  | 688px  | 896px   | 1120px | 1184px  | 1440px  |
+<details>
+<summary>Max width</summary>
 
 <Callout type="error">
   <em>Don't mix Auto and Manual classes</em>
 </Callout>
 
-#### Manual
+<h4>Auto</h4>
+
+> `container-fixed`
+
+| Breakpoint | \<375px | ≥375px | ≥640px | ≥768px | ≥1024px | ≥1280  | ≥1440px | ≥1920px |
+| :--------- | :------ | :----- | :----- | :----- | :------ | :----- | :------ | :------ |
+| spacing    | 0       | 16     | 28     | 40     | 64      | 80     | 128     | 240     |
+| max-width  | 100%    | 343px  | 584px  | 688px  | 896px   | 1120px | 1184px  | 1440px  |
+
+<h4>Manual</h4>
 
 1\. Base class `container` <small>(mandatory)</small> <br/>
 2\. Max width class `container-x` <small>(where `x` is the breakpoint key)</small>
@@ -42,36 +48,68 @@ import { Callout } from "nextra-theme-docs";
 | container-mac  | 128     | 100%    | 100%   | 100%   | 100%   | 100%    | 100%    | 1184px  | 1440px  |
 | container-maxw | 240     | 100%    | 100%   | 100%   | 100%   | 100%    | 100%    | 100%    | 1440px  |
 
-<br />
+</details>
 
-### Inner padding
+<details>
+<summary>Center</summary>
 
-Equal left and right padding applied to the fixed container at each breakpoint
+```js
+container: {
+  // ...
+  center: true | false,
+  // ...
+}
+```
 
-| Value  | Condition                                                                                    | Default |
-| :----- | :------------------------------------------------------------------------------------------- | :------ |
-| number | should be 0 or greater                                                                       |         |
-| string | valid css like "16px", "1rem", etc...                                                        |         |
-| object | applies to specific breakpoint <br /> - key: breakpoint key <br /> - value: number or string | yes     |
+<h4>true</h4>
 
-<br />
+- Horizontally align the fixed container to the center.
+- This is set by default.
 
-### Center
+<h4>false</h4>
 
-#### true
-
-- horizontally align the fixed container to center
-- this is set by default
-
-#### false
-
-- Below classes are available to manually set alignment
+- Below classes are available to manually set alignment.
 
 | Class            | Description                               |
 | :--------------- | :---------------------------------------- |
 | container-left   | Aligns the fixed container to the left.   |
 | container-center | Centers the fixed container horizontally. |
 | container-right  | Aligns the fixed container to the right.  |
+
+</details>
+
+<details>
+<summary>Inner Padding</summary>
+
+> Apply to all breakpoints
+
+```js filename="apply to all breakpoints"
+container: {
+  // ...
+  innerPadding: number | string,
+  // ...
+}
+```
+
+> Apply to specific breakpoint
+
+```js filename="apply to specific breakpoint"
+container: {
+  // ...
+  innerPadding: {
+    "breakpoint key": number | string
+  },
+  // ...
+}
+```
+
+| Value  | Condition                                                                                    | Default |
+| :----- | :------------------------------------------------------------------------------------------- | :------ |
+| Number | Should be 0 or greater                                                                       |         |
+| String | Valid CSS like "16px", "1rem", etc...                                                        |         |
+| object | Applies to specific breakpoint <br /> - Key: breakpoint key <br /> - Value: number or string | Yes     |
+
+</details>
 
 <br />
 <br />
@@ -115,17 +153,17 @@ Equal left and right padding applied to the fixed container at each breakpoint
   <em>Don't mix Auto and Manual classes</em>
 </Callout>
 
-### Auto
+<h3 class="no-nx">Auto</h3>
 
-> <em>automatically set max-width at each breakpoint</em>
+> <em>Automatically set max-width at each breakpoint.</em>
 
 ```js
 class="container-fixed"
 ```
 
-### Manual
+<h3 class="no-nx">Manual</h3>
 
-> <em>manually set max-width at a specific breakpoint</em>
+> <em>Manually set max-width at a specific breakpoint.</em>
 
 ```js
 class="container container-md"
