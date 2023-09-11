@@ -1,25 +1,30 @@
+---
+title: Library - TS config - Configs | Vishesh | MrJadeja
+description: Typescript library config with vite.
+---
+
 import { Tabs, Tab, Callout } from "nextra-theme-docs";
 
 # Typescript library config
 
 > **<kbd>Typescript</kbd> + <kbd>Library</kbd> + <kbd>Vite</kbd>**
 
-## Prerequisite
+## Prerequisites
 
 ```shell
 # Node.js  (choose any)
-v14
-v16
-v18  (Recomended)
+- v14
+- v16
+- v18  (Recommended)
 
 # Package manager  (choose any)
-pnpm: v8 or higher  (Recomended)
-npm: v7 or higher
-yarn: v1 or higher
+- pnpm: v8 or higher  (Recommended)
+- npm: v7 or higher
+- yarn: v1 or higher
 
 # Tools
-Vite: v3 or higher
-Typescript: v4 or higher
+- Vite: v3 or higher
+- Typescript: v4 or higher
 ```
 
 <br />
@@ -27,8 +32,8 @@ Typescript: v4 or higher
 
 ## Install
 
-<Tabs items={['pnpm', "npm", "yarn"]}>
-  <Tab>
+<details open>
+<summary>pnpm</summary>
 
     > <em>Run this scripts in sequence</em>
     ```shell copy
@@ -40,8 +45,10 @@ Typescript: v4 or higher
     pnpm dlx install-peerdeps vishesh-tsconfig-lib -P -D
     ```
 
-  </Tab>
-  <Tab>
+</details>
+
+<details >
+<summary>npm</summary>
 
     > <em>Run this scripts in sequence</em>
     ```shell copy
@@ -53,8 +60,10 @@ Typescript: v4 or higher
     npm exec install-peerdeps vishesh-tsconfig-lib -P -D
     ```
 
-  </Tab>
-  <Tab>
+</details>
+
+<details >
+<summary>yarn</summary>
 
     > <em>Run this scripts in sequence</em>
     ```shell copy
@@ -66,29 +75,27 @@ Typescript: v4 or higher
     yarn dlx install-peerdeps vishesh-tsconfig-lib -P -D
     ```
 
-  </Tab>
-</Tabs>
+</details>
 
 <br />
 <br />
 
 ## Setup
 
-1. Setup [Vishesh eslint-lib][eslint-lib] &nbsp;&nbsp;<small>(_if not already_)</small>
-2. Setup [Vishesh prettier][prettier] &nbsp;&nbsp;<small>(_if not already_)</small>
+1. Set up [Vishesh eslint-lib][eslint-lib] &nbsp;&nbsp;<small>(_if not already done_)</small>
+2. Set up [Vishesh prettier][prettier] &nbsp;&nbsp;<small>(_if not already done_)</small>
 3. Create a folder at root of the repository with two files inside.
 
 ```shell
-lib - a folder that contians below two files
-  main.ts - your code for the awesome library
-  index.d.ts - types for your code
+lib - A folder that contains the following two files.
+  main.ts - Your code for the awesome library
+  index.d.ts - Types for your code
 ```
 
-4. Create two new files at the root of your repository.
+4. Override `tsconfig.json` and `vite.config.ts` file.
 
-<Tabs items={["tsconfig.json", "vite.config.ts"]}>
-
-<Tab>
+<details open>
+<summary>Typescript Config file</summary>
 
 ```json filename="tsconfig.json" copy
 {
@@ -98,12 +105,13 @@ lib - a folder that contians below two files
 ```
 
 <Callout type="info">
-  <em>you can override [options][tsconfig-opts]</em>
+  <em>You can override [options][tsconfig-opts].</em>
 </Callout>
 
-</Tab>
+</details>
 
-<Tab>
+<details >
+<summary>Vite Config file</summary>
 
 ```ts filename="vite.config.ts" copy
 import { defineConfig } from "vite";
@@ -135,17 +143,18 @@ export default defineConfig({
 });
 ```
 
-<Callout type="info">_you can override [config][vite-config]_</Callout>
+<Callout type="info">
+  <em>You can override [config][vite-config].</em>
+</Callout>
 
-</Tab>
-</Tabs>
+</details>
 
 <br />
 <br />
 
 ## Basic scripts
 
-> <em>Add scripts to check the code, build it and publish</em>
+> <em>Add scripts to check the code, build it and publish.</em>
 
 ```diff filename="package.json"
 {
@@ -181,104 +190,109 @@ export default defineConfig({
 
 ## Basic usage
 
-<Tabs items={["Check", "Build", "Publish"]}>
-  <Tab>
+<details>
+<summary>Check the types</summary>
 
-    > <em>Check the types</em>
+> <em>Check the code against typescript options.</em>
 
-    <Tabs items={['pnpm', "npm", "yarn"]}>
-      <Tab>
+<details open>
+<summary>pnpm</summary>
 
-        ```shell copy
-        pnpm check:ts
-        ```
+```shell copy
+pnpm check:ts
+```
 
-      </Tab>
-      <Tab>
+</details>
 
-        ```shell copy
-        npm run check:ts
-        ```
+<details >
+<summary>npm</summary>
 
-      </Tab>
-      <Tab>
+```shell copy
+npm run check:ts
+```
 
-        ```shell copy
-        yarn check:ts
-        ```
+</details>
 
-      </Tab>
-    </Tabs>
+<details >
+<summary>yarn</summary>
 
-  </Tab>
-  <Tab>
+```shell copy
+yarn check:ts
+```
 
-> <em>Build the library</em>
+</details>
 
-  <Tabs items={['pnpm', "npm", "yarn"]}>
-    <Tab>
-
-      ```shell copy
-      pnpm build
-      ```
-
-    </Tab>
-    <Tab>
-
-      ```shell copy
-      npm run build
-      ```
-
-    </Tab>
-    <Tab>
-
-      ```shell copy
-      yarn build
-      ```
-
-    </Tab>
-
-  </Tabs>
-
-  </Tab>
-  <Tab>
-
-> <em>Publish the library</em>
-
-  <Tabs items={['pnpm', "npm", "yarn"]}>
-    <Tab>
-
-      ```shell copy
-      pnpm publish --access public
-      ```
-
-    </Tab>
-    <Tab>
-
-      ```shell copy
-      npm run publish --access public
-      ```
-
-    </Tab>
-    <Tab>
-
-      ```shell copy
-      yarn publish --access public
-      ```
-
-    </Tab>
-
-  </Tabs>
+</details>
 
 <Callout type="warning">
-  <em>
-    This is not the complete guild to build and publish the library on npm.
-  </em>
+  <em>This is not the complete guide to building</em>
+  <em> and publishing the library on npm.</em>
 </Callout>
 
-  </Tab>
-</Tabs>
+<details>
+<summary>Build the library</summary>
 
+<details open>
+<summary>pnpm</summary>
+
+```shell copy
+pnpm build
+```
+
+</details>
+
+<details >
+<summary>npm</summary>
+
+```shell copy
+npm run build
+```
+
+</details>
+
+<details >
+<summary>yarn</summary>
+
+```shell copy
+yarn build
+```
+
+</details>
+
+</details>
+
+<details>
+<summary>Publish the library</summary>
+
+<details open>
+<summary>pnpm</summary>
+
+```shell copy
+pnpm publish --access public
+```
+
+</details>
+
+<details >
+<summary>npm</summary>
+
+```shell copy
+npm run publish --access public
+```
+
+</details>
+
+<details >
+<summary>yarn</summary>
+
+```shell copy
+yarn publish --access public
+```
+
+</details>
+</details>
+
+<br />
 <br />
 
 ## Source code

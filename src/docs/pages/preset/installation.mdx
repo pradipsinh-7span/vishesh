@@ -1,72 +1,91 @@
+---
+title: Installation - Preset | Vishesh | MrJadeja
+description: Install vishesh preset to your project
+---
+
 import { Callout, Tabs, Tab } from "nextra-theme-docs";
+
+# Installation
+
+Install the Vishesh preset and set it up in your project.
 
 ## Pre-requisite
 
 ```shell
-# Node.js  (choose any)
-v14
-v16
-v18  (Recomended)
+# Node.js (choose any)
+- v14
+- v16
+- v18 (Recommended)
 
-# Package manager  (choose any)
-pnpm: v8 or higher  (Recomended)
-npm: v7 or higher
-yarn: v1 or higher
+# Package manager (choose any)
+- pnpm: v8 or higher (Recommended)
+- npm: v7 or higher
+- yarn: v1 or higher
 
-# Tailwindcss
-v3 or higher
+# Tailwind CSS
+- v3 or higher
 ```
 
 <br />
 
 ## Install
 
-<Tabs items={["pnpm", "npm", "yarn"]}>
-  <Tab>
+<details open>
+<summary>pnpm</summary>
 
-    ```shell copy
-    pnpm add -D vishesh-preset
-    ```
+```shell copy
+pnpm add -D vishesh-preset
+```
 
-  </Tab>
-  <Tab>
+</details>
 
-    ```shell copy
-    npm i -D vishesh-preset
-    ```
+<details >
+<summary>npm</summary>
 
-  </Tab>
-  <Tab>
+```shell copy
+npm i -D vishesh-preset
+```
 
-    ```shell copy
-    yarn add -D vishesh-preset
-    ```
+</details>
 
-  </Tab>
-</Tabs>
+<details >
+<summary>yarn</summary>
+
+```shell copy
+yarn add -D vishesh-preset
+```
+
+</details>
 
 <br />
 
 ## Setup
 
-1\. Setup [Tailwindcss][tailwindcss] &nbsp;&nbsp;(<small>_if not already_</small>)
+1\. Set up [Tailwindcss][tailwindcss] &nbsp;&nbsp;(<small>_if not already done_</small>)
 
 <Callout type="warning">
-  <em>if running on v2, [migrate to v3][migrate-to-v3]</em>
+  <em>If you're using v2, [migrate to v3][migrate-to-v3]</em>
 </Callout>
 
-2\. go to your tailwind config file. then, identify which package to install by looking at the way your config file were exported.
+2\. Navigate to your Tailwind CSS configuration file. Then, identify which package to install based on how your config file is exported.
 
 <Callout>
-  <em>**ESM**: `export default`</em> <br />
-  <em>**CJS**: `module.exports`</em>
+  <em>
+    <abbr title="ECMAScript Module">_ESM_</abbr>
+  </em>
+  <em>: `export default`</em> <br />
+  <em>
+    <abbr title="CommonJS Module">*CJS*</abbr>
+  </em>
+  <em>: `module.exports`</em>
 </Callout>
 
 <br />
 
-### Setup ESM
+<details>
+<summary>Setting up&nbsp;<abbr title="ECMAScript Module">_ESM_</abbr></summary>
 
-> <em>you can extend or override [config][tailwind-config]</em>
+> <em>You can extend or override the [configuration][tailwind-config].</em>
 
 ```diff filename="tailwind.config.js"
 # /* your other imports */
@@ -74,6 +93,7 @@ v3 or higher
 
 # /* remove tailwindcss auto suggestion */
 - /** @type {import('tailwindcss').Config} */
+
 # /* add tailwindcss + vishesh-preset auto suggestion */
 + /** @type {import('vishesh-preset/types').VisheshPreset} */
   export default {
@@ -89,11 +109,12 @@ v3 or higher
   }
 ```
 
-<br />
+</details>
 
-### Setup CJS
+<details>
+<summary>Setting up&nbsp;<abbr title="ECMAScript Module">_CJS_</abbr></summary>
 
-> <em>you can extend or override [config][tailwind-config]</em>
+> <em>You can extend or override the [configuration][tailwind-config].</em>
 
 ```diff filename="tailwind.config.cjs"
 # /* your other imports */
@@ -101,6 +122,7 @@ v3 or higher
 
 # /* remove tailwindcss auto suggestion */
 - /** @type {import('tailwindcss').Config} */
+
 # /* add tailwindcss + vishesh-preset auto suggestion */
 + /** @type {import('vishesh-preset/types').VisheshPreset} */
   module.exports = {
@@ -116,14 +138,16 @@ v3 or higher
   }
 ```
 
+</details>
+
 <br />
 <br />
 
-## Customize
+## Customization
 
-Vishesh preset was shipped with _default configurations to start_. Providing you a headstart in your journey. <br />
+The Vishesh preset comes with default configurations to help you get started and provide a head start on your journey. <br />
 
-> <em>👉 &nbsp; you can customize it with `theme.extend`</em>
+> <em>👉 &nbsp; You can customize it using the `theme.extend` option.</em>
 
 [tailwindcss]: https://tailwindcss.com/docs/installation/framework-guides "Setup tailwindcss"
 [tailwind-config]: https://tailwindcss.com/docs/configuration#configuration-options "Tailwindcss configuration documentation"

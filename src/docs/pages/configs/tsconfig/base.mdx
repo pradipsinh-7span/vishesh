@@ -1,19 +1,24 @@
+---
+title: Base - TS config - Configs | Vishesh | MrJadeja
+description: Typescript base config.
+---
+
 import { Tabs, Tab, Callout } from "nextra-theme-docs";
 
 # Typescript base config
 
-## Prerequisite
+## Prerequisites
 
 ```shell
 # Node.js  (choose any)
-v14
-v16
-v18  (Recomended)
+- v14
+- v16
+- v18  (Recommended)
 
 # Package manager  (choose any)
-pnpm: v8 or higher  (Recomended)
-npm: v7 or higher
-yarn: v1 or higher
+- pnpm: v8 or higher  (Recommended)
+- npm: v7 or higher
+- yarn: v1 or higher
 ```
 
 <br />
@@ -21,38 +26,41 @@ yarn: v1 or higher
 
 ## Install
 
-<Tabs items={['pnpm', "npm", "yarn"]}>
-  <Tab>
+<details open>
+<summary>pnpm</summary>
 
     ```shell copy
     pnpm dlx install-peerdeps vishesh-tsconfig -P -D
     ```
 
-  </Tab>
-  <Tab>
+</details>
+
+<details >
+<summary>npm</summary>
 
     ```shell copy
     npm exec install-peerdeps vishesh-tsconfig -- -D
     ```
 
-  </Tab>
-  <Tab>
+</details>
+
+<details >
+<summary>yarn</summary>
 
     ```shell copy
     yarn dlx install-peerdeps vishesh-tsconfig -Y -D
     ```
 
-  </Tab>
-</Tabs>
+</details>
 
 <br />
 <br />
 
 ## Setup
 
-1. Setup [Vite project][vite] &nbsp;&nbsp;<small>(_if not already_)</small>
-2. Setup [Vishesh eslint][eslint] &nbsp;&nbsp;<small>(_if not already_)</small>
-3. Setup [Vishesh prettier][prettier] &nbsp;&nbsp;<small>(_if not already_)</small>
+1. Set up [Vite project][vite] &nbsp;&nbsp;<small>(_if not already done_)</small>
+2. Set up [Vishesh eslint][eslint] &nbsp;&nbsp;<small>(_if not already done_)</small>
+3. Set up [Vishesh prettier][prettier] &nbsp;&nbsp;<small>(_if not already done_)</small>
 4. Create a new files at the root of your repository.
 
 ```json filename="tsconfig.json" copy
@@ -63,7 +71,7 @@ yarn: v1 or higher
 ```
 
 <Callout type="info">
-  <em>you can override [options][tsconfig-opts]</em>
+  <em>You can override [options][tsconfig-opts].</em>
 </Callout>
 
 <br />
@@ -71,7 +79,7 @@ yarn: v1 or higher
 
 ## Basic scripts
 
-> <em>Add script to check types</em>
+> <em>Add script to check types.</em>
 
 ```diff filename="package.json"
 {
@@ -89,32 +97,36 @@ yarn: v1 or higher
 
 ## Basic usage
 
-> <em>Check the types</em>
+> <em>Check the types against typescript options.</em>
 
-<Tabs items={['pnpm', "npm", "yarn"]}>
-  <Tab>
+<details open>
+<summary>pnpm</summary>
 
-    ```shell copy
-    pnpm check:ts
-    ```
+```shell copy
+pnpm check:ts
+```
 
-  </Tab>
-  <Tab>
+</details>
 
-    ```shell copy
-    npm run check:ts
-    ```
+<details >
+<summary>npm</summary>
 
-  </Tab>
-  <Tab>
+```shell copy
+npm run check:ts
+```
 
-    ```shell copy
-    yarn check:ts
-    ```
+</details>
 
-  </Tab>
-</Tabs>
+<details >
+<summary>yarn</summary>
 
+```shell copy
+yarn check:ts
+```
+
+</details>
+
+<br />
 <br />
 
 ## Source code

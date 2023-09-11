@@ -1,30 +1,35 @@
+---
+title: React.js - ESLint - Configs | Vishesh | MrJadeja
+description: ESLint React.js config with typescript and vite.
+---
+
 import { Tabs, Tab, Callout } from "nextra-theme-docs";
 
 # ESLint React.js config
 
 > **<kbd>Typescript</kbd> + <kbd>React.js</kbd> + <kbd>Vite</kbd>**
 
-## Prerequisite
+## Prerequisites
 
 ```shell
 # Node.js  (choose any)
-v14
-v16
-v18  (Recomended)
+- v14
+- v16
+- v18  (Recommended)
 
 # Package manager  (choose any)
-pnpm: v8 or higher  (Recomended)
-npm: v7 or higher
-yarn: v1 or higher
+- pnpm: v8 or higher  (Recommended)
+- npm: v7 or higher
+- yarn: v1 or higher
 
 # Tools
-React.js: v17 or higher
-Tailwindcss: v3 or higher
-Vite: v3 or higher
-Typescript: v4 or higher
+- React.js: v17 or higher
+- Tailwindcss: v3 or higher
+- Vite: v3 or higher
+- Typescript: v4 or higher
 
 # VS code extension
-dbaeumer.vscode-eslint
+- dbaeumer.vscode-eslint
 ```
 
 <br />
@@ -32,8 +37,8 @@ dbaeumer.vscode-eslint
 
 ## Install
 
-<Tabs items={['pnpm', "npm", "yarn"]}>
-  <Tab>
+<details open>
+<summary>pnpm</summary>
 
     > <em>Run this scripts in sequence</em>
     ```shell copy
@@ -45,8 +50,10 @@ dbaeumer.vscode-eslint
     pnpm dlx install-peerdeps eslint-config-vishesh-react -P -D
     ```
 
-  </Tab>
-  <Tab>
+</details>
+
+<details >
+<summary>npm</summary>
 
     > <em>Run this scripts in sequence</em>
     ```shell copy
@@ -58,8 +65,10 @@ dbaeumer.vscode-eslint
     npm exec install-peerdeps eslint-config-vishesh-react -P -D
     ```
 
-  </Tab>
-  <Tab>
+</details>
+
+<details >
+<summary>yarn</summary>
 
     > <em>Run this scripts in sequence</em>
     ```shell copy
@@ -71,22 +80,20 @@ dbaeumer.vscode-eslint
     yarn dlx install-peerdeps eslint-config-vishesh-react -P -D
     ```
 
-  </Tab>
-</Tabs>
+</details>
 
 <br />
 <br />
 
 ## Setup
 
-1. Setup [Vishesh tsconfig-react][tsconfig-react] &nbsp;&nbsp;<small>(_if not already_)</small>
-2. Setup [Vishesh prettier-react][prettier-react] &nbsp;&nbsp;<small>(_if not already_)</small>
-3. Setup [Tailwindcss][tailwindcss] &nbsp;&nbsp;<small>(_if not already_)</small>
+1. Set up [Vishesh tsconfig-react][tsconfig-react] &nbsp;&nbsp;<small>(_if not already done_)</small>
+2. Set up [Vishesh prettier-react][prettier-react] &nbsp;&nbsp;<small>(_if not already done_)</small>
+3. Set up [Tailwindcss][tailwindcss] &nbsp;&nbsp;<small>(_if not already done_)</small>
 4. Create two new files at the root of your repository.
 
-<Tabs items={[".eslintrc", ".eslintignore"]}>
-
-<Tab>
+<details open>
+<summary>Config file</summary>
 
 ```json filename=".eslintrc" copy
 {
@@ -96,12 +103,13 @@ dbaeumer.vscode-eslint
 ```
 
 <Callout type="info">
-  <em>you can override [rules] and [other configs][configure-eslint]</em>
+  <em>You can override [rules] and [other configs][configure-eslint].</em>
 </Callout>
 
-</Tab>
+</details>
 
-<Tab>
+<details >
+<summary>Ignore file</summary>
 
 ```js filename=".eslintignore" copy
 .git
@@ -118,17 +126,18 @@ package.json
 *.json
 ```
 
-<Callout type="info">_[Reference][eslint-ignore] for ignore files_</Callout>
+<Callout type="info">
+  <em>_[Reference][eslint-ignore] for ignore files_.</em>
+</Callout>
 
-</Tab>
-</Tabs>
+</details>
 
 <br />
 <br />
 
 ## Basic scripts
 
-> <em>Add scripts to lint your code</em>
+> <em>Add scripts to lint your code.</em>
 
 ```diff filename="package.json"
 {
@@ -147,73 +156,80 @@ package.json
 
 ## Basic usage
 
-<Tabs items={["Check", "Fix"]}>
-  <Tab>
+<details>
+<summary>Check the code</summary>
 
-    > <em>Check the code against eslint rules</em>
+> <em>Check the code against eslint rules.</em>
 
-    <Tabs items={['pnpm', "npm", "yarn"]}>
-      <Tab>
+<details open>
+<summary>pnpm</summary>
 
-        ```shell copy
-        pnpm lint
-        ```
+```shell copy
+pnpm lint
+```
 
-      </Tab>
-      <Tab>
+</details>
 
-        ```shell copy
-        npm run lint
-        ```
+<details >
+<summary>npm</summary>
 
-      </Tab>
-      <Tab>
+```shell copy
+npm run lint
+```
 
-        ```shell copy
-        yarn lint
-        ```
+</details>
 
-      </Tab>
-    </Tabs>
+<details >
+<summary>yarn</summary>
 
-  </Tab>
-  <Tab>
+```shell copy
+yarn lint
+```
 
-> <em>Fix the code</em>
+</details>
+
+</details>
+
+<details>
+<summary>Fix the code</summary>
+
+> <em>Fix the code according to ESLint rules.</em>
 
 <Callout type="warning" emoji="">
-  <em>⚠️ &nbsp;Stage all the files before running fix command</em> <br />
+  <em>⚠️ &nbsp;Stage all the files before running the fix command.</em> <br />
   <em>👉 &nbsp;`git add .`</em>
 </Callout>
 
-  <Tabs items={['pnpm', "npm", "yarn"]}>
-    <Tab>
+<details open>
+<summary>pnpm</summary>
 
-      ```shell copy
-      pnpm fix:lint
-      ```
+```shell copy
+pnpm fix:lint
+```
 
-    </Tab>
-    <Tab>
+</details>
 
-      ```shell copy
-      npm run fix:lint
-      ```
+<details >
+<summary>npm</summary>
 
-    </Tab>
-    <Tab>
+```shell copy
+npm run fix:lint
+```
 
-      ```shell copy
-      yarn fix:lint
-      ```
+</details>
 
-    </Tab>
+<details >
+<summary>yarn</summary>
 
-  </Tabs>
+```shell copy
+yarn fix:lint
+```
 
-  </Tab>
-</Tabs>
+</details>
 
+</details>
+
+<br />
 <br />
 
 ## Source code

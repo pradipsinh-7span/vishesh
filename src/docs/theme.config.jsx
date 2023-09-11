@@ -154,17 +154,19 @@ export default {
 
     return (
       <>
-        <link rel="icon" href="/vishesh/favicon.ico" />
-        <meta property="og:url" content={url} />
-        <meta property="og:title" content={frontMatter.title || "Vishesh"} />
+        {/* <meta property="og:url" content={url} />
+        <meta
+          property="og:title"
+          content={frontMatter.title || "Vishesh | MrJadeja"}
+        />
         <meta
           property="og:description"
           content={
             frontMatter.description ||
-            "The rapid design system for your next project ✌ | MrJadeja"
+            "The rapid design system for your next project"
           }
-        />
-        <title>{frontMatter.title || "Vishesh by MrJadeja"}</title>
+        /> */}
+        <title>{frontMatter.title || "Vishesh | MrJadeja"}</title>
       </>
     );
   },

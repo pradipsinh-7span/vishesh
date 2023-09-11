@@ -18,6 +18,11 @@ export default {
           dark: "#1D4ED8",
         },
       },
+      fontFamily: {
+        display: ["Bitter", "sans-serif"],
+        body: ["Work Sans", "sans-serif"],
+        mono: ["Sono", "monospace"],
+      },
       container: {
         innerPadding: {
           zero: 24,

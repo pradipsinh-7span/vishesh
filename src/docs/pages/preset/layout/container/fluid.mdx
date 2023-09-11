@@ -1,32 +1,38 @@
+---
+title: Fluid Container - Container - Layout - Preset | Vishesh | MrJadeja
+description: A fluid container dynamically adapts its width to fit the available space while simultaneously adjusting its padding at different breakpoints. This ensures that the container scales proportionally, maintains a flexible layout, and retains consistent spacing and alignment.
+---
+
 import { Callout } from "nextra-theme-docs";
 
 # Fluid container
 
 <Callout type="info">
   <em>`width = 100% - ( 2 * spacing )`</em> <br />
-  <em>_please refer_ [breakpoints][breakpoints]</em>
+  <em>For reference, please check [breakpoints][breakpoints]</em>
 </Callout>
 
 <br />
 
 ## Configuration
 
-### Horizontal padding
-
-#### Auto
-
-> `container-fluid`
-
-| breakpoint | \<375px     | ≥375px      | ≥640px      | ≥768px      | ≥1024px      | ≥1280        | ≥1440px      | ≥1920px      |
-| :--------- | :---------- | :---------- | :---------- | :---------- | :----------- | :----------- | :----------- | :----------- |
-| spacing    | 16          | 16          | 28          | 40          | 64           | 80           | 128          | 240          |
-| width      | 100% - 32px | 100% - 32px | 100% - 56px | 100% - 80px | 100% - 128px | 100% - 160px | 100% - 256px | 100% - 480px |
+<details>
+<summary>Horizontal padding</summary>
 
 <Callout type="error">
   <em>Don't mix Auto and Manual classes</em>
 </Callout>
 
-#### Manual
+<h4 class="no-nx">Auto</h4>
+
+> `container-fluid`
+
+| Breakpoint | \<375px     | ≥375px      | ≥640px      | ≥768px      | ≥1024px      | ≥1280        | ≥1440px      | ≥1920px      |
+| :--------- | :---------- | :---------- | :---------- | :---------- | :----------- | :----------- | :----------- | :----------- |
+| spacing    | 16          | 16          | 28          | 40          | 64           | 80           | 128          | 240          |
+| width      | 100% - 32px | 100% - 32px | 100% - 56px | 100% - 80px | 100% - 128px | 100% - 160px | 100% - 256px | 100% - 480px |
+
+<h4 class="no-nx">Manual</h4>
 
 1\. Base class `container` <small>(mandatory)</small> <br/>
 2\. padding class `container-x` <small>(where `x` is the breakpoint key)</small>
@@ -41,6 +47,8 @@ import { Callout } from "nextra-theme-docs";
 | container-xl   | 80      | 100%        | 100%        | 100%        | 100%        | 100%         | 100% - 160px | 100% - 256px | 100% - 480px |
 | container-mac  | 128     | 100%        | 100%        | 100%        | 100%        | 100%         | 100%         | 100% - 256px | 100% - 480px |
 | container-maxw | 240     | 100%        | 100%        | 100%        | 100%        | 100%         | 100%         | 100%         | 100% - 480px |
+
+</details>
 
 <br />
 <br />
@@ -81,17 +89,17 @@ import { Callout } from "nextra-theme-docs";
   <em>Don't mix Auto and Manual classes</em>
 </Callout>
 
-### Auto
+<h3 class="no-nx">Auto</h3>
 
-> <em>automatically set horizontal padding at each breakpoint</em>
+> <em>Automatically set horizontal padding at each breakpoint.</em>
 
 ```js
 class="container-fluid"
 ```
 
-### Manual
+<h3 class="no-nx">Manual</h3>
 
-> <em>manually set horizontal padding at a specific breakpoint</em>
+> <em>manually set horizontal padding at a specific breakpoint.</em>
 
 ```js
 class="container container-md"

@@ -9,12 +9,14 @@ export default () => {
       </div>
       <div className="sm:max-w-xs md:max-w-sm xl:max-w-lg">
         <div className="rsm:mt-10 text-black dark:text-white">
-          <h2 className="text-3xl font-semibold capitalize xl:text-5xl xl:leading-[60px]">
-            The rapid design system for your next project
+          <h2 className="text-3xl font-semibold xl:text-5xl xl:leading-[60px]">
+            The Rapid Design System for Your Next Project
           </h2>
-          <h4 className="mt-4 xl:text-lg xl:mt-6 italic">
-            Unlease the true potential of your project with <em>vishesh</em>,
-            where confidence meets <strong>boldness</strong> in design.
+          <h4 className="mt-4 xl:text-lg xl:mt-6 display-body">
+            Unleash the true potential of your project with <em>vishesh</em>,
+            where confidence meets{" "}
+            <strong className="font-semibold tracking-wide">boldness</strong> in
+            design.
           </h4>
         </div>
         <div className="mt-6 flex items-center xl:mt-8">
