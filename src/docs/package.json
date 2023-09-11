@@ -1,7 +1,7 @@
 {
-  "name": "vishesh",
-  "description": "The Rapid Design System for Your Next Project.",
-  "version": "0.8.0",
+  "name": "docs",
+  "description": "the official documentation of vishesh project",
+  "version": "0.8.1",
   "type": "module",
   "scripts": {
     "dev": "next dev",
