@@ -48,7 +48,7 @@ If you choose either a Fixed or Fluid container, you can use only one of them in
 
 ```diff
 {
-  content: [____],
+# // ...
   theme: {
 #   /* Remove Tailwind container configuration */
 -   container: {
@@ -61,6 +61,7 @@ If you choose either a Fixed or Fluid container, you can use only one of them in
 -       '2xl': '6rem',
 -     },
 -   },
+#   // ...
     extend: {
 #     /* Default values are already present */
 #     /* No need to add them again, provided here just for reference */
@@ -86,10 +87,11 @@ If you choose either a Fixed or Fluid container, you can use only one of them in
 +         mac: 0,
 +         maxw: 0
 +       }
-+     }
++     },
+#     // ...
     }
   },
-  plugins: [____]
+# // ...
 }
 ```
 
@@ -128,7 +130,8 @@ container: {
 container: {
   // ...
   spacing: {
-    "breakpoint key": number
+    "breakpoint key": number,
+    // ...
   },
   // ...
 }
@@ -166,7 +169,7 @@ container: {
 
 ## Source code
 
-\{ \} [container.ts](https://github.com/mrjadeja/vishesh/blob/main/src/packages/preset/lib/components/container/index.ts "Vishesh preset container source code")
+\{ \} [container/index.ts](https://github.com/mrjadeja/vishesh/blob/main/src/packages/preset/lib/components/container/index.ts "Vishesh preset container source code")
 
 ## References
 

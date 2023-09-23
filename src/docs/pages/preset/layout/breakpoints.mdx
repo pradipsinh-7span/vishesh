@@ -3,7 +3,7 @@ title: Breakpoints - Layout - Preset | Vishesh | MrJadeja
 description: Breakpoints are like signposts in web design that signal when a design needs to adapt to different screen sizes. They guide the website's layout and appearance, ensuring it's user-friendly across devices like phones, tablets, and computers.
 ---
 
-import { Callout, Tabs, Tab } from "nextra-theme-docs";
+import { Callout } from "nextra-theme-docs";
 
 # Breakpoints
 
@@ -21,7 +21,7 @@ When a screen hits a breakpoint, the design switches to a version that fits that
 ```diff filename="tailwind.config.js"
 # Default breakpoints are in pixels
 {
-#  // ...
+# // ...
   theme: {
 -    screens: {
 -      zero: 0,
@@ -33,6 +33,7 @@ When a screen hits a breakpoint, the design switches to a version that fits that
 -      mac: 1440,
 -      maxw: 1920,
 -    },
+#   // ...
     extend: {
 #     /* defaults values are there */
 #     /* no need to add */
@@ -47,6 +48,7 @@ When a screen hits a breakpoint, the design switches to a version that fits that
 +       mac: 1440,
 +       maxw: 1920,
 +     },
+#     // ...
     }
   },
 # // ...
@@ -199,7 +201,7 @@ class="p-6 rxs:p-3.5 osm:p-5 lg-mac:p-7"
 
 ## Source code
 
-\{ \} [breakpoints.ts](https://github.com/mrjadeja/vishesh/blob/main/src/packages/preset/lib/variants/breakpoints/index.ts "Vishesh preset breakpoints source code")
+\{ \} [breakpoints/index.ts](https://github.com/mrjadeja/vishesh/blob/main/src/packages/preset/lib/variants/breakpoints/index.ts "Vishesh preset breakpoints source code")
 
 ## References
 

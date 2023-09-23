@@ -1,0 +1,321 @@
+---
+title: Aspect Ratio - Layout - Preset | Vishesh | MrJadeja
+description: Aspect ratio describes the proportional relationship between an element's width and height.
+---
+
+import { Callout } from "nextra-theme-docs";
+
+# Aspect Ratio
+
+Aspect ratio is like a teamwork between width and height. Imagine you have a rectangle, and the aspect ratio is 4:3. This means for every 4 units you move horizontally (width), you move 3 units vertically (height). Now, if you want to change the width to 8 units, the height will automatically adjust to 6 units to maintain that 4:3 ratio. It's like a see-saw where one side goes up when the other goes down, all to keep things looking just right.
+
+It can be applied to any element; in our case, when we change the width, the height adjusts itself in accordance with the aspect ratio.
+
+<Callout type="info">
+  <em>Native support for the aspect ratio property was added in 2021,</em>
+  <em> but it doesn't cover a wide range of browsers.</em> <br />
+  <em>Therefore, Vishesh Preset uses the vertical padding hack for</em>
+  <em> aspect ratios, which has broad support.</em>
+</Callout>
+
+<br />
+<br />
+
+## Setup
+
+The Vishesh preset includes commonly used aspect ratios. However, there's a special property called the `generator` that allows you to create classes based on a specified numeric range.
+
+By default, it covers the range from _1-16_, generating classes in the format `ratio-x/y`, where x and y can be any numbers within that range.
+
+<Callout type="info">
+  <em>It doesn't generate classes for same numbers. i.e.,</em>
+  <em> *ratio-1/1*, *ratio-2/2*, *...*, *ratio-16/16*.</em> <br />
+  <em>For these, you can simply use `ratio-square`.</em>
+</Callout>
+
+```js filename="tailwind.config.js"
+export default {
+  // ...
+  theme: {
+    //...
+    extend: {
+      /* defaults values are there */
+      /* no need to add */
+      /* just for reference */
+      aspectRatio: {
+        square: "1/1",
+        video: "16/9",
+        photo: "4/3",
+        "photo-wide": "5/4",
+        "photo-wider": "3/2",
+        "photo-widest": "16/9",
+        cinema: "1.85/1",
+        "cinema-wide": "2.39/1",
+        "cinema-70mm": "2.76/1",
+        display: "16/9",
+        "display-tall": "16/10",
+        "display-wide": "18/9",
+        "display-wider": "19.5/9",
+        "display-ultrawide": "21/9",
+        // special property
+        // generates classes from the range
+        generator: "1-16",
+      },
+      // ...
+    },
+  },
+  // ...
+};
+```
+
+<br />
+<br />
+
+## Classes
+
+### Base
+
+<details>
+<summary>aspect</summary>
+
+```css
+.aspect {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.aspect > :first-child {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  padding-top: calc(
+    (var(--vishesh-aspect-h, 1) / var(--vishesh-aspect-w, 1)) * 100%
+  );
+}
+
+.aspect > :first-child > :first-child {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.aspect > :first-child > :first-child > img,
+.aspect > :first-child > :first-child > video {
+  width: 100%;
+  height: 100%;
+}
+```
+
+</details>
+
+### Ratio
+
+<Callout type="info">
+  <em>Ratio classes are generated as mentioned</em>
+  <em> above in the [Setup](/preset/layout/aspect-ratio#setup).</em>
+</Callout>
+
+<details>
+<summary>ratio-x/y</summary>
+
+```css
+.ratio-x\/y {
+  --vishesh-aspect-w: x;
+  --vishesh-aspect-h: y;
+}
+```
+
+</details>
+
+<Callout type="info">
+  <em>Ratio has arbitrary value support.</em>
+</Callout>
+
+<details>
+<summary>ratio-[x/y]</summary>
+
+```css
+.ratio-\[x\/y\] {
+  --vishesh-aspect-w: x;
+  --vishesh-aspect-h: y;
+}
+```
+
+</details>
+
+### Overflow
+
+<Callout type="info">
+  <em>By default, overflow is hidden.</em>
+</Callout>
+
+<details>
+<summary>aspect-overflow-auto</summary>
+
+```css
+.aspect-overflow-auto > :first-child {
+  overflow: auto;
+}
+.aspect-overflow-auto > :first-child > :first-child {
+  width: auto;
+  height: auto;
+}
+```
+
+</details>
+<details>
+<summary>aspect-overflow-x-auto</summary>
+
+```css
+.aspect-overflow-x-auto > :first-child {
+  overflow-x: auto;
+}
+.aspect-overflow-x-auto > :first-child > :first-child {
+  width: auto;
+}
+```
+
+</details>
+<details>
+<summary>aspect-overflow-y-auto</summary>
+
+```css
+.aspect-overflow-y-auto > :first-child {
+  overflow-y: auto;
+}
+.aspect-overflow-y-auto > :first-child > :first-child {
+  height: auto;
+}
+```
+
+</details>
+<details>
+<summary>aspect-overflow-x-hidden</summary>
+
+```css
+.aspect-overflow-x-hidden > :first-child {
+  overflow-x: hidden;
+}
+.aspect-overflow-x-hidden > :first-child > :first-child {
+  width: 100%;
+}
+```
+
+</details>
+<details>
+<summary>aspect-overflow-y-hidden</summary>
+
+```css
+.aspect-overflow-y-hidden > :first-child {
+  overflow-y: hidden;
+}
+.aspect-overflow-y-hidden > :first-child > :first-child {
+  height: 100%;
+}
+```
+
+</details>
+<details>
+<summary>aspect-overflow-hidden</summary>
+
+```css
+.aspect-overflow-hidden > :first-child {
+  overflow: hidden;
+}
+.aspect-overflow-hidden > :first-child > :first-child {
+  width: 100%;
+  height: 100%;
+}
+```
+
+</details>
+
+### Reset
+
+<details>
+<summary>aspect-none</summary>
+
+```css
+.aspect-none {
+  display: initial;
+  width: initial;
+  height: initial;
+}
+
+.aspect-none > :first-child {
+  display: initial;
+  width: initial;
+  height: initial;
+  position: initial;
+  overflow: initial;
+  padding-top: unset;
+}
+
+.aspect-none > :first-child > :first-child {
+  position: initial;
+  top: unset;
+  left: unset;
+  width: initial;
+  height: initial;
+}
+
+.aspect-none > :first-child > :first-child > img,
+.aspect-none > :first-child > :first-child > video {
+  width: initial;
+  height: initial;
+}
+```
+
+</details>
+
+<br />
+<br />
+
+## Basic Usage
+
+```html
+<!-- width and overflow -->
+<div class="aspect w-1/2 aspect-overflow-y-auto xl:aspect-none">
+  <!-- aspect ratio, background -->
+  <!-- arbitrary valus support, ratio-[x/y] -->
+  <div class="ratio-3/1">
+    <!-- aspect container, display, background -->
+    <div class="flex justify-center bg-slate-200">
+      <!-- content -->
+      <img
+        src="https://www.mrjadeja.in/assets/icons/vishesh-hero.svg"
+        class="rounded-lg object-cover"
+      />
+    </div>
+  </div>
+</div>
+```
+
+<br />
+
+### Why 3 divs?
+
+As mentioned above, we are using CSS hack for aspect ratio. So, to make it proper considering the other scenarios, we have come to the conclusion that it needs 3 divs to work perfectly, and each div has its own role and responsibility.
+
+> 1<sup>st</sup> div has the class `aspect`, which sets all the necessary CSS. You can also use it to control the width and overflow. It is offering flexibility in how you present your content.
+
+> 2<sup>nd</sup> div sets the ratio for the content. You can control the background CSS here if your content does not occupy the whole space. This level of customization ensures that your design remains visually appealing.
+
+> 3<sup>rd</sup> div acts as a container and parent for content. You can apply any CSS except for positioning-related properties.
+
+By utilizing this three-div structure, you can achieve precise control over aspect ratios while maintaining flexibility and customization options for your design.
+
+<br />
+
+## Source code
+
+\{ \} [aspect-ratio/index.ts](https://github.com/mrjadeja/vishesh/blob/main/src/packages/preset/lib/components/aspect-ratio/index.ts "Vishesh preset aspect ratio source code")
+
+## References
+
+[Stack overflow](https://stackoverflow.com/questions/1495407/maintain-the-aspect-ratio-of-a-div-with-css "Maintain the aspect ratio of a div with CSS")

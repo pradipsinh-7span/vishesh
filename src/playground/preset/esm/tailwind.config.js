@@ -33,7 +33,6 @@ const theme = {
       },
     },
   },
-  plugins: [],
 };
 
 console.log("theme", theme.presets);

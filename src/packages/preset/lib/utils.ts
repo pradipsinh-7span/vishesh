@@ -20,6 +20,7 @@ const dependencyList: Record<VisheshCorePluginsList, VisheshCorePluginsList[]> =
   {
     breakpoints: ["breakpoints"],
     container: ["container", "breakpoints"],
+    aspectRatio: ["aspectRatio"],
   };
 
 export const isObject = (obj: any): boolean => {
@@ -35,6 +36,7 @@ export const transformTailwindConfig = (
   };
   const corePlugins: Partial<Record<CorePluginList, boolean>> = {
     container: false,
+    aspectRatio: false,
   };
 
   // vishesh core plugins and tailwindcss core plugins mapping
@@ -44,6 +46,7 @@ export const transformTailwindConfig = (
   > = {
     breakpoints: "screens",
     container: "container",
+    aspectRatio: "aspectRatio",
   };
   // disabled tailwindcss core plugin with override
   // there is an issue or plugin doesn't exist in tailwindcss

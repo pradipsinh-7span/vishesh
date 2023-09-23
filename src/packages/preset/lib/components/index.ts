@@ -1,3 +1,4 @@
+import aspectRatio from "./aspect-ratio";
 import container from "./container";
 
 import type { PluginProps, VisheshCorePluginsList } from "..";
@@ -7,4 +8,5 @@ export default function (
   disabledPluginList: VisheshCorePluginsList[]
 ): void {
   !disabledPluginList.includes("container") && container(props);
+  !disabledPluginList.includes("aspectRatio") && aspectRatio(props);
 }

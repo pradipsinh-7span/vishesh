@@ -97,15 +97,15 @@ yarn add -D vishesh-preset
 # /* add tailwindcss + vishesh-preset auto suggestion */
 + /** @type {import('vishesh-preset/types').VisheshPreset} */
   export default {
+#   // ...
 +   presets: [vishesh()],
-    content: [____],
     theme: {
 #     // ...
       extend: {
 #     // ...
       }
     },
-    plugins: [____]
+#   // ...
   }
 ```
 
@@ -126,15 +126,15 @@ yarn add -D vishesh-preset
 # /* add tailwindcss + vishesh-preset auto suggestion */
 + /** @type {import('vishesh-preset/types').VisheshPreset} */
   module.exports = {
+#   // ...
 +   presets: [vishesh()],
-    content: [____],
     theme: {
 #     // ...
       extend: {
-#       // ...
+#     // ...
       }
     },
-    plugins: [____]
+#   // ...
   }
 ```
 

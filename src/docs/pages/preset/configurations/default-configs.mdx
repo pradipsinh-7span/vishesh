@@ -1,7 +1,22 @@
-import type { VisheshPreset } from ".";
+---
+title: Default Configurations - Configurations - Preset | Vishesh | MrJadeja
+description: Visual representation of the Vishesh Preset's internal default configurations, that supercharges the Tailwind CSS.
+---
+
+# Default Configurations
+
+Visual representation of the Vishesh Preset's internal default configurations, that supercharges the Tailwind CSS.
+
+<br />
+
+```js filename="vishesh-preset"
+import plugin from "tailwindcss/plugin";
 
 export default {
   theme: {
+    // disabled screens with override
+    // as it is not available in corePlugins
+    screens: {},
     breakpoints: {
       zero: 0,
       xs: 375,
@@ -54,4 +69,21 @@ export default {
       generator: "1-16",
     },
   },
-} satisfies Partial<VisheshPreset>;
+  corePlugins: {
+    /*
+     * disabled screens with override in themes
+     * as screens is not available in corePlugins
+     */
+    // screens: false,
+    container: false,
+    aspectRatio: false,
+  }
+  plugins: [
+    plugin((props) => {
+      breakpoints(props);
+      container(props);
+      aspectRatio(props);
+    })
+  ]
+}
+```
