@@ -27,7 +27,7 @@ import { isObject } from "../../utils";
 import type { PluginProps } from "../..";
 
 /**
- * Generates `aspect`, `aspect-none` and `ratio-*` utitiles
+ * Generates `aspect`, `aspect-overflow-*`, `aspect-none` and `ratio-*` utitiles
  */
 export default function ({
   theme,

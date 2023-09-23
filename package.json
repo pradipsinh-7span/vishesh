@@ -1,7 +1,7 @@
 {
   "name": "vishesh",
   "description": "the rapid design system for your next project",
-  "version": "1.21.2",
+  "version": "1.21.4",
   "type": "module",
   "scripts": {
     "clear": "pnpx rimraf --glob **/node_modules **/dist **/types **/.turbo **/.next **/tsconfig.tsbuildinfo",
