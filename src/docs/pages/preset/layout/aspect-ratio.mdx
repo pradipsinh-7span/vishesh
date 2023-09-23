@@ -14,7 +14,7 @@ It can be applied to any element; in our case, when we change the width, the hei
 <Callout type="info">
   <em>Native support for the aspect ratio property was added in 2021,</em>
   <em> but it doesn't cover a wide range of browsers.</em> <br />
-  <em>Therefore, Vishesh Preset uses the vertical padding hack for</em>
+  <em>Therefore, Vishesh Preset uses the vertical padding css hack for</em>
   <em> aspect ratios, which has broad support.</em>
 </Callout>
 
@@ -304,7 +304,7 @@ export default {
 
 ### Why 3 divs?
 
-As mentioned above, we are using CSS hack for aspect ratio. So, to make it proper considering the other scenarios, we have come to the conclusion that it needs 3 divs to work perfectly, and each div has its own role and responsibility.
+As mentioned [above](/preset/layout/aspect-ratio), we are using CSS hack for aspect ratio. So, to make it proper considering the other scenarios, we have come to the conclusion that it needs 3 divs to work perfectly, and each div has its own role and responsibility.
 
 > 1<sup>st</sup> div has the class `aspect`, which sets all the necessary CSS. You can also use it to control the width and overflow. It is offering flexibility in how you present your content.
 

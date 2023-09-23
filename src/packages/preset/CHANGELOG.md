@@ -13,6 +13,18 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.7.2] - 23-09-2023
+
+<br />
+
+### Improved
+
+- minor fixes
+
+<br /><br />
+
+---
+
 ## [0.7.1] - 23-09-2023
 
 <br />
@@ -220,6 +232,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.7.2]: https://github.com/mrjadeja/vishesh/commit/d45c96e9...e38f534e
 [0.7.1]: https://github.com/mrjadeja/vishesh/commit/de281dd1...d45c96e9
 [0.7.0]: https://github.com/mrjadeja/vishesh/commit/f709c3c1...de281dd1
 [0.6.0]: https://github.com/mrjadeja/vishesh/commit/6e5ad8f8...f709c3c1
