@@ -14,6 +14,19 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [1.21.2] - 23-09-2023
+
+<br />
+
+### Added
+
+- [pkg-001]\: added iframe and canvas in aspect ratio (0.7.1)
+- [doc-001]\: added iframe and canvas in aspect ratio (0.10.1)
+
+<br /><br />
+
+---
+
 ## [1.21.0] - 23-09-2023
 
 <br />
@@ -25,6 +38,8 @@ and this project adheres to [Semantic Versioning][semver].
 - [pkg-001]\: #93 &nbsp;-&nbsp; added aspect ratio (0.7.0)
 - [play-001]\: #93 &nbsp;-&nbsp; added aspect ratio (0.4.0)
 - [play-002]\: #93 &nbsp;-&nbsp; added aspect ratio (0.4.0)
+
+<br />
 
 ### Improved
 
@@ -502,6 +517,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[1.21.2]: https://github.com/mrjadeja/vishesh/commit/de281dd1...d45c96e9
 [1.21.0]: https://github.com/mrjadeja/vishesh/commit/a6334ffc...de281dd1
 [1.16.1]: https://github.com/mrjadeja/vishesh/commit/e807eb00...a6334ffc
 [1.16.0]: https://github.com/mrjadeja/vishesh/commit/282ff89f...e807eb00
