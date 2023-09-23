@@ -1,5 +1,6 @@
 {
   "index": "Introduction",
   "breakpoints": "Breakpoints",
-  "container": "Container"
+  "container": "Container",
+  "aspect-ratio": "Aspect Ratio"
 }

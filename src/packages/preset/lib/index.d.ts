@@ -1,5 +1,3 @@
-import type { Container } from "./components/container/types";
-import type { Breakpoints } from "./variants/breakpoints/types";
 import type { Config, ThemeConfig } from "tailwindcss/types/config";
 
 type Merge<A, B> = {
@@ -15,6 +13,7 @@ type Merge<A, B> = {
 interface PluginProps {
   theme: Function;
   addComponents: Function;
+  matchComponents: Function;
   addVariant: Function;
   config: Function;
 }
@@ -22,6 +21,7 @@ interface PluginProps {
 interface ThemeDefaults {
   breakpoints: Breakpoints;
   container: Container;
+  aspectRatio: AspectRatio;
 }
 
 type Theme = ThemeConfig & ThemeDefaults;
@@ -31,7 +31,7 @@ interface VisheshConfig {
 }
 
 // To disable vishesh core plugins and enable back tailwindcss core plugins
-type VisheshCorePluginsList = "breakpoints" | "container";
+type VisheshCorePluginsList = "breakpoints" | "container" | "aspectRatio";
 
 export interface VisheshPreset extends Config {
   theme: VisheshThemeConfig;

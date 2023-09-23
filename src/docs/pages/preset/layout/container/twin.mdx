@@ -24,15 +24,18 @@ You can use fixed and fluid container configurations just as you would when the 
 
 ```js
 container: {
-  type: "twin",
+  mode: "twin",
   // ...
   spacing: {
     "breakpoint key": number,     // #1
+    // ...
     fixed: {
       "breakpoint key": number,   // #2
+      // ...
     },
     fluid: {
       "breakpoint key": number,   // #3
+      // ...
     }
   },
   // ...

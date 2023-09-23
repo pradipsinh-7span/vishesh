@@ -14,9 +14,11 @@ import { isObject } from "../../utils";
 
 import type { PluginProps } from "../..";
 
-// container
-// center: boolean
+/* container */
+// mode: "fixed" | "fluid" | "twin"
+// center: true | false
 // spacing: key:value pair that mapped to breakpoints
+// - zero: 16
 // - xs: 16
 // - sm: 28
 // - md: 40

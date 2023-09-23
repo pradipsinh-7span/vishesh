@@ -9,6 +9,23 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.4.0] - 23-09-2023
+
+<br />
+
+### Added
+
+- #93 &nbsp;-&nbsp; Added aspect ratio
+
+### Improved
+
+- #93 &nbsp;-&nbsp; minor fixex
+- #93 &nbsp;-&nbsp; improved html
+
+<br /><br />
+
+---
+
 ## [0.3.0] - 06-09-2023
 
 <br>
@@ -59,6 +76,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.4.0]: https://github.com/mrjadeja/vishesh/commit/f709c3c1...de281dd1
 [0.3.0]: https://github.com/mrjadeja/vishesh/commit/af778dea...f709c3c1
 [0.2.0]: https://github.com/mrjadeja/vishesh/compare/b7f440a2...af778dea
 [0.1.0]: https://github.com/mrjadeja/vishesh/compare/60e5816f...b7f440a2
