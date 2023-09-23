@@ -58,7 +58,7 @@ export default function ({
           left: "0px",
           width: "100%",
           height: "100%",
-          "& > img, & > video": {
+          "& > img, & > video, & > iframe, & > canvas": {
             width: "100%",
             height: "100%",
           },
@@ -162,7 +162,7 @@ export default function ({
           left: "unset",
           width: "initial",
           height: "initial",
-          "& > img, & > video": {
+          "& > img, & > video, & > iframe, & > canvas": {
             width: "initial",
             height: "initial",
           },
