@@ -2,5 +2,6 @@
   "index": "Introduction",
   "breakpoints": "Breakpoints",
   "container": "Container",
-  "aspect-ratio": "Aspect Ratio"
+  "aspect-ratio": "Aspect Ratio",
+  "columns": "Columns"
 }

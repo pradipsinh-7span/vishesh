@@ -22,16 +22,21 @@ interface ThemeDefaults {
   breakpoints: Breakpoints;
   container: Container;
   aspectRatio: AspectRatio;
+  columns: Columns;
 }
 
-type Theme = ThemeConfig & ThemeDefaults;
+type Theme = Merge<ThemeConfig, ThemeDefaults>;
 
 interface VisheshConfig {
   disable: VisheshCorePluginsList[];
 }
 
 // To disable vishesh core plugins and enable back tailwindcss core plugins
-type VisheshCorePluginsList = "breakpoints" | "container" | "aspectRatio";
+type VisheshCorePluginsList =
+  | "breakpoints"
+  | "container"
+  | "aspectRatio"
+  | "columns";
 
 export interface VisheshPreset extends Config {
   theme: VisheshThemeConfig;

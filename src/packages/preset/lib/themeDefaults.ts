@@ -1,3 +1,5 @@
+import { deepCopy } from "./utils";
+
 import type { VisheshPreset } from ".";
 
 export default {
@@ -52,6 +54,53 @@ export default {
       "display-wider": "19.5/9",
       "display-ultrawide": "21/9",
       generator: "1-16",
+    },
+    columns: ({ theme }: any) => {
+      return {
+        count: "1-12",
+        width: {
+          auto: "auto",
+          "3xs": 256,
+          "2xs": 288,
+          xs: 320,
+          sm: 384,
+          md: 448,
+          lg: 512,
+          xl: 576,
+          "2xl": 672,
+          "3xl": 768,
+          "4xl": 896,
+          "5xl": 1024,
+          "6xl": 1152,
+          "7xl": 1280,
+        },
+        divider: {
+          width: {
+            ...deepCopy(theme("borderWidth")),
+            px: "1px",
+            medium: "medium",
+            thick: "thick",
+            thin: "thin",
+          },
+          color: deepCopy(theme("colors")),
+          style: {
+            dashed: "dashed",
+            dotted: "dotted",
+            double: "double",
+            groove: "groove",
+            hidden: "hidden",
+            inset: "inset",
+            none: "none",
+            outset: "outset",
+            ridge: "ridge",
+            solid: "solid",
+          },
+        },
+        gap: {
+          ...deepCopy(theme("spacing")),
+          normal: "normal",
+        },
+      };
     },
   },
 } satisfies Partial<VisheshPreset>;

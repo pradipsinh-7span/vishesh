@@ -1,6 +1,32 @@
 import type { Merge, VisheshCorePluginsList, VisheshThemeConfig } from ".";
 import type { CorePluginList } from "tailwindcss/types/generated/corePluginList";
 
+export const deepCopy = (x: Object | Array<any>) =>
+  JSON.parse(JSON.stringify(x));
+
+const dependencyList: Record<VisheshCorePluginsList, VisheshCorePluginsList[]> =
+  {
+    breakpoints: ["breakpoints"],
+    container: ["container", "breakpoints"],
+    aspectRatio: ["aspectRatio"],
+    columns: ["columns"],
+  };
+
+// borrowed from tailwindcss
+// @ts-ignore
+export const flattenColorPalette = (colors) =>
+  Object.assign(
+    {},
+    // @ts-ignore
+    ...Object.entries(colors ?? {}).flatMap(([color, values]) =>
+      typeof values == "object"
+        ? Object.entries(flattenColorPalette(values)).map(([number, hex]) => ({
+            [color + (number === "DEFAULT" ? "" : `-${number}`)]: hex,
+          }))
+        : [{ [`${color}`]: values }]
+    )
+  );
+
 export const getDisabledPluginsList = (
   disabledVisheshCorePlugins: VisheshCorePluginsList[]
 ) => {
@@ -16,16 +42,11 @@ export const getDisabledPluginsList = (
     .filter(Boolean) as VisheshCorePluginsList[];
 };
 
-const dependencyList: Record<VisheshCorePluginsList, VisheshCorePluginsList[]> =
-  {
-    breakpoints: ["breakpoints"],
-    container: ["container", "breakpoints"],
-    aspectRatio: ["aspectRatio"],
-  };
-
 export const isObject = (obj: any): boolean => {
   return obj && typeof obj === "object" && !Array.isArray(obj);
 };
+
+export const isRange = (range: string): boolean => /^\d+-\d+$/.test(range);
 
 export const transformTailwindConfig = (
   disabledVisheshCorePlugins: VisheshCorePluginsList[]
@@ -37,6 +58,7 @@ export const transformTailwindConfig = (
   const corePlugins: Partial<Record<CorePluginList, boolean>> = {
     container: false,
     aspectRatio: false,
+    columns: false,
   };
 
   // vishesh core plugins and tailwindcss core plugins mapping
@@ -47,6 +69,7 @@ export const transformTailwindConfig = (
     breakpoints: "screens",
     container: "container",
     aspectRatio: "aspectRatio",
+    columns: "columns",
   };
   // disabled tailwindcss core plugin with override
   // there is an issue or plugin doesn't exist in tailwindcss

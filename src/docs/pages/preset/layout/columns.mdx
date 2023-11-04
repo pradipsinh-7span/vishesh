@@ -1,0 +1,493 @@
+---
+title: Columns - Layout - Preset | Vishesh | MrJadeja
+description: Multi-column layout, often called 'multicol' layout, is a CSS specification that arranges content into column boxes, like the columns in a traditional newspaper.
+---
+
+import { Callout } from "nextra-theme-docs";
+
+# Columns
+
+CSS columns are like a way to organize your content into multiple vertical sections, similar to how text appears in columns within a newspaper or magazine.
+
+You can control the number of columns, the width of each column, and the gaps between them. When you change the number of columns or their width, the content adjusts to maintain a neat and organized appearance.
+
+It's as if you're rearranging items on a shelf, and they automatically adapt to keep everything well-organized on your webpage.
+
+<Callout type="info">
+  <em>Make sure to give a fix or predictable height.</em>
+</Callout>
+
+<br />
+<br />
+
+## Setup
+
+Columns include five utility classes named count, width, gap, fill and divider. The _count_ class generates values based on a number range, while the _divider_ class's width, color, and column gap settings are derived from the default Tailwind configuration but have been extended and customized by your theme.
+
+<details>
+<summary>Tailwind CSS config file setup</summary>
+
+```js filename="tailwind.config.js"
+export default {
+  // ...
+  theme: {
+    //...
+    extend: {
+      // ...
+
+      /* defaults values are there */
+      /* no need to add */
+      /* just for reference */
+      columns: ({ theme }) => {
+        // https://tailwindcss.com/docs/theme#referencing-other-values
+        return {
+          // special property
+          // generates classes from the range
+          count: "1-12",
+          // column max widths
+          width: {
+            auto: "auto",
+            "3xs": 256,
+            "2xs": 288,
+            xs: 320,
+            sm: 384,
+            md: 448,
+            lg: 512,
+            xl: 576,
+            "2xl": 672,
+            "3xl": 768,
+            "4xl": 896,
+            "5xl": 1024,
+            "6xl": 1152,
+            "7xl": 1280,
+          },
+          divider: {
+            width: {
+              // Tailwind default border widths
+              // extended by your configuration file merge
+              ...theme("borderWidth"),
+              px: "1px",
+              medium: "medium",
+              thick: "thick",
+              thin: "thin",
+            },
+            // Tailwind default colors
+            // extended by your configuration file merge
+            color: theme("colors"),
+            style: {
+              dashed: "dashed",
+              dotted: "dotted",
+              double: "double",
+              groove: "groove",
+              hidden: "hidden",
+              inset: "inset",
+              none: "none",
+              outset: "outset",
+              ridge: "ridge",
+              solid: "solid",
+            },
+          },
+          gap: {
+            // Tailwind default spacing
+            // extended by your configuration file merge
+            // i.e., 0, px, 0.5, 1, 2, 4, 8, ..., 40, ..., 96
+            ...theme("spacing"),
+            normal: "normal",
+          },
+        };
+      },
+      // ...
+    },
+  },
+  // ...
+};
+```
+
+</details>
+
+<br />
+<br />
+
+## Classes
+
+### Base
+
+> It is required for other properties to take effect.
+
+<details>
+<summary>columns</summary>
+
+{/* prettier-ignore */}
+```css
+.columns {
+  columns:
+    var(--vishesh-columns-width, auto)
+    var(--vishesh-columns-count, auto);
+  column-rule:
+    var(--vishesh-columns-divider-width, 1px)
+    var(--vishesh-columns-divider-style, solid)
+    var(--vishesh-columns-divider-color, transparent);
+}
+
+.columns * {
+  column-span: "none";
+}
+```
+
+</details>
+
+<br />
+
+### Column Count
+
+> there's a special property called the `count` that allows you to create classes based on a specified numeric range. By default, it covers the range from _1-12_, generating classes in the format `cols-x`, where x can be any numbers within that range.
+
+<details>
+<summary>cols-x</summary>
+
+```css
+.cols-x {
+  --vishesh-columns-count: x;
+}
+```
+
+</details>
+
+<details>
+<summary>cols-[x]</summary>
+
+> <em>Column count has arbitrary value support.</em>
+
+```css
+.cols-\[x\] {
+  --vishesh-columns-count: x;
+}
+```
+
+</details>
+
+<br />
+
+### Column Width
+
+> The `cols-w-*` property establishes the ideal width for columns, enabling automatic column count calculation and equal space distribution within a container.
+
+<details>
+<summary>cols-w-x</summary>
+
+```css
+.cols-w-x {
+  --vishesh-columns-width: x;
+}
+```
+
+| class       | value  |
+| :---------- | :----- |
+| cols-w-auto | auto   |
+| cols-w-3xs  | 256px  |
+| cols-w-2xs  | 288px  |
+| cols-w-xs   | 320px  |
+| cols-w-sm   | 384px  |
+| cols-w-md   | 448px  |
+| cols-w-lg   | 512px  |
+| cols-w-xl   | 576px  |
+| cols-w-2xl  | 672px  |
+| cols-w-3xl  | 768px  |
+| cols-w-4xl  | 896px  |
+| cols-w-5xl  | 1024px |
+| cols-w-6xl  | 1152px |
+| cols-w-7xl  | 1280px |
+
+</details>
+
+<details>
+<summary>cols-w-[x]</summary>
+
+> <em>Column width has arbitrary value support.</em>
+
+```css
+.cols-w-\[x\] {
+  --vishesh-columns-width: x;
+}
+```
+
+</details>
+
+<br />
+
+<Callout type="warning">
+  <em>When using both count and width, count functions as the </em> <br />
+  <em>maximum column count, while width serves as the minimum </em> <br />
+  <em>column width. Count may be fewer than defined, but width </em> <br />
+  <em>will not be reduced.</em>
+</Callout>
+
+<br />
+
+### Column Divider
+
+> Column divider specifies the color, width and style of the line between columns.
+
+<h4 class="no-nx pt-2">Width</h4>
+
+<details>
+<summary>cols-dw-x</summary>
+
+```css
+.cols-dw-x {
+  --vishesh-columns-divider-width: x;
+}
+```
+
+| class          | value  |
+| :------------- | :----- |
+| cols-dw-0      | 0px    |
+| cols-dw-px     | 1px    |
+| cols-dw-2      | 2px    |
+| cols-dw-4      | 4px    |
+| cols-dw-8      | 8px    |
+| cols-dw-thin   | thin   |
+| cols-dw-medium | medium |
+| cols-dw-thick  | thick  |
+
+</details>
+
+<details>
+<summary>cols-dw-[x]</summary>
+
+> <em>Column divider width has arbitrary value support.</em>
+
+```css
+.cols-dw-\[x\] {
+  --vishesh-columns-divider-width: x;
+}
+```
+
+</details>
+
+<h4 class="no-nx pt-4">Style</h4>
+
+<details>
+<summary>cols-ds-x</summary>
+
+```css
+.cols-ds-x {
+  --vishesh-columns-divider-style: x;
+}
+```
+
+| class          | value  |
+| :------------- | :----- |
+| cols-ds-dashed | dashed |
+| cols-ds-dotted | dotted |
+| cols-ds-double | double |
+| cols-ds-groove | groove |
+| cols-ds-hidden | hidden |
+| cols-ds-inset  | inset  |
+| cols-ds-none   | none   |
+| cols-ds-outset | outset |
+| cols-ds-ridge  | ridge  |
+| cols-ds-solid  | solid  |
+
+</details>
+
+<details>
+<summary>cols-ds-[x]</summary>
+
+> <em>Column divider style has arbitrary value support.</em>
+
+```css
+.cols-ds-\[x\] {
+  --vishesh-columns-divider-style: x;
+}
+```
+
+</details>
+
+<h4 class="no-nx pt-4">Color</h4>
+
+<details>
+<summary>cols-dc-x</summary>
+
+> <em>You can pick any color provided by Tailwind.</em> <br />
+> <em>i.e., cols-dw-orange-500</em>
+
+```css
+.cols-dc-x {
+  --vishesh-columns-divider-color: x;
+}
+```
+
+</details>
+
+<details>
+<summary>cols-dc-[x]</summary>
+
+> <em>Column divider color has arbitrary value support.</em>
+
+```css
+.cols-dc-\[x\] {
+  --vishesh-columns-divider-color: x;
+}
+```
+
+</details>
+
+<br />
+
+### Column Gap
+
+> Column gap specify the gap or spacing between columns.
+
+<details>
+<summary>cols-gap-normal</summary>
+
+```css
+.cols-gap-normal {
+  column-gap: normal;
+}
+```
+
+</details>
+
+<details>
+<summary>cols-gap-x</summary>
+
+> <em>You can pick any spacing provided by Tailwind.</em> <br />
+> <em>i.e., 0, px, 0.5, 2, 4, 8, ..., 40, ..., 96</em>
+
+```css
+.cols-gap-x {
+  column-gap: x;
+}
+```
+
+</details>
+
+<details>
+<summary>cols-gap-[x]</summary>
+
+> <em>Column gap has arbitrary value support.</em>
+
+```css
+.cols-gap-\[x\] {
+  column-gap: x;
+}
+```
+
+</details>
+
+<br />
+
+### Column Fill
+
+> It is used to specify how content is distributed within columns. [Know more](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_multicol_layout/Spanning_balancing_columns#filling_and_balancing_columns)
+
+<details>
+<summary>cols-fill-balance</summary>
+
+```css
+.cols-fill-balance {
+  column-fill: balance;
+}
+```
+
+</details>
+<details>
+<summary>cols-fill-auto</summary>
+
+```css
+.cols-fill-auto {
+  column-fill: auto;
+}
+```
+
+</details>
+
+<br />
+
+### Reset
+
+> It reset the applied customisation.
+
+<details>
+<summary>columns-none</summary>
+
+```css
+.columns-none {
+  columns: unset;
+  column-rule: unset;
+  column-gap: 0;
+  column-fill: unset;
+}
+```
+
+</details>
+
+<details>
+<summary>cols-divider-none</summary>
+
+```css
+.cols-divider-none {
+  column-rule: unset;
+}
+```
+
+</details>
+
+<details>
+<summary>cols-gap-none</summary>
+
+```css
+.cols-gap-none {
+  column-gap: 0;
+}
+```
+
+</details>
+
+<details>
+<summary>cols-fill-none</summary>
+
+```css
+.cols-fill-none {
+  column-fill: unset;
+}
+```
+
+</details>
+
+<br />
+<br />
+
+## Basic Usage
+
+```html
+<div
+  class="columns cols-2 cols-dw-medium cols-dc-purple-500 cols-gap-4 xl:cols-4 xl:cols-gap-10"
+>
+  <!-- ... -->
+  <img
+    class="w-full object-cover rounded-lg"
+    src="https://some-website.com/image.png"
+  />
+  <!-- ... -->
+  <img
+    class="w-full object-cover rounded-lg"
+    src="https://some-website.com/image.png"
+  />
+  <!-- ... -->
+</div>
+```
+
+<br />
+
+## Source code
+
+\{ \} [columns/index.ts](https://github.com/mrjadeja/vishesh/blob/main/src/packages/preset/lib/components/columns/index.ts "Vishesh preset columns source code")
+
+## References
+
+1. [MDN CSS columns](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_multicol_layout/Basic_concepts "MDN CSS columns documentation") <br />
+2. [Tailwind CSS columns](https://tailwindcss.com/docs/columns "Tailwindcss columns documentation")
+3. [Youtube video by Kevin Powell](https://www.youtube.com/watch?v=nJfrThH92WU "The most underappreciated CSS property")

@@ -32,7 +32,7 @@ const visheshConfig = (
       plugin((props): void => {
         variants(props, disabledPluginList);
         components(props, disabledPluginList);
-      }, themeDefaults),
+      }, themeDefaults as Partial<VisheshPreset>),
     ],
   };
 };
