@@ -14,6 +14,38 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [1.25.3] - 04-11-2023
+
+<br />
+
+### Added
+
+- [doc-001]\: Added columns in default configuration and core plugins (0.11.2)
+
+### Improved
+
+- [pkg-001]\: Improved aspect ratio plugin code (0.8.1)
+- [doc-001]\: Improved preset docs structure (0.11.2)
+
+<br /><br />
+
+---
+
+## [1.25.0] - 04-11-2023
+
+<br />
+
+### Added
+
+- [pkg-001]\: #101 &nbsp;-&nbsp; Added columns (0.8.0)
+- [doc-001]\: #101 &nbsp;-&nbsp; Added columns (0.11.0)
+- [play-001]\: #101 &nbsp;-&nbsp; Added columns (0.5.0)
+- [play-002]\: #101 &nbsp;-&nbsp; Added columns (0.5.0)
+
+<br /><br />
+
+---
+
 ## [1.21.4] - 23-09-2023
 
 <br />
@@ -530,6 +562,8 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[1.25.3]: https://github.com/mrjadeja/vishesh/commit/43dd2a53...19d2e1d6
+[1.25.0]: https://github.com/mrjadeja/vishesh/commit/e38f534e...43dd2a53
 [1.21.4]: https://github.com/mrjadeja/vishesh/commit/d45c96e9...e38f534e
 [1.21.2]: https://github.com/mrjadeja/vishesh/commit/de281dd1...d45c96e9
 [1.21.0]: https://github.com/mrjadeja/vishesh/commit/a6334ffc...de281dd1

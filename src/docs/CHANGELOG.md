@@ -9,6 +9,36 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.11.2] - 04-11-2023
+
+<br />
+
+### Added
+
+- Added columns in default configuration and core plugins
+
+<br />
+
+### Improved
+
+- Improved preset docs structure
+
+<br /><br />
+
+---
+
+## [0.11.0] - 04-11-2023
+
+<br />
+
+### Added
+
+- #101 &nbsp;-&nbsp; Added columns
+
+<br /><br />
+
+---
+
 ## [0.10.2] - 23-09-2023
 
 <br />
@@ -296,6 +326,8 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.11.2]: https://github.com/mrjadeja/vishesh/commit/43dd2a53...19d2e1d6
+[0.11.0]: https://github.com/mrjadeja/vishesh/commit/e38f534e...43dd2a53
 [0.10.2]: https://github.com/mrjadeja/vishesh/commit/d45c96e9...e38f534e
 [0.10.1]: https://github.com/mrjadeja/vishesh/commit/de281dd1...d45c96e9
 [0.10.0]: https://github.com/mrjadeja/vishesh/commit/a6334ffc...de281dd1

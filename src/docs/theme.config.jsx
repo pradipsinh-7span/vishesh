@@ -110,7 +110,7 @@ export default {
             <div className="py-8">
               <h5 className="text-lg">
                 <span className="text-amber-500 dark:text-yellow-400">
-                  Fueled by Passion
+                  Fuelled by Passion
                 </span>
                 <br />
                 Powered by{" "}

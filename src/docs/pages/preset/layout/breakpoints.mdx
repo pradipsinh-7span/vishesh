@@ -11,12 +11,23 @@ Breakpoints are like signposts in web design that signal when a design needs to 
 
 When a screen hits a breakpoint, the design switches to a version that fits that size perfectly. Breakpoints are like the magic behind a website's ability to look great and work seamlessly, no matter if you're browsing on a tiny smartphone or a large desktop monitor.
 
+<Callout type="info">
+  <em>Tailwind CSS has range breakpoints, but it's a bit more verbose.</em>
+  <br />
+  <em>For a comparison, refer to [basic usage](#basic-usage).</em>
+</Callout>
+
 <br />
+
+## Setup
 
 <Callout type="warning">
   <em>Make sure to remove the `screens`</em>
   <em> configuration from your config file.</em>
 </Callout>
+
+<details>
+<summary>Tailwind CSS config file setup</summary>
 
 ```diff filename="tailwind.config.js"
 # Default breakpoints are in pixels
@@ -55,33 +66,13 @@ When a screen hits a breakpoint, the design switches to a version that fits that
 }
 ```
 
-<br />
-
-## **Why?**
-
-Have you ever found yourself struggling with the limitations of minimum or maximum breakpoints in your design? If you're a Tailwind CSS user, you probably know the pain of having to manually define these breakpoints.
-
-Even less frequently, you may encounter a situation where you need one design for mobile, a different one for tablets, but oddly, the desktop design is almost identical to mobile. Resetting styles can be a tedious task in such cases 😓.
-
-That's where the Vishesh Preset comes to the rescue!
-
-<br />
-
-## **Solution** ✌️
-
-These breakpoints aren't your regular breakpoints. Vishesh Preset goes the extra mile by generating a plethora of other breakpoint variants. <br />
-It includes `minimum`, `maximum`, `range`, and `only` variants 🤘.
-
-<Callout type="info">
-  <em>Tailwind CSS has a solution, but it's a bit more verbose.</em> <br />
-  <em>For a comparison, refer to [basic usage](#basic-usage).</em>
-</Callout>
+</details>
 
 <br />
 
 ## Types of breakpoint variants
 
-<details open>
+<details>
   <summary>Minimum Variants</summary>
 
 > <em>Usually, we use these breakpoint variants</em> <br />
@@ -167,9 +158,7 @@ It includes `minimum`, `maximum`, `range`, and `only` variants 🤘.
 
 ## CSS Specificity Order
 
-<Callout type="info">
-  <em>_Higher-power variants override lower-power variants_</em>
-</Callout>
+> Higher-power variants overrides lower-power variants
 
 | Power | Variant | Type    |
 | :---- | :------ | :------ |
@@ -182,9 +171,7 @@ It includes `minimum`, `maximum`, `range`, and `only` variants 🤘.
 
 ## Basic Usage
 
-<Callout type="info">
-  <em>The example is for showcase purposes only.</em>
-</Callout>
+> The example is for showcase purposes only.
 
 ```js filename="Before"
 // Without Tailwind range variants

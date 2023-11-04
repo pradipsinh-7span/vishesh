@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning][semver].
 
 ---
 
+## [0.5.0] - 04-11-2023
+
+<br />
+
+### Added
+
+- #101 &nbsp;-&nbsp; Added columns
+
+<br /><br />
+
+---
+
 ## [0.4.0] - 23-09-2023
 
 <br />
@@ -76,6 +88,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 शुभारम्भः
 
+[0.5.0]: https://github.com/mrjadeja/vishesh/commit/de281dd1...43dd2a53
 [0.4.0]: https://github.com/mrjadeja/vishesh/commit/f709c3c1...de281dd1
 [0.3.0]: https://github.com/mrjadeja/vishesh/commit/af778dea...f709c3c1
 [0.2.0]: https://github.com/mrjadeja/vishesh/compare/b7f440a2...af778dea

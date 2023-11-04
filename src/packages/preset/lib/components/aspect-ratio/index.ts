@@ -22,7 +22,7 @@
 // ...
 // 16/15
 
-import { isObject } from "../../utils";
+import { isObject, isRange } from "../../utils";
 
 import type { PluginProps } from "../..";
 
@@ -39,6 +39,7 @@ export default function ({
     return;
   }
 
+  // generate aspect and aspect-overflow-* classes
   addComponents({
     ".aspect": {
       display: "block",
@@ -51,7 +52,7 @@ export default function ({
         position: "relative",
         overflow: "hidden",
         paddingTop:
-          "calc((var(--vishesh-aspect-h, 1) / var(--vishesh-aspect-w, 1)) * 100%)",
+          "calc((var(--vishesh-aspect-y, 1) / var(--vishesh-aspect-x, 1)) * 100%)",
         "& > :first-child": {
           position: "absolute",
           top: "0px",
@@ -118,11 +119,11 @@ export default function ({
   });
 
   // generator: 1-16  (default)
-  if ("generator" in aspectRatio && /^\d+-\d+$/.test(aspectRatio.generator)) {
-    const generator = aspectRatio.generator.split("-");
+  if ("generator" in aspectRatio && isRange(aspectRatio.generator)) {
+    const [from, to] = aspectRatio.generator.split("-");
     delete aspectRatio.generator;
-    for (let i = generator[0]; i <= generator[1]; i++) {
-      for (let j = generator[0]; j <= generator[1]; j++) {
+    for (let i = from; i <= to; i++) {
+      for (let j = from; j <= to; j++) {
         if (i !== j) {
           const ratio = `${i}/${j}`;
           aspectRatio[ratio] = ratio;
@@ -131,19 +132,22 @@ export default function ({
     }
   }
 
+  // generate ratio-x/y classes
+  // add arbitrary value support ration-[x/y]
   matchComponents(
     {
       ratio: (value: string) => {
-        const [w, h] = value.split("/");
+        const [x, y] = value.split("/");
         return {
-          "--vishesh-aspect-w": w,
-          "--vishesh-aspect-h": h,
+          "--vishesh-aspect-x": x,
+          "--vishesh-aspect-y": y,
         };
       },
     },
     { values: aspectRatio }
   );
 
+  // generate aspect-none class
   addComponents({
     ".aspect-none": {
       display: "initial",

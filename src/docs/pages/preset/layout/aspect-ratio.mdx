@@ -7,7 +7,9 @@ import { Callout } from "nextra-theme-docs";
 
 # Aspect Ratio
 
-Aspect ratio is like a teamwork between width and height. Imagine you have a rectangle, and the aspect ratio is 4:3. This means for every 4 units you move horizontally (width), you move 3 units vertically (height). Now, if you want to change the width to 8 units, the height will automatically adjust to 6 units to maintain that 4:3 ratio. It's like a see-saw where one side goes up when the other goes down, all to keep things looking just right.
+Aspect ratio is like a teamwork between width and height. Imagine you have a rectangle, and the aspect ratio is 4:3. This means for every 4 units you move horizontally (width), you move 3 units vertically (height). Now, if you want to change the width to 8 units, the height will automatically adjust to 6 units to maintain that 4:3 ratio.
+
+It's like a see-saw where one side goes up when the other goes down.
 
 It can be applied to any element; in our case, when we change the width, the height adjusts itself in accordance with the aspect ratio.
 
@@ -23,15 +25,10 @@ It can be applied to any element; in our case, when we change the width, the hei
 
 ## Setup
 
-The Vishesh preset includes commonly used aspect ratios. However, there's a special property called the `generator` that allows you to create classes based on a specified numeric range.
+The Vishesh preset includes commonly used aspect ratios. However, there's a special property called the _generator_ that allows you to create classes based on a specified numeric range.
 
-By default, it covers the range from _1-16_, generating classes in the format `ratio-x/y`, where x and y can be any numbers within that range.
-
-<Callout type="info">
-  <em>It doesn't generate classes for same numbers. i.e.,</em>
-  <em> *ratio-1/1*, *ratio-2/2*, *...*, *ratio-16/16*.</em> <br />
-  <em>For these, you can simply use `ratio-square`.</em>
-</Callout>
+<details>
+<summary>Tailwind CSS config file setup</summary>
 
 ```js filename="tailwind.config.js"
 export default {
@@ -68,12 +65,16 @@ export default {
 };
 ```
 
+</details>
+
 <br />
 <br />
 
 ## Classes
 
 ### Base
+
+> It is required for other properties to take effect.
 
 <details>
 <summary>aspect</summary>
@@ -92,7 +93,7 @@ export default {
   position: relative;
   overflow: hidden;
   padding-top: calc(
-    (var(--vishesh-aspect-h, 1) / var(--vishesh-aspect-w, 1)) * 100%
+    (var(--vishesh-aspect-y, 1) / var(--vishesh-aspect-x, 1)) * 100%
   );
 }
 
@@ -115,42 +116,55 @@ export default {
 
 </details>
 
+<br />
+
 ### Ratio
 
-<Callout type="info">
-  <em>Ratio classes are generated as mentioned</em>
-  <em> above in the [Setup](/preset/layout/aspect-ratio#setup).</em>
-</Callout>
+> It sets the aspect ratio of the container.
 
 <details>
 <summary>ratio-x/y</summary>
 
+> <em> There's a special property called the **generator**</em>
+> <em> that allows you to create classes based on a</em>
+> <em> specified numeric range.</em>
+> <br />
+> <em>By default, it covers the range from _1-16_,</em>
+> <em> generating classes in the format `ratio-x/y`,</em>
+> <em> where x and y can be any numbers within that range.</em>
+
+> <em>It doesn't generate classes for same numbers. i.e.,</em>
+> <em> *ratio-1/1*, *ratio-2/2*, *...*, *ratio-16/16*.</em> <br />
+> <em>For these, you can simply use `ratio-square`.</em>
+
 ```css
 .ratio-x\/y {
-  --vishesh-aspect-w: x;
-  --vishesh-aspect-h: y;
+  --vishesh-aspect-x: x;
+  --vishesh-aspect-y: y;
 }
 ```
 
 </details>
-
-<Callout type="info">
-  <em>Ratio has arbitrary value support.</em>
-</Callout>
 
 <details>
 <summary>ratio-[x/y]</summary>
 
+> <em>Ratio has arbitrary value support.</em>
+
 ```css
 .ratio-\[x\/y\] {
-  --vishesh-aspect-w: x;
-  --vishesh-aspect-h: y;
+  --vishesh-aspect-x: x;
+  --vishesh-aspect-y: y;
 }
 ```
 
 </details>
 
+<br />
+
 ### Overflow
+
+> It provide the scrollbar, if content is larger than the aspect container.
 
 <Callout type="info">
   <em>By default, overflow is hidden.</em>
@@ -237,7 +251,11 @@ export default {
 
 </details>
 
+<br />
+
 ### Reset
+
+> It reset the applied customization.
 
 <details>
 <summary>aspect-none</summary>
